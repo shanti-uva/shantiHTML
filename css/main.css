@@ -1,0 +1,242 @@
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding-bottom: 20px;
+  background-color: rgba(57, 55, 63, 0.95);
+}
+
+.container-fluid {
+  background-color: white;
+}
+
+.navbar-header img {
+  max-width: 30% !important;
+  height: auto;
+}
+
+.navbar-header .navbar-brand {
+  padding: 10px 15px 0 15px;
+}
+
+.navbar-nav.left-margins {
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+}
+
+.nav.header-text {
+  margin: 14px 0 0 -300px;
+  font-size: 1.1em;
+  font-style: italic;
+  font-family: 'Droid Serif', serif;
+  color: #777777;
+}
+
+.left-margins li {
+  border-left: 1px solid #E7E7E7;
+}
+
+body > .navbar {
+  margin-bottom: 0;
+}
+
+.collections,
+.titlearea {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.collections {
+  background-color: rgba(57, 55, 63, 0.95);
+  color: white;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 700;
+}
+
+.collections .closecollection a {
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.collections .lightblue-bg {
+  background-color: rgba(76, 75, 81, 0.95);
+  overflow: auto;
+  position: relative;
+}
+
+.collections .lightblue-bg .four-collections {
+  padding-bottom: 10px;
+}
+
+.collections ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 20px;
+  border-right: 1px solid rgba(53, 52, 56, 0.95);
+  height: 100px;
+}
+
+.collections ul.last {
+  border-right: none;
+}
+
+.collections ul li {
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  letter-spacing: 0.125em;
+}
+
+.collections ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.collections ul li a:hover {
+  text-decoration: none;
+}
+
+.collections h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 0.5em;
+}
+
+.titlearea {
+  color: white;
+  background-color: #DC3C47;
+  position: relative;
+}
+
+.titlearea .page-title {
+  font-size: x-large;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: 400;
+}
+
+.titlearea .page-title .fa {
+  padding: 2px 4px;
+  background-color: rgba(57, 55, 63, 0.20);
+  margin-left: -15px;
+}
+
+.titlearea .breadcrumb {
+  background-color: inherit;
+  font-size: smaller;
+  font-family: 'Droid Serif', serif;
+}
+
+.titlearea .breadcrumb .tag-before-breadcrumb {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.titlearea .breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+
+.titlearea .breadcrumb .active {
+  color: white;
+}
+
+.titlearea .breadcrumb li + li:before {
+  color: white;
+}
+
+.titlearea .search-box {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 8px 0 8px 8px;
+  -webkit-border-top-left-radius: 50px;
+  -webkit-border-bottom-left-radius: 50px;
+  -moz-border-radius-topleft: 50px;
+  -moz-border-radius-bottomleft: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.titlearea .search-box .search-color {
+  background-color: rgba(57, 55, 63, 0.95);
+  height: 34px;
+  font-size: 1.5em;
+  line-height: 34px;
+  -webkit-border-top-left-radius: 50px;
+  -webkit-border-bottom-left-radius: 50px;
+  -moz-border-radius-topleft: 50px;
+  -moz-border-radius-bottomleft: 50px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.titlearea .search-box .search-color .fa {
+  margin-left: 12px;
+}
+
+.titlearea .tag-before-breadcrumb {
+  font-weight: bold;
+}
+
+.footer {
+  color: #777;
+  width: 100%;
+  font-size: small;
+  padding-left: 15px;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.marketing {
+  margin: 40px 0;
+}
+
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
