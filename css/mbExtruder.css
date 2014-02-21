@@ -76,14 +76,17 @@ object.flip_label{
 }
 
 
-/* ------ the search panels ------ */
-#extruderRight .panel-group{
+
+
+
+/* ------ the search accordian panels ------ */
+#extruderRight .panel-group2{
   border:none;
   width:100%;
   background-color:#fff;
-  margin:-11px -20px 0 0;
+  margin:-11px -20px 0 -3px;
 }
-#extruderRight .panel-group .panel{ 
+#extruderRight .panel-group2 .panel{ 
   border:none;
   border-radius:0px; 
   width:100%; 
@@ -98,7 +101,6 @@ object.flip_label{
   width:100% !important;
 }
 
-/* #extruderRight .panel-default{ margin-bottom:0px;border:none !important;} */
 
 #extruderRight .panel-default>.panel-heading{ 
   color:#444; 
