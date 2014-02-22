@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/mbExtruder.css" media="all" type="text/css">
+  <link rel="stylesheet" href="css/search-panel.css" media="all" type="text/css">
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
           <li>Scholarly Collections at the University of Virginia</li>
         </ul>
         <ul class="nav navbar-nav navbar-right left-margins">
-          <li><a href="#opencollect" data-toggle="collapse">EXPLORE <i class="fa fa-thumb-tack fa-fw"></i></a></li>
+          <li><a href="#opencollect" data-toggle="collapse" class="nav-explore">EXPLORE <i class="fa fa-thumb-tack fa-fw"></i></a></li>
           <li><a href="#">LOGIN</a></li>
           <li><a href="#">ENG <i class="fa fa-sort fa-fw"></i></a></li>
         </ul>
@@ -106,11 +106,10 @@
         </div>
         <div class="search-box">
           <div class="search-color"><i class="fa fa-search"></i></div>
-        </div>
+        </div>       
       </div>
     </div>
-
-    <div class="row main-content">
+    <div class="row main-content" style="position:relative;">
       <div class="col-sm-2 content-sidebar">
         <ul class="nav nav-pills nav-stacked">
           <li><a href="#tab-overview" data-toggle="pill"><i class="fa fa-fw fa-bars"></i> Overview</a></li>
@@ -230,164 +229,165 @@
           <div class="tab-pane" id="tab-sources">Sources</div>
         </div>
       </div>
-    </div>
-
-  </div><!-- END container-fluid>
-
-
-
-
-		<!-- ------------------ -->
-		<!-- BEGIN search panel -->
-		<!-- ------------------ -->
-		<div id="extruderRight">
-		<div class="panel-group2" id="accordion2">
-		
-		  <!-- first panel -->
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapse2One">Search</a></h4>
-		    </div>
-		    <div id="collapse2One" class="panel-collapse collapse in">
-		      <div class="panel-body">
-		          
-		          <div class="input-group">
-		              <input type="text" class="form-control">
-		              <span class="input-group-btn">
-		              <button class="btn btn-default" type="button">Go!</button>
-		            </span>
-		          </div><!-- /input-group -->
-		          <span style="text-align:right;margin:7px 20px 0 0;font-family:times, sans-serif;color:#e00; display:block;"><a href="#" title="">Advanced</a></span>
-		
-		      </div>
-		    </div>
-		  </div>
-		
-		  <!-- second panel -->
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapse2Two">Results</a></h4>
-		    </div>
-		    <div id="collapse2Two" class="panel-collapse collapse">
-		      <div class="panel-body">
-		        
-		        <table class="table">
-		          <thead>
-		            <th>NAME</th>
-		            <th>FEATURE TYPE</th>
-		          </thead>
-		          <tbody>
-		          <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		          <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		          <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		            <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		          <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		          <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		            <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		          <tr>
-		            <td><em><a href="#" title="">Another Name</a></em></td>
-		            <td>Another Name</td>
-		          </tr>
-		          <tbody>
-		        </table>
-		
-		      </div>
-		    </div>
-		  </div>
-		
-		  <!-- third panel -->
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapse2Three">Options</a></h4>
-		    </div>
-		    <div id="collapse2Three" class="panel-collapse collapse">
-		      <div class="panel-body">
-		        
-		        <div class="input-group" style="margin-bottom:10px;">
-		        <div class="input-group-btn">
-		          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 1 <span class="caret"></span></button>
-		            <ul class="dropdown-menu">
-		              <li><a href="#">Action</a></li>
-		              <li><a href="#">Another action</a></li>
-		              <li><a href="#">Something else here</a></li>
-		              <li class="divider"></li>
-		              <li><a href="#">Separated link</a></li>
-		            </ul>
-		          </div><!-- /btn-group -->
-		            <input type="text" class="form-control">
-		          </div><!-- /input-group -->
-		
-		          <div class="input-group" style="margin-bottom:25px;">
-		            <div class="input-group-btn">
-		              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 2 <span class="caret"></span></button>
-		              <ul class="dropdown-menu">
-		                <li><a href="#">Action</a></li>
-		                <li><a href="#">Another action</a></li>
-		                <li><a href="#">Something else here</a></li>
-		                <li class="divider"></li>
-		                <li><a href="#">Separated link</a></li>
-		              </ul>
-		            </div><!-- /btn-group -->
-		             <input type="text" class="form-control">           
-		          </div><!-- /input-group -->
-		
-		          <div class="input-group" style="margin-bottom:10px;">
-		            <span class="input-group-addon">
-		              <input type="checkbox">
-		            </span>
-		            <input type="text" class="form-control">
-		          </div><!-- /input-group -->
-		
-		          <div class="input-group" style="margin-bottom:40px;">
-		            <span class="input-group-addon">
-		              <input type="radio">
-		            </span>
-		            <input type="text" class="form-control">
-		          </div><!-- /input-group -->
-		
-		      </div>
-		    </div>
-		  </div>
-		
-		  <!-- fourth panel -->
-		  <div class="panel panel-default">
-		    <div class="panel-heading">
-		      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapse2Four">Browse</a></h4>
-		    </div>
-		    <div id="collapse2Four" class="panel-collapse collapse">
-		      <div class="panel-body">
-		        Lhasa is the most important city in modern and historical Tibet religiously and politically; located in the geographical center of central Tibet, it is home to the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		</div><!-- END search -->
-		
-
-
-
-
+      
+      
+      
+      
+				  
+						<!-- ------------------ -->
+						<!-- BEGIN search panel -->
+						<!-- ------------------ -->
+						<div id="extruder-search">
+						<div class="panel-group-search" id="accordion-search">
+						
+						  <!-- first panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-search" href="#collapse-search-1">Search</a></h4>
+						    </div>
+						    <div id="collapse-search-1" class="panel-collapse collapse in">
+						      <div class="panel-body">
+						          
+						          <div class="input-group">
+						              <input type="text" class="form-control">
+						              <span class="input-group-btn">
+						              <button class="btn btn-default" type="button">Go!</button>
+						            </span>
+						          </div><!-- /input-group -->
+						          <div style="text-align:right;margin:7px 20px 0 0;font-family:times,sans-serif;color:#e00;"><a href="#" class="advanced-link">Advanced</a></div>
+											<div style="display:none;height:100px;padding-top:10px;" class="advanced-link-view">This section contains advanced search tools</div>
+						      </div>
+						    </div>
+						  </div>
+						        <style>table.table-results{ border:none !important;}table.results tr td div{  } table.table-results a{ font-style:italic; font-size:0.92em !important;}</style>
+						
+						  
+						  <!-- second panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-search" href="#collapse-search-2">Results</a></h4>
+						    </div>
+						    
+						    <div id="collapse-search-2" class="panel-collapse collapse">
+						      <div class="panel-body">
+						        
+						        <div class="table-responsive">
+						         <table class="table table-condensed table-results">
+						          <thead>
+						            <th>Name</th>
+						            <th>Feature Type</th>
+						          </thead>
+						          <tbody>
+						          <tr>
+						            <td><a href="#" title="">Jokhang</a></td>
+						            <td><div>Temple</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Khartrak</a></td>
+						            <td><div>Council</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>Cultural Region</div></td>
+						          </tr>
+						            <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>City</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>ADM2</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>Township (without urban registered population)</div></td>
+						          </tr>
+						            <tr>
+						            <td><a href="#" title="">Lhasa Stream</a></td>
+						            <td><div>Large Stream</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa Yerpa</a></td>
+						            <td><div>Sacred Places</div></td>
+						          </tr>
+						          <tbody>
+						        </table>
+						
+						      </div>
+						    </div>
+						  </div>
+						
+						  
+						  <!-- third panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-search" href="#collapse-search-3">Options</a></h4>
+						    </div>
+						    <div id="collapse-search-3" class="panel-collapse collapse">
+						      <div class="panel-body">
+						        
+						        <div class="input-group" style="margin-bottom:10px;">
+						        <div class="input-group-btn">
+						          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 1 <span class="caret"></span></button>
+						            <ul class="dropdown-menu">
+						              <li><a href="#">Action</a></li>
+						              <li><a href="#">Another action</a></li>
+						              <li><a href="#">Something else here</a></li>
+						              <li class="divider"></li>
+						              <li><a href="#">Separated link</a></li>
+						            </ul>
+						          </div><!-- /btn-group -->
+						            <input type="text" class="form-control">
+						          </div><!-- /input-group -->
+						
+						          <div class="input-group" style="margin-bottom:15px;">
+						            <div class="input-group-btn">
+						              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 2 <span class="caret"></span></button>
+						              <ul class="dropdown-menu">
+						                <li><a href="#">Action</a></li>
+						                <li><a href="#">Another action</a></li>
+						                <li><a href="#">Something else here</a></li>
+						                <li class="divider"></li>
+						                <li><a href="#">Separated link</a></li>
+						              </ul>
+						            </div><!-- /btn-group -->
+						             <input type="text" class="form-control">           
+						          </div><!-- /input-group -->
+						
+						          <div class="input-group" style="margin-bottom:10px;">
+						            <span class="input-group-addon">
+						              <input type="checkbox">
+						            </span>
+						            <input type="text" class="form-control">
+						          </div><!-- /input-group -->
+						
+						          <div class="input-group" style="margin-bottom:40px;">
+						            <span class="input-group-addon">
+						              <input type="radio">
+						            </span>
+						            <input type="text" class="form-control">
+						          </div><!-- /input-group -->
+						
+						      </div>
+						    </div>
+						  </div>
+						
+						  <!-- fourth panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion-search" href="#collapse-search-4">Browse</a></h4>
+						    </div>
+						    <div id="collapse-search-4" class="panel-collapse collapse">
+						      <div class="panel-body">
+						        Lhasa is the most important city in modern and historical Tibet religiously and politically; located in the geographical center of central Tibet, it is home to the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						</div><!-- END search --> 
+      
+    </div><!-- END main-content row -->
+  </div><!-- END container-fluid -->
 
   <div class="footer">
     <div>
@@ -400,26 +400,10 @@
   <script src="js/vendor/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
 
-<!-- search panel Extruder resources -->
+	<!-- search panel Extruder resources -->
   <script type="text/javascript" src="js/inc/jquery.hoverIntent.min.js"></script>
   <script type="text/javascript" src="js/inc/jquery.mb.flipText.js"></script>
   <script type="text/javascript" src="js/inc/mbExtruder.js"></script>
-  <script type="text/javascript">
-      $("#extruderRight").buildMbExtruder({
-            positionFixed:false,
-            width:320,
-            top:0,
-            sensibility:800,
-            position:"right", // left, right, bottom
-            extruderOpacity:1,
-            onExtOpen:function(){},
-            onExtContentLoad:function(){},
-            onExtClose:function(){},
-            hidePanelsOnClose:true,
-            autoCloseTime:0, // 0=never
-            slideTimer:300
-        });
-  </script>
 
 </body>
 </html>
