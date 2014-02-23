@@ -160,7 +160,7 @@ object.flip_label{
   border:none;
   width:100%;
   background-color:#fff;
-  margin:-5px -20px 0 -4px;
+  margin:-10px -20px 0 -2px;
 }
 #extruder-search .panel-group-search .panel{ 
   border:none;
@@ -191,34 +191,36 @@ object.flip_label{
   padding:0; 
 }
 #extruder-search h4.panel-title{
-  color:#404040; 
-  font-size:1.32em;
-  line-height:1.75em;
-  text-transform:uppercase;
+  color:#505050; 
+	cursor:pointer;
+  font-size:1.44em;
+  font-weight:normal;
+  font-family:  "Trebuchet MS", arial, sans-serif;
+  letter-spacing:0.12em;
 	line-height:1.75em; /* this should match h4-panel-title for better click */
 	display:block;
-	padding:0.5em;
+	padding:0.44em;
 	padding-left:10px;
-	cursor:pointer;
+  text-transform:uppercase;
 }
 
 #extruder-search h4.panel-title i{
   border-radius: 50%;
   background: #fff;
-  -moz-box-shadow:0px 0px 5px 3px #aaa;
-	-webkit-box-shadow:0px 0px 5px 3px #aaa; 
-	box-shadow:0px 0px 5px 3px #aaa;
-  color:#606060;
-  width: 22px;
-  height: 22px;
+  -moz-box-shadow:0px 0px 4px 3px #ccc;
+	-webkit-box-shadow:0px 0px 4px 3px #ccc; 
+	box-shadow:0px 0px 4px 3px #ccc;
+  color:#777;
+  width: 21px;
+  height: 21px;
   -moz-border-radius: 50%; 
   -webkit-border-radius: 50%; 
 	font-size:0.75em;
 	position:relative;
 	top:-2px;
-	line-height:22px;
+	line-height:21px;
 	text-indent:5px;
-	margin-right:15px;
+	margin-right:12px;
 }
 #extruder-search .panel-body{ 
   background-color:#eee;
@@ -233,12 +235,12 @@ object.flip_label{
 
 
 
-.advanced-link{ 
+#accordion-search .advanced-link{ 
 	text-align:right;margin:7px 20px 0 0;font-family:times,sans-serif;color:#e00;
 }
-.advanced-link-view{
+##accordion-search .advanced-link-view{
 	display:none;height:100px;padding-top:10px;
 }
-table.table-results{ border:none; font-size:90%;}
-table.table-results a{ font-style:italic;}
+##accordion-search table.table-results{ border:none; font-size:90%;}
+#accordion-search table.table-results a{ font-style:italic;}
 
