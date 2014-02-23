@@ -30,11 +30,11 @@ jQuery(function($) {
 		
 				$(this).find("i").toggleClass("fa-plus fa-minus");					
 											
-				if ($("#accordion-search .in").length ){
-							$(this).prev().addClass("active-parent");					      													
-							$(".active-parent").find("i").toggleClass("fa-minus true");
-							$(".active-parent").find("i").toggleClass("fa-plus false");			
-				}		
+				// if ($("#accordion-search .in").length ){
+				//			$(this).prev().addClass("active-parent");					      													
+				//			$(".active-parent").find("i").toggleClass("fa-minus true");
+				//			$(".active-parent").find("i").toggleClass("fa-plus false");			
+				// }		
 		});								
 });
 
