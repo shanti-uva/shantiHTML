@@ -1,5 +1,5 @@
 
-// *** sliding search panel
+// *** SEARCH *** sliding search panel
 jQuery(function($) {
   $("#extruder-search").buildMbExtruder({
         positionFixed:false,
@@ -10,7 +10,7 @@ jQuery(function($) {
 });
 
 
-// *** advanced search toggle
+// *** SEARCH *** advanced search toggle
 jQuery(function($) {
 	$(".advanced-link").click(function() {
     $(".advanced-link-view").toggle("show");
@@ -18,31 +18,38 @@ jQuery(function($) {
 });
 
 
-// *** inserts search icon for sliding panel
+// *** SEARCH *** inserts search icon for sliding panel
 jQuery(function($) {
 	$(".flap").append("<span style='font-size:1.32em;position:relative;top:-35px;left:9px;'><i class='fa fa-search'></i></span>");
 });
 
 
-
-
-
-
+// *** SEARCH *** toggle function for icons on search accordion
 jQuery(function($) {	
-			  $("#extruder-search .panel-heading").click(function() {					      			
-
-							$(this).find("i").toggleClass("fa-plus fa-minus");
-							$("#extruder-search .panel-collapse.in").prev().find("i").toggleClass("fa-plus false");							
-							$("#extruder-search .panel-collapse.in").prev().find("i").toggleClass("fa-minus true");
-							
-				});	
-
-							$("#extruder-search .panel-collapse.in").prev().find("i.fa").removeClass("fa-plus");				
-							$("#extruder-search .panel-collapse.in").prev().find("i.fa").addClass("fa-minus");
-							
-							if ($("#extruder-search .panel-collapse.in").length ){					      													
-										$(this).prev().find("i").toggleClass("fa-minus true");
-										$(this).prev().find("i").toggleClass("fa-plus false");			
-							}
-								
+	  $("#accordion-search .panel-heading").click(function() {					      			
+		
+				$(this).find("i").toggleClass("fa-plus fa-minus");					
+											
+				if ($("#accordion-search .in").length ){
+							$(this).prev().addClass("active-parent");					      													
+							$(".active-parent").find("i").toggleClass("fa-minus true");
+							$(".active-parent").find("i").toggleClass("fa-plus false");			
+				}		
+		});								
 });
+
+
+// *** SEARCH *** IF NEEDED this makes the accordian function with only one open
+// jQuery(function($) {	
+// 		var active = true;
+//    $('#accordion-search').on('show.bs.collapse', function () {
+//        if (active) $('#accordion-search .in').collapse('hide');
+//    });								
+// });
+
+
+
+
+
+
+

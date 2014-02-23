@@ -196,17 +196,14 @@ object.flip_label{
   line-height:1.75em;
   text-transform:uppercase;
 }
-#extruder-search h4.panel-title a,
-#extruder-search h4.panel-title a:visited{ 
+#extruder-search h4.panel-title{ 
 	line-height:1.75em; /* this should match h4-panel-title for better click */
 	display:block;
 	padding:0.5em;
 	padding-left:5px;
 }
-#extruder-search h4.panel-title a:hover{
-	text-decoration:none;
-}
-#extruder-search h4.panel-title a i{
+
+#extruder-search h4.panel-title i{
   border-radius: 50%;
   background: #fff;
   box-shadow:0px 0px 5px 3px #ccc;
