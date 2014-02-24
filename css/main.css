@@ -15,12 +15,7 @@ body {
 }
 
 .navbar-header img {
-  max-width: 30% !important;
-  height: auto;
-}
-
-.navbar-header .navbar-brand {
-  padding: 10px 15px 0 15px;
+  width: 107px;
 }
 
 .navbar-nav.left-margins {
@@ -29,11 +24,24 @@ body {
 }
 
 .nav.header-text {
-  margin: 14px 0 0 -300px;
-  font-size: 1.1em;
+  font-size: 1.0em;
+  text-align: center;
   font-style: italic;
   font-family: 'Droid Serif', serif;
   color: #777777;
+}
+
+.nav.navbar-right {
+  margin: 0 auto;
+  width: 275px;
+}
+
+.nav.navbar-right li {
+  float: left;
+}
+
+.nav.navbar-right li:first-child {
+  border-left: none;
 }
 
 .left-margins li {
@@ -76,6 +84,17 @@ body > .navbar {
 
 .collections .lightblue-bg .four-collections {
   padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+.collections .lightblue-bg .four-collections > div {
+  width: 50%;
+  float: left;
+  margin-bottom: 15px;
+}
+
+.collections .lightblue-bg .col-sm-3:nth-child(2) ul {
+  border-right: none;
 }
 
 .collections ul {
@@ -194,6 +213,7 @@ body > .navbar {
   width: 100%;
   font-size: small;
   padding-left: 15px;
+  padding-top: 30px;
 }
 
 .container-narrow > hr {
@@ -214,22 +234,34 @@ body > .navbar {
   font-weight: 700;
   font-size: 0.800em;
   text-transform: uppercase;
+  border-right: 1px solid rgb(213, 213, 213);
 }
 
 .main-content .nav-pills li {
-  border-bottom: 1px solid rgb(213, 213, 213);
+  margin-right: -1px;
 }
 
 .main-content .nav-pills li a,
 .main-content .nav-pills li a:hover {
   color: rgb(51, 51, 51);
-  padding-left: 30px;
+  padding-left: 155px;
+  border-radius: inherit;
 }
 
 .main-content .nav-pills li.active a {
   background-color: rgb(241, 242, 242);
   border-left: 10px solid #DC3C47;
   color: rgb(51, 51, 51);
+  padding-left: 145px;
+  border-top: 1px solid rgb(213, 213, 213);
+  border-bottom: 1px solid rgb(213, 213, 213);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right-color: transparent;
+}
+
+.main-content .nav-pills li:first-child a {
+  border-top: none;
 }
 
 .content-page {
@@ -261,6 +293,135 @@ body > .navbar {
   color: #777;
   text-decoration: none;
 }
+
+.content-page .google-maps {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+}
+
+.content-page .google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media screen and (min-width: 500px) {
+  .main-content .content-sidebar {
+    float: left;
+    width: 30%;
+  }
+
+  .main-content .content-sidebar li a,
+  .main-content .content-sidebar li a:hover {
+    padding-left: 10px;
+  }
+
+  .main-content .content-sidebar li.active a {
+    padding-left: 0;
+  }
+
+  .main-content .content-page {
+    float: left;
+    width: 70%;
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+  .main-content .content-sidebar {
+    width: 25%;
+  }
+
+  .main-content .content-sidebar li a,
+  .main-content .content-sidebar li a:hover {
+    padding-left: 20px;
+  }
+
+  .main-content .content-sidebar li.active a {
+    padding-left: 10px;
+  }
+
+  .main-content .content-page {
+    width: 75%;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .navbar-header img {
+    max-width: 30% !important;
+    height: auto;
+    width: inherit;
+  }
+
+  .navbar-header .navbar-brand {
+    padding: 10px 15px 0 15px;
+  }
+
+  .nav.navbar-right {
+    width: inherit;
+  }
+
+  .nav.header-text {
+    margin: 14px 0 0 -300px;
+    font-size: 1.1em;
+  }
+
+  .collections .lightblue-bg .four-collections {
+    padding-bottom: 10px;
+  }
+
+  .collections .lightblue-bg .four-collections > div {
+    width: 25%;
+    margin-bottom: 15px;
+    padding-right: 5px;
+  }
+
+  .collections .lightblue-bg .col-sm-3:nth-child(2) ul {
+    border-right: 1px solid rgba(53, 52, 56, 0.95);
+  }
+
+  .main-content .content-sidebar {
+    width: 16.66667%;
+  }
+
+  .main-content .content-page {
+    width: 83.33333%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
