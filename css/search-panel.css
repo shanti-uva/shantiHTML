@@ -93,8 +93,8 @@
 .extruder.right .extruder-content,
 .panel-default .panel-heading,
 .extruder.right .panel-heading,
-.extruder.right .panel-group-search,
-.extruder.right .panel-group-search .panel,
+.extruder.right .panel-group,
+.extruder.right .panel-group .panel,
 .extruder.right .panel-default>.panel-heading{
 	border:none;
 }
@@ -156,19 +156,22 @@ object.flip_label{
 
 
 /* ------ the search accordian panels ------ */
-#extruder-search .panel-group-search{
+#extruder-search .panel-group{
   border:none;
   width:100%;
   background-color:#fff;
   margin:-10px -20px 0 -2px;
 }
-#extruder-search .panel-group-search .panel{ 
+.panel-group .panel+.panel{ margin-top:0;}
+
+#extruder-search .panel-group .panel{ 
   border:none;
   box-shadow:none;
   border-radius:0px; 
   margin-bottom:2px;
   width:100%; 
   background-color:#fff;
+  margin-bottom:0px;
 }
 #extruder-search .text{ 
   text-shadow:none; 
@@ -191,18 +194,28 @@ object.flip_label{
   padding:0; 
 }
 #extruder-search h4.panel-title{
-  color:#505050; 
-	cursor:pointer;
+  color:#555;
   font-size:1.44em;
   font-weight:normal;
   font-family:  "Trebuchet MS", arial, sans-serif;
   letter-spacing:0.12em;
-	line-height:1.75em; /* this should match h4-panel-title for better click */
-	display:block;
-	padding:0.44em;
-	padding-left:10px;
+	line-height:2.63em; 
   text-transform:uppercase;
+  padding:0;
+  margin:0;
 }
+#extruder-search h4.panel-title a,
+#extruder-search h4.panel-title a:visited{
+  color:#555; 
+	line-height: 2.63em;
+	height: 2.63em;
+	display:block;
+ 	padding:0;
+  text-transform:uppercase;
+  border:none;
+}
+#extruder-search h4.panel-title a:hover{ text-decoration:none;border:none;}
+#extruder-search h4.panel-title a:active{ text-decoration:none;border:none;}
 
 #extruder-search h4.panel-title i{
   border-radius: 50%;
@@ -211,17 +224,45 @@ object.flip_label{
 	-webkit-box-shadow:0px 0px 4px 3px #ccc; 
 	box-shadow:0px 0px 4px 3px #ccc;
   color:#777;
-  width: 21px;
-  height: 21px;
+  width: 18px;
+  height: 18px;
+  display:block;
   -moz-border-radius: 50%; 
   -webkit-border-radius: 50%; 
-	font-size:0.75em;
-	position:relative;
-	top:-2px;
-	line-height:21px;
-	text-indent:5px;
-	margin-right:12px;
+	font-size:0.5em;
+	line-height:1.63em;
+	margin:18px; margin-left:10px;
+	float:left;
+	position:relative; top:0px; 
+	text-indent:4px;
 }
+
+
+#extruder-search h4.panel-title .fa:before {
+    font-family: 'Glyphicons Halflings'; 
+    content: "\2212"; 
+}
+#extruder-search h4.panel-title .accordion-toggle.collapsed .fa:before {
+    content: "\002b";
+}
+
+
+
+.panel-title:focus,
+.panel-title a:focus,
+.panel-heading a:focus{
+    outline: 0 !important;
+		outline: 5px auto -webkit-focus-ring-color !important;
+}
+
+
+
+
+
+
+
+
+
 #extruder-search .panel-body{ 
   background-color:#eee;
   border:none; 
@@ -239,8 +280,8 @@ object.flip_label{
 	text-align:right;margin:7px 20px 0 0;font-family:times,sans-serif;color:#e00;
 }
 ##accordion-search .advanced-link-view{
-	display:none;height:100px;padding-top:10px;
+	height:100px;padding-top:10px;
 }
-##accordion-search table.table-results{ border:none; font-size:90%;}
+##accordion-search table.table-results{ border:none; font-size:90%; margin-bottom:0;}
 #accordion-search table.table-results a{ font-style:italic;}
 

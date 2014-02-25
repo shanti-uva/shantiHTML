@@ -240,14 +240,17 @@
 						<!-- BEGIN search panel -->
 						<!-- ------------------ -->
 						<div id="extruder-search">
-						<div class="panel-group-search" id="accordion-search">
+						<div class="panel-group" id="accordion-search">
 						
-						  <!-- first panel -->
+						  
+						  <!-- SEARCH --- panel -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
-						      <h4 class="panel-title" data-toggle="collapse" data-target="#collapse-search-1"><i class="fa fa-minus"></i>Search</h4>
+						      <h4 class="panel-title">
+						      	<a href="#collapse-search" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Search</a>
+						      </h4>
 						    </div>
-						    <div id="collapse-search-1" class="panel-collapse collapse in">
+						    <div id="collapse-search" class="panel-collapse collapse in">
 						      <div class="panel-body">						          
 						          <div class="input-group">
 						              <input type="text" class="form-control">
@@ -256,18 +259,21 @@
 						            </span>
 						          </div><!-- /input-group -->
 						          <div class="advanced-link"><a href="#">Advanced</a></div>
-											<div class="advanced-link-view">This section contains advanced search tools</div>
+											<div class="advanced-link-view" style="display:none;padding-top:50px;">The options in this section contain advanced faceted search filters...</div>
 						      </div>
 						    </div>
-						  </div>						
+						  </div>	
+						  					
 						  
-						  <!-- second panel -->
+						  <!-- RESULTS --- panel -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
-						      <h4 class="panel-title" data-toggle="collapse" data-target="#collapse-search-2"><i class="fa fa-plus"></i>Results</h4>
+						      <h4 class="panel-title">
+						      	<a href="#collapse-results" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Results</a>
+						      </h4>
 						    </div>
 						    
-						    <div id="collapse-search-2" class="panel-collapse collapse">
+						    <div id="collapse-results" class="panel-collapse collapse">
 						      <div class="panel-body">
 						        
 						        <div class="table-responsive">
@@ -315,14 +321,32 @@
 						      </div>
 						    </div>
 						  </div>
-						
-						  
-						  <!-- third panel -->
+
+
+						  <!-- BROWSE --- panel -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
-						      <h4 class="panel-title" data-toggle="collapse" data-target="#collapse-search-3"><i class="fa fa-plus"></i>Options</h4>
+						      <h4 class="panel-title">
+						      	<a href="#collapse-browse" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Browse</a>
+						      </h4>
 						    </div>
-						    <div id="collapse-search-3" class="panel-collapse collapse">
+						    <div id="collapse-browse" class="panel-collapse collapse">
+						      <div class="panel-body">
+										 <p>Lhasa is the most important city in modern and historical Tibet religiously and politically; located in the geographical center of central Tibet, it is home to the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.</p>
+							    </div>
+						    </div>
+						  </div>
+						</div>
+												
+						  
+						  <!-- OPTIONS --- panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						       <h4 class="panel-title">
+						      	<a href="#collapse-options" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Options</a>
+						      </h4>
+						    </div>
+						    <div id="collapse-options" class="panel-collapse collapse">
 						      <div class="panel-body">
 						        
 						        <div class="input-group" style="margin-bottom:10px;">
@@ -371,18 +395,6 @@
 						    </div>
 						  </div>
 						
-						  <!-- fourth panel -->
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title" data-toggle="collapse" data-target="#collapse-search-4"><i class="fa fa-plus"></i>Browse</h4>
-						    </div>
-						    <div id="collapse-search-4" class="panel-collapse collapse">
-						      <div class="panel-body">
-						        Lhasa is the most important city in modern and historical Tibet religiously and politically; located in the geographical center of central Tibet, it is home to the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.
-						      </div>
-						    </div>
-						  </div>
-						</div>
 						</div><!-- END search --> 
       
     </div><!-- END main-content row -->
@@ -397,12 +409,13 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
   <script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
-
+  
 	<!-- search panel Extruder resources -->
-  <script type="text/javascript" src="js/inc/jquery.hoverIntent.min.js"></script>
-  <script type="text/javascript" src="js/inc/jquery.mb.flipText.js"></script>
-  <script type="text/javascript" src="js/inc/mbExtruder.js"></script>
-
+  <script src="js/inc/jquery.hoverIntent.min.js"></script>
+  <script src="js/inc/jquery.mb.flipText.js"></script>
+  <script src="js/inc/mbExtruder.js"></script>
+  
+  <script src="js/main.js"></script> 
+   
 </body>
 </html>

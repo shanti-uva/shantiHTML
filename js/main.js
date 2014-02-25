@@ -24,32 +24,12 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** toggle function for icons on search accordion
-jQuery(function($) {	
-	  $("#accordion-search .panel-heading").click(function() {					      			
-		
-				$(this).find("i").toggleClass("fa-plus fa-minus");					
-											
-				// if ($("#accordion-search .in").length ){
-				//			$(this).prev().addClass("active-parent");					      													
-				//			$(".active-parent").find("i").toggleClass("fa-minus true");
-				//			$(".active-parent").find("i").toggleClass("fa-plus false");			
-				// }		
-		});								
-});
-
-
-// *** SEARCH *** IF NEEDED this makes the accordian function with only one open
+// *** SEARCH *** accordian function for maintaining only one open tab
 // jQuery(function($) {	
 // 		var active = true;
 //    $('#accordion-search').on('show.bs.collapse', function () {
 //        if (active) $('#accordion-search .in').collapse('hide');
 //    });								
 // });
-
-
-
-
-
-
+ 
 
