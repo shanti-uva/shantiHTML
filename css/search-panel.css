@@ -162,6 +162,13 @@ object.flip_label{
   background-color:#fff;
   margin:-10px -20px 0 -2px;
 }
+#extruder-search .panel-body{ 
+  background-color:#eee;
+  border:none; 
+  border-radius:0px; 
+  width:100%; 
+}
+
 .panel-group .panel+.panel{ margin-top:0;}
 
 #extruder-search .panel-group .panel{ 
@@ -247,7 +254,6 @@ object.flip_label{
 }
 
 
-
 .panel-title:focus,
 .panel-title a:focus,
 .panel-heading a:focus{
@@ -262,20 +268,8 @@ object.flip_label{
 
 
 
-
-#extruder-search .panel-body{ 
-  background-color:#eee;
-  border:none; 
-  border-radius:0px; 
-  width:100%; 
-}
-
-
-
-
-
-
-
+/************* utilities **************/
+/*---- adnvanced search toggle ------*/
 #accordion-search .advanced-link{ 
 	text-align:right;margin:7px 20px 0 0;font-family:times,sans-serif;color:#e00;
 }
@@ -286,17 +280,12 @@ object.flip_label{
 #accordion-search table.table-results a{ font-style:italic;}
 
 
-
-
-ul.fancytree-container{ background-color:transparent; border:none;}
-
+/*---- browse tree navigation ----*/
+ul.fancytree-container{ background-color:transparent; border:none; font-size:1em; line-height:1.12em;}
 span.fancytree-icon{ display:none !important; margin:0 !important; width:0 !important; height:0 !important;}
+ul.fancytree-container .glyphicon{ color:#555; font-family: 'Glyphicons Halflings'; font-size:.75em; line-height:1.12em; padding-right:10px;}
 
-ul.fancytree-container{ font-size:1em; line-height:1.12em;}
-ul.fancytree-container .glyphicon{ font-family: 'Glyphicons Halflings'; font-size:.75em; line-height:1.12em; padding-right:10px;}
-
+span.fancytree-node.fancytree-active .glyphicon{ color:#f00;}
 span.fancytree-expander{ width:0; height:0;}
-
-span.fancytree-node.fancytree-active{ background-color:#f0f0f0 !important; border:none;}
-
+span.fancytree-node.fancytree-active{ background-color:#fff !important; border:none;}
 span.fancytree-node{ border:none;}
