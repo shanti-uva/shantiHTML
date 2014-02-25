@@ -14,14 +14,17 @@
   <link href="fonts/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/main.css">
+	<link href="src/skin-bootstrap/ui.fancytree.css" rel="stylesheet" type="text/css" class="skinswitcher">
   <link rel="stylesheet" href="css/search-panel.css" media="all" type="text/css">
-  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
 </head>
 <body>
   <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
+
 
   <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container-fluid">
@@ -361,7 +364,7 @@
 						    </div>
 						    <div id="collapse-browse" class="panel-collapse collapse">
 						      <div class="panel-body">
-										 <p>Lhasa is the most important city in modern and historical Tibet religiously and politically; located in the geographical center of central Tibet, it is home to the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.</p>
+												<div id="tree"></div>
 							    </div>
 						    </div>
 						  </div>
@@ -426,7 +429,6 @@
       
     </div><!-- END main-content row -->
   </div><!-- END container-fluid -->
-
   <div class="footer">
     <div>
       <p>&copy; COPYRIGHT 2014</p>
@@ -436,13 +438,21 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
   <script src="js/vendor/bootstrap.min.js"></script>
-  
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
+
+
 	<!-- search panel Extruder resources -->
-  <script src="js/inc/jquery.hoverIntent.min.js"></script>
-  <script src="js/inc/jquery.mb.flipText.js"></script>
-  <script src="js/inc/mbExtruder.js"></script>
-  
+  <script type="text/javascript" src="js/inc/jquery.hoverIntent.min.js"></script>
+  <script type="text/javascript" src="js/inc/jquery.mb.flipText.js"></script>
+  <script type="text/javascript" src="js/inc/mbExtruder.js"></script> 
+
+	<script src="src/jquery.fancytree.js" type="text/javascript"></script>
+	<script src="src/jquery.fancytree.glyph.js" type="text/javascript"></script>  
+
   <script src="js/main.js"></script> 
-   
+  
 </body>
 </html>

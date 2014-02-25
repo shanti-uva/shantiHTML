@@ -24,12 +24,57 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** accordian function for maintaining only one open tab
+// *** SEARCH *** toggle function for icons on search accordion
+jQuery(function($) {	
+	  $("#accordion-search .panel-heading").click(function() {					      			
+		
+				$(this).find("i").toggleClass("fa-plus fa-minus");					
+											
+				// if ($("#accordion-search .in").length ){
+				//			$(this).prev().addClass("active-parent");					      													
+				//			$(".active-parent").find("i").toggleClass("fa-minus true");
+				//			$(".active-parent").find("i").toggleClass("fa-plus false");			
+				// }		
+		});								
+});
+
+
+// *** SEARCH *** IF NEEDED this makes the accordian function with only one open
 // jQuery(function($) {	
 // 		var active = true;
 //    $('#accordion-search').on('show.bs.collapse', function () {
 //        if (active) $('#accordion-search .in').collapse('hide');
 //    });								
 // });
- 
 
+
+
+jQuery(function($) {
+		// Initialize Fancytree
+		$("#tree").fancytree({
+			extensions: ["glyph"],
+			checkbox: false,
+			selectMode: 2,
+			glyph: {
+				map: {
+					doc: "",
+					docOpen: "",
+					error: "glyphicon glyphicon-warning-sign",
+					expanderClosed: "glyphicon glyphicon-plus",
+					expanderLazy: "glyphicon glyphicon-plus",
+					// expanderLazy: "glyphicon glyphicon-expand",
+					expanderOpen: "glyphicon glyphicon-minus",
+					// expanderOpen: "glyphicon glyphicon-collapse-down",
+					folder: "",
+					folderOpen: "",
+					loading: "glyphicon glyphicon-refresh"
+					// loading: "icon-spinner icon-spin"
+				}
+			},
+//			source: {url: "ajax-tree-plain.json", debugDelay: 1000},
+			source: {url: "src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
+			lazyload: function(event, ctx) {
+				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
+			}
+		});
+	});

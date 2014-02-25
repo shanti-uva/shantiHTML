@@ -285,3 +285,14 @@ object.flip_label{
 ##accordion-search table.table-results{ border:none; font-size:90%; margin-bottom:0;}
 #accordion-search table.table-results a{ font-style:italic;}
 
+
+
+
+ul.fancytree-container{ background-color:transparent; border:none;}
+
+span.fancytree-icon{ display:none !important; margin:0 !important; width:0 !important; height:0 !important;}
+
+ul.fancytree-container{ font-size:1em; line-height:1.12em;}
+ul.fancytree-container .glyphicon{ font-family: 'Glyphicons Halflings'; font-size:.75em; line-height:1.12em; padding-right:10px;}
+
+span.fancytree-expander{ width:0; height:0;}
