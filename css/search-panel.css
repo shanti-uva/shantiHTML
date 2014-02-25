@@ -296,3 +296,7 @@ ul.fancytree-container{ font-size:1em; line-height:1.12em;}
 ul.fancytree-container .glyphicon{ font-family: 'Glyphicons Halflings'; font-size:.75em; line-height:1.12em; padding-right:10px;}
 
 span.fancytree-expander{ width:0; height:0;}
+
+span.fancytree-node.fancytree-active{ background-color:#f0f0f0 !important; border:none;}
+
+span.fancytree-node{ border:none;}
