@@ -266,87 +266,163 @@
         </div><!-- END tab-content -->
       </div><!-- END content-page --> 
 
-			<!-- ------------------ -->
-			<!-- BEGIN search panel -->
-			<!-- ------------------ -->
-			<div id="extruder-search">
-				<div class="panel-group-search" id="accordion-search">
-				
-				  <!-- first panel -->
-				  <div class="panel panel-default">
-				    <div class="panel-heading">
-				      <h4 class="panel-title" data-toggle="collapse" data-target="#collapse-search-1"><i class="fa fa-minus"></i>Search</h4>
-				    </div>
-				    <div id="collapse-search-1" class="panel-collapse collapse in">
-				      <div class="panel-body">						          
-				          <div class="input-group">
-				              <input type="text" class="form-control">
-				              <span class="input-group-btn">
-				              <button class="btn btn-default" type="button">Go!</button>
-				            </span>
-				          </div><!-- /input-group -->
-				          <div class="advanced-link"><a href="#">Advanced</a></div>
-									<div class="advanced-link-view">This section contains advanced search tools</div>
-				      </div>
-				    </div>
-				  </div>						
 				  
-				  <!-- second panel -->
-				  <div class="panel panel-default">
-				    <div class="panel-heading">
-				      <h4 class="panel-title" data-toggle="collapse" data-target="#collapse-search-2"><i class="fa fa-plus"></i>Results</h4>
-				    </div>
-				    
-				    <div id="collapse-search-2" class="panel-collapse collapse">
-				      <div class="panel-body">
-				        
-				        <div class="table-responsive">
-				         <table class="table table-condensed table-results">
-				          <thead>
-				            <th>Name</th>
-				            <th>Feature Type</th>
-				          </thead>
-				          <tbody>
-				          <tr>
-				            <td><a href="#" title="">Jokhang</a></td>
-				            <td><div>Temple</div></td>
-				          </tr>
-				          <tr>
-				            <td><a href="#" title="">Khartrak</a></td>
-				            <td><div>Council</div></td>
-				          </tr>
-				          <tr>
-				            <td><a href="#" title="">Lhasa</a></td>
-				            <td><div>Cultural Region</div></td>
-				          </tr>
-				            <tr>
-				            <td><a href="#" title="">Lhasa</a></td>
-				            <td><div>City</div></td>
-				          </tr>
-				          <tr>
-				            <td><a href="#" title="">Lhasa</a></td>
-				            <td><div>ADM2</div></td>
-				          </tr>
-				          <tr>
-				            <td><a href="#" title="">Lhasa</a></td>
-				            <td><div>Township (without urban registered population)</div></td>
-				          </tr>
-				            <tr>
-				            <td><a href="#" title="">Lhasa Stream</a></td>
-				            <td><div>Large Stream</div></td>
-				          </tr>
-				          <tr>
-				            <td><a href="#" title="">Lhasa Yerpa</a></td>
-				            <td><div>Sacred Places</div></td>
-				          </tr>
-				          <tbody>
-				        </table>
-				
-				      </div>
-				    </div>
-				  </div>
-				
-				  
+
+						<!-- ------------------ -->
+						<!-- BEGIN search panel -->
+						<!-- ------------------ -->
+						<div id="extruder-search">
+						 <div class="panel-group" id="accordion-search">						
+						  
+						  <!-- SEARCH --- panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						      	<a href="#collapse-search" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Search</a>
+						      </h4>
+						    </div>
+						    <div id="collapse-search" class="panel-collapse collapse in">
+						      <div class="panel-body">						          
+						          <div class="input-group">
+						              <input type="text" class="form-control">
+						              <span class="input-group-btn">
+						              <button class="btn btn-default" type="button">Go!</button>
+						            </span>
+						          </div><!-- /input-group -->
+						          <div class="advanced-link"><a href="#">Advanced</a></div>
+											<div class="advanced-link-view" style="display:none;padding-top:50px;">The options in this section contain advanced faceted search filters...</div>
+						      </div>
+						    </div>
+						  </div>							  					
+						  
+						  <!-- RESULTS --- panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						      	<a href="#collapse-results" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Results</a>
+						      </h4>
+						    </div>						    
+						    <div id="collapse-results" class="panel-collapse collapse">
+						      <div class="panel-body">
+						        
+						        <div class="table-responsive">
+						         <table class="table table-condensed table-results">
+						          <thead>
+						            <th>Name</th>
+						            <th>Feature Type</th>
+						          </thead>
+						          <tbody>
+						          <tr>
+						            <td><a href="#" title="">Jokhang</a></td>
+						            <td><div>Temple</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Khartrak</a></td>
+						            <td><div>Council</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>Cultural Region</div></td>
+						          </tr>
+						            <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>City</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>ADM2</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa</a></td>
+						            <td><div>Township (without urban registered population)</div></td>
+						          </tr>
+						            <tr>
+						            <td><a href="#" title="">Lhasa Stream</a></td>
+						            <td><div>Large Stream</div></td>
+						          </tr>
+						          <tr>
+						            <td><a href="#" title="">Lhasa Yerpa</a></td>
+						            <td><div>Sacred Places</div></td>
+						          </tr>
+						          <tbody>
+						        </table>
+						
+						      </div>
+						    </div>
+						  </div>
+
+
+						  <!-- BROWSE --- panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						      	<a href="#collapse-browse" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Browse</a>
+						      </h4>
+						    </div>
+						    <div id="collapse-browse" class="panel-collapse collapse">
+						      <div class="panel-body">
+										 <p>Lhasa is the most important city in modern and historical Tibet religiously and politically; located in the geographical center of central Tibet, it is home to the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.</p>
+							    </div>
+						    </div>
+						  </div>
+												
+						  
+						  <!-- OPTIONS --- panel -->
+						  <div class="panel panel-default">
+						    <div class="panel-heading">
+						       <h4 class="panel-title">
+						      	<a href="#collapse-options" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-search"><i class="fa"></i>Options</a>
+						      </h4>
+						    </div>
+						    <div id="collapse-options" class="panel-collapse collapse">
+						      <div class="panel-body">
+						        
+						        <div class="input-group" style="margin-bottom:10px;">
+						          <div class="input-group-btn">
+						            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 1 <span class="caret"></span></button>
+						            <ul class="dropdown-menu">
+						              <li><a href="#">Action</a></li>
+						              <li><a href="#">Another action</a></li>
+						              <li><a href="#">Something else here</a></li>
+						              <li class="divider"></li>
+						              <li><a href="#">Separated link</a></li>
+						            </ul>
+						          </div><!-- /btn-group -->
+						            <input type="text" class="form-control">
+						          </div><!-- /input-group -->
+						
+						          <div class="input-group" style="margin-bottom:15px;">
+						            <div class="input-group-btn">
+						              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 2 <span class="caret"></span></button>
+						              <ul class="dropdown-menu">
+						                <li><a href="#">Action</a></li>
+						                <li><a href="#">Another action</a></li>
+						                <li><a href="#">Something else here</a></li>
+						                <li class="divider"></li>
+						                <li><a href="#">Separated link</a></li>
+						              </ul>
+						            </div><!-- /btn-group -->
+						             <input type="text" class="form-control">           
+						          </div><!-- /input-group -->
+						
+						          <div class="input-group" style="margin-bottom:10px;">
+						            <span class="input-group-addon">
+						              <input type="checkbox">
+						            </span>
+						            <input type="text" class="form-control">
+						          </div><!-- /input-group -->
+						
+						          <div class="input-group" style="margin-bottom:40px;">
+						            <span class="input-group-addon">
+						              <input type="radio">
+						            </span>
+						            <input type="text" class="form-control">
+						          </div><!-- /input-group -->
+						
+										</div>
+						      </div>
+						   </div>						
+						</div><!-- END search --> 
       
     </div><!-- END main-content row -->
   </div><!-- END container-fluid -->
