@@ -24,16 +24,6 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** IF NEEDED this makes the accordian function with only one open
-// jQuery(function($) {	
-// 		var active = true;
-//    $('#accordion-search').on('show.bs.collapse', function () {
-//        if (active) $('#accordion-search .in').collapse('hide');
-//    });								
-// });
-
-
-
 jQuery(function($) {
 		// Initialize Fancytree
 		$("#tree").fancytree({
@@ -56,7 +46,7 @@ jQuery(function($) {
 					// loading: "icon-spinner icon-spin"
 				}
 			},
-		  // source: {url: "ajax-tree-plain.json", debugDelay: 1000},
+//			source: {url: "ajax-tree-plain.json", debugDelay: 1000},
 			source: {url: "src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};

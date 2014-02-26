@@ -224,7 +224,7 @@ object.flip_label{
 #extruder-search h4.panel-title a:hover{ text-decoration:none;border:none;}
 #extruder-search h4.panel-title a:active{ text-decoration:none;border:none;}
 
-#extruder-search h4.panel-title i{
+#extruder-search h4.panel-title .accordion-toggle .fa{
   border-radius: 50%;
   background: #fff;
   -moz-box-shadow:0px 0px 4px 3px #ccc;
@@ -245,7 +245,7 @@ object.flip_label{
 }
 
 
-#extruder-search h4.panel-title .fa:before {
+#extruder-search h4.panel-title .accordion-toggle .fa:before {
     font-family: 'Glyphicons Halflings'; 
     content: "\2212"; 
 }
