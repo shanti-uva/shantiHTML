@@ -24,21 +24,6 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** toggle function for icons on search accordion
-jQuery(function($) {	
-	  $("#accordion-search .panel-heading").click(function() {					      			
-		
-				$(this).find("i").toggleClass("fa-plus fa-minus");					
-											
-				// if ($("#accordion-search .in").length ){
-				//			$(this).prev().addClass("active-parent");					      													
-				//			$(".active-parent").find("i").toggleClass("fa-minus true");
-				//			$(".active-parent").find("i").toggleClass("fa-plus false");			
-				// }		
-		});								
-});
-
-
 // *** SEARCH *** IF NEEDED this makes the accordian function with only one open
 // jQuery(function($) {	
 // 		var active = true;
@@ -71,7 +56,7 @@ jQuery(function($) {
 					// loading: "icon-spinner icon-spin"
 				}
 			},
-//			source: {url: "ajax-tree-plain.json", debugDelay: 1000},
+		  // source: {url: "ajax-tree-plain.json", debugDelay: 1000},
 			source: {url: "src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
