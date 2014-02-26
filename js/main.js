@@ -13,7 +13,7 @@ jQuery(function($) {
 // *** SEARCH *** advanced search toggle
 jQuery(function($) {
 	$(".advanced-link").click(function() {
-    $(".advanced-link-view").toggle("show");
+    $(".advanced-link-view").slideToggle();
   });
 });
 
@@ -46,10 +46,10 @@ jQuery(function($) {
 					// loading: "icon-spinner icon-spin"
 				}
 			},
-//			source: {url: "ajax-tree-plain.json", debugDelay: 1000},
+			// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
 			source: {url: "src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
 		});
-	});
+});

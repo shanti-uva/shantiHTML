@@ -278,7 +278,9 @@
 						<div id="extruder-search">
 						 <div class="panel-group" id="accordion-search">						
 						  
+						  <!-- ----------------- -->
 						  <!-- SEARCH --- panel -->
+						  <!-- ----------------- -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
@@ -294,12 +296,108 @@
 						            </span>
 						          </div><!-- /input-group -->
 						          <div class="advanced-link"><a href="#">Advanced</a></div>
-											<div class="advanced-link-view" style="display:none;padding-top:50px;">The options in this section contain advanced faceted search filters...</div>
+											<div class="advanced-link-view" style="display:none;padding-top:5px;">
+											
+													<form class="form-horizontal">
+													<fieldset>
+													
+													<!-- Form Name -->
+													<legend style="display:none;">uvaKmap</legend>
+													
+													<!-- Multiple Radios (inline) -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="radios">Inline Radios</label>
+													  <div class="col-md-8"> 
+													    <label class="radio-inline" for="radios-0">
+													      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+													      1
+													    </label> 
+													    <label class="radio-inline" for="radios-1">
+													      <input type="radio" name="radios" id="radios-1" value="2">
+													      2
+													    </label> 
+													    <label class="radio-inline" for="radios-2">
+													      <input type="radio" name="radios" id="radios-2" value="3">
+													      3
+													    </label> 
+													    <label class="radio-inline" for="radios-3">
+													      <input type="radio" name="radios" id="radios-3" value="4">
+													      4
+													    </label>
+													  </div>
+													</div>
+													
+													<!-- Select Basic -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
+													  <div class="col-md-8">
+													    <select id="selectbasic" name="selectbasic" class="form-control" style="padding:3px;height:25px;">
+													      <option value="1">Option one</option>
+													      <option value="2">Option two</option>
+													    </select>
+													  </div>
+													</div>
+													
+													<!-- Multiple Checkboxes -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="checkboxes">Multiple Checkboxes</label>
+													  <div class="col-md-8">
+													  <div class="checkbox">
+													    <label for="checkboxes-0">
+													      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+													      Option one
+													    </label>
+														</div>
+													  <div class="checkbox">
+													    <label for="checkboxes-1">
+													      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+													      Option two
+													    </label>
+														</div>
+													  </div>
+													</div>
+													
+													<!-- Multiple Radios -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="radios">Multiple Radios</label>
+													  <div class="col-md-8">
+													  <div class="radio">
+													    <label for="radios-0">
+													      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+													      Option one
+													    </label>
+														</div>
+													  <div class="radio">
+													    <label for="radios-1">
+													      <input type="radio" name="radios" id="radios-1" value="2">
+													      Option two
+													    </label>
+														</div>
+													  </div>
+													</div>
+													
+													<!-- Select Multiple -->
+													<div class="form-group">
+													  <label class="col-md-4 control-label" for="selectmultiple">Select Multiple</label>
+													  <div class="col-md-8">
+													    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+													      <option value="1">Option one</option>
+													      <option value="2">Option two</option>
+													    </select>
+													  </div>
+													</div>
+													
+													</fieldset>
+													</form>
+											</div>							
+										
 						      </div>
 						    </div>
 						  </div>							  					
-						  
+
+						  <!-- ----------------- -->
 						  <!-- RESULTS --- panel -->
+						  <!-- ----------------- -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
@@ -355,8 +453,9 @@
 						    </div>
 						  </div>
 
-
+							<!-- ----------------- -->
 						  <!-- BROWSE --- panel -->
+						  <!-- ----------------- -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
@@ -370,8 +469,9 @@
 						    </div>
 						  </div>
 												
-						  
+						  <!-- ----------------- -->
 						  <!-- OPTIONS --- panel -->
+						  <!-- ----------------- -->
 						  <div class="panel panel-default">
 						    <div class="panel-heading">
 						       <h4 class="panel-title">
@@ -427,6 +527,7 @@
 						      </div>
 						   </div>						
 						</div><!-- END search --> 
+						
       
     </div><!-- END main-content row -->
   </div><!-- END container-fluid -->
