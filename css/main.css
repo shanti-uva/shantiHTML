@@ -243,15 +243,18 @@ body > .navbar {
 
 .main-content .nav-pills li a,
 .main-content .nav-pills li a:hover {
-  color: #707070 !important;
+  color: #707070;
   padding-left: 155px;
   border-radius: inherit;
+}
+.main-content .nav-pills li a:hover{
+	color: #222;
 }
 
 .main-content .nav-pills li.active a {
   background-color: rgb(241, 242, 242);
   border-left: 10px solid #DC3C47;
-  color: #404040;
+  color: #333;
   padding-left: 145px;
   border-top: 1px solid rgb(213, 213, 213);
   border-bottom: 1px solid rgb(213, 213, 213);
