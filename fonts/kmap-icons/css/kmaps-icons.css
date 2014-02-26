@@ -1,0 +1,147 @@
+@font-face {
+	font-family: 'uva-kmaps';
+	src:url('../fonts/uva-kmaps.eot?-6mtuc3');
+	src:url('../fonts/uva-kmaps.eot?#iefix-6mtuc3') format('embedded-opentype'),
+		url('../fonts/uva-kmaps.woff?-6mtuc3') format('woff'),
+		url('../fonts/uva-kmaps.ttf?-6mtuc3') format('truetype'),
+		url('../fonts/uva-kmaps.svg?-6mtuc3#uva-kmaps') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon {
+	font-family: 'uva-kmaps';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+		
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+/* makes the font 33% larger relative to the icon container */
+.km-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -30%;
+}
+.km-2x {
+  font-size: 2em;
+}
+.km-3x {
+  font-size: 3em;
+}
+.km-4x {
+  font-size: 4em;
+}
+.km-5x {
+  font-size: 5em;
+}
+.km-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+.km-ul {
+  padding-left: 0;
+  margin-left: 2.142857142857143em;
+  list-style-type: none;
+}
+.km-ul > li {
+  position: relative;
+}
+.km-li {
+  position: absolute;
+  left: -2.142857142857143em;
+  width: 2.142857142857143em;
+  top: 0.14285714285714285em;
+  text-align: center;
+}
+.km-li.km-lg {
+  left: -1.8571428571428572em;
+}
+.km-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.km.pull-left {
+  margin-right: .3em;
+}
+.km.pull-right {
+  margin-left: .3em;
+}
+.km-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+
+.icon-overview:before {
+	content: "\e104";
+}
+.icon-essays:before {
+	content: "\e10b";
+}
+.icon-subjects:before {
+	content: "\e108";
+}
+.icon-places:before {
+	content: "\e106";
+}
+.icon-agents:before {
+	content: "\e100";
+}
+.icon-events:before {
+	content: "\e102";
+}
+.icon-photos:before {
+	content: "\e105";
+}
+.icon-audiovideo:before {
+	content: "\e101";
+}
+.icon-visuals:before {
+	content: "\e10c";
+}
+.icon-texts:before {
+	content: "\e10a";
+}
+.icon-maps:before {
+	content: "\e103";
+}
+.icon-community:before {
+	content: "\e10d";
+}
+.icon-terms:before {
+	content: "\e109";
+}
+.icon-sources:before {
+	content: "\e107";
+}
+
+
+
+.icon-arrowselect:before {
+	content: "\e10e";
+}
+.icon-directions:before {
+	content: "\e10f";
+}
+
+
+
+
+

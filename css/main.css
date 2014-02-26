@@ -232,7 +232,7 @@ body > .navbar {
 .main-content .nav-pills {
   font-family: 'Droid Sans', sans-serif;
   font-weight: 700;
-  font-size: 0.800em;
+  font-size: 1em;
   text-transform: uppercase;
   border-right: 1px solid rgb(213, 213, 213);
 }
@@ -243,7 +243,7 @@ body > .navbar {
 
 .main-content .nav-pills li a,
 .main-content .nav-pills li a:hover {
-  color: rgb(51, 51, 51);
+  color: #707070 !important;
   padding-left: 155px;
   border-radius: inherit;
 }
@@ -251,7 +251,7 @@ body > .navbar {
 .main-content .nav-pills li.active a {
   background-color: rgb(241, 242, 242);
   border-left: 10px solid #DC3C47;
-  color: rgb(51, 51, 51);
+  color: #404040;
   padding-left: 145px;
   border-top: 1px solid rgb(213, 213, 213);
   border-bottom: 1px solid rgb(213, 213, 213);

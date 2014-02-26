@@ -10,13 +10,14 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,400italic' rel='stylesheet' type='text/css'>
-  <link href="fonts/font-awesome-4.0.3/css/font-awesome.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-	<link href="src/skin-bootstrap/ui.fancytree.css" rel="stylesheet" type="text/css" class="skinswitcher">
-  <link rel="stylesheet" href="css/search-panel.css" media="all" type="text/css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,400italic">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="fonts/kmap-icons/css/kmaps-icons.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="src/skin-bootstrap/ui.fancytree.css" class="skinswitcher">
+  <link rel="stylesheet" type="text/css" href="css/search-panel.css" media="all" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
 </head>
@@ -42,9 +43,9 @@
           <li>Scholarly Collections at the University of Virginia</li>
         </ul>
         <ul class="nav navbar-nav navbar-right left-margins">
-          <li><a href="#opencollect" data-toggle="collapse">EXPLORE <i class="fa fa-thumb-tack fa-fw"></i></a></li>
-          <li><a href="#">LOGIN</a></li>
-          <li><a href="#">ENG <i class="fa fa-sort fa-fw"></i></a></li>
+          <li style="border-left: 1px solid #E7E7E7;"><a href="#opencollect" data-toggle="collapse">EXPLORE<i class="icon km-lg km-2x icon-directions"></i></a></li>
+          <li><a href="#">LOGIN<i class="icon km-lg km-2x"></i></a></li>
+          <li><a href="#">ENG<i class="icon km-lg km-2x icon-arrowselect"></i></a></li>
         </ul>
       </div>
     </div>
@@ -57,31 +58,31 @@
           <div class="row four-collections">
             <div class="col-sm-3">
               <ul class="fa-ul">
-                <li><a href="#"><i class="fa-li fa fa-anchor"></i> Subjects</a></li>
-                <li><a href="#"><i class="fa-li fa fa-map-marker"></i> Places</a></li>
-                <li><a href="#"><i class="fa-li fa fa-user"></i> Agents</a></li>
-                <li><a href="#"><i class="fa-li fa fa-calendar"></i> Events</a></li>
+                <li><a href="#"><i class="fa-li fa fa-anchor"></i>Subjects</a></li>
+                <li><a href="#"><i class="fa-li fa fa-map-marker"></i>Places</a></li>
+                <li><a href="#"><i class="fa-li fa fa-user"></i>Agents</a></li>
+                <li><a href="#"><i class="fa-li fa fa-calendar"></i>Events</a></li>
               </ul>
             </div>
             <div class="col-sm-3">
               <ul class="fa-ul">
-                <li><a href="#"><i class="fa-li fa fa-picture-o"></i> Photos</a></li>
-                <li><a href="#"><i class="fa-li fa fa-forward"></i> Audio-Video</a></li>
-                <li><a href="#"><i class="fa-li fa fa-eye"></i> Visuals</a></li>
+                <li><a href="#"><i class="fa-li fa fa-picture-o"></i>Photos</a></li>
+                <li><a href="#"><i class="fa-li fa fa-forward"></i>Audio-Video</a></li>
+                <li><a href="#"><i class="fa-li fa fa-eye"></i>Visuals</a></li>
               </ul>
             </div>
             <div class="col-sm-3">
               <ul class="fa-ul">
-                <li><a href="#"><i class="fa-li fa fa-clipboard"></i> Essays</a></li>
-                <li><a href="#"><i class="fa-li fa fa-file-text"></i> Texts</a></li>
-                <li><a href="#"><i class="fa-li fa fa-compass"></i> Maps</a></li>
+                <li><a href="#"><i class="fa-li fa fa-clipboard"></i>Essays</a></li>
+                <li><a href="#"><i class="fa-li fa fa-file-text"></i>Texts</a></li>
+                <li><a href="#"><i class="fa-li fa fa-compass"></i>Maps</a></li>
               </ul>
             </div>
             <div class="col-sm-3">
               <ul class="fa-ul last">
-                <li><a href="#"><i class="fa-li fa fa-users"></i> Community</a></li>
-                <li><a href="#"><i class="fa-li fa fa-list-ul"></i> Terms</a></li>
-                <li><a href="#"><i class="fa-li fa fa-book"></i> Sources</a></li>
+                <li><a href="#"><i class="fa-li fa fa-users"></i>Community</a></li>
+                <li><a href="#"><i class="fa-li fa fa-list-ul"></i>Terms</a></li>
+                <li><a href="#"><i class="fa-li fa fa-book"></i>Sources</a></li>
               </ul>
             </div>
           </div>
@@ -112,20 +113,20 @@
     <div class="row main-content" style="position:relative;">
       <div class="col-sm-2 content-sidebar">
         <ul class="nav nav-pills nav-stacked">
-          <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="fa fa-fw fa-bars"></i> Overview</a></li>
-          <li><a href="#tab-essays" data-toggle="pill"><i class="fa fa-fw fa-clipboard"></i> Essays <span class="badge">1</span></a></li>
-          <li><a href="#tab-subjects" data-toggle="pill"><i class="fa fa-fw fa-anchor"></i> Subjects <span class="badge">3</span></a></li>
-          <li><a href="#tab-places" data-toggle="pill"><i class="fa fa-fw fa-map-marker"></i> Places</a></li>
-          <li><a href="#tab-agents" data-toggle="pill"><i class="fa fa-fw fa-user"></i> Agents</a></li>
-          <li><a href="#tab-events" data-toggle="pill"><i class="fa fa-fw fa-calendar"></i> Events</a></li>
-          <li><a href="#tab-photos" data-toggle="pill"><i class="fa fa-fw fa-picture-o"></i> Photos <span class="badge">396</span></a></li>
-          <li><a href="#tab-audio-video" data-toggle="pill"><i class="fa fa-fw fa-forward"></i> Audio-Video</a></li>
-          <li><a href="#tab-visuals" data-toggle="pill"><i class="fa fa-fw fa-eye"></i> Visuals</a></li>
-          <li><a href="#tab-texts" data-toggle="pill"><i class="fa fa-fw fa-file-text"></i> Texts</a></li>
-          <li><a href="#tab-maps" data-toggle="pill"><i class="fa fa-fw fa-compass"></i> Maps</a></li>
-          <li><a href="#tab-community" data-toggle="pill"><i class="fa fa-fw fa-users"></i> Community</a></li>
-          <li><a href="#tab-terms" data-toggle="pill"><i class="fa fa-fw fa-list-ul"></i> Terms</a></li>
-          <li><a href="#tab-sources" data-toggle="pill"><i class="fa fa-fw fa-book"></i> Sources</a></li>
+          <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="icon km-lg km-2x icon-overview"></i>Overview</a></li>
+          <li><a href="#tab-essays" data-toggle="pill"><i class="icon km-lg km-2x icon-essays"></i>Essays <span class="badge">1</span></a></li>
+          <li><a href="#tab-subjects" data-toggle="pill"><i class="icon km-lg km-2x icon-essays"></i>Subjects <span class="badge">3</span></a></li>
+          <li><a href="#tab-places" data-toggle="pill"><i class="icon km-lg km-2x icon-places"></i>Places</a></li>
+          <li><a href="#tab-agents" data-toggle="pill"><i class="icon km-lg km-2x icon-agents"></i>Agents</a></li>
+          <li><a href="#tab-events" data-toggle="pill"><i class="icon km-lg km-2x icon-events"></i>Events</a></li>
+          <li><a href="#tab-photos" data-toggle="pill"><i class="icon km-lg km-2x icon-photos"></i>Photos <span class="badge">396</span></a></li>
+          <li><a href="#tab-audio-video" data-toggle="pill"><i class="icon km-lg km-2x icon-audiovideo"></i>Audio-Video</a></li>
+          <li><a href="#tab-visuals" data-toggle="pill"><i class="icon km-lg km-2x icon-visuals"></i>Visuals</a></li>
+          <li><a href="#tab-texts" data-toggle="pill"><i class="icon km-lg km-2x icon-texts"></i>Texts</a></li>
+          <li><a href="#tab-maps" data-toggle="pill"><i class="icon km-lg km-2x icon-maps"></i>Maps</a></li>
+          <li><a href="#tab-community" data-toggle="pill"><i class="icon km-lg km-2x icon-community"></i>Community</a></li>
+          <li><a href="#tab-terms" data-toggle="pill"><i class="icon km-lg km-2x icon-terms"></i>Terms</a></li>
+          <li><a href="#tab-sources" data-toggle="pill"><i class="icon km-lg km-2x icon-sources"></i>Sources</a></li>
         </ul>
       </div><!-- END content-sidebar --> 
       <div class="col-sm-10 content-page">
@@ -435,24 +436,19 @@
     </div>
   </div>  
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-  <script src="js/vendor/bootstrap.min.js"></script>
-
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
-
-
-	<!-- search panel Extruder resources -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+  <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+	<!-- sliding search panel Extruder resources -->
   <script type="text/javascript" src="js/inc/jquery.hoverIntent.min.js"></script>
   <script type="text/javascript" src="js/inc/jquery.mb.flipText.js"></script>
   <script type="text/javascript" src="js/inc/mbExtruder.js"></script> 
-
-	<script src="src/jquery.fancytree.js" type="text/javascript"></script>
-	<script src="src/jquery.fancytree.glyph.js" type="text/javascript"></script>  
-
-  <script src="js/main.js"></script> 
+	<!-- fancy tree resources -->
+	<script type="text/javascript" src="src/jquery.fancytree.js"></script>
+	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
+	<!-- kmaps -->
+  <script type="text/javascript" src="js/main.js"></script> 
   
 </body>
 </html>
