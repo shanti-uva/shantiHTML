@@ -49,8 +49,8 @@ jQuery(function($) {
 					// loading: "icon-spinner icon-spin"
 				}
 			},
-			// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-			source: {url: "http://dukar.net/demo/src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
+			// source: {url: "src/json/ajax-tree-plain.json", debugDelay: 1000},
+			source: {url: "src/json/ajax-tree-products.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
