@@ -13,23 +13,26 @@ jQuery(function($) {
 // *** SEARCH *** advanced search toggle
 jQuery(function($) {
 	$(".advanced-link").click(function() {
-    $(".advanced-link-view").slideToggle();
+    $(".advanced-link-view").slideToggle('fast');
   });
 });
 
 
 // *** SEARCH *** inserts search icon for sliding panel
 jQuery(function($) {
-	$(".flap").append("<span style='font-size:1.32em;position:relative;top:-35px;left:9px;'><i class='fa fa-search'></i></span>");
+	$(".flap").append("<span style='font-size:1.32em;position:relative;top:-35px;right:-9px;'><i class='fa fa-search'></i></span>");	
+	// if($(".isOpened").length ) {
+	//   		$(".flap").css('right','-29px');
+	// }
 });
 
 
 jQuery(function($) {
-		// Initialize Fancytree
 		$("#tree").fancytree({
 			extensions: ["glyph"],
 			checkbox: false,
 			selectMode: 2,
+			closeOnExternalClick:false,
 			glyph: {
 				map: {
 					doc: "",
@@ -47,9 +50,21 @@ jQuery(function($) {
 				}
 			},
 			// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-			source: {url: "src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
+			source: {url: "http://dukar.net/demo/src/json/ajax-tree-taxonomy.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
 		});
 });
+
+
+
+jQuery(function($) {
+	$('#search-tabs a').click(function (e) {
+	  e.preventDefault()
+	  $(this).tab('show')
+	})
+});
+
+
+

@@ -40,7 +40,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav header-text">
-          <li>Scholarly Collections at the University of Virginia</li>
+          <li style="position:relative;left:-30px;top:3px;margin:0;padding:0;">Scholarly Collections at the University of Virginia</li>
         </ul>
         <ul class="nav navbar-nav navbar-right left-margins">
           <li style="border-left: 1px solid #E7E7E7;"><a href="#opencollect" data-toggle="collapse">EXPLORE<i class="icon km-lg km-2x icon-directions"></i></a></li>
@@ -115,7 +115,7 @@
         <ul class="nav nav-pills nav-stacked">
           <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="icon km-lg km-2x icon-overview"></i>Overview</a></li>
           <li><a href="#tab-essays" data-toggle="pill"><i class="icon km-lg km-2x icon-essays"></i>Essays<span class="badge">1</span></a></li>
-          <li><a href="#tab-subjects" data-toggle="pill"><i class="icon km-lg km-2x icon-essays"></i>Subjects<span class="badge">3</span></a></li>
+          <li><a href="#tab-subjects" data-toggle="pill"><i class="icon km-lg km-2x icon-subjects"></i>Subjects<span class="badge">3</span></a></li>
           <li><a href="#tab-places" data-toggle="pill"><i class="icon km-lg km-2x icon-places"></i>Places</a></li>
           <li><a href="#tab-agents" data-toggle="pill"><i class="icon km-lg km-2x icon-agents"></i>Agents</a></li>
           <li><a href="#tab-events" data-toggle="pill"><i class="icon km-lg km-2x icon-events"></i>Events</a></li>
@@ -141,7 +141,7 @@
             </p>
             <h6>Map</h6>
             <div class="google-maps">
-              <iframe src="https://mapsengine.google.com/map/embed?mid=zCEqriyJd8A0.kM1pQfphj0Ns" width="640" height="480" frameborder="0" style="border:0"></iframe>
+              <!-- <iframe src="https://mapsengine.google.com/map/embed?mid=zCEqriyJd8A0.kM1pQfphj0Ns" width="640" height="480" frameborder="0" style="border:0"></iframe> -->
             </div>
             <div class="panel-group" id="accordion">
               <div class="panel panel-default">
@@ -272,140 +272,71 @@
 
 				  
 
-						<!-- ------------------ -->
-						<!-- BEGIN search panel -->
-						<!-- ------------------ -->
-						<div id="extruder-search">
-						 <div class="panel-group" id="accordion-search">						
-						  
-						  <!-- ----------------- -->
-						  <!-- SEARCH --- panel -->
-						  <!-- ----------------- -->
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						      	<a href="#collapse-search" class="accordion-toggle" data-toggle="collapse"><i class="fa"></i>Search</a>
-						      </h4>
-						    </div>
-						    <div id="collapse-search" class="panel-collapse collapse in">
-						      <div class="panel-body">						          
-						          <div class="input-group">
-						              <input type="text" class="form-control">
-						              <span class="input-group-btn">
-						              <button class="btn btn-default" type="button">Go!</button>
-						            </span>
-						          </div><!-- /input-group -->
-						          <div class="advanced-link"><a href="#">Advanced</a></div>
-											<div class="advanced-link-view" style="display:none;padding-top:5px;">
+						
+						
+				<!-- BEGIN Search Panel -->	
+				<div id="extruder-search">								
+					 <div>
+					  		
+								<!-- BEGIN search section -->									  
+							  <div id="search-section">									  
+								  <h3 style="width:105%;">Search <a href="#" onclick="$('#extruder-search').closeMbExtruder();">[x]</a></h3>	
+									
+									<form class="form">
+									<fieldset>												
+										<legend style="display:none;">Places Search - Advanced Options</legend>									
+																					
+								  <div class="search-form-view form-group" style="background-color:#f0f0f0;padding:10px 0 0; margin:-3px 0 0;">
+											<textarea class="form-control" rows="3" placeholder="Enter search terms here..." style="margin: 0 0 5px 10px; width:93%;"></textarea>												  																			
+											<div class="advanced-link">
+													<button class="btn btn-primary btn-med" type="submit" style="margin:7px 0 10px 10px">Submit Search</button>
+													<a href="#" title="show and hide advanced search options">[+] Advanced Options</a>
+											</div>
+								  </div>	
 											
-													<form class="form-horizontal">
-													<fieldset>
-													
-													<!-- Form Name -->
-													<legend style="display:none;">uvaKmap</legend>
-													
-													<!-- Multiple Radios (inline) -->
-													<div class="form-group">
-													  <label class="col-md-4 control-label" for="radios">Inline Radios</label>
-													  <div class="col-md-8"> 
-													    <label class="radio-inline" for="radios-0">
-													      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-													      1
-													    </label> 
-													    <label class="radio-inline" for="radios-1">
-													      <input type="radio" name="radios" id="radios-1" value="2">
-													      2
-													    </label> 
-													    <label class="radio-inline" for="radios-2">
-													      <input type="radio" name="radios" id="radios-2" value="3">
-													      3
-													    </label> 
-													    <label class="radio-inline" for="radios-3">
-													      <input type="radio" name="radios" id="radios-3" value="4">
-													      4
-													    </label>
-													  </div>
-													</div>
-													
-													<!-- Select Basic -->
-													<div class="form-group">
-													  <label class="col-md-4 control-label" for="selectbasic">Select Basic</label>
-													  <div class="col-md-8">
-													    <select id="selectbasic" name="selectbasic" class="form-control" style="padding:3px;height:25px;">
-													      <option value="1">Option one</option>
-													      <option value="2">Option two</option>
-													    </select>
-													  </div>
-													</div>
-													
-													<!-- Multiple Checkboxes -->
-													<div class="form-group">
-													  <label class="col-md-4 control-label" for="checkboxes">Multiple Checkboxes</label>
-													  <div class="col-md-8">
-													  <div class="checkbox">
-													    <label for="checkboxes-0">
-													      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-													      Option one
-													    </label>
-														</div>
-													  <div class="checkbox">
-													    <label for="checkboxes-1">
-													      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
-													      Option two
-													    </label>
-														</div>
-													  </div>
-													</div>
-													
-													<!-- Multiple Radios -->
-													<div class="form-group">
-													  <label class="col-md-4 control-label" for="radios">Multiple Radios</label>
-													  <div class="col-md-8">
-													  <div class="radio">
-													    <label for="radios-0">
-													      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-													      Option one
-													    </label>
-														</div>
-													  <div class="radio">
-													    <label for="radios-1">
-													      <input type="radio" name="radios" id="radios-1" value="2">
-													      Option two
-													    </label>
-														</div>
-													  </div>
-													</div>
-													
-													<!-- Select Multiple -->
-													<div class="form-group">
-													  <label class="col-md-4 control-label" for="selectmultiple">Select Multiple</label>
-													  <div class="col-md-8">
-													    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-													      <option value="1">Option one</option>
-													      <option value="2">Option two</option>
-													    </select>
-													  </div>
-													</div>
-													
-													</fieldset>
-													</form>
-											</div>							
-										
-						      </div>
-						    </div>
-						  </div>							  					
-
-						  <!-- ----------------- -->
-						  <!-- RESULTS --- panel -->
-						  <!-- ----------------- -->
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						      	<a href="#collapse-results" class="accordion-toggle collapsed" data-toggle="collapse"><i class="fa"></i>Results</a>
-						      </h4>
-						    </div>						    
-						    <div id="collapse-results" class="panel-collapse collapse">
-						      <div class="panel-body">
+										 <!-- advanced search hidden ontent -->
+										 <div class="advanced-link-view" style="background-color:#f0f0f0;">													    
+														  <div class="form-group"> 
+														    <label class="radio-inline" for="radios-0">
+														      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">All Text</label> 
+														    <label class="radio-inline" for="radios-1">
+														      <input type="radio" name="radios" id="radios-1" value="2">Name </label> 
+														  </div>
+														  													  
+														  <div class="form-group">
+														    <label class="radio-inline" for="radios-2">
+														      <input type="radio" name="radios2" id="radios-2" value="3" checked="checked">Contains</label> 
+														    <label class="radio-inline" for="radios-3">
+														      <input type="radio" name="radios2" id="radios-3" value="4">Starts With</label>
+														    <label class="radio-inline" for="radios-4">
+														      <input type="radio" name="radios2" id="radios-4" value="5">Exactly</label>													    
+														  </div>
+														  
+														  <div class="form-group">
+														    <label class="checkbox-inline" for="checkbox-1">
+														      <input type="checkbox" name="checkbox" id="checkbox-1" value="6">Show only entries with essays</label> 													    
+														  </div>
+											</div>
+											
+									</fieldset>
+									</form>													
+							  </div>	<!-- END search section -->
+								
+							  
+							  <!-- START View section -->																	
+							  <div id="view-section" style="margin-top:10px;">						 
+								  <ul class="nav nav-tabs" id="search-tabs">
+									  <li class="active"><a href="#treeview" data-toggle="tab">Tree View</a></li>
+									  <li><a href="#listview" data-toggle="tab">List View</a></li>
+									</ul>
+									
+									<div class="tab-content" style="background-color:#f0f0f0;padding:10px 10px 100px;border: 1px solid #ddd;border-top:none;">
+									  <div class="tab-pane active" id="treeview"><!-- TREE view -->						  		
+									  		<div id="tree"></div>									  
+									  </div>
+									  <div class="tab-pane" id="listview">
+										  
+										  <div class="panel-body">
 						        
 						        <div class="table-responsive">
 						         <table class="table table-condensed table-results">
@@ -450,87 +381,22 @@
 						        </table>
 						
 						      </div>
-						    </div>
-						  </div>
-
-							<!-- ----------------- -->
-						  <!-- BROWSE --- panel -->
-						  <!-- ----------------- -->
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						      <h4 class="panel-title">
-						      	<a href="#collapse-browse" class="accordion-toggle collapsed" data-toggle="collapse"><i class="fa"></i>Browse</a>
-						      </h4>
-						    </div>
-						    <div id="collapse-browse" class="panel-collapse collapse">
-						      <div class="panel-body">
-												<div id="tree"></div>
-							    </div>
-						    </div>
-						  </div>
-												
-						  <!-- ----------------- -->
-						  <!-- OPTIONS --- panel -->
-						  <!-- ----------------- -->
-						  <div class="panel panel-default">
-						    <div class="panel-heading">
-						       <h4 class="panel-title">
-						      	<a href="#collapse-options" class="accordion-toggle collapsed" data-toggle="collapse"><i class="fa"></i>Options</a>
-						      </h4>
-						    </div>
-						    <div id="collapse-options" class="panel-collapse collapse">
-						      <div class="panel-body">
-						        
-						        <div class="input-group" style="margin-bottom:10px;">
-						          <div class="input-group-btn">
-						            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 1 <span class="caret"></span></button>
-						            <ul class="dropdown-menu">
-						              <li><a href="#">Action</a></li>
-						              <li><a href="#">Another action</a></li>
-						              <li><a href="#">Something else here</a></li>
-						              <li class="divider"></li>
-						              <li><a href="#">Separated link</a></li>
-						            </ul>
-						          </div><!-- /btn-group -->
-						            <input type="text" class="form-control">
-						          </div><!-- /input-group -->
-						
-						          <div class="input-group" style="margin-bottom:15px;">
-						            <div class="input-group-btn">
-						              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Option 2 <span class="caret"></span></button>
-						              <ul class="dropdown-menu">
-						                <li><a href="#">Action</a></li>
-						                <li><a href="#">Another action</a></li>
-						                <li><a href="#">Something else here</a></li>
-						                <li class="divider"></li>
-						                <li><a href="#">Separated link</a></li>
-						              </ul>
-						            </div><!-- /btn-group -->
-						             <input type="text" class="form-control">           
-						          </div><!-- /input-group -->
-						
-						          <div class="input-group" style="margin-bottom:10px;">
-						            <span class="input-group-addon">
-						              <input type="checkbox">
-						            </span>
-						            <input type="text" class="form-control">
-						          </div><!-- /input-group -->
-						
-						          <div class="input-group" style="margin-bottom:40px;">
-						            <span class="input-group-addon">
-						              <input type="radio">
-						            </span>
-						            <input type="text" class="form-control">
-						          </div><!-- /input-group -->
-						
-										</div>
-						      </div>
-						   </div>						
-						</div><!-- END search --> 
+										  
+										  
+									  </div><!-- LIST view -->		
+								  </div>
+							  </div>
+							  
+					 </div><!-- END container -->
+				</div><!-- END extruder-search --> 
+				
+				
 						
       
     </div><!-- END main-content row -->
   </div><!-- END container-fluid -->
+  
+  
   <div class="footer">
     <div>
       <p>&copy; COPYRIGHT 2014</p>
