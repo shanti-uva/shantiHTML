@@ -1,7 +1,7 @@
 
 // *** SEARCH *** sliding search panel
 jQuery(function($) {
-  $("#extruder-search").buildMbExtruder({
+  $("#kmaps-search").buildMbExtruder({
         positionFixed:false,
         position:"right",
         width:320,
@@ -17,22 +17,13 @@ jQuery(function($) {
   });
 });
 
-
-// *** SEARCH *** inserts search icon for sliding panel
-jQuery(function($) {
-	$(".flap").append("<span style='font-size:1.32em;position:relative;top:-35px;right:-9px;'><i class='fa fa-search'></i></span>");	
-	// if($(".isOpened").length ) {
-	//   		$(".flap").css('right','-29px');
-	// }
-});
-
-
 jQuery(function($) {
 		$("#tree").fancytree({
 			extensions: ["glyph"],
 			checkbox: false,
 			selectMode: 2,
 			closeOnExternalClick:false,
+			flapMargin:5,
 			glyph: {
 				map: {
 					doc: "",
@@ -65,6 +56,29 @@ jQuery(function($) {
 	  $(this).tab('show')
 	})
 });
+
+
+
+// *** SEARCH *** inserts search icon for sliding panel
+jQuery(function($) {
+		if (!$(".extruder.right").hasClass("isOpened")) {
+						$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
+		} 
+});
+
+
+
+jQuery(function($) {
+	$("#kmaps-search .flap").addClass("off-flap");	
+	$("#kmaps-search .flap, #closeSearch").click( function(){
+          $("h3.off").toggleClass("on", 200 );
+          $(".off-flap").toggleClass( "on-flap", 200 );
+	});
+});
+
+
+
+
 
 
 

@@ -275,26 +275,27 @@
 						
 						
 				<!-- BEGIN Search Panel -->	
-				<div id="extruder-search">								
-					  		
+				<div id="kmaps-search">								
+						<div style="width:310px">
+						
+						<h3 class="off">Search <a href="#" id="closeSearch" onclick="$('#kmaps-search').closeMbExtruder();"> </a></h3>
+								
 								<!-- BEGIN search section -->									  
-							  <div id="search-section">									  
-								  <h3 style="width:105%;">Search <a href="#" onclick="$('#extruder-search').closeMbExtruder();">[x]</a></h3>	
-									
+							  <div id="search-section" style="margin-left:7px;">									  
 									<form class="form">
 									<fieldset>												
-										<legend style="display:none;">Places Search - Advanced Options</legend>									
+										<legend style="display:none;">Places Search</legend>									
 																					
-								  <div class="search-form-view form-group" style="background-color:#f0f0f0;padding:10px 0 0; margin:-3px 0 0;">
-											<textarea class="form-control" rows="3" placeholder="Enter search terms here..." style="margin: 0 0 5px 10px; width:93%;"></textarea>												  																			
+								  <div class="search-form-view form-group" style="background-color:#f0f0f0;padding:10px 0 0; margin:-3px 0 0;border-top:2px solid #ddd;">
+											<textarea class="form-control" rows="3" placeholder="Enter search terms..." style="margin: 0 0 0 10px; width:93%;"></textarea>												  																			
 											<div class="advanced-link">
-													<button class="btn btn-primary btn-med" type="submit" style="margin:7px 0 10px 10px">Submit Search</button>
+													<button class="btn btn-primary btn-med" type="submit" style="margin:2px 0 10px 10px">Submit Search</button>
 													<a href="#" title="show and hide advanced search options">[+] Advanced Options</a>
 											</div>
 								  </div>	
 											
 										 <!-- advanced search hidden ontent -->
-										 <div class="advanced-link-view" style="background-color:#f0f0f0;">													    
+										 <div class="advanced-link-view" style="background-color:#f0f0f0;display:none;">													    
 														  <div class="form-group"> 
 														    <label class="radio-inline" for="radios-0">
 														      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">All Text</label> 
@@ -323,18 +324,22 @@
 								
 							  
 							  <!-- START View section -->																	
-							  <div id="view-section" style="margin-top:10px;">						 
+							  <div id="view-section" style="margin:7px 0 7px 7px;">						 
 								  <ul class="nav nav-tabs" id="search-tabs">
 									  <li class="active"><a href="#treeview" data-toggle="tab">Tree View</a></li>
 									  <li><a href="#listview" data-toggle="tab">List View</a></li>
 									</ul>
 									
-									<div class="tab-content" style="background-color:#f0f0f0;padding:10px 10px 100px;border: 1px solid #ddd;border-top:none;">
-									  <div class="tab-pane active" id="treeview"><!-- TREE view -->						  		
+									
+									<div class="tab-content" style="background-color:#f0f0f0;padding:10px 10px 40px;border-left: 1px solid #ddd;">
+									  
+									  <!-- tree view -->
+									  <div id="treeview" class="tab-pane active">	  		
 									  		<div id="tree"></div>									  
 									  </div>
 									  
-									  <div class="tab-pane" id="listview">						        
+									  <!-- list view -->
+									  <div id="listview" class="tab-pane">						        
 						        <div class="table-responsive">
 						         <table class="table table-condensed table-results">
 						          <thead>
@@ -380,13 +385,14 @@
 						       </div>										  
 								   </div>	
 							  </div><!-- END view section -->
-				</div><!-- END extruder-search --> 
+						</div>	  
+				</div><!-- END kmaps-search --> 
 				
-				
-						
-      
+
     </div><!-- END main-content row -->
   </div><!-- END container-fluid -->
+
+
   
   
   <div class="footer">
