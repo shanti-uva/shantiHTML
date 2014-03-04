@@ -13,10 +13,13 @@ jQuery(function($) {
 // *** SEARCH *** advanced search toggle
 jQuery(function($) {
 	$(".advanced-link").click(function() {
+		$(".advanced-trigger").toggleClass("show-advanced", 200);
     $(".advanced-link-view").slideToggle('fast');
   });
 });
 
+
+// *** SEARCH *** manages sliding panel (and aspects of search button)
 jQuery(function($) {
 		$("#tree").fancytree({
 			extensions: ["glyph"],
@@ -50,16 +53,16 @@ jQuery(function($) {
 
 
 
-jQuery(function($) {
-	$('#search-tabs a').click(function (e) {
-	  e.preventDefault()
-	  $(this).tab('show')
-	})
-});
+// jQuery(function($) {
+//	$('#search-tabs a').click(function (e) {
+//	  e.preventDefault()
+//	  $(this).tab('show')
+//	})
+// });
 
 
 
-// *** SEARCH *** inserts search icon for sliding panel
+// inserts search icon for sliding panel
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
 			$(".flap").addClass("off-flap");
@@ -68,6 +71,7 @@ jQuery(function($) {
 });		
 
 
+// control the search icon button, changes the button appearance when open/closed 
 jQuery(function($) {
 		$(".flap, #closeSearch").click( function(){
 						$(".off-flap").toggleClass("on-flap", 200);
@@ -76,7 +80,7 @@ jQuery(function($) {
 });
 
 
-
+// unique classes for tabs, useful for icons etc
 jQuery(function($) {
 	$("#search-tabs").find("li:eq(0)").addClass("treetab");
 	$("#search-tabs").find("li:eq(1)").addClass("listtab");
