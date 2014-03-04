@@ -62,23 +62,25 @@ jQuery(function($) {
 // *** SEARCH *** inserts search icon for sliding panel
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
-						$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
-		} 
+			$(".flap").addClass("off-flap");
+			$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
+		}
+});		
+
+
+jQuery(function($) {
+		$(".flap, #closeSearch").click( function(){
+						$(".off-flap").toggleClass("on-flap", 200);
+						$("h3.off").toggleClass("on", 200);
+		});
 });
 
 
 
 jQuery(function($) {
-	$("#kmaps-search .flap").addClass("off-flap");	
-	$("#kmaps-search .flap, #closeSearch").click( function(){
-          $("h3.off").toggleClass("on", 200 );
-          $(".off-flap").toggleClass( "on-flap", 200 );
-	});
+	$("#search-tabs").find("li:eq(0)").addClass("treetab");
+	$("#search-tabs").find("li:eq(1)").addClass("listtab");
 });
-
-
-
-
 
 
 

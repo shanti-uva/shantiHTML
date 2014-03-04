@@ -408,6 +408,115 @@ body > .navbar {
 
 
 
+/*************************************************/
+/********* SHANTI Styles begin ********/
+/*************************************************/
+
+/*------ clear default styles -------*/
+.extruder, 
+.extruder.right,
+.extruder .extruder-content, 
+.extruder.right .flap .flapLabel, 
+.extruder .text, 
+.extruder .voice.hover, 
+.extruder .voice.sel, 
+.extruder .settingsBtn, 
+.extruder .optionsPanel,
+.optionsPanel .panelVoice a:hover{
+	background-image:none; background-color:transparent;
+} 
+.extruder.open .extruder-content, 
+.extruder.right.open .extruder-content,
+.extruder.right .flap,
+.extruder .voice,
+.extruder.right .text,
+.optionsPanel .panelVoice a{
+	box-shadow:none; text-transform:none;
+}
+.extruder.right .extruder-content,
+.panel-default .panel-heading,
+.extruder.right .panel-heading,
+.extruder.right .panel-group,
+.extruder.right .panel-group .panel,
+.extruder.right .panel-default>.panel-heading{
+	border:none;
+}
+
+
+
+/*---- search panel wrapper ------------------
+------ js targets this extruder Right ID -- */
+#kmaps-search{ 
+  margin-top:-70px;
+  box-shadow:none;
+  background-color:#fff;
+}
+
+
+#kmaps-search .ext_wrapper{ height:auto;}
+
+
+/* #kmaps-search *:focus{
+    outline: 0 !important;
+		outline: 5px auto -webkit-focus-ring-color !important;
+} */
+
+
+
+.extruder{ }
+.extruder.right{ background-color:#fff;}
+.extruder.right .extruder-content{
+	background-color:#fff;
+	border:none;
+	width:100%;
+	padding:0;
+	-moz-box-shadow:-2px 0px 15px 7px #aaa;
+	-webkit-box-shadow:-2px 0px 15px 7px #aaa; 
+	box-shadow: -3px 0px 9px #c0c0c0;
+}
+
+
+/* ------ search button icon ------ */
+.extruder.right .flap{ 
+  cursor:pointer;
+  display:block;
+  background-color:#fff;
+  height:50px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  padding: 8px 0 8px 8px;
+  border-top-left-radius:50px;
+  border-bottom-left-radius:50px;
+}
+.extruder.right .flap.off-flap{
+	margin:0px 0px 0px -49px;
+	width:50px;
+}
+.extruder.right .flap.on-flap{
+	margin:0px 0px 0px -25px;
+	width:30px;
+}
+
+.extruder.right .flap span.flapLabel{
+  background-color:#505050;  
+  height:36px;
+  display:block; 
+  padding:18px 40px 18px 0; 
+  margin:-1px 0px 0px 0px;
+  border-top-left-radius:25px;
+  border-bottom-left-radius:25px;
+  overflow:hidden;
+  width:42px !important;
+}
+.extruder.right .flap.on-flap span.flapLabel{ /*-- toggle --*/
+	width:25px !important;
+	padding-right:30px;
+}
+
+object.flip_label{   
+  display:none;
+}
 
 
 
@@ -419,6 +528,40 @@ body > .navbar {
 
 
 
+/* ------ the search accordian panels ------ */
+#kmaps-search .panel-group{
+  border:none;
+  width:100%;
+  background-color:#fff;
+  /*margin:-10px -20px 0 -2px;*/
+}
+#kmaps-search .panel-body{ 
+  background-color:#eee;
+  border:none; 
+  border-radius:0px; 
+  width:100%; 
+}
+
+.panel-group .panel+.panel{ margin-top:0;}
+
+#kmaps-search .panel-group .panel{ 
+  border:none;
+  box-shadow:none;
+  border-radius:0px; 
+  margin-bottom:2px;
+  width:100%; 
+  background-color:#fff;
+  margin-bottom:0px;
+}
+.extruder .text,
+#kmaps-search .text{ 
+  text-shadow:none; 
+  background-color:#fff;
+  color:#222;
+  border:none;
+  width:100% !important;
+  padding:0;
+}
 
 
 
@@ -428,6 +571,120 @@ body > .navbar {
 
 
 
+/************* utilities **************/
+/*---- adnvanced search toggle ------*/
+#kmaps-search h3{
+	color:#f5f5f5;
+	background-color: #505050;
+	margin:7px 0 10px 0px;
+	font-weight:normal;
+	line-height:36px;
+	height:36px;
+	padding:0;
+	width:13em;
+}
+#kmaps-search h3.on{
+	padding-left:25px;
+}
+#kmaps-search h3.on a{ 
+	background: transparent url(../images/close-searchSlide.png) no-repeat right center;
+	width:40px !important;
+	height:36px !important;	
+	text-indent:-9000px;
+	float:right;
+	display:inline-block;
+}
+
+
+#kmaps-search .advanced-link{ padding-top:5px;margin:0;}
+#kmaps-search .advanced-link a{ 
+	display:inline; 
+	color:#428bca; 
+	float:right; 
+	font-family: Times, serif; 
+	height:15px; 
+	margin:0 20px 5px 0;
+}
+#kmaps-search .advanced-link-view{
+	padding:0 0 30px 15px;
+}
+
+
+
+
+/*---- START tabs -----*/
+#view-section{ margin:7px 0 7px 7px;}
+#view-section .tab-content{
+	background-color:#f0f0f0;
+	padding:10px 10px 40px;
+	border-left: 1px solid #ddd;
+}
+#view-section .nav-tabs>li{
+	width:50%;
+	font-size:1.12em;
+}
+#view-section .nav-tabs>li>a{
+	display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#view-section li.treetab a:before{
+	content: "\f0e8";
+	margin-right:4px;
+}
+#view-section li.listtab a:before{
+	content: "\f0ca";
+	margin-right:4px;
+}
+
+#view-section .nav-tabs>li>a{
+	margin-right: 0px;
+	line-height: 1.428571429;
+	border-radius: 0;
+	font-weight:bold;
+}
+#view-section .nav>li>a{
+	display:block;
+	text-align:center;
+}
+#view-section .nav-tabs>li>a:hover, 
+#view-section .nav-tabs>li>a:focus{
+	background-color:#fff;
+	text-decoration:underline;
+}
+#view-section .nav-tabs>li.active>a, 
+#view-section .nav-tabs>li.active>a:hover, 
+#view-section .nav-tabs>li.active>a:focus{
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	background-color:#f0f0f0;
+	text-decoration:none;
+}
+
+
+
+/*---- list view ----*/
+
+#view-section table.table-results{ border:none; font-size:90%; margin-bottom:0;}
+#view-section table.table-results a{ font-style:italic;}
+
+/*---- tree view ----*/
+
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size:1em; line-height:1.12em;}
+#view-section span.fancytree-icon{ display:none !important; margin:0 !important; width:0 !important; height:0 !important;}
+#view-section ul.fancytree-container .glyphicon{ color:#555; font-family: 'Glyphicons Halflings'; font-size:.75em; line-height:1.12em; padding-right:10px;}
+
+#view-section span.fancytree-node.fancytree-active .glyphicon{ color:#f00;}
+#view-section span.fancytree-expander{ width:0; height:0;}
+#view-section span.fancytree-node.fancytree-active{ background-color:#fff !important; border:none;}
+#view-section span.fancytree-node{ border:none;}
+#view-section span.fancytree-title{ color:#333;}
+
+/*---- END tabs -----*/
 
 
 
@@ -437,12 +694,9 @@ body > .navbar {
 
 
 
-
-
-
-
-
-
+/*------ left column resources -------*/
+.main-content .nav-pills li.active a{ border-radius:0px !important;}
+.main-content .content-sidebar li a i{ margin-right:2px;}
 
 
 
