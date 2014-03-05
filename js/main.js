@@ -44,7 +44,8 @@ jQuery(function($) {
 				}
 			},
 			// source: {url: "src/json/ajax-tree-plain.json", debugDelay: 1000},
-			source: {url: "src/json/ajax-tree-products.json", debugDelay: 1000},
+            // source: {url: "src/json/ajax-tree-products.json", debugDelay: 1000},
+            source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
