@@ -152,6 +152,8 @@ body > .navbar {
   background-color: inherit;
   font-size: smaller;
   font-family: 'Droid Serif', serif;
+  margin:0;
+  padding:10px 0 5px 35px;
 }
 
 .titlearea .breadcrumb .tag-before-breadcrumb {
@@ -234,11 +236,14 @@ body > .navbar {
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;
-  border-right: 1px solid rgb(213, 213, 213);
+  border-right: 1px solid #eee;
 }
+
+.main-content .content-sidebar li a i{ margin-right:3px;}
 
 .main-content .nav-pills li {
   margin-right: -1px;
+  margin-top:0;
 }
 
 .main-content .nav-pills li a,
@@ -246,26 +251,32 @@ body > .navbar {
   color: #707070;
   padding-left: 155px;
   border-radius: inherit;
+  border-top: 1px solid #eee;
+	margin-top:0px;	
 }
 .main-content .nav-pills li a:hover{
 	color: #222;
+	border-top-color:#ddd;
 }
 
 .main-content .nav-pills li.active a {
-  background-color: rgb(241, 242, 242);
+  background-color: #f0f0f0;
   border-left: 10px solid #DC3C47;
+  border-top-color:#ddd;
   color: #333;
   padding-left: 145px;
-  border-top: 1px solid rgb(213, 213, 213);
-  border-bottom: 1px solid rgb(213, 213, 213);
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-right-color: transparent;
+  border-right-color: #f0f0f0;
 }
-
 .main-content .nav-pills li:first-child a {
   border-top: none;
 }
+.main-content .nav-pills li.active a:focus{
+    outline: 0 !important;
+		outline: -2px auto -webkit-focus-ring-color !important;
+}
+
+
+
 
 .content-page {
   background-color: rgb(241, 242, 242);
@@ -408,6 +419,10 @@ body > .navbar {
 
 
 
+
+
+
+
 /*************************************************/
 /********* SEARCH * Styles ********/
 /*************************************************/
@@ -482,11 +497,10 @@ body > .navbar {
 
 
 
-/*---- #kmaps-search wrapper ---------*/
-/*---- mbExtruder js targets this ID ---- */
-
+/*---- sliding panel wrapper ---------*/
+/*---- mbExtruder targets #kmaps-search ---- */
 #kmaps-search{ 
-  margin-top:-70px;
+  margin-top:-60px;
   box-shadow:none;
   background-color:#fff;
 }
@@ -498,9 +512,9 @@ body > .navbar {
 	border:none;
 	width:100%;
 	padding:0;
-	-moz-box-shadow:0px 0px 8px 1px #aaa;
-	-webkit-box-shadow:0px 0px 8px 1px #aaa; 
-	box-shadow:0px 0px 8px 1px #aaa;
+	-moz-box-shadow:0px 0px 8px 1px #999;
+	-webkit-box-shadow:0px 0px 8px 1px #999; 
+	box-shadow:0px 0px 5px 0px #999;
 }
 /* ------ search button icon ------ */
 .extruder.right .flap{ 
@@ -522,12 +536,12 @@ body > .navbar {
 .extruder.right .flap.on-flap{
 	margin:0px 0px 0px -25px;
 	width:35px;
-	-moz-box-shadow:-2px 0px 2px 0px #999;
-	-webkit-box-shadow:-2px 0px 2px 0px #999; 
-	box-shadow:-2px 0px 2px 0px #999;
+	-moz-box-shadow:-2px 0px 2px 0px #5b191e;
+	-webkit-box-shadow:-2px 0px 2px 0px #5b191e; 
+	box-shadow:-2px 0px 2px 0px #942830;
 }
 
-.extruder.right .flap span.flapLabel{
+.extruder.right .flap span.flapLabel{ 
   background-color:#505050;  
   height:36px;
   display:block; 
@@ -563,7 +577,7 @@ object.flip_label{
 	margin: 0 0 0 3%; 
 	width:93%;
 }
-/*---- adnvanced search toggle ------*/
+/*---- advanced search toggle ------*/
 #kmaps-search h3{
 	color:#f5f5f5;
 	background-color: #505050;
@@ -621,7 +635,7 @@ object.flip_label{
 #view-section{ margin:7px 0 7px 7px;}
 #view-section .tab-content{
 	background-color:#f0f0f0;
-	padding:10px 10px 40px;
+	padding:10px 10px 40px 5px;
 	border-left: 1px solid #ddd;
 }
 #view-section .nav-tabs>li{
@@ -630,7 +644,7 @@ object.flip_label{
 }
 #view-section .nav-tabs>li>a{
 	display: inline-block;
-  font-family: FontAwesome;
+  
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -639,11 +653,13 @@ object.flip_label{
 }
 #view-section li.treetab a:before{
 	content: "\f0e8";
-	margin-right:4px;
+	margin-right:6px;
+	font-family: FontAwesome;
 }
 #view-section li.listtab a:before{
 	content: "\f0ca";
-	margin-right:4px;
+	margin-right:6px;
+	font-family: FontAwesome;
 }
 
 #view-section .nav-tabs>li>a{
@@ -677,15 +693,39 @@ object.flip_label{
 
 /*---- tree view ----*/
 
-#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.18em;}
-#view-section span.fancytree-icon{ display:none !important; margin:0 !important; width:0 !important; height: 0 !important;}
-#view-section ul.fancytree-container .glyphicon{ color:#555; font-family: 'Glyphicons Halflings'; font-size: 0.62em; line-height:1.5em; padding-right:10px;}
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em;}
 
-#view-section span.fancytree-node.fancytree-active .glyphicon{ color:#f00;}
-#view-section span.fancytree-expander{ width:0; height:0;}
+#view-section span.fancytree-icon{ display:none; margin:0; width:20px; height:0; line-height:0;}
+
+
+#view-section ul.fancytree-container .glyphicon{ color:#808080; font-family: 'Glyphicons Halflings'; font-size: 0.93em; line-height:1em; margin-right:12px;}
+
+#view-section span.fancytree-node.fancytree-active .glyphicon{ color:#e00;}
+#view-section span.fancytree-expander{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:#fff !important; border:none;}
 #view-section span.fancytree-node{ border:none;}
-#view-section span.fancytree-title{ color:#333;}
+
+#view-section span.fancytree-title{ color:#333; margin-left:-15px; }
+#view-section span.fancytree-title:before{ 
+	color:#444;
+	font-family: 'kmaps-icons';
+	font-size: 0.75em; 
+	line-height:1em;
+	content: "\e600";
+	padding-left:0px;
+	margin-right:1px;
+}
+
+
+
+#view-section .fancytree-has-children span.fancytree-title{ padding-left:9px;}
+#view-section .fancytree-has-children span.fancytree-title:before{ content:none;}
+
+
+ul.fancytree-container ul{ margin-top:0 !important;margin-bottom:5px;padding-top:0 !important;}
+
+
+
 
 /*---- END tabs -----*/
 /*---- END Search -----*/
@@ -693,13 +733,6 @@ object.flip_label{
 
 
 
-
-
-
-
-/*------ left column resources -------*/
-.main-content .nav-pills li.active a{ border-radius:0px !important;}
-.main-content .content-sidebar li a i{ margin-right:2px;}
 
 
 
