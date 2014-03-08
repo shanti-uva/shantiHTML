@@ -1,22 +1,27 @@
 
-// *** SEARCH *** sliding search panel
+// *** SEARCH **************
 jQuery(function($) {
+  // --- search panel
   $("#kmaps-search").buildMbExtruder({
         positionFixed:false,
         position:"right",
         width:320,
         top:0
-    });
-});
-
-
-// *** SEARCH *** advanced search toggle
-jQuery(function($) {
-	$(".advanced-link").click(function() {
+  });
+  
+  // --- collections toggle
+  $("#toggle-collections, .closecollection").click(function() {
+    $("#opencollect").slideToggle('slow');
+  });
+  
+  // --- advanced search toggle
+  $(".advanced-link").click(function() {
 		$(".advanced-trigger").toggleClass("show-advanced", 200);
     $(".advanced-link-view").slideToggle('fast');
   });
+
 });
+
 
 
 // *** SEARCH *** manage sliding panel
@@ -43,9 +48,7 @@ jQuery(function($) {
 					// loading: "icon-spinner icon-spin"
 				}
 			},
-			// source: {url: "src/json/ajax-tree-plain.json", debugDelay: 1000},
-            // source: {url: "src/json/ajax-tree-products.json", debugDelay: 1000},
-            source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
+      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
@@ -68,7 +71,7 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** create unique classes on tabs
+// *** SEARCH *** unique classes on tabs
 jQuery(function($) {
 	$("#search-tabs").find("li:eq(0)").addClass("treetab");
 	$("#search-tabs").find("li:eq(1)").addClass("listtab");

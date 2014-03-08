@@ -63,17 +63,19 @@ body > .navbar {
   background-color: rgba(57, 55, 63, 0.95);
   color: white;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 0px;
   font-family: 'Droid Sans', sans-serif;
   font-weight: 700;
 }
 
-.collections .closecollection a {
-  color: white;
+.collections .closecollection {
+  color: #aaa;
   font-size: 2em;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 20px;
+  cursor:pointer;
+  display:inline-block;
 }
 
 .collections .lightblue-bg {
@@ -137,15 +139,16 @@ body > .navbar {
 }
 
 .titlearea .page-title {
-  font-size: x-large;
   font-family: 'Droid Sans', sans-serif;
   font-weight: 400;
+  font-size:2em;
+  line-height:1em
 }
 
-.titlearea .page-title .fa {
-  padding: 2px 4px;
-  background-color: rgba(57, 55, 63, 0.20);
-  margin-left: -15px;
+.titlearea .page-title .icon {
+  line-height:1em;
+  margin-left:-15px;
+  background-color:#a52d34;
 }
 
 .titlearea .breadcrumb {
@@ -275,6 +278,11 @@ body > .navbar {
 		outline: -2px auto -webkit-focus-ring-color !important;
 }
 
+/*----- perhaps remove for accessability ----*/
+*:focus{
+    outline: 0 !important;
+		outline: -2px auto -webkit-focus-ring-color !important;
+}
 
 
 
@@ -373,10 +381,26 @@ body > .navbar {
     width: inherit;
   }
 
-  .navbar-header .navbar-brand {
-    padding: 10px 15px 0 15px;
+  .navbar h1 {
+    max-width:570px; display:inline; float:left; font-style:italic; font-size:1em; line-height: 1em; margin:10px 0 0; padding:0 0 0 20px; font-family: 'Droid Serif', serif;  
   }
-
+  .navbar h1 a.navbar-brand{
+    display:inline;
+    padding:0;
+    margin:0;
+    float:left;
+    /*padding:0 0 0 180px; 
+    background: url(../images/shanti_logo.png); 
+    background-repeat: no-repeat;
+    background-position: bottom left; 
+    background-size: 180px auto;*/
+  }
+  .navbar h1 a.navbar-brand{ font-size:1.06em; line-height: 1.12em; font-family: 'Droid Serif', serif; }
+  .navbar h1 a.navbar-brand img { max-width: 27% !important; margin-right:20px; }
+  .navbar h1 a.navbar-brand span{ position:relative; top:4px;}
+  
+    
+  
   .nav.navbar-right {
     width: inherit;
   }
@@ -619,7 +643,8 @@ object.flip_label{
 	content: "\f068";
 }
 #kmaps-search .advanced-link-view{
-	padding:0 0 30px 15px;
+	padding:0 0 5px 15px;
+	background-color:#f0f0f0;
 }
 
 
@@ -628,9 +653,11 @@ object.flip_label{
 #view-section{ margin:7px 0 7px 7px;}
 #view-section .tab-content{
 	background-color:#f0f0f0;
-	padding:10px 10px 40px 5px;
+	padding:0;
 	border-left: 1px solid #ddd;
 }
+#view-section .tab-content .tab-pane{ padding-bottom:30px;}
+#view-section .tab-content .tab-pane#treeview{ padding-bottom:5px;}
 #view-section .nav-tabs>li{
 	width:50%;
 	font-size:1.12em;
@@ -644,6 +671,7 @@ object.flip_label{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#view-section li.treetab  .tab-content{ padding-bottom:0px;}
 #view-section li.treetab a:before{
 	content: "\f0e8";
 	margin-right:6px;
@@ -686,7 +714,7 @@ object.flip_label{
 
 /*---- tree view ----*/
 
-#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em; max-height:600px;}
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em; max-height:600px; min-height:250px}
 #view-section ul.fancytree-container ul{ padding-top:1px;}
 #view-section span.fancytree-icon{ display:none; margin:0; width:20px; height:0; line-height:0;}
 
@@ -720,7 +748,7 @@ object.flip_label{
 
 
 
-
+.navtop ul li{ border-left: 1px solid #E7E7E7;}
 
 
 
