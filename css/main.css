@@ -687,7 +687,7 @@ object.flip_label{
 /*---- tree view ----*/
 
 #view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em; max-height:600px;}
-
+#view-section ul.fancytree-container ul{ padding-top:1px;}
 #view-section span.fancytree-icon{ display:none; margin:0; width:20px; height:0; line-height:0;}
 
 
@@ -715,7 +715,7 @@ object.flip_label{
 #view-section .fancytree-has-children span.fancytree-title:before{ content:none;}
 
 
-ul.fancytree-container ul{ margin-top:0 !important;margin-bottom:5px;padding-top:0 !important;}
+/*ul.fancytree-container ul{ margin-top:0 !important;margin-bottom:5px;padding-top:0 !important;}*/
 
 
 
