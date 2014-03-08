@@ -456,9 +456,7 @@ body > .navbar {
 .extruder.right .panel-default>.panel-heading{
 	border:none;
 }
-
-
-/* ------ search panels ------ */
+/* ------ bootstrap style fix ------ */
 #kmaps-search .panel-group{
   border:none;
   width:100%;
@@ -471,7 +469,6 @@ body > .navbar {
   border-radius:0px; 
   width:100%; 
 }
-
 #kmaps-search .panel-group .panel+.panel{ margin-top:0;}
 #kmaps-search .panel-group .panel{ 
   border:none;
@@ -493,11 +490,7 @@ body > .navbar {
 }
 
 
-
-
-
-
-/*---- sliding panel wrapper ---------*/
+/*---- SEARCH sliding panel wrapper ---------*/
 /*---- mbExtruder targets #kmaps-search ---- */
 #kmaps-search{ 
   margin-top:-60px;
@@ -693,7 +686,7 @@ object.flip_label{
 
 /*---- tree view ----*/
 
-#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em;}
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em; max-height:600px;}
 
 #view-section span.fancytree-icon{ display:none; margin:0; width:20px; height:0; line-height:0;}
 
