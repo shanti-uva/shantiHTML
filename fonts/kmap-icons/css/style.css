@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'kmaps-icons';
-	src:url('fonts/kmaps-icons.eot?-hww24o');
-	src:url('fonts/kmaps-icons.eot?#iefix-hww24o') format('embedded-opentype'),
-		url('fonts/kmaps-icons.woff?-hww24o') format('woff'),
-		url('fonts/kmaps-icons.ttf?-hww24o') format('truetype'),
-		url('fonts/kmaps-icons.svg?-hww24o#kmaps-icons') format('svg');
+	src:url('fonts/kmaps-icons.eot?idqg1e');
+	src:url('fonts/kmaps-icons.eot?#iefixidqg1e') format('embedded-opentype'),
+		url('fonts/kmaps-icons.woff?idqg1e') format('woff'),
+		url('fonts/kmaps-icons.ttf?idqg1e') format('truetype'),
+		url('fonts/kmaps-icons.svg?idqg1e#kmaps-icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,84 +23,102 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-plus-circle:before {
+.km-visuals:before {
 	content: "\e600";
 }
-.icon-sort-arrows:before {
+.km-texts:before {
 	content: "\e601";
 }
-.icon-down-arrow:before {
+.km-terms:before {
 	content: "\e602";
 }
-.icon-tree-view:before {
+.km-subjects:before {
 	content: "\e603";
 }
-.icon-plus-square:before {
+.km-sources:before {
 	content: "\e604";
 }
-.icon-arrow-circle:before {
+.km-places:before {
 	content: "\e605";
 }
-.icon-arrow-circle-down:before {
+.km-photos:before {
 	content: "\e606";
 }
-.icon-minus-square:before {
+.km-overview:before {
 	content: "\e607";
 }
-.icon-minus-square-line:before {
+.km-maps:before {
 	content: "\e608";
 }
-.icon-plus-square-line:before {
+.km-events:before {
 	content: "\e609";
 }
-.icon-minus-circle:before {
+.km-essays:before {
 	content: "\e60a";
 }
-.icon-visuals:before {
+.km-directions:before {
 	content: "\e60b";
 }
-.icon-texts:before {
+.km-community:before {
 	content: "\e60c";
 }
-.icon-terms:before {
+.km-cancel-circle:before {
 	content: "\e60d";
 }
-.icon-subjects:before {
+.km-audiovideo:before {
 	content: "\e60e";
 }
-.icon-arrowselect:before {
+.km-arrowselect:before {
 	content: "\e60f";
 }
-.icon-sources:before {
+.km-arrow-right:before {
 	content: "\e610";
 }
-.icon-places:before {
+.km-agents:before {
 	content: "\e611";
 }
-.icon-photos:before {
+.km-books:before {
 	content: "\e612";
 }
-.icon-overview:before {
+.km-check-circle:before {
 	content: "\e613";
 }
-.icon-maps:before {
+.km-checkmark-empty:before {
 	content: "\e614";
 }
-.icon-events:before {
+.km-checkmark:before {
 	content: "\e615";
 }
-.icon-essays:before {
+.km-dot:before {
 	content: "\e616";
 }
-.icon-directions:before {
+.km-downarrow:before {
 	content: "\e617";
 }
-.icon-community:before {
+.km-info:before {
 	content: "\e618";
 }
-.icon-audiovideo:before {
+.km-list:before {
 	content: "\e619";
 }
-.icon-agents:before {
+.km-list2:before {
 	content: "\e61a";
+}
+.km-menu:before {
+	content: "\e61b";
+}
+.km-minus:before {
+	content: "\e61c";
+}
+.km-mulitply:before {
+	content: "\e61d";
+}
+.km-plus:before {
+	content: "\e61e";
+}
+.km-search:before {
+	content: "\e61f";
+}
+.km-tree:before {
+	content: "\e620";
 }

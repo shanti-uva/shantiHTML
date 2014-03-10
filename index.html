@@ -25,20 +25,51 @@
   <![endif]-->
   <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>        
-        <h1><a href="#" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo" /><span>Scholarly Collections at the University of Virginia</span></a></h1>
+        <h1><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo" />
+        		<span>Scholarly Collections at the University of Virginia</span></a></h1>
       </div>
       
-      <div class="navbar-collapse collapse pull-right navtop">
+      <div class="navbar-collapse collapse pull-right" id="navtop">
         <ul class="nav navbar-nav pull-left">
           <li><a href="#" id="toggle-collections">EXPLORE<i class="icon km-lg km-2x km-directions"></i></a></li>
-          <li><a href="#">LOGIN<i class="icon km-lg km-2x"></i></a></li>
-          <li><a href="#">ENG<i class="icon km-lg km-2x km-arrowselect"></i></a></li>
+          <li><a href="">Login<i class="icon km-lg km-2x"></i></a></li>
+          <li class="dropdown tools">
+          		<a href="" class="dropdown-toggle" data-toggle="dropdown">Tools<i class="icon km-lg km-2x km-arrowselect"></i></a>
+          		<ul class="dropdown-menu pull-left dropdown-features">
+
+                <li class="tool-title">Perspective</li>
+                  <li class="selected"><a href="">General</a></li>
+                  <li class="last"><a href="">Other</a></li>
+                  
+                <li class="tool-title">Subject Language</li>
+                  <li><a href="">Chinese Characters (simplified)</a></li>
+                  <li><a href="">Devangiri Script</a></li>
+                  <li class="selected"><a href="">Popular Standard (simplified)</a></li>
+                  <li><a href="">Scholarly Standard (simplified)</a></li>
+                  <li><a href="">Tibetan Script (simplified)</a></li>
+                  <li class="last"><a href="">Tibetan Script (simplified)</a></li>
+                
+                <li class="tool-title">Show Subject Details</li>		                    
+                  <li class="selected"><a href="">Yes</a></li>
+                  <li class="last"><a href="">No</a></li>
+
+          	</ul>	
+          </li>
+          <li class="dropdown lang">
+          		<a href="" class="dropdown-toggle" data-toggle="dropdown">Eng<i class="icon km-lg km-2x km-arrowselect"></i></a>
+          		<ul class="dropdown-menu pull-left dropdown-features">
+                    <li><a href="">Tibetan</a></li>
+                    <li><a href="">Chinese</a></li>
+                    <li class="selected"><a href="">English</a></li>
+                    <li class="last"><a href="">French</a></li>
+              </ul>
+          </li>
         </ul>
       </div>
   </div><!-- END navbar top --> 
@@ -51,37 +82,37 @@
           <div class="row-fluid four-collections">
             <div class="col-sm-2">
               <ul class="km-ul">
-                <li><a href="#"><i class="icon km-li km-2x km-subjects"></i>Subjects</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-places"></i>Places</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-agents"></i>Agents</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-events"></i>Events</a></li>
+                <li><a href="#"><i class="icon km-2x km-subjects"></i>Subjects</a></li>
+                <li><a href="#"><i class="icon km-2x km-places"></i>Places</a></li>
+                <li><a href="#"><i class="icon km-2x km-agents"></i>Agents</a></li>
+                <li><a href="#"><i class="icon km-2x km-events"></i>Events</a></li>
               </ul>
             </div>
             <div class="col-sm-2">
               <ul class="km-ul">
-                <li><a href="#"><i class="icon km-li km-2x km-photos"></i>Photos</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-audiovideo"></i>Audio-Video</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-visuals"></i>Visuals</a></li>
+                <li><a href="#"><i class="icon km-2x km-photos"></i>Photos</a></li>
+                <li><a href="#"><i class="icon km-2x km-audiovideo"></i>Audio-Video</a></li>
+                <li><a href="#"><i class="icon km-2x km-visuals"></i>Visuals</a></li>
               </ul>
             </div>
             <div class="col-sm-2">
               <ul class="km-ul">
-                <li><a href="#"><i class="icon km-li km-2x km-essays"></i>Essays</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-texts"></i>Texts</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-maps"></i>Maps</a></li>
+                <li><a href="#"><i class="icon km-2x km-essays"></i>Essays</a></li>
+                <li><a href="#"><i class="icon km-2x km-texts"></i>Texts</a></li>
+                <li><a href="#"><i class="icon km-2x km-maps"></i>Maps</a></li>
               </ul>
             </div>
             <div class="col-sm-2">
               <ul class="km-ul last">
-                <li><a href="#"><i class="icon km-li km-2x km-community"></i>Community</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-terms"></i>Terms</a></li>
-                <li><a href="#"><i class="icon km-li km-2x km-sources"></i>Sources</a></li>
+                <li><a href="#"><i class="icon km-2x km-community"></i>Community</a></li>
+                <li><a href="#"><i class="icon km-2x km-terms"></i>Terms</a></li>
+                <li><a href="#"><i class="icon km-2x km-sources"></i>Sources</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="closecollection">
-          <i class="fa fa-times-circle"></i>
+          <i class="icon km-close"></i>
         </div>
       </div>
     </div>
