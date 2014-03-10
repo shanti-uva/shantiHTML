@@ -90,9 +90,9 @@ jQuery(function($) {
 });
 
 
-
-
-
+jQuery(function($) {
+	$("h3.search-header").css('display','block');
+});
 
 
 
