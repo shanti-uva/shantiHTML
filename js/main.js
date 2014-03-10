@@ -22,7 +22,7 @@ jQuery(function($) {
 // *** SEARCH *** manages sliding panel (and aspects of search button)
 jQuery(function($) {
 		$("#tree").fancytree({
-			extensions: ["glyph"],
+			extensions: ["glyph","filter"],
 			checkbox: false,
 			selectMode: 2,
 			closeOnExternalClick:false,
@@ -69,14 +69,34 @@ jQuery(function($) {
 			$(".flap").addClass("off-flap");
 			$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
 		}
-});		
-
+});
 
 // control the search icon button, changes the button appearance when open/closed 
 jQuery(function($) {
 		$(".flap, #closeSearch").click( function(){
 						$(".off-flap").toggleClass("on-flap", 200);
 						$("h3.off").toggleClass("on", 200);
+
+            var tree = $("#tree").fancytree("getTree");
+
+            jQuery("input#search").keyup(function(e){
+                var match = $(this).val();
+                if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
+                    jQuery("button#btnResetSearch").click();
+                    return;
+                }
+                // Pass text as col string (will be matched as substring in the node title)
+                var n = tree.applyFilter(match);
+                jQuery("button#btnResetSearch").attr("disabled", false);
+                jQuery("span#matches").text("(" + n + " matches)");
+            }).focus();
+
+            jQuery("input#hideMode").change(function(e){
+                tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
+                tree.clearFilter();
+                jQuery("input#search").keyup();
+//      tree.render();
+            });
 		});
 });
 

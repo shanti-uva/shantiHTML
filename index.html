@@ -287,7 +287,7 @@
 										<legend style="display:none;">Collections Search Form</legend>									
 																					
 								  <div class="search-form-view form-group">
-											<textarea class="form-control" rows="3" placeholder="Enter search terms..."></textarea>												  																			
+											<input id="search" name="search" class="form-control" rows="3" placeholder="Enter search terms..."></input>
 											<div class="search-utils">
 													<button class="btn btn-primary btn-med" type="submit" style="margin:2px 0 10px 10px">Submit Search</button>
 													<a href="#" class="advanced-link advanced-trigger" title="show and hide advanced search options"><i class="fa"></i>Advanced Options</a>
@@ -334,7 +334,8 @@
 									<div class="tab-content">
 									  
 									  <!-- TAB - tree view -->
-									  <div id="treeview" class="tab-pane active">	  		
+									  <div id="treeview" class="tab-pane active">
+                                          <label><input type="checkbox" name="hideMode" id="hideMode" value="6"></input> Hide unmatched items </label>
 									  		<div id="tree"></div>									  
 									  </div>
 									  
@@ -411,8 +412,10 @@
   <script type="text/javascript" src="js/inc/mbExtruder.js"></script> 
 	<!-- fancy tree resources -->
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script>
-	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
-	<!-- kmaps -->
+	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>
+    <script type="text/javascript" src="src/jquery.fancytree.filter.js"></script>
+
+  <!-- kmaps -->
   <script type="text/javascript" src="js/main.js"></script> 
   
 </body>
