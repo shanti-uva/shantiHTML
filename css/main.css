@@ -279,7 +279,7 @@ body {
 }
 
 .main-content {
-  color: #777777;
+  color: #333;
 }
 
 .main-content .content-sidebar {
@@ -316,12 +316,12 @@ body {
 }
 
 .main-content .nav-pills li.active a {
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   border-left: 10px solid #DC3C47;
   border-top-color:#ddd;
   color: #333;
   padding-left: 145px;
-  border-right-color: #f0f0f0;
+  border-right-color: transparent;
 }
 .main-content .nav-pills li:first-child a {
   border-top: none;
@@ -339,7 +339,7 @@ body {
 
 
 .content-page {
-  background-color: rgb(241, 242, 242);
+  background-color: #f5f5f5;
   padding: 15px;
   font-family: 'Droid Serif', serif;
 }
@@ -463,13 +463,10 @@ body {
   margin-top:-60px;
   box-shadow:none;
   background-color:#fff;
-  position:absolute;
-  z-index:10;
 }
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ 
-  position:absolute;
-  z-index:10;	
+	
 }
 #kmaps-search .ext_wrapper{ height:auto;}
 .extruder{ }
