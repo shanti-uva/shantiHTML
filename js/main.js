@@ -79,3 +79,24 @@ jQuery(function($) {
 
 
 
+jQuery(function($) {
+	$(".dropdown-menu li").find("a").hover( function () {
+	    $(this).addClass('on');
+	    },                 
+	      function () {              
+	    $(this).removeClass('on');
+	    }
+	);
+});
+
+
+
+
+
+
+
+
+
+
+
+
