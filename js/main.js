@@ -90,9 +90,26 @@ jQuery(function($) {
 });
 
 
+// *** SEARCH *** helps control flash when loading
 jQuery(function($) {
 	$("h3.search-header").css('display','block');
 });
+
+// *** SEARCH *** trying to override the automatic z-index from search panel script for dropdown menus above
+jQuery(function($) {
+	$(".extruder.right").css('z-index','10');
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

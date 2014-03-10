@@ -265,7 +265,9 @@ if (!jQuery.browser) {
       extruder.addClass("isOpened");
       if(!isIE) extruder.css("opacity",1);
       var position= opt.position;
-      extruder.mb_bringToFront();
+      
+      // extruder.mb_bringToFront(); *************************************** override for z-index of dropdowns above
+      
       if (position=="top" || position=="bottom"){
         extruder.find('.extruder-content').slideDown( opt.slideTimer);
         if(opt.onExtOpen) opt.onExtOpen();
