@@ -488,7 +488,7 @@ a.list-group-item.active>.badge,
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ 
 	position:absolute;
-	z-index:10;
+	z-index:1;
 }
 #kmaps-search .ext_wrapper{ height:auto;}
 .extruder{ }
@@ -512,7 +512,7 @@ a.list-group-item.active>.badge,
   position:absolute;
   left:0px;
   top:0px;
-  z-index:10;
+  z-index:1;
   padding: 8px 0 8px 8px;
   border-top-left-radius:50px;
   border-bottom-left-radius:50px;
