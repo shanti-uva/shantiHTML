@@ -363,7 +363,7 @@ a.list-group-item.active>.badge,
 }
 
 .content-page a {
-  color: rgb(90, 101, 209);
+  color: #428bca;
 }
 
 .content-page iframe {
@@ -487,6 +487,8 @@ a.list-group-item.active>.badge,
 }
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ 
+	position:absolute;
+	z-index:10;
 }
 #kmaps-search .ext_wrapper{ height:auto;}
 .extruder{ }
@@ -510,6 +512,7 @@ a.list-group-item.active>.badge,
   position:absolute;
   left:0px;
   top:0px;
+  z-index:10;
   padding: 8px 0 8px 8px;
   border-top-left-radius:50px;
   border-bottom-left-radius:50px;
@@ -646,7 +649,7 @@ object.flip_label{
 	font-family: 'FontAwesome';
 }
 
-#view-section #listview div{ padding:5px 10px;}
+#view-section #listview > div{ padding:5px 10px;}
 #view-section li.listtab a::before{
 	content: '\f0ca';
 	margin-right:6px;
@@ -678,7 +681,10 @@ object.flip_label{
 
 /*---- list view ----*/
 
-#view-section table.table-results{ border:none; font-size:90%; margin-bottom:0;}
+#listview > div { max-height:600px !important; min-height:250px !important;}
+#view-section div.table-responsive{ }
+
+#view-section table.table-results{ border:none; font-size:1.12em; margin-bottom:0; font-family:'droid-serif', serif;}
 #view-section table.table-results a{ font-style:italic;}
 
 .table tbody>tr>td{ line-height:1em; vertical-align:middle;}
@@ -688,7 +694,7 @@ object.flip_label{
 
 /*---- tree view ----*/
 
-#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.32em; max-height:600px !important; min-height:250px !important;}
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1.12em; line-height: 1.32em; max-height:600px !important; min-height:250px !important; font-family: 'droid-serif', serif; }
 #view-section ul.fancytree-container ul{ padding-top:1px;}
 #view-section span.fancytree-icon{ display:none; margin:0; width:20px; height:0; line-height:0;}
 
@@ -706,9 +712,9 @@ object.flip_label{
 	font-size: 0.75em; 
 	line-height:1em;
 	content: '\e600';
-	margin-right:7px;
+	margin-right:10px;
 }
-#view-section .fancytree-has-children span.fancytree-title{ padding-left:9px; margin-left:-15px;}
+#view-section .fancytree-has-children span.fancytree-title{ padding-left:10px; margin-left:-15px;}
 #view-section .fancytree-has-children span.fancytree-title::before{ content:none;}
 
 #view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 0.93em; line-height:1em; margin-right:12px;}
