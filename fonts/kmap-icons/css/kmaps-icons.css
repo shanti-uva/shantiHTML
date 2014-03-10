@@ -1,15 +1,16 @@
 @font-face {
-	font-family: 'kmaps-icons';
-	src:url('../fonts/kmaps-icons.eot?-6mtuc3');
-	src:url('../fonts/kmaps-icons.eot?#iefix-6mtuc3') format('embedded-opentype'),
-		url('../fonts/kmaps-icons.woff?-6mtuc3') format('woff'),
-		url('../fonts/kmaps-icons.ttf?-6mtuc3') format('truetype'),
-		url('../fonts/kmaps-icons.svg?-6mtuc3#kmaps-icons') format('svg');
+	font-family: 'uva-kmaps';
+	src:url('../fonts/uva-kmaps.eot?-6mtuc3');
+	src:url('../fonts/uva-kmaps.eot?#iefix-6mtuc3') format('embedded-opentype'),
+		url('../fonts/uva-kmaps.woff?-6mtuc3') format('woff'),
+		url('../fonts/uva-kmaps.ttf?-6mtuc3') format('truetype'),
+		url('../fonts/uva-kmaps.svg?-6mtuc3#uva-kmaps') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
+
 .icon {
-	font-family: 'kmaps-icons';
+	font-family: 'uva-kmaps';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -23,7 +24,7 @@
 }
 
 
-/*--- increases the font 33% larger relative to the icon container ---*/
+/* makes the font 33% larger relative to the icon container */
 .km-lg {
   font-size: 1.3333333333333333em;
   line-height: 0.75em;
@@ -74,10 +75,10 @@
 .pull-left {
   float: left;
 }
-.icon.pull-left {
+.km.pull-left {
   margin-right: .3em;
 }
-.icon.pull-right {
+.km.pull-right {
   margin-left: .3em;
 }
 .km-spin {
@@ -88,105 +89,55 @@
 }
 
 
+.icon-overview:before {
+	content: "\e104";
+}
+.icon-essays:before {
+	content: "\e10b";
+}
+.icon-subjects:before {
+	content: "\e108";
+}
+.icon-places:before {
+	content: "\e106";
+}
+.icon-agents:before {
+	content: "\e100";
+}
+.icon-events:before {
+	content: "\e102";
+}
+.icon-photos:before {
+	content: "\e105";
+}
+.icon-audiovideo:before {
+	content: "\e101";
+}
+.icon-visuals:before {
+	content: "\e10c";
+}
+.icon-texts:before {
+	content: "\e10a";
+}
+.icon-maps:before {
+	content: "\e103";
+}
+.icon-community:before {
+	content: "\e10d";
+}
+.icon-terms:before {
+	content: "\e109";
+}
+.icon-sources:before {
+	content: "\e107";
+}
 
-/*---- kmaps icon font set -----*/
 
-.km-visuals:before {
-	content: "\e600";
+
+.icon-arrowselect:before {
+	content: "\e10e";
 }
-.km-texts:before {
-	content: "\e601";
+.icon-directions:before {
+	content: "\e10f";
 }
-.km-terms:before {
-	content: "\e602";
-}
-.km-subjects:before {
-	content: "\e603";
-}
-.km-sources:before {
-	content: "\e604";
-}
-.km-places:before {
-	content: "\e605";
-}
-.km-photos:before {
-	content: "\e606";
-}
-.km-overview:before {
-	content: "\e607";
-}
-.km-maps:before {
-	content: "\e608";
-}
-.km-events:before {
-	content: "\e609";
-}
-.km-essays:before {
-	content: "\e60a";
-}
-.km-directions:before {
-	content: "\e60b";
-}
-.km-community:before {
-	content: "\e60c";
-}
-.km-cancel-circle:before {
-	content: "\e60d";
-}
-.km-audiovideo:before {
-	content: "\e60e";
-}
-.km-arrowselect:before {
-	content: "\e60f";
-}
-.km-arrow-right:before {
-	content: "\e610";
-}
-.km-agents:before {
-	content: "\e611";
-}
-.km-books:before {
-	content: "\e612";
-}
-.km-check-circle:before {
-	content: "\e613";
-}
-.km-checkmark-empty:before {
-	content: "\e614";
-}
-.km-checkmark:before {
-	content: "\e615";
-}
-.km-dot:before {
-	content: "\e616";
-}
-.km-downarrow:before {
-	content: "\e617";
-}
-.km-info:before {
-	content: "\e618";
-}
-.km-list:before {
-	content: "\e619";
-}
-.km-list2:before {
-	content: "\e61a";
-}
-.km-menu:before {
-	content: "\e61b";
-}
-.km-minus:before {
-	content: "\e61c";
-}
-.km-mulitply:before {
-	content: "\e61d";
-}
-.km-plus:before {
-	content: "\e61e";
-}
-.km-search:before {
-	content: "\e61f";
-}
-.km-tree:before {
-	content: "\e620";
-}
+

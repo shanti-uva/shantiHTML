@@ -1,30 +1,25 @@
 
-// *** SEARCH **************
+// *** SEARCH *** sliding search panel
 jQuery(function($) {
-  // --- search panel
   $("#kmaps-search").buildMbExtruder({
         positionFixed:false,
         position:"right",
         width:320,
         top:0
-  });
-  
-  // --- collections toggle
-  $("#toggle-collections, .closecollection").click(function() {
-    $("#opencollect").slideToggle('slow');
-  });
-  
-  // --- advanced search toggle
-  $(".advanced-link").click(function() {
-		$(".advanced-trigger").toggleClass("show-advanced", 200);
-    $(".advanced-link-view").slideToggle('fast');
-  });
-
+    });
 });
 
 
+// *** SEARCH *** advanced search toggle
+jQuery(function($) {
+	$(".advanced-link").click(function() {
+		$(".advanced-trigger").toggleClass("show-advanced", 200);
+    $(".advanced-link-view").slideToggle('fast');
+  });
+});
 
-// *** SEARCH *** manage sliding panel
+
+// *** SEARCH *** manages sliding panel (and aspects of search button)
 jQuery(function($) {
 		$("#tree").fancytree({
 			extensions: ["glyph","filter"],
@@ -37,10 +32,10 @@ jQuery(function($) {
 					doc: "",
 					docOpen: "",
 					error: "glyphicon glyphicon-warning-sign",
-					expanderClosed: "glyphicon glyphicon-plus-sign",
-					expanderLazy: "glyphicon glyphicon-plus-sign",
+					expanderClosed: "glyphicon glyphicon-plus",
+					expanderLazy: "glyphicon glyphicon-plus",
 					// expanderLazy: "glyphicon glyphicon-expand",
-					expanderOpen: "glyphicon glyphicon-minus-sign",
+					expanderOpen: "glyphicon glyphicon-minus",
 					// expanderOpen: "glyphicon glyphicon-collapse-down",
 					folder: "",
 					folderOpen: "",
@@ -48,7 +43,9 @@ jQuery(function($) {
 					// loading: "icon-spinner icon-spin"
 				}
 			},
-      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
+			// source: {url: "src/json/ajax-tree-plain.json", debugDelay: 1000},
+            // source: {url: "src/json/ajax-tree-products.json", debugDelay: 1000},
+            source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
 			lazyload: function(event, ctx) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
@@ -57,13 +54,25 @@ jQuery(function($) {
 
 
 
-// *** SEARCH *** manage toggle button
+// jQuery(function($) {
+//	$('#search-tabs a').click(function (e) {
+//	  e.preventDefault()
+//	  $(this).tab('show')
+//	})
+// });
+
+
+
+// inserts search icon for sliding panel
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
 			$(".flap").addClass("off-flap");
 			$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
 		}
-		// --- toggle class for search button & header
+});
+
+// control the search icon button, changes the button appearance when open/closed 
+jQuery(function($) {
 		$(".flap, #closeSearch").click( function(){
 						$(".off-flap").toggleClass("on-flap", 200);
 						$("h3.off").toggleClass("on", 200);
@@ -92,28 +101,11 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** unique classes on tabs
+// unique classes for tabs, useful for icons etc
 jQuery(function($) {
 	$("#search-tabs").find("li:eq(0)").addClass("treetab");
 	$("#search-tabs").find("li:eq(1)").addClass("listtab");
 });
-
-
-
-jQuery(function($) {
-	$(".dropdown-menu li").find("a").hover( function () {
-	    $(this).addClass('on');
-	    },                 
-	      function () {              
-	    $(this).removeClass('on');
-	    }
-	);
-});
-
-
-
-
-
 
 
 
