@@ -358,7 +358,7 @@ a.list-group-item.active>.badge,
   background-color: #eee;    /*---- content background color -----*/
   padding: 15px;
   font-family: 'Droid Serif', serif;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .content-page h6 {
