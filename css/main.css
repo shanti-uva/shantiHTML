@@ -331,13 +331,14 @@ body {
 a.list-group-item.active>.badge, 
 .nav-pills>.active>a>.badge{
 	color:#fff;
-	background-color:#707070;
+	background:#606060;
 }
 .nav-pills>li>a>.badge{
-	line-height:9px;
+	background:#888;
+	line-height:7px;
 	margin-left:5px;
-	position:relative; top:-5px;
-	font-size:10px;
+	position:relative; top:-3px;
+	font-size:9px;
 	letter-spacing:0.06em;
 }
 
