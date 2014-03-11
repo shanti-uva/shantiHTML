@@ -10,8 +10,10 @@ jQuery(function($) {
   });
   
   // --- collections toggle
+  $("li.explore").addClass("closed");
   $("#toggle-collections, .closecollection").click(function() {
     $("#opencollect").slideToggle('slow');
+    $(".closed").toggleClass("open", 200);
   });
   
   // --- advanced search toggle

@@ -77,13 +77,12 @@ body {
 	border:none !important;
 }
 #navtop ul.dropdown-menu li { line-height:1.75em; height:1.75em;  margin:0; padding:0;}
-#navtop ul.dropdown-menu li.last{ margin-bottom:10px;}
 
 #navtop ul.dropdown-menu li.options-title{ font-size:1.25em; line-height: 2em; height:2em; background: #eee; padding:0 0 0 18px; margin:0; color:#555; font-family: 'Droid Sans', sans-serif;}
 #navtop ul.dropdown-menu li.options-title:first-child{ margin-top:0px;}
 
 #navtop ul.dropdown-menu>li>a{ padding: 0;}
-#navtop ul.dropdown-menu li a{ line-height:1.75em; padding:0 0 3px 15px !important;}
+#navtop ul.dropdown-menu li a{ line-height:1em; height:1.75em; padding:0 0 0 15px !important;}
 #navtop ul.dropdown-menu li a::before{ color:#ddd; font-size:1.5em; position:relative; top:6px; font-family:'kmaps-icons'; content:'\e614'; margin-right:5px;}
 #navtop ul.dropdown-menu li.select a::before{ color:#397fbb; content:'\e615';}
 
@@ -94,7 +93,7 @@ div.navbar.navbar-default.navbar-static-top{
 	
 }
 
-
+#navtop .nav>li>a{ }
 
 
 
@@ -667,14 +666,15 @@ object.flip_label{
 #view-section .tab-content .tab-pane#treeview{ padding-bottom:5px;}
 #view-section .nav-tabs>li{
 	width:50%;
-	font-size:1.12em;
+	font-size:1.25em;
+	letter-spacing:0.06em;
 }
 #view-section .nav-tabs>li>a{
 	display: inline-block;
   
   font-style: normal;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
