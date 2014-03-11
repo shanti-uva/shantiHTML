@@ -738,7 +738,7 @@ object.flip_label{
 #view-section span.fancytree-expander::before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:#fff !important; border:none;}
 
-#view-section span.fancytree-title{ color:#333; margin-left:-16px; }
+#view-section span.fancytree-title{ color:#333; margin-left:-17px; }
 #view-section span.fancytree-title:hover{ color:#111;}
 
 #view-section span.fancytree-title::before{ 
@@ -752,7 +752,7 @@ object.flip_label{
 #view-section .fancytree-has-children span.fancytree-title{ padding-left:10px; margin-left:-15px;}
 #view-section .fancytree-has-children span.fancytree-title::before{ content:none;}
 
-#view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 0.93em; line-height:1em; margin-right:12px;}
+#view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 0.93em; line-height:1em; margin-right:14px;}
 
 /*ul.fancytree-container ul{ margin-top:0 !important;margin-bottom:5px;padding-top:0 !important;}*/
 
