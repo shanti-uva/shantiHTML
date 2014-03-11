@@ -42,7 +42,7 @@ body {
 
 #navtop.navbar-collapse{ padding:0 !important;background-color:#fff !important;}
 
-.navbar-nav>li>a{ padding-bottom:10px; font-weight:600;}
+.navbar-nav>li>a{ color:#555; padding-bottom:10px; font-weight:600;}
 .navbar-nav>li.login{ margin-bottom:0px; padding-bottom:0;}
 .navbar-nav>li.login a{ position:relative; top:2px;}
 
@@ -197,6 +197,7 @@ div.navbar.navbar-default.navbar-static-top{
   color: white;
   background-color: #DC3C47;
   position: relative;
+  padding-top:10px;
 }
 
 .titlearea .page-title {
@@ -499,17 +500,20 @@ a.list-group-item.active>.badge,
   border:none; 
   text-shadow:none; 
   background-color:#fff;
-  color:#222;
+  color:#333;
   width:100% !important;
   padding:0;
   font-family: 'droid-serif', serif;
 }
 
 
+
+
+
 /*---- SEARCH sliding panel wrapper ---------*/
 /*---- mbExtruder targets #kmaps-search ---- */
 #kmaps-search{ 
-  margin-top:-60px;
+  margin-top:-67px; /*--- position location of sliding panel vertically, relative to content container ---*/
   box-shadow:none;
   background-color:#fff;
 }
@@ -584,6 +588,8 @@ object.flip_label{
 	width:93%;
 	font-size:1.18em;
 	color:#404040;
+	resize: none;
+	overflow: auto;
 }
 /*---- advanced search toggle ------*/
 #kmaps-search h3{
