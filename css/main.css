@@ -20,7 +20,7 @@ body {
 }
 .navbar-default{ background-color:#fff !important;}
 
-#navtop ul li{ border-left:1px solid #fff;}
+#navtop ul li{ border-left:1px solid #eee;}
 .navbar-header img {
   /* max-width: 30% !important; */
   height: auto;
