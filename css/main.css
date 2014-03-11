@@ -41,9 +41,11 @@ body {
 
 #navtop.navbar-collapse{ padding:0 !important;}
 
+.navbar-nav>li>a{ padding-bottom:10px;}
+
 .navbar ul.dropdown-menu { 
 	position:absolute;  
-	top:55px;
+	top:51px;
 	z-index:1000; 
 	margin:0;	
 	padding:0;
@@ -59,7 +61,6 @@ body {
 	left:-45px;
 	min-width:120px;
 }
-
 .navbar-nav>li>.dropdown-menu{
 	margin: 0px;
 	border-bottom-right-radius: 12px;
@@ -333,7 +334,11 @@ a.list-group-item.active>.badge,
 	background-color:#707070;
 }
 .nav-pills>li>a>.badge{
-	margin-left:10px;
+	line-height:9px;
+	margin-left:5px;
+	position:relative; top:-5px;
+	font-size:10px;
+	letter-spacing:0.06em;
 }
 
 
@@ -341,7 +346,8 @@ a.list-group-item.active>.badge,
 
 
 
-/*----- perhaps remove for accessability ----*/
+
+/*----- perhaps remove for accessability, good for testing ----*/
 *:focus{
   outline: 0 !important;
   outline: -2px auto -webkit-focus-ring-color !important;
