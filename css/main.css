@@ -42,7 +42,17 @@ body {
 
 #navtop.navbar-collapse{ padding:0 !important;background-color:#fff !important;}
 
-.navbar-nav>li>a{ padding-bottom:10px;}
+.navbar-nav>li>a{ padding-bottom:10px; font-weight:600;}
+.navbar-nav>li.login{ margin-bottom:0px; padding-bottom:0;}
+.navbar-nav>li.login a{ position:relative; top:2px;}
+
+.navbar .explore{ width:115px !important;}
+.navbar .login{ width:72px !important;}
+.navbar .options{ width:105px !important;}
+.navbar .lang{ width:70px !important;}
+.navbar li.explore>a>i{ position:relative;left:0px;top:0px;}
+.navbar li>a>i.km-arrowselect{ position:relative;left:-5px;top:2px;}
+
 
 .navbar ul.dropdown-menu { 
 	position:absolute;  
@@ -52,13 +62,6 @@ body {
 	padding:0;
 	/* border:1px solid #eee; */
 }
-.navbar .explore{ width:115px !important;}
-.navbar .login{ width:66px !important;}
-.navbar .options{ width:91px !important;}
-.navbar .lang{ width:67px !important;}
-.navbar li.explore>a>i{ position:relative;left:0px;top:0px;}
-.navbar li>a>i.km-arrowselect{ position:relative;left:-5px;top:2px;}
-
 .navbar .options ul.dropdown-menu {  /* options dropdown */
 	position:absolute; 
 	left:-112px;
@@ -81,7 +84,7 @@ body {
 #navtop ul.dropdown-menu li.options-title{ font-size:1.25em; line-height: 2em; height:2em; background: #eee; padding:0 0 0 18px; margin:0; color:#555; font-family: 'Droid Sans', sans-serif;}
 #navtop ul.dropdown-menu li.options-title:first-child{ margin-top:0px;}
 
-#navtop ul.dropdown-menu>li>a{ padding: 0;}
+#navtop ul.dropdown-menu>li>a{ padding:0;}
 #navtop ul.dropdown-menu li a{ line-height:1em; height:1.75em; padding:0 0 0 15px !important;}
 #navtop ul.dropdown-menu li a::before{ color:#ddd; font-size:1.5em; position:relative; top:6px; font-family:'kmaps-icons'; content:'\e614'; margin-right:5px;}
 #navtop ul.dropdown-menu li.select a::before{ color:#397fbb; content:'\e615';}
@@ -576,8 +579,11 @@ object.flip_label{
 }
 
 #kmaps-search .search-form-view textarea{
-	margin: 5px 0 0 3%; 
+	margin: 0 0 5px 10px; 
+	padding:5px 7px 10px 10px;
 	width:93%;
+	font-size:1.18em;
+	color:#404040;
 }
 /*---- advanced search toggle ------*/
 #kmaps-search h3{
@@ -610,7 +616,7 @@ object.flip_label{
 	float:right; 
 	font-weight:600;
 	height:15px; 
-	margin:7px 20px 5px 0;
+	margin:3px 20px 5px 0;
 	padding-left:20px;
 	font-size:1em;	
 }
@@ -645,7 +651,7 @@ object.flip_label{
 	padding-bottom:20px;
 }
 
-.search-utils .btn{ font-size:1.18em; margin:2px 0 10px 10px !important; }
+.search-utils .btn{ font-size:1.18em; margin:0 0 10px 10px !important; }
 
 
 /*---- START tabs -----*/
@@ -732,7 +738,7 @@ object.flip_label{
 #view-section span.fancytree-expander::before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:#fff !important; border:none;}
 
-#view-section span.fancytree-title{ color:#555; margin-left:-16px; }
+#view-section span.fancytree-title{ color:#333; margin-left:-16px; }
 #view-section span.fancytree-title:hover{ color:#111;}
 
 #view-section span.fancytree-title::before{ 
