@@ -80,9 +80,9 @@ body {
 	border:none !important;
 }
 
-.navbar li.explore a{ padding-right:5px;}
+.navbar li.explore a{ padding-right:5px !important;}
 .navbar li.dropdown.options a, /* helps center text with icons */
-.navbar li.dropdown.lang a{ padding-right:0px;} 
+.navbar li.dropdown.lang a{ padding-right:0px !important;} 
 
 #navtop ul.dropdown-menu li { line-height:1.75em; height:1.75em;  margin:0; padding:0;}
 
