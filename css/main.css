@@ -9,7 +9,7 @@ body {
   background-color: #eee !important;
 }
 .container-fluid {
-  background-color: white;
+  background-color: #eee !important;
 }
 /* #navtop ul{ margin:0 !important; padding:0 !important; } */
 #navtop ul li{
@@ -21,7 +21,7 @@ body {
 	border-bottom:3px double #aaa;
 	background-color:#fff;
 }
-.navbar-default{ background-color:#fff;}
+.navbar-default{ background-color:#fff !important;}
 .navbar-header img {
   /* max-width: 30% !important; */
   height: auto;
@@ -73,7 +73,7 @@ body {
 #navtop ul.dropdown-menu li { line-height:1.75em; height:1.75em;  margin:0; padding:0;}
 #navtop ul.dropdown-menu li.last{ margin-bottom:10px;}
 
-#navtop ul.dropdown-menu li.tool-title{ font-size:1.25em; line-height: 2em; height:2em; background: #f0f0f0; padding:0 0 0 18px; margin:0; color:#555; font-family: 'Droid Sans', sans-serif;}
+#navtop ul.dropdown-menu li.tool-title{ font-size:1.25em; line-height: 2em; height:2em; background: #eee; padding:0 0 0 18px; margin:0; color:#555; font-family: 'Droid Sans', sans-serif;}
 #navtop ul.dropdown-menu li.tool-title:first-child{ margin-top:0px;}
 
 #navtop ul.dropdown-menu>li>a{ padding: 0;}
@@ -561,7 +561,7 @@ object.flip_label{
 /*---- search input section -----*/
 #kmaps-search #search-section{ margin-left:7px;}
 #kmaps-search .search-form-view{
-	background-color:#f0f0f0;
+	background-color:#f8f8f8;
 	padding:10px 0 0; 
 	margin:-3px 0 0;
 	border-top:2px solid #ddd;
@@ -622,21 +622,24 @@ object.flip_label{
 }
 #kmaps-search .advanced-link-view{
 	padding:0 0 5px 15px;
-	background-color:#f0f0f0;
+	background-color:#f8f8f8;
 }
 
 #kmaps-search .advanced-link-view .form-group{ 
-	padding:7px 0; 
+	padding:12px 0;
+	margin:0; 
 	border:1px solid #ddd; 
 	border-width:1px 0;
 }
-
+#kmaps-search .advanced-link-view .form-group.last{
+	
+}
 
 
 /*---- START tabs -----*/
 #view-section{ margin:7px 0 7px 7px;}
 #view-section .tab-content{
-	background-color:#f0f0f0;
+	background-color:#f8f8f8;
 	padding:0;
 	border-left: 1px solid #ddd;
 }
@@ -688,7 +691,7 @@ object.flip_label{
 #view-section .nav-tabs>li.active>a:focus{
 	border: 1px solid #ddd;
 	border-bottom-color: transparent;
-	background-color:#f0f0f0;
+	background-color:#f8f8f8;
 	text-decoration:none;
 }
 
