@@ -93,6 +93,34 @@ jQuery(function($) {
 
 
 
+jQuery(function($) {
+	if (!elementSupportsAttribute('textarea', 'placeholder')) {
+	  // Fallback for browsers that don't support HTML5 placeholder attribute on search form
+	  $("#searchform")
+	    .data("originalText", $("#searchform").text())
+	    .css("color", "#999")
+	    .focus(function() {
+	        var $el = $(this);
+	        if (this.value == $el.data("originalText")) {
+	          this.value = "";
+	        }
+	    })
+	    .blur(function() {
+	      if (this.value == "") {
+	          this.value = $(this).data("originalText");
+	      }
+	    });
+	} else {
+	  // Browser does support HTML5 placeholder attribute, so use it.
+	  $("#searchform")
+	    .attr("placeholder", $("#searchform").text())
+	    .text("");
+	}
+});
+
+
+
+
 
 
 
