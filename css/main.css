@@ -538,19 +538,16 @@ a.list-group-item.active>.badge,
   padding: 8px 0 8px 8px;
   border-top-left-radius:50px;
   border-bottom-left-radius:50px;
-}
-.extruder.right .flap.off-flap{
-	margin:0px 0px 0px -49px;
+  margin:0px 0px 0px -50px;
 }
 .extruder.right .flap.on-flap{
-	margin:0px 0px 0px -25px;
-	width:35px;
 	-moz-box-shadow:-2px 0px 2px 0px #a22c35;
 	-webkit-box-shadow:-2px 0px 2px 0px #a22c35; 
 	box-shadow:-2px 0px 2px 0px #b3303a;
 }
 
-.extruder.right .flap span.flapLabel{ 
+.extruder.right .flap span.flapLabel,
+.extruder.right .flap.on-flap span.flapLabel{ 
   background-color:#505050;  
   height:36px;
   display:block; 
@@ -561,10 +558,6 @@ a.list-group-item.active>.badge,
   overflow:hidden;
   width:42px !important;
 }
-.extruder.right .flap.on-flap span.flapLabel{ /*-- toggle --*/
-	width:25px !important;
-	padding-right:30px;
-}
 
 object.flip_label{   
   display:none;
@@ -574,16 +567,16 @@ object.flip_label{
 
 
 /*---- search input section -----*/
-#kmaps-search #search-section{ margin-left:7px;}
+#kmaps-search #search-section{ margin:7px 0 0 7px;}
 #kmaps-search .search-form-view{
 	background-color:#f8f8f8;
 	padding:10px 0 0; 
-	margin:-3px 0 0;
-	border-top:2px solid #ddd;
+	margin:0;
+	/* border-top:2px solid #ddd; */
 }
 
 #kmaps-search .search-form-view textarea{
-	margin: 0 0 0 3%; 
+	margin: 5px 0 0 3%; 
 	width:93%;
 }
 /*---- advanced search toggle ------*/
@@ -652,7 +645,7 @@ object.flip_label{
 	padding-bottom:20px;
 }
 
-.search-utils .btn{ font-size:1.12em;}
+.search-utils .btn{ font-size:1.18em; margin:2px 0 10px 10px !important; }
 
 
 /*---- START tabs -----*/
@@ -666,7 +659,7 @@ object.flip_label{
 #view-section .tab-content .tab-pane#treeview{ padding-bottom:5px;}
 #view-section .nav-tabs>li{
 	width:50%;
-	font-size:1.25em;
+	font-size:1.18em;
 	letter-spacing:0.06em;
 }
 #view-section .nav-tabs>li>a{
