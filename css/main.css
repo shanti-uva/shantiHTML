@@ -46,7 +46,7 @@ body {
 
 .navbar ul.dropdown-menu { 
 	position:absolute;  
-	top:51px;
+	top:50px;
 	z-index:1000; 
 	margin:0;	
 	padding:0;
@@ -215,12 +215,17 @@ div.navbar.navbar-default.navbar-static-top{
   font-size: smaller;
   font-family: 'Droid Serif', serif;
   margin:0;
-  padding:10px 0 5px 35px;
+  padding:10px 0 5px 5px;
 }
 
 .titlearea .breadcrumb .tag-before-breadcrumb {
   font-family: 'Droid Sans', sans-serif;
+  font-size:1.32em;
+  padding-right:5px;
+  font-weight: bold;
 }
+
+.breadcrumb > li + li::before{ padding:0 3px;}
 
 .titlearea .breadcrumb a {
   color: white;
@@ -234,6 +239,9 @@ div.navbar.navbar-default.navbar-static-top{
 .titlearea .breadcrumb li + li::before {
   color: white;
 }
+
+.titlearea .breadcrumb .active{ font-weight:bold; color:#fff; font-size:1.06em;}
+
 
 .titlearea .search-box {
   width: 50px;
@@ -268,9 +276,6 @@ div.navbar.navbar-default.navbar-static-top{
   margin-left: 12px;
 }
 
-.titlearea .tag-before-breadcrumb {
-  font-weight: bold;
-}
 
 
 
