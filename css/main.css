@@ -18,7 +18,7 @@ body {
 	border-bottom:3px double #aaa;
 	background-color:#fff !important;
 }
-.navbar-default{ background-color:#fff !important;}
+.navbar-default{ }
 
 #navtop ul li{ border-left:1px solid #eee;}
 .navbar-header img {
@@ -490,6 +490,7 @@ a.list-group-item.active>.badge,
   color:#222;
   width:100% !important;
   padding:0;
+  font-family: 'droid-serif', serif;
 }
 
 
@@ -605,7 +606,7 @@ object.flip_label{
 	display:inline; 
 	color:#3b7db5; 
 	float:right; 
-	font-family: Times, georgia, serif; 
+	font-weight:500;
 	height:15px; 
 	margin:0 20px 5px 0;
 	padding-left:20px;	
@@ -635,6 +636,7 @@ object.flip_label{
 	margin:0; 
 	border:1px solid #e0e0e0; 
 	border-width:1px 0 0;
+	font-size:1.06em; font-weight:700;
 }
 #kmaps-search .advanced-link-view .form-group.last{
 	
