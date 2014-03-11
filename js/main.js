@@ -71,12 +71,6 @@ jQuery(function($) {
 });
 
 
-// *** SEARCH *** unique classes on tabs
-jQuery(function($) {
-	$("#search-tabs").find("li:eq(0)").addClass("treetab");
-	$("#search-tabs").find("li:eq(1)").addClass("listtab");
-});
-
 
 
 jQuery(function($) {

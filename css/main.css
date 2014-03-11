@@ -85,10 +85,10 @@ body {
 #navtop ul.dropdown-menu>li>a{ padding: 0;}
 #navtop ul.dropdown-menu li a{ line-height:1.75em; padding:0 0 3px 15px !important;}
 #navtop ul.dropdown-menu li a::before{ color:#ddd; font-size:1.5em; position:relative; top:6px; font-family:'kmaps-icons'; content:'\e614'; margin-right:5px;}
-#navtop ul.dropdown-menu li.selected a::before{ color:#397fbb; content:'\e615';}
+#navtop ul.dropdown-menu li.select a::before{ color:#397fbb; content:'\e615';}
 
 #navtop ul.dropdown-menu li a.on::before{ color:#aaa;}
-#navtop ul.dropdown-menu li.selected a.on::before{ color:#fff;}
+#navtop ul.dropdown-menu li.select a.on::before{ color:#fff;}
 
 div.navbar.navbar-default.navbar-static-top{
 	
@@ -618,7 +618,7 @@ object.flip_label{
 	float:right; 
 	font-weight:600;
 	height:15px; 
-	margin:3px 20px 5px 0;
+	margin:7px 20px 5px 0;
 	padding-left:20px;
 	font-size:1em;	
 }
@@ -678,15 +678,15 @@ object.flip_label{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#view-section li.treetab  .tab-content{ padding-bottom:0px;}
-#view-section li.treetab a::before{
+#view-section li.treeview  .tab-content{ padding-bottom:0px;}
+#view-section li.treeview a::before{
 	content: '\f0e8';
 	margin-right:6px;
 	font-family: 'FontAwesome';
 }
 
 #view-section #listview > div{ padding:5px 10px;}
-#view-section li.listtab a::before{
+#view-section li.listview a::before{
 	content: '\f0ca';
 	margin-right:6px;
 	font-family: 'FontAwesome';
