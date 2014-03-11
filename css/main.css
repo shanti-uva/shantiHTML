@@ -52,14 +52,21 @@ body {
 	padding:0;
 	/* border:1px solid #eee; */
 }
+.navbar .explore{ width:117px !important;}
+.navbar .login{ width:67px !important;}
+.navbar .tools{ width:75px !important;}
+.navbar .lang{ width:67px !important;}
+.navbar li>a>i{ position:relative;left:-5px;top:2px;}
+.navbar li.explore>a>i{ position:relative;left:0px;top:0px;}
+
 .navbar .tools ul.dropdown-menu { 
 	position:absolute; 
-	left:-100px;
+	left:-125px;
 	min-width:260px;
 }
 .navbar .lang ul.dropdown-menu { 
 	position:absolute; 
-	left:-45px;
+	left:-60px;
 	min-width:120px;
 }
 .navbar-nav>li>.dropdown-menu{
