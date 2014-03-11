@@ -46,10 +46,10 @@ body {
 .navbar-nav>li.login{ margin-bottom:0px; padding-bottom:0;}
 .navbar-nav>li.login a{ position:relative; top:0px;}
 
-.navbar .explore{ width:115px !important;}
+/*.navbar .explore{ width:110px !important;}
 .navbar .login{ width:72px !important;}
-.navbar .options{ width:105px !important;}
-.navbar .lang{ width:70px !important;}
+.navbar .options{ width:100px !important;}
+.navbar .lang{ width:70px !important;}*/
 .navbar li.explore>a>i{ position:relative;left:0px;top:0px;}
 .navbar li>a>i.km-arrowselect{ position:relative;left:-5px;top:2px;}
 
@@ -62,12 +62,12 @@ body {
 	padding:0;
 	/* border:1px solid #eee; */
 }
-.navbar .options ul.dropdown-menu {  /* options dropdown */
+.navbar .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
-	left:-95px;
+	left:-93px;
 	min-width:260px;
 }
-.navbar .lang ul.dropdown-menu {  /* language dropdown */
+.navbar .lang ul.dropdown-menu{  /* language dropdown */
 	position:absolute; 
 	left:-60px;
 	min-width:120px;
@@ -79,6 +79,11 @@ body {
 	padding:0 0 8px;
 	border:none !important;
 }
+
+.navbar li.explore a{ padding-right:5px;}
+.navbar li.dropdown.options a, /* helps center text with icons */
+.navbar li.dropdown.lang a{ padding-right:0px;} 
+
 #navtop ul.dropdown-menu li { line-height:1.75em; height:1.75em;  margin:0; padding:0;}
 
 #navtop ul.dropdown-menu li.options-title{ font-size:1.25em; line-height: 2em; height:2em; font-weight:600; background: #eee; padding:0 0 0 18px; margin:0; color:#707070; font-family: 'Trebuchet MS', Helvetica, sans-serif;}
@@ -94,11 +99,9 @@ body {
 
 #navtop ul.dropdown-menu li.last{ padding-bottom:15px !important;}
 
-
 div.navbar.navbar-default.navbar-static-top{
 	
 }
-
 #navtop .nav>li>a{ }
 
 
