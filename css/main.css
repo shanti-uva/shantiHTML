@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgba(57, 55, 63, 0.95);
+  background-color: #eee !important;
 }
 .container-fluid {
   background-color: white;
@@ -19,7 +19,9 @@ body {
 	padding:0; 
 	margin-bottom:0;  
 	border-bottom:3px double #aaa;
+	background-color:#fff;
 }
+.navbar-default{ background-color:#fff;}
 .navbar-header img {
   /* max-width: 30% !important; */
   height: auto;
@@ -272,6 +274,7 @@ body {
 .main-content {
   color: #333;
   background-color: #eee;
+  position:relative;
 }
 .main-content>div {
   background-color: #eee;
@@ -620,6 +623,12 @@ object.flip_label{
 #kmaps-search .advanced-link-view{
 	padding:0 0 5px 15px;
 	background-color:#f0f0f0;
+}
+
+#kmaps-search .advanced-link-view .form-group{ 
+	padding:7px 0; 
+	border:1px solid #ddd; 
+	border-width:1px 0;
 }
 
 
