@@ -24,8 +24,6 @@ jQuery(function($) {
 
 });
 
-
-
 // *** SEARCH *** manage sliding panel
 jQuery(function($) {
 		$("#tree").fancytree({
@@ -59,7 +57,6 @@ jQuery(function($) {
 });
 
 
-
 // *** SEARCH *** manage toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
@@ -74,8 +71,7 @@ jQuery(function($) {
 });
 
 
-
-
+// *** SEARCH *** set class for icon onHover
 jQuery(function($) {
 	$(".dropdown-menu li").find("a").hover( function () {
 	    $(this).addClass('on');
@@ -88,15 +84,14 @@ jQuery(function($) {
 
 
 // *** SEARCH *** helps control flash when loading
-jQuery(function($) {
-	$("h3.search-header").css('display','block');
-});
+// jQuery(function($) {
+//	$("h3.search-header").css('display','block');
+// });
 
 
-
+// *** SEARCH *** fallback for browsers that don't support HTML5 placeholder attribute
 jQuery(function($) {
 	if (!elementSupportsAttribute('textarea', 'placeholder')) {
-	  // Fallback for browsers that don't support HTML5 placeholder attribute on search form
 	  $("#searchform")
 	    .data("originalText", $("#searchform").text())
 	    .css("color", "#999")
