@@ -29,7 +29,7 @@ jQuery(function($) {
 // *** SEARCH *** manage sliding panel
 jQuery(function($) {
 		$("#tree").fancytree({
-			extensions: ["glyph"],
+			extensions: ["glyph","filter"],
 			checkbox: false,
 			selectMode: 2,
 			closeOnExternalClick:false,
@@ -55,6 +55,13 @@ jQuery(function($) {
 				ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
 			}
 		});
+
+       $("#searchbutton").click(
+         function() {
+             $('#tree').getTree().applyFilter($("#searchfield").val());
+             return false;
+         }
+       );
 });
 
 
