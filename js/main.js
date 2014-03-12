@@ -11,7 +11,7 @@ jQuery(function($) {
   
   // --- collections toggle
   $("li.explore").addClass("closed");
-  $("#toggle-collections, .closecollection").click(function() {
+  $("#toggle-collections, .closecollection, .km-ul a").click(function() {
     $("#opencollect").slideToggle('slow');
     $(".closed").toggleClass("open", 200);
   });
@@ -24,14 +24,13 @@ jQuery(function($) {
 
 });
 
-
-
 // *** SEARCH *** manage sliding panel
 jQuery(function($) {
 		$("#tree").fancytree({
 			extensions: ["glyph","filter"],
 			checkbox: false,
 			selectMode: 2,
+			autoCollapse: true,
 			closeOnExternalClick:false,
 			flapMargin:5,
 			glyph: {
@@ -65,7 +64,6 @@ jQuery(function($) {
 });
 
 
-
 // *** SEARCH *** manage toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
@@ -80,8 +78,7 @@ jQuery(function($) {
 });
 
 
-
-
+// *** SEARCH *** set class for icon onHover
 jQuery(function($) {
 	$(".dropdown-menu li").find("a").hover( function () {
 	    $(this).addClass('on');
@@ -94,14 +91,35 @@ jQuery(function($) {
 
 
 // *** SEARCH *** helps control flash when loading
+// jQuery(function($) {
+//	$("h3.search-header").css('display','block');
+// });
+
+
+// *** SEARCH *** fallback for browsers that don't support HTML5 placeholder attribute
 jQuery(function($) {
-	$("h3.search-header").css('display','block');
+	if (!elementSupportsAttribute('textarea', 'placeholder')) {
+	  $("#searchform")
+	    .data("originalText", $("#searchform").text())
+	    .css("color", "#999")
+	    .focus(function() {
+	        var $el = $(this);
+	        if (this.value == $el.data("originalText")) {
+	          this.value = "";
+	        }
+	    })
+	    .blur(function() {
+	      if (this.value == "") {
+	          this.value = $(this).data("originalText");
+	      }
+	    });
+	} else {
+	  // Browser does support HTML5 placeholder attribute, so use it.
+	  $("#searchform")
+	    .attr("placeholder", $("#searchform").text())
+	    .text("");
+	}
 });
-
-
-
-
-
 
 
 
