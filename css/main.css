@@ -66,7 +66,7 @@ body {
 	margin: 0px;
 	border-bottom-right-radius: 12px;
 	border-bottom-left-radius: 12px;
-	padding:0 0 8px;
+	padding:0 0 10px;
 	border:none !important;
 }
 
@@ -80,14 +80,17 @@ body {
 	left:-65px;
 	min-width:120px;
 }
-
+.navbar .lang ul.dropdown-menu{
+	padding-top:7px;
+	margin-top:0px;
+}
 .navbar li.explore a{ padding-right:5px !important;}
 .navbar li.dropdown.options a, /* helps center text with icons */
 .navbar li.dropdown.lang a{ padding-right:0px !important;} 
 
 #navtop ul.dropdown-menu li { font-size:1em; line-height:1.63em; height:1.63em;  margin:0; padding:0;}
 
-#navtop ul.dropdown-menu li.drop-title{ font-size:1.25em; line-height: 2em; height:2em; font-weight:600; background: #eee; padding:0 0 0 14px; margin:10px 0 0; color:#888; font-family: 'Trebuchet MS', Helvetica, sans-serif;}
+#navtop ul.dropdown-menu li.drop-title{ font-size:1.25em; line-height: 2em; height:2em; font-weight:600; background: #eee; padding:0 0 0 14px; margin:8px 0 2px; color:#888; font-family: 'Trebuchet MS', Helvetica, sans-serif;}
 #navtop ul.dropdown-menu li.drop-title:first-child{ margin-top:0px;}
 
 #navtop ul.dropdown-menu>li>a{ padding:0;margin:0;}
@@ -118,7 +121,7 @@ body {
 	top:6px;*/ 
   /*text-indent: 4px;*/
 }
-#navtop ul.dropdown-menu li i.icon::before{ 
+#navtop ul.dropdown-menu li i.icon:before{ 
 	font-size:1.44em !important;
 	font-family:'kmaps-icons'; 
 	content:'\e615'; 
@@ -127,14 +130,14 @@ body {
   right:3px;
   color:#ccc;
 }
-#navtop ul.dropdown-menu li.select i.icon::before{ color:#397fbb; content:'\e615';}
+#navtop ul.dropdown-menu li.select i.icon:before{ color:#397fbb; content:'\e615';}
 
 
 
 
 
-/*#navtop ul.dropdown-menu li a.on::before{ color:#aaa;}
-#navtop ul.dropdown-menu li.select a.on::before{ color:#fff;}*/
+/*#navtop ul.dropdown-menu li a.on:before{ color:#aaa;}
+#navtop ul.dropdown-menu li.select a.on:before{ color:#fff;}*/
 
 
 #navtop ul.dropdown-menu li.last{ padding-bottom:15px !important;}
@@ -234,7 +237,7 @@ div.navbar.navbar-default.navbar-static-top{
 .collections .closecollection:hover {
 	color: #ccc;
 }
-.collections .closecollection::before {
+.collections .closecollection:before {
 	content: '\e61d'; /*--- close ---*/
 	font-family:'kmaps-icons';
 }
@@ -285,7 +288,7 @@ div.navbar.navbar-default.navbar-static-top{
   font-weight: bold;
 }
 
-.breadcrumb > li + li::before{ padding:0 3px;}
+.breadcrumb > li + li:before{ padding:0 3px;}
 
 .titlearea .breadcrumb a {
   color: white;
@@ -296,7 +299,7 @@ div.navbar.navbar-default.navbar-static-top{
   color: white;
 }
 
-.titlearea .breadcrumb li + li::before {
+.titlearea .breadcrumb li + li:before {
   color: white;
 }
 
@@ -698,10 +701,10 @@ object.flip_label{
 	margin-right:3px;
 	font-size:0.68em;
 }
-#search-section a.advanced-link i::before{
+#search-section a.advanced-link i:before{
 	content: '\f067';
 }
-#search-section a.advanced-link.show-advanced i::before{
+#search-section a.advanced-link.show-advanced i:before{
 	content: '\f068';
 }
 #search-section .advanced-link-view{
@@ -772,14 +775,14 @@ object.flip_label{
   -moz-osx-font-smoothing: grayscale;
 }
 #view-section li.treeview  .tab-content{ padding-bottom:0px;}
-#view-section li.treeview a::before{
+#view-section li.treeview a:before{
 	content: '\f0e8';
 	margin-right:6px;
 	font-family: 'FontAwesome';
 }
 
 #view-section #listview > div{ padding:5px 10px;}
-#view-section li.listview a::before{
+#view-section li.listview a:before{
 	content: '\f0ca';
 	margin-right:6px;
 	font-family: 'FontAwesome';
@@ -829,13 +832,13 @@ object.flip_label{
 
 #view-section span.fancytree-node{ border:none;}
 #view-section span.fancytree-node.fancytree-active .glyphicon{ color:#e00;}
-#view-section span.fancytree-expander::before{ }
+#view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:#fff !important; border:none;}
 
 #view-section span.fancytree-title{ color:#333; margin-left:-17px; }
 #view-section span.fancytree-title:hover{ color:#111;}
 
-#view-section span.fancytree-title::before{ 
+#view-section span.fancytree-title:before{ 
 	color:#c0c0c0;
 	font-family: 'kmaps-icons';
 	font-size: 0.75em; 
@@ -844,7 +847,7 @@ object.flip_label{
 	margin-right:10px;
 }
 #view-section .fancytree-has-children span.fancytree-title{ padding-left:10px; margin-left:-15px;}
-#view-section .fancytree-has-children span.fancytree-title::before{ content:none;}
+#view-section .fancytree-has-children span.fancytree-title:before{ content:none;}
 
 #view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 0.93em; line-height:1em; margin-right:14px;}
 
