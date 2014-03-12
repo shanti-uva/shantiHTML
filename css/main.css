@@ -64,12 +64,12 @@ body {
 }
 .navbar .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
-	left:-93px;
+	left:-115px;
 	min-width:260px;
 }
 .navbar .lang ul.dropdown-menu{  /* language dropdown */
 	position:absolute; 
-	left:-60px;
+	left:-65px;
 	min-width:120px;
 }
 .navbar-nav>li>.dropdown-menu{
@@ -204,6 +204,7 @@ div.navbar.navbar-default.navbar-static-top{
   background-color: #DC3C47;
   position: relative;
   padding-top:10px;
+  padding-bottom:5px;
 }
 
 .titlearea .page-title {
@@ -520,7 +521,7 @@ a.list-group-item.active>.badge,
 /*---- SEARCH sliding panel wrapper ---------*/
 /*---- mbExtruder targets #kmaps-search ---- */
 #kmaps-search{ 
-  margin-top:-67px; /*--- position location of sliding panel vertically, relative to content container ---*/
+  margin-top:-70px; /*--- position location of sliding panel vertically, relative to content container ---*/
   box-shadow:none;
   background-color:#fff;
 }

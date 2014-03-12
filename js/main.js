@@ -32,6 +32,7 @@ jQuery(function($) {
 			extensions: ["glyph"],
 			checkbox: false,
 			selectMode: 2,
+			autoCollapse: true,
 			closeOnExternalClick:false,
 			flapMargin:5,
 			glyph: {
