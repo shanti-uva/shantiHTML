@@ -440,7 +440,6 @@ a.list-group-item.active>.badge,
   background-color: #eee;    /*---- content background color -----*/
   padding: 15px;
   font-family: 'Droid Serif', serif;
-  max-width: 900px;
 }
 
 .content-page h6 {
@@ -949,7 +948,14 @@ object.flip_label{
   }
 
 
-
+@media screen and (min-width: 900px) {
+  .main-content .content-sidebar {
+    width: 180px;
+  }
+  .main-content .content-page {
+    width: 850px;
+  }
+}
 
 
 
