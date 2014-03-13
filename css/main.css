@@ -539,10 +539,10 @@ a.list-group-item.active>.badge,
   top: 4px;
   left:0px;    
   font-family: 'Glyphicons Halflings';
-  content: "\002b";
+  content: "\2212";
 }
-#accordion h6 a.collapsed .fa:before{
-	content: "\2212";
+#accordion .panel h6 a.collapsed .fa:before{
+	content: "\002b";
 }
 
 
