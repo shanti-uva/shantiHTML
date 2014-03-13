@@ -60,18 +60,14 @@ jQuery(function($) {
 // *** SEARCH *** manage toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
-			$(".flap").addClass("off-flap");
-			$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
+			$(".flap").prepend("<span style='font-size:47px; position:absolute; left:7px; top:-4px; z-index:10;'><i class='icon km-search'></i></span>");
+			$(".flap").addClass("on-flap");
 		}
-		// --- toggle class for search button & header
-		$(".flap, #closeSearch").click( function(){
-						$(".off-flap").toggleClass("on-flap", 200);
-						$("h3.off").toggleClass("on", 200);
-		});
 });
 
 
-// *** SEARCH *** set class for icon onHover
+
+// *** SEARCH *** set class on dropdown menu for icon
 jQuery(function($) {
 	$(".dropdown-menu li").find("a").hover( function () {
 	    $(this).addClass('on');
@@ -80,15 +76,16 @@ jQuery(function($) {
 	    $(this).removeClass('on');
 	    }
 	);
+
+	// ---- on hover for search icon button if needed, darkens black bg
+	// $(".flap").find("span").hover( function () {
+	//    $(".flap").addClass('on-hover');
+	//    },                 
+	//      function () {              
+	//    $(".flap").removeClass('on-hover');
+	//    }
+	// );
 });
-
-
-
-
-
-
-
-
 
 
 
