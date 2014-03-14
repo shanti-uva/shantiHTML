@@ -69,14 +69,6 @@ jQuery(function($) {
 
 // *** SEARCH *** set class on dropdown menu for icon
 jQuery(function($) {
-	$(".dropdown-menu li").find("a").hover( function () {
-	    $(this).addClass('on');
-	    },                 
-	      function () {              
-	    $(this).removeClass('on');
-	    }
-	);
-	
 	$(".extruder.right .flap").hover( function () {
 	    $(this).addClass('on-hover');
 	    },                 

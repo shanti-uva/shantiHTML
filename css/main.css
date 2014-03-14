@@ -133,10 +133,7 @@ body {
 
 #navtop ul.dropdown-menu li.last{ padding-bottom:15px !important;}
 
-div.navbar.navbar-default.navbar-static-top{
-	
-}
-#navtop .nav>li>a{ }
+
 
 
 
@@ -807,7 +804,7 @@ object.flip_label{
 	padding-bottom:20px;
 }
 
-#search-section .search-utils .btn{ font-size:1em; padding:4px 12px; margin:0 0 10px 10px !important; }
+#search-section .search-utils .btn{ font-family: 'Trebuchet MS', helvetica, sans-serif; font-size:1em; padding:4px 12px; margin:0 0 10px 10px !important; }
 
 #search-section .radio-inline input,
 #search-section .radio input[type="radio"], 
@@ -845,28 +842,23 @@ object.flip_label{
 #view-section .tab-content .tab-pane#treeview{ padding-bottom:5px;}
 #view-section .nav-tabs>li{
 	width:50%;
-	font-size:18px;
+	font-size:1.25em;
+	line-height:1.5em;
 	letter-spacing:1px;
 	font-family: 'Trebuchet MS', helvetica, sans-serif; 
 }
 #view-section .nav-tabs>li>a{
+	font-size:1em;
+	line-height:1.25em;	
+	padding:10px 0 5px 0;
 	display: inline-block;
   font-family: 'Trebuchet MS', helvetica, sans-serif; 
-  font-style: normal;
-  font-weight: normal;
-  font-size:18px;
-  line-height: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 #view-section li.treeview  .tab-content{ padding-bottom:0px;}
 #view-section li a i{ margin-right:5px;}
-#view-section li.treeview a i:before{
-	font-size:16px;
-}
-#view-section li.listview a i:before{
-	font-size:15px;
-}
+#view-section li a i:before{ font-size:15px;}
 #view-section #listview > div{ padding:5px 10px;}
 
 
@@ -1010,7 +1002,7 @@ object.flip_label{
 	}
 	.navbar .lang ul.dropdown-menu{  /* language dropdown */
 		position:static;
-		width:80% !important;
+		width:100% !important;
 		background-color:#fff;
 	}
 	.nav.navbar-nav{
@@ -1021,7 +1013,7 @@ object.flip_label{
 		background-color:#f2f2f2;
 		border-bottom:1px solid #ccc;
 		border-top:1px solid #fff;
-		padding-left:40px;	
+		padding-left:0px;	
 	}
 	.nav.navbar-nav li a{
 		background-color:#fff;
