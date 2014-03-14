@@ -43,14 +43,12 @@ body {
 #navtop.navbar-collapse{ padding:0 !important;}
 
 .navbar-nav>li{ height:50px;}
-.navbar-nav>li>a{ color:#555; display:inline-block; font-weight:600; font-size:0.93em; line-height:1.12em; font-family: 'Trebuchet MS', Helvetica, sans-serif;}
-.navbar-nav>li.login{ }
+.navbar-nav>li>a{ color:#555; display:block; font-weight:600; font-size:0.93em; line-height:1.12em; font-family: 'Trebuchet MS', Helvetica, sans-serif;}
 .navbar-nav>li.login a{ position:relative;left:0px;top:4px; } 
-
-.navbar-nav>li>a .icon{ margin-right:10px;}
 .navbar-nav li.explore>a>i{ font-size:17px; position:relative;left:3px;top:0px;}
 .navbar-nav li>a>i.km-arrowselect{ font-size:17px; position:relative;left:0px;top:2px;}
 
+.navbar-nav>li>a .icon{ margin-right:10px;}
 
 .navbar ul.dropdown-menu { 
 	position:absolute;  
@@ -369,13 +367,14 @@ div.navbar.navbar-default.navbar-static-top{
 .content-sidebar .nav-pills {
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 0.93em;
   text-transform: uppercase;
   border-right: 1px solid #eee;
 }
 .nav-pills li {
   margin-right: -1px;
   margin-top:0;
+  white-space:nowrap;
 }
 .content-sidebar .nav-pills li a{ padding-left:30px !important; background-color: #fff; font-size:0.93em;}
 .content-sidebar .nav-pills li a,
@@ -650,7 +649,7 @@ div.navbar.navbar-default.navbar-static-top{
 
 
 #kmaps-search{ /*---- SEARCH panel wrapper */
-  margin-top:-70px; /*--- position panel vertically, relative to content-page container */
+  margin-top:-65px; /*--- position panel vertically, relative to content-page container */
   box-shadow:none;
   background-color:#eee;
 }
