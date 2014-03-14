@@ -11,8 +11,8 @@ jQuery(function($) {
   
   // --- collections toggle
   $("li.explore").addClass("closed");
-  $("#toggle-collections, .closecollection, .km-ul a").click(function() {
-    $("#opencollect").slideToggle('slow');
+  $("#toggle-collections, .closecollection").click(function() {
+    $("#opencollect").slideToggle('fast');
     $(".closed").toggleClass("open", 200);
   });
   
