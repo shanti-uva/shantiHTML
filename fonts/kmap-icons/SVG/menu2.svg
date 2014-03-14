@@ -4,5 +4,5 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
 <g>
 </g>
-	<path d="M17.992 13.021l3.792-1.272 3.182 9.48-3.793 1.273-3.181-9.481zM8.988 22.5h4v-11h-4v11zM9.988 13.5h2v1h-2v-1zM13.988 22.5h4v-11h-4v11zM14.988 13.5h2v1h-2v-1z" fill="#000000" />
+	<path d="M2 6h28v6h-28v-6zM2 14h28v6h-28v-6zM2 22h28v6h-28v-6z" fill="#000000" />
 </svg>

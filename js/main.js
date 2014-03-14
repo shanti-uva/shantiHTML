@@ -60,7 +60,7 @@ jQuery(function($) {
 // *** SEARCH *** manage toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
-			$(".flap").prepend("<span style='font-size:47px; position:absolute; left:7px; top:-4px; z-index:10;'><i class='icon km-search'></i></span>");
+			$(".flap").prepend("<span style='font-size:27px; position:absolute; left:16px; top:8px; z-index:10;'><i class='icon km-search'></i></span>");
 			$(".flap").addClass("on-flap");
 		}
 });
@@ -74,6 +74,14 @@ jQuery(function($) {
 	    },                 
 	      function () {              
 	    $(this).removeClass('on');
+	    }
+	);
+	
+	$(".extruder.right .flap").hover( function () {
+	    $(this).addClass('on-hover');
+	    },                 
+	      function () {              
+	    $(this).removeClass('on-hover');
 	    }
 	);
 });

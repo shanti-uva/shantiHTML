@@ -91,102 +91,103 @@
 
 /*---- kmaps icon font set -----*/
 
+
 .km-visuals:before {
 	content: "\e600";
 }
-.km-texts:before {
+.km-tree:before {
 	content: "\e601";
 }
-.km-terms:before {
+.km-texts:before {
 	content: "\e602";
 }
-.km-subjects:before {
+.km-terms:before {
 	content: "\e603";
 }
-.km-sources:before {
+.km-subjects:before {
 	content: "\e604";
 }
-.km-places:before {
+.km-stack:before {
 	content: "\e605";
 }
-.km-photos:before {
+.km-sources:before {
 	content: "\e606";
 }
-.km-overview:before {
+.km-search:before {
 	content: "\e607";
 }
-.km-maps:before {
+.km-places:before {
 	content: "\e608";
 }
-.km-events:before {
+.km-overview:before {
 	content: "\e609";
 }
-.km-essays:before {
+.km-minus:before {
 	content: "\e60a";
 }
-.km-directions:before {
+.km-menu2:before {
 	content: "\e60b";
 }
-.km-community:before {
+.km-maps:before {
 	content: "\e60c";
 }
-.km-cancel-circle:before {
+.km-list2:before {
 	content: "\e60d";
 }
-.km-audiovideo:before {
+.km-list:before {
 	content: "\e60e";
 }
-.km-arrowselect:before {
+.km-info2:before {
 	content: "\e60f";
 }
-.km-arrow-right:before {
+.km-info:before {
 	content: "\e610";
 }
-.km-agents:before {
+.km-events:before {
 	content: "\e611";
 }
-.km-books:before {
+.km-essays:before {
 	content: "\e612";
 }
-.km-check-circle:before {
+.km-directions:before {
 	content: "\e613";
 }
-.km-checkmark-empty:before {
+.km-compass:before {
 	content: "\e614";
 }
-.km-checkmark:before {
+.km-community:before {
 	content: "\e615";
 }
-.km-dot:before {
+.km-audiovideo:before {
 	content: "\e616";
 }
-.km-downarrow:before {
+.km-arrowselect:before {
 	content: "\e617";
 }
-.km-info:before {
+.km-agents:before {
 	content: "\e618";
 }
-.km-list:before {
+.km-checkmark:before {
 	content: "\e619";
 }
-.km-list2:before {
+.km-dot:before {
 	content: "\e61a";
 }
-.km-menu:before {
+.km-downarrow:before {
 	content: "\e61b";
 }
-.km-minus:before {
+.km-mulitply:before {
 	content: "\e61c";
 }
-.km-mulitply:before {
+.km-plus:before {
 	content: "\e61d";
 }
-.km-plus:before {
+.km-circle:before {
 	content: "\e61e";
 }
-.km-search:before {
+.km-photos:before {
 	content: "\e61f";
 }
-.km-tree:before {
+.km-cancel:before {
 	content: "\e620";
 }
