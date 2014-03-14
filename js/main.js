@@ -76,17 +76,7 @@ jQuery(function($) {
 	    $(this).removeClass('on');
 	    }
 	);
-
-	// ---- on hover for search icon button if needed, darkens black bg
-	// $(".flap").find("span").hover( function () {
-	//    $(".flap").addClass('on-hover');
-	//    },                 
-	//      function () {              
-	//    $(".flap").removeClass('on-hover');
-	//    }
-	// );
 });
-
 
 
 
