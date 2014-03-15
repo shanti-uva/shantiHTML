@@ -830,16 +830,17 @@ object.flip_label{
 #view-section span.fancytree-node.fancytree-active .glyphicon{ color:#e00;}
 #view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:white; border:none;}
-#view-section span.fancytree-title{ color:#222; margin-left:-25px; line-height:1.38em; height:1.38em; padding-left:5px;}
+#view-section span.fancytree-title{ color:#222; margin-left:-25px; line-height:1.32em; height:1.32em; padding-left:5px;}
 #view-section span.fancytree-title:hover{ color:#000;}
 #view-section span.fancytree-title:before{ 
 	color:#888;
 	font-family: 'kmaps-icons';
 	content: '\e61a';
 	font-size: 28px;
-	line-height:18px;
+	line-height:5px;
+	height:5px; 
 	margin-right:0px;
-	position:relative; top:0px; right:0px;
+	position:relative; top:8px; right:0px;
 }
 #view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#dc3c47;}
 #view-section span.fancytree-node.fancytree-has-children.fancytree-active span.fancytree-title:before{ content:none;}

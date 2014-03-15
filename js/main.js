@@ -63,12 +63,8 @@ jQuery(function($) {
 			$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:11px; z-index:10;'><i class='icon km-search'></i></span>");
 			$(".flap").addClass("on-flap");
 		}
-});
 
-
-
-// *** SEARCH *** set class on dropdown menu for icon
-jQuery(function($) {
+	// --- set class on dropdown menu for icon
 	$(".extruder.right .flap").hover( function () {
 	    $(this).addClass('on-hover');
 	    },                 
