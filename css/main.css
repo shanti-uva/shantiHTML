@@ -88,7 +88,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 .navbar .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
-	left:-105px;
+	left:-110px;
 	width:270px;
 }
 .navbar .lang ul.dropdown-menu{  /* language dropdown */
