@@ -842,7 +842,7 @@ object.flip_label{
 	margin-right:0px;
 	position:relative; top:8px; right:0px;
 }
-#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#dc3c47;text-shadow: 0px 0px 4px #777;}
+#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#f4222c;text-shadow: 0px 0px 2px #111;}
 #view-section span.fancytree-node.fancytree-has-children.fancytree-active span.fancytree-title:before{ content:none; text-shadow: none; display:none;}
 
 #view-section span.fancytree-node.fancytree-active span.fancytree-title{ color:#000;}
@@ -851,7 +851,7 @@ object.flip_label{
 #view-section ul.fancytree-container .glyphicon{ color:#777; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
 #view-section span.fancytree-node.fancytree-active{ background-color:transparent;}
 #view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
-	color:#dc3c47;
+	color:#f4222c;
 	background-color:transparent;
 	transition: color 0.6s ease 0s;
 	-webkit-transition: color 0.6s ease 0s;
