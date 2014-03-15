@@ -798,11 +798,13 @@ object.flip_label{
 #view-section .nav-tabs>li.active>a, 
 #view-section .nav-tabs>li.active>a:hover, 
 #view-section .nav-tabs>li.active>a:focus{
-	color:#404040;
+	color:#555;
 	font-size:17px;
 	background-color:#f8f8f8;
 	text-decoration:none;
+	border-color:#ddd;
 	border-bottom-color: transparent;
+	
 }
 #view-section li.treeview  .tab-content{ padding-bottom:0px;}
 #view-section li a i{ margin-right:5px;}
