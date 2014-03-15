@@ -336,55 +336,59 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   padding-left: 0;
   padding-right: 0;
 }
-.content-sidebar .nav-pills {  
+.content-sidebar ul.nav-pills {  
   font-weight: 700;
   font-size: 0.93em;
   text-transform: uppercase;
   border-right: 1px solid #eee;
 }
-.nav-pills li {
+.content-sidebar ul.nav-pills li {
   margin-right: -1px;
   margin-top:0;
   white-space:nowrap;
+  border-left: 10px solid #ccc;
 }
-.content-sidebar .nav-pills li a{ 
-	padding-left:30px !important; 
+.content-sidebar ul.nav-pills li.active {
+	border-left: 10px solid #DC3C47;
+}
+.content-sidebar ul.nav-pills li a{ 
+	padding-left:20px !important; 
 	background-color: white; 
 	font-size:0.93em; 
-	border-top: none !important;
+	border: none;
+	border-bottom:1px solid #ddd;
 	transition: background-color 0.4s ease 0s;
 	-webkit-transition: background-color 0.4s ease 0s;
 	-moz-transition: background-color 0.4s ease 0s;
 	-o-transition: background-color 0.4s ease 0s;
 }
-.content-sidebar .nav-pills li a,
-.content-sidebar .nav-pills li a:hover {
+.content-sidebar ul.nav-pills li a,
+.content-sidebar ul.nav-pills li a:hover {
   color: #777;
   border-radius:0%;  
   margin-top:0px;	
 }
-.content-sidebar .nav-pills li a:hover{
+.content-sidebar ul.nav-pills li a:hover{
   color: #333;
 }
-.content-sidebar .nav-pills li.active a {
+.content-sidebar ul.nav-pills li.active a {
   color: #333;
   background-color: #eee; 							/*---- match background on content-page -----*/
-  border-left: 10px solid #DC3C47;
   border-top-color:transparent;
   border-right-color: transparent;
   padding-left:20px !important;
 }
-.content-sidebar .nav-pills li a { }
-.content-sidebar .nav-pills li a i{ margin-right:10px; font-size:18px;}
-.content-sidebar .nav-pills li a i:before{
+.content-sidebar ul.nav-pills li a { }
+.content-sidebar ul.nav-pills li a i{ margin-right:10px; font-size:18px;}
+.content-sidebar ul.nav-pills li a i:before{
 	position:relative; top:2px;
 }
 .content-sidebar a.list-group-item.active>.badge, 
-.content-sidebar .nav-pills>.active>a>.badge{
+.content-sidebar ul.nav-pills>.active>a>.badge{
 	color:white;
 	background:#606060;
 }
-.content-sidebar .nav-pills>li>a>.badge{
+.content-sidebar ul.nav-pills>li>a>.badge{
 	background:#888;
 	line-height:7px;
 	margin-left:5px;
@@ -535,7 +539,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   outline: 0 !important;
   outline: -2px auto -webkit-focus-ring-color !important;
 }
-.content-sidebar .nav-pills li.active a:focus{
+.content-sidebar ul.nav-pills li.active a:focus{
   outline: 0 !important;
   outline: -2px auto -webkit-focus-ring-color !important;
 } */
@@ -826,17 +830,16 @@ object.flip_label{
 #view-section span.fancytree-node.fancytree-active .glyphicon{ color:#e00;}
 #view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:white; border:none;}
-#view-section span.fancytree-title{ color:#222; margin-left:-25px; line-height:1.63em; padding-left:5px;}
+#view-section span.fancytree-title{ color:#222; margin-left:-25px; line-height:1.38em; height:1.38em; padding-left:5px;}
 #view-section span.fancytree-title:hover{ color:#000;}
 #view-section span.fancytree-title:before{ 
 	color:#888;
 	font-family: 'kmaps-icons';
 	content: '\e61a';
 	font-size: 28px;
-	line-height:5px;
-	height:5px; 
+	line-height:18px;
 	margin-right:0px;
-	position:relative; top:10px; right:1px;
+	position:relative; top:0px; right:0px;
 }
 #view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#dc3c47;}
 #view-section span.fancytree-node.fancytree-has-children.fancytree-active span.fancytree-title:before{ content:none;}
