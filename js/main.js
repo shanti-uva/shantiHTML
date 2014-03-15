@@ -60,7 +60,7 @@ jQuery(function($) {
 // *** SEARCH *** manage toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
-			$(".flap").prepend("<span style='font-size:27px; position:absolute; left:16px; top:8px; z-index:10;'><i class='icon km-search'></i></span>");
+			$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:11px; z-index:10;'><i class='icon km-search'></i></span>");
 			$(".flap").addClass("on-flap");
 		}
 });
