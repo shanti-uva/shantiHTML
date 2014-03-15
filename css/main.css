@@ -55,7 +55,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	color:#555; 
 	display:block; 
 	font-weight:600; 
-	font-size:0.93em; 
+	font-size:0.83em; 
 	line-height:1.12em;  
 	margin:0 !important;
 	transition: background-color 0.4s ease 0s;
@@ -63,7 +63,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	-moz-transition: background-color 0.4s ease 0s;
 	-o-transition: background-color 0.4s ease 0s;
 }
-.navbar-nav>li.login a{ position:relative;left:0px;top:4px; } 
+.navbar-nav>li.login a{ position:relative;left:0px;top:5px; } 
 .navbar-nav li.explore>a>i{ 
 	font-size:17px; 
 	position:relative;
@@ -799,7 +799,7 @@ object.flip_label{
 #view-section .nav-tabs>li.active>a:hover, 
 #view-section .nav-tabs>li.active>a:focus{
 	color:#555;
-	font-size:17px;
+	font-size:16px;
 	background-color:#f8f8f8;
 	text-decoration:none;
 	border-color:#ddd;
