@@ -22,7 +22,7 @@ body {
   width: inherit;
 }
 .navbar-default h1 {
- 	color:#333 !important; width:600px; display:inline; float:left; font-style:italic; font-size:1em; line-height: 1.25em; margin:0; padding:8px 0 0 20px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;  
+ 	color:#444; width:600px; display:inline; float:left; font-style:italic; font-size:1em; line-height: 1.25em; margin:0; padding:8px 0 0 20px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;  
 }
 .navbar-default h1 a.navbar-brand{
   display:inline;
@@ -45,6 +45,10 @@ body {
 	font-weight:600; 
 	font-size:0.93em; 
 	line-height:1.12em;  
+	transition: background-color 0.4s ease 0s;
+	-webkit-transition: background-color 0.4s ease 0s;
+	-moz-transition: background-color 0.4s ease 0s;
+	-o-transition: background-color 0.4s ease 0s;
 }
 .navbar-nav>li.login a{ position:relative;left:0px;top:4px; } 
 .navbar-nav li.explore>a>i{ 
@@ -185,6 +189,7 @@ body {
 .collections ul li a:hover {
   text-decoration: none;
   color: #fff;
+
 }
 .collections ul li .km-li{
 	position:relative
@@ -210,6 +215,8 @@ body {
 }
 .collections .closecollection:hover {
 	color: #eee;
+	transition: color 0.9s ease 0s;-webkit-transition: color 0.9s ease 0s;-moz-transition: color 0.9s ease 0s;-o-transition: color 0.9s ease 0s;
+
 }
 .collections .closecollection:before {
 	content: '\e620'; /*--- close ---*/
@@ -219,7 +226,7 @@ body {
 
 
 .titlearea {
-  color: white;
+  color: #f9f9f9;
   background-color: #DC3C47;
   position: relative;
   padding-top:10px;
@@ -332,6 +339,10 @@ body {
 	background-color: #fff; 
 	font-size:0.93em; 
 	border-top: none !important;
+	transition: background-color 0.4s ease 0s;
+	-webkit-transition: background-color 0.4s ease 0s;
+	-moz-transition: background-color 0.4s ease 0s;
+	-o-transition: background-color 0.4s ease 0s;
 }
 .content-sidebar .nav-pills li a,
 .content-sidebar .nav-pills li a:hover {
@@ -750,6 +761,10 @@ object.flip_label{
 	border: 1px solid #eee;
 	background-color:#fff;
 	border-bottom: 1px solid #ddd;
+	transition: background-color 0.4s ease 0s;
+	-webkit-transition: background-color 0.4s ease 0s;
+	-moz-transition: background-color 0.4s ease 0s;
+	-o-transition: background-color 0.4s ease 0s;
 }
 #view-section .nav-tabs>li>a:hover, 
 #view-section .nav-tabs>li>a:focus{
@@ -769,60 +784,55 @@ object.flip_label{
 #view-section #treeview > div{ padding:10px 10px 5px;}
 
 /*---- list view ----*/
-#view-section #listview > div{ padding:10px 10px 5px; height:500px;}
+#view-section #listview > div{ padding:10px 10px 0px; height:500px;}
 #view-section div.table-responsive{ }
 #view-section table.table-results{ border:none; font-size:15px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 #view-section table.table-results a{ font-style:italic;}
 .table tbody>tr>td{ line-height:16px; vertical-align:middle;}
 
 /*---- tree view ----*/
-#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height: 1.63em; height:600px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height:1em; height:500px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 #view-section ul.fancytree-container ul{ padding-top:1px;}
 #view-section span.fancytree-icon{ margin:0; padding:0; width:0; height:0; line-height:0; display:none;}
-#view-section span.fancytree-node{ border:none;}
+#view-section span.fancytree-node{ border:none; display:block;}
 #view-section span.fancytree-node.fancytree-active .glyphicon{ color:#e00;}
 #view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:#fff; border:none;}
-#view-section span.fancytree-title{ color:#222 !important; margin-left:-10px; }
-#view-section span.fancytree-title:hover{ color:#111;}
+#view-section span.fancytree-title{ color:#222; margin-left:-25px; line-height:1.63em; padding-left:5px;}
+#view-section span.fancytree-title:hover{ color:#000;}
 #view-section span.fancytree-title:before{ 
 	color:#888;
 	font-family: 'kmaps-icons';
-	font-size: 5px; 
-	content: '\e61e';
-	margin-right:10px;
-	position:relative; 
-	top:-3px; 
-	right:2px;
-	/*--- for bullet style icon -- 
-	font-size: 10px; 
-	content: '\e61e';
-	margin-right:10px;position:relative; top:0px; right:5px; */
+	content: '\e61a';
+	font-size: 28px;
+	line-height:5px;
+	height:5px; 
+	margin-right:0px;
+	position:relative; top:10px; right:0px;
 }
-#view-section .fancytree-has-children span.fancytree-title{ padding-left:10px; margin-left:-15px;}
-#view-section .fancytree-has-children span.fancytree-title:before{ content:none;}
+#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#dc3c47;}
+#view-section span.fancytree-node.fancytree-has-children.fancytree-active span.fancytree-title:before{ content:none;}
+
+#view-section span.fancytree-node.fancytree-active span.fancytree-title{ color:#000;}
+#view-section span.fancytree-node.fancytree-has-children span.fancytree-title{ line-height:1.63em; padding-left:10px; margin-left:-15px; width:100%;}
+#view-section span.fancytree-node.fancytree-has-children span.fancytree-title:before{ content:none;}
 #view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
-
+#view-section span.fancytree-node.fancytree-active{ background-color:transparent;}
+#view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
+		color:#dc3c47;
+			transition: color 0.6s ease 0s;
+	-webkit-transition: color 0.6s ease 0s;
+	-moz-transition: color 0.6s ease 0s;
+	-o-transition: color 0.6s ease 0s;
+	background-color:transparent;
+}
 /*ul.fancytree-container ul{ margin-top:0 !important;margin-bottom:5px;padding-top:0 !important;}*/
-
-
 /*---- END tabs -----*/
 /*---- END Search -----*/
 
 
 
 
-
-
-
-
-
-
- 
-  
-  
-  
-  
 
 @media screen and (min-width: 500px) {
   .main-content .content-sidebar {
@@ -927,8 +937,6 @@ object.flip_label{
     width: 83.33333%;
   }
 }
-
-
 
 @media screen and (min-width: 992px) {
   .main-content .content-page {
