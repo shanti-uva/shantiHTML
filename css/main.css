@@ -833,22 +833,22 @@ object.flip_label{
 #view-section span.fancytree-title{ color:#222; margin-left:-25px; line-height:1.32em; height:1.32em; padding-left:5px;}
 #view-section span.fancytree-title:hover{ color:#000;}
 #view-section span.fancytree-title:before{ 
-	color:#888;
+	color:#777;
 	font-family: 'kmaps-icons';
 	content: '\e61a';
-	font-size: 28px;
+	font-size: 27px;
 	line-height:5px;
 	height:5px; 
 	margin-right:0px;
 	position:relative; top:8px; right:0px;
 }
-#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#dc3c47;}
-#view-section span.fancytree-node.fancytree-has-children.fancytree-active span.fancytree-title:before{ content:none;}
+#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#dc3c47;text-shadow: 0px 0px 4px #777;}
+#view-section span.fancytree-node.fancytree-has-children.fancytree-active span.fancytree-title:before{ content:none; text-shadow: none; display:none;}
 
 #view-section span.fancytree-node.fancytree-active span.fancytree-title{ color:#000;}
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title{ line-height:1.63em; padding-left:10px; margin-left:-15px; width:100%;}
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title:before{ content:none;}
-#view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
+#view-section ul.fancytree-container .glyphicon{ color:#777; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
 #view-section span.fancytree-node.fancytree-active{ background-color:transparent;}
 #view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
 	color:#dc3c47;
