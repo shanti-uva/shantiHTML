@@ -22,6 +22,9 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	margin:0 !important;  
 	background-color:white !important;
 }
+.navbar.navbar-default .navbar-collapse,
+.navbar.navbar-static-top{ border-bottom: none !important;}
+
 .navbar-default h1 {
  	color:#555; 
  	width:570px; 
@@ -70,10 +73,10 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .navbar-nav li.explore>a>i{ 
 	font-size:17px; 
 	position:relative;
-	left:3px;
-	top:0px;
+	left:4px;
+	top:2px;
 }
-.navbar-nav li>a>i.km-arrowselect{ font-size:17px; position:relative;left:0px;top:2px;}
+.navbar-nav li>a>i.km-arrowselect{ font-size:17px; position:relative;left:2px;top:4px;}
 .navbar-nav>li>a .icon{ margin-right:10px;}
 .navbar ul.dropdown-menu { 
 	position:absolute;  
@@ -597,10 +600,10 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 
 	.navbar-header img {
     height: auto;
-    width: inherit;
+    width: 30%;
   }
   .navbar-header .navbar-brand {
-    padding: 10px 0px 0 15px;
+    padding: 0 0px 0 15px;
   }    
   .nav.navbar-right {
     width: inherit;
@@ -625,6 +628,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   }
   .navbar-default h1{ 
   	width:500px;
+  	margin-top:2px;
   }
   .navbar-default h1 a.navbar-brand{ 	
   	font-size:1.12em; 
@@ -640,10 +644,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   #main-content .content-section {
     width: 750px;
   }
-  .navbar-default h1{ width:570px;}
-  .navbar-default h1 a.navbar-brand{ 	
-  	font-size:1.18em; 
-	}  
+  .navbar-default h1{ width:570px;}  
 }
 
 
