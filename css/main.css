@@ -43,7 +43,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	line-height: 1.56em;
 	font-weight:normal;
 	border:0;
-	text-shadow:1px 1px #e0e0e0;
+	/* text-shadow:1px 1px #e0e0e0; */
 }
 
 #navtop.navbar-collapse{ padding:0 !important;}
@@ -910,7 +910,7 @@ object.flip_label{
     width: inherit;
   }
   .navbar-header .navbar-brand {
-    padding: 10px 15px 0 15px;
+    padding: 10px 0px 0 15px;
   }    
   .nav.navbar-right {
     width: inherit;
