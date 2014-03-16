@@ -43,6 +43,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	line-height: 1.56em;
 	font-weight:normal;
 	border:0;
+	text-shadow:1px 1px #ddd;
 }
 #navtop>ul>li{ border-left:1px solid #eee;}
 
@@ -103,8 +104,8 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .navbar li.explore a{ padding-right:5px !important;}
 .navbar li.dropdown.options a{ padding-right:0px !important;} 
 #navtop ul.dropdown-menu li { font-size:1em; line-height:1.63em; height:1.63em;  margin:0; padding:0;}
-#navtop ul.dropdown-menu li.drop-title{ font-size:1.25em; line-height: 2em; height:2em; font-weight:600; color:#707070; background: #eee; padding:0 0 0 14px; margin:8px 0 2px;}
-#navtop ul.dropdown-menu li.drop-title:first-child{ margin-top:0px;}
+#navtop ul.dropdown-menu li.drop-hdr{ text-shadow:1px 1px #ddd; font-size:1.25em; line-height: 2em; height:2em; font-weight:600; color:#707070; background: #eee; padding:0 0 0 14px; margin:8px 0 2px;}
+#navtop ul.dropdown-menu li.drop-hdr:first-child{ margin-top:0px;}
 #navtop ul.dropdown-menu>li>a{ padding:0;margin:0;}
 #navtop ul.dropdown-menu li a{ font-size:0.93em; line-height:1.75em; height:1.63em; padding:0 0 0 18px !important;}
 #navtop ul.dropdown-menu li i{ /*--- this adjusts the square outline ----*/
@@ -322,12 +323,11 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 
 
-
-
 #main-content {
   color: #333;
   background-color: #eee;
   position:relative;
+  min-height:800px;
 }
 #main-content>div {
   background-color: #eee;
