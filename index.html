@@ -34,7 +34,8 @@
       </div>
       
       <div class="navbar-collapse collapse" id="navtop">
-        
+      <form role="form" class="form">
+			 <fieldset>	        
         <ul class="nav navbar-nav navbar-right">
           <li class="explore"><a href="#" id="toggle-collections">EXPLORE<i class="icon km-directions"></i></a></li>
           <li class="login"><a href="">LOGIN</a></li>
@@ -43,35 +44,67 @@
 	          		<ul class="dropdown-menu dropdown-menu-right dropdown-features">
 	                
 	                <li class="drop-hdr">Perspective</li>
-	                  <li class="select"><a href=""><i></i>General</a></li>
-	                  <li class="last"><a href=""><i></i>Other</a></li>
+                    <li class="form-group"><label class="radio-inline" for="options1a">
+												<input type="radio" name="options1" id="options1a" value="options1a" checked>General</label>
+										</li>
+	                  <li class="last form-group"><label class="radio-inline" for="options1b">
+												<input type="radio" name="options1" id="options1b" value="options1b">Tibetan</label>
+										</li>
 	                  
 	                <li class="drop-hdr">Subject Language</li>
-	                  <li><a href=""><i></i>Chinese Characters (simplified)</a></li>
-	                  <li><a href=""><i></i>Chinese Characters (traditional)</a></li>
-	                  <li><a href=""><i></i>Devangiri Script</a></li>
-	                  <li class="select"><a href=""><i></i>Popular Standard (romanization)</a></li>
-	                  <li><a href=""><i></i>Scholarly Standard (romanization)</a></li>
-	                  <li><a href=""><i></i>Tibetan Script (simplified)</a></li>
-	                  <li class="last"><a href=""><i></i>Tibetan Script (romanization)</a></li>
+                    <li class="form-group"><label class="radio-inline" for="options2a">
+												<input type="radio" name="options2" id="options2a" value="options2a">Chinese Characters (simplified)</label>
+										</li>
+                    <li class="form-group"><label class="radio-inline" for="options2b">
+												<input type="radio" name="options2" id="options2b" value="options2b">Chinese Characters (traditional)</label>
+										</li>
+                    <li class="form-group"><label class="radio-inline" for="options2c">
+												<input type="radio" name="options2" id="options2c" value="options2c">Devangiri Script</label>
+										</li>
+                    <li class="form-group"><label class="radio-inline" for="options2d">
+												<input type="radio" name="options2" id="options2d" value="options2d" checked>Popular Standard (romanization)</label>
+										</li>
+                    <li class="form-group"><label class="radio-inline" for="options2e">
+												<input type="radio" name="options2" id="options2e" value="options2e">Scholarly Standard (romanization)</label>
+										</li>										
+                    <li class="form-group"><label class="radio-inline" for="options2f">
+												<input type="radio" name="options2" id="options2f" value="options2f">Tibetan Script (simplified)</label>
+										</li>										
+                    <li class="last form-group"><label class="radio-inline" for="options2g">
+												<input type="radio" name="options2" id="options2g" value="options2g">Tibetan Script (romanization)</label>
+										</li>
 	                
 	                <li class="drop-hdr">Show Subject Details</li>		                    
-	                  <li class="select"><a href=""><i></i>Yes</a></li>
-	                  <li class="last"><a href=""><i></i>No</a></li>
+	                  <li class="form-group"><label class="radio-inline" for="options3a">
+												<input type="radio" name="options3" id="options3a" value="options3a" checked>Yes</label>
+										</li>
+                    <li class="last form-group"><label class="radio-inline" for="options3a">
+												<input type="radio" name="options3" id="options3a" value="options3a">No</label>
+										</li>
 	          	  </ul>	
           </li>
-          <li class="dropdown lang">
-          		<a href="" class="dropdown-toggle" data-toggle="dropdown">ENG<i class="icon km-arrowselect"></i></a>
-	          		<ul class="dropdown-menu pull-left dropdown-features">
-	                    <li><a href=""><i></i>Tibetan</a></li>
-	                    <li><a href=""><i></i>Chinese</a></li>
-	                    <li class="select"><a href=""><i></i>English</a></li>
-	                    <li class="last"><a href=""><i></i>French</a></li>
-	              </ul>
+          <li class="dropdown lang">										
+	          			<a href="" class="dropdown-toggle" data-toggle="dropdown">ENG<i class="icon km-arrowselect"></i></a>
+		          		<ul class="dropdown-menu pull-left dropdown-features">
+                    <li class="form-group"><label class="radio-inline" for="optionslang1">
+												<input type="radio" name="radios" id="optionslang1" value="lang1">Tibetan</label>
+										</li>
+                    <li class="form-group"><label class="radio-inline" for="optionslang2">
+												<input type="radio" name="radios" id="optionslang2" value="lang2" checked>English</label>
+										</li>
+                    <li class="form-group"><label class="radio-inline" for="optionslang3">
+												<input type="radio" name="radios" id="optionslang3" value="lang3">French</label>
+										</li>
+                    <li class="last form-group"><label class="radio-inline" for="optionslang4">
+												<input type="radio" name="radios" id="optionslang4" value="lang4">Chinese</label>
+										</li>
+		              </ul>      
           </li>
         </ul>
-        
+			 </fieldset>  
+			 </form>		       
       </div><!-- END navbar-collapse -->
+      
     </div>
   </div><!-- END navbar -->
   
@@ -312,12 +345,12 @@
 							  <div id="search-section">									  
 									<form role="form" class="form">
 									<fieldset>												
-										<legend style="display:none;">Search Form</legend>									
+										<legend class="hidden">Search Form</legend>									
 																					
 								  <div class="search-form-view form-group">
 											<textarea id="searchform" class="form-control" rows="3" placeholder="Enter Search..."></textarea>												  																			
 											<div class="search-utils btn-group">
-													<button class="btn btn-primary btn-sm" type="submit">Submit Search</button>
+													<button type="submit" class="btn btn-primary btn-sm">Submit Search</button>
 											</div>
 											<a href="#" class="advanced-link advanced-trigger" title="Advanced search options"><i class="icon"></i>Advanced</a>
 								  </div>	
@@ -447,6 +480,11 @@
 	<!-- fancy tree resources -->
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script>
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
+	<!-- radio and checkbox graphics -->
+	<link href="js/forms/skins/minimal/red.css" rel="stylesheet">
+	<script src="js/forms/icheck.js"></script>
+
+
 	<!-- kmaps -->
   <script type="text/javascript" src="js/main.js"></script> 
 

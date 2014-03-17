@@ -27,14 +27,14 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 
 .navbar-default h1 {
  	color:#555; 
- 	width:570px; 
+ 	width:60%; 
  	display:inline; 
  	float:left; 
  	font-style:italic; 
  	font-size:1em; 
  	line-height: 1.25em; 
  	margin:0; 
- 	padding:2px 0 0 20px; 
+ 	padding:0 0 0 20px; 
  	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;  
 }
 .navbar-default h1 a.navbar-brand{
@@ -55,11 +55,13 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .navbar-default h1 a.navbar-brand img { height: auto; width:28%; margin:8px 15px 0 0; }
 .navbar-default h1 a.navbar-brand span{ }
 
-.navbar-collapse>ul>li{ border-left:1px solid #eee;}
+.navbar-collapse ul>li{ border-left:1px solid #eee;}
+
+.navbar-nav .dropdown.lang{ margin-right:10px;}
 .navbar-nav>li{ height:48px;}
 .navbar-nav>li>a{ 
 	color:#404040; 
-	display:block; 
+	display:inline-block; 
 	font-weight:600; 
 	font-size:0.75em; 
 	line-height:1.25em;  
@@ -94,60 +96,34 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 .navbar .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
-	left:-106px;
+	left:-101px;
 	width:255px;
 }
 .navbar .lang ul.dropdown-menu{  /* language dropdown */
 	position:absolute; 
-	left:-55px;
+	left:-47px;
 	width:110px;
 	min-width:110px;
-	padding-top:7px;
+	padding-top:5px;
 	margin-top:0px;
+	padding-bottom:18px;
 }
 .navbar .lang ul.dropdown-menu{ margin-right:15px;}
+.navbar .options ul.dropdown-menu{ padding-bottom:18px;}
 
 .navbar li.explore a{ padding-right:5px !important;}
 .navbar li.dropdown.options a{ padding-right:0px !important;} 
 #navtop ul.dropdown-menu li{ font-size:1em; line-height:1.68em; height:1.68em;  margin:0; padding:0;}
-#navtop ul.dropdown-menu li.drop-hdr{ /*text-shadow:1px 1px #ddd;*/ font-size:1.1em; line-height: 2em; height:2em; font-weight:600; color:#707070; background: #eee; padding:0 0 0 14px; margin:8px 0 2px;}
+#navtop ul.dropdown-menu li.drop-hdr{ /*text-shadow:1px 1px #ddd;*/ font-size:1.12em; line-height: 2em; height:2em; font-weight:600; color:#707070; background: #eee; padding:0 0 0 14px; margin:8px 0 2px;}
 #navtop ul.dropdown-menu li.drop-hdr:first-child{ margin-top:0px;}
-#navtop ul.dropdown-menu li a{ padding:1px 0 0 18px !important;}
-#navtop ul.dropdown-menu>li>a{ font-size:0.88em; margin:0; line-height:2em; height:2em;}
-#navtop ul.dropdown-menu li i{ /*--- adjust the square outline ----*/
-  background: white;
-  -moz-box-shadow: 0px 0px 3px #eee;
-  -webkit-box-shadow: 0px 0px 3px #eee;
-  box-shadow: 0px 0px 3px #eee;
-  color: #777;
-  width: 14px;
-  height: 14px;
-  display: block;
-  -moz-border-radius: 0%;
-  -webkit-border-radius: 0%;
-  border-radius: 0%;
-  font-size: 16px;
-  line-height:18px;
-  margin: 0 10px 0 0;
-  float: left;
-  position: relative;
-  top: 4px;
-  right:0;
-  border:1px solid #eee;
-  font-family:'kmaps-icons';
-}
-#navtop ul.dropdown-menu li i:before{ /*--- this adjusts the icon checkmark ----*/
-	font-size:11px;
-	font-family:'kmaps-icons'; 
-	content:'\e619'; 
-	position: relative;
-  top: -4px;
-  left:-1px;
-  color:#eee;
-}
-#navtop ul.dropdown-menu li.select i:before{ color:#397fbb;} /*--- this adjusts the icon color on selected ----*/
+#navtop ul.dropdown-menu li label{ padding:1px 0 0 13px !important;}
+#navtop ul.dropdown-menu>li>label{ font-size:0.88em; margin:0; line-height:2em; height:2em;}
+
 #navtop ul.dropdown-menu li.last{ padding-bottom:15px !important;}
 
+#navtop ul.dropdown-menu li .radio-inline{ padding-left:15px;}
+#navtop ul.dropdown-menu label{ display:block;}
+#navtop ul.dropdown-menu label>div{ margin-right:7px;margin-top:-3px;}
 
 
 
@@ -445,7 +421,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 #accordion .panel h6{ 
 	font-size:1em; 
-	line-height:4.32em;
+	line-height:3.75em;
   border-top:1px solid white;
   border-bottom:1px solid #ccc;
   margin:0;
@@ -453,7 +429,9 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   height:60px;
 }
 #accordion h6 a {
-  color:#444;
+	color:#444;
+	font-size:1em; 
+	line-height:3.93em;  
 	font-weight:bold;  
 	text-decoration: none;
 	display:block;
@@ -525,6 +503,12 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 
 
 
+@media screen and (max-width: 500px) {
+	.navbar-default h1 a span{ display:none !important;}
+	.navbar-default h1{ width:200px;height:50px;}
+	.navbar-default h1 img{ width:60%; height:auto;}
+}
+
 
 
 @media screen and (min-width: 500px) {
@@ -546,7 +530,17 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
     float: left;
     width: 70%;
   }
-
+  .navbar-default h1{ 
+  	width:200px;
+  	display:inline-block;
+  }
+  .navbar-default h1 a.navbar-brand{ 	
+  	font-size:0px; 
+		line-height: 0px; 
+	}
+	.navbar-default h1 a img{ 
+		width:100%;		
+	}
 }
 
 @media screen and (min-width: 600px) {
@@ -566,7 +560,18 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   #main-content .content-section {
     width: 75%;
   }
-
+  
+  .navbar-default h1{ 
+  	width:480px;
+    margin-top:2px;
+  }
+  .navbar-default h1 a.navbar-brand{ 	
+  	font-size:1.06em; 
+		line-height: 1.25em; 
+	}
+	.navbar-default h1 a img{ 
+		width:50%;		
+	}
 }
 
 @media screen and (max-width: 768px) {
@@ -594,13 +599,19 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 		background-color:white;
 	}
 	.table-responsive>.table{ background-color:transparent;}
+	
+	.navbar-default h1 a,
+	.navbar-default h1{ height:40px !important; display:inline;}
+	.navbar-default h1 a img{ 
+		height:auto;		
+	}
 }
 
 @media screen and (min-width: 768px) {
 
 	.navbar-header img {
     height: auto;
-    width: 30%;
+    width: 32%;
   }
   .navbar-header .navbar-brand {
     padding: 0 0px 0 15px;
@@ -628,14 +639,13 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   }
   .navbar-default h1{ 
   	width:500px;
-  	margin-top:2px;
   }
   .navbar-default h1 a.navbar-brand{ 	
   	font-size:1.12em; 
 		line-height: 1.25em; 
 	}
 	.navbar-default h1 a img{ 
-		width:35%;		
+		width:32%;		
 	}
 }
 

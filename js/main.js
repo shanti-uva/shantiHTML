@@ -75,7 +75,20 @@ jQuery(function($) {
 });
 
 
+// *** SEARCH *** call function iCheck for form graphics
+jQuery(function($) {
+  $('input').each(function(){
+    var self = $(this),
+      label = self.next(),
+      label_text = label.text();
 
-
+    label.remove();
+    self.iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red',
+      insert: '<div class="icheck_line-icon"></div>' + label_text
+    });
+  });
+});
 
 
