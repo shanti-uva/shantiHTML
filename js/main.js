@@ -11,8 +11,8 @@ jQuery(function($) {
   
   // --- collections toggle
   $("li.explore").addClass("closed");
-  $("#toggle-collections, .closecollection, .km-ul a").click(function() {
-    $("#opencollect").slideToggle('slow');
+  $("#toggle-collections, .closecollection").click(function() {
+    $("#opencollect").slideToggle('fast');
     $(".closed").toggleClass("open", 200);
   });
   
@@ -67,66 +67,35 @@ jQuery(function($) {
 // *** SEARCH *** manage toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
-			$(".flap").addClass("off-flap");
-			$(".flap").prepend("<span style='font-size:1.32em; position:absolute; top:7px; left:18px; z-index:10;'><i class='fa fa-search'></i></span>");
+			$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:11px; z-index:10;'><i class='icon km-search'></i></span>");
+			$(".flap").addClass("on-flap");
 		}
-		// --- toggle class for search button & header
-		$(".flap, #closeSearch").click( function(){
-						$(".off-flap").toggleClass("on-flap", 200);
-						$("h3.off").toggleClass("on", 200);
-		});
-});
 
-
-// *** SEARCH *** set class for icon onHover
-jQuery(function($) {
-	$(".dropdown-menu li").find("a").hover( function () {
-	    $(this).addClass('on');
+	// --- set class on dropdown menu for icon
+	$(".extruder.right .flap").hover( function () {
+	    $(this).addClass('on-hover');
 	    },                 
 	      function () {              
-	    $(this).removeClass('on');
+	    $(this).removeClass('on-hover');
 	    }
 	);
 });
 
 
-// *** SEARCH *** helps control flash when loading
-// jQuery(function($) {
-//	$("h3.search-header").css('display','block');
-// });
-
-
-// *** SEARCH *** fallback for browsers that don't support HTML5 placeholder attribute
+// *** SEARCH *** call function iCheck for form graphics
 jQuery(function($) {
-	if (!elementSupportsAttribute('textarea', 'placeholder')) {
-	  $("#searchform")
-	    .data("originalText", $("#searchform").text())
-	    .css("color", "#999")
-	    .focus(function() {
-	        var $el = $(this);
-	        if (this.value == $el.data("originalText")) {
-	          this.value = "";
-	        }
-	    })
-	    .blur(function() {
-	      if (this.value == "") {
-	          this.value = $(this).data("originalText");
-	      }
-	    });
-	} else {
-	  // Browser does support HTML5 placeholder attribute, so use it.
-	  $("#searchform")
-	    .attr("placeholder", $("#searchform").text())
-	    .text("");
-	}
+  $('input').each(function(){
+    var self = $(this),
+      label = self.next(),
+      label_text = label.text();
+
+    label.remove();
+    self.iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red',
+      insert: '<div class="icheck_line-icon"></div>' + label_text
+    });
+  });
 });
-
-
-
-
-
-
-
-
 
 

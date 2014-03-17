@@ -18,3 +18,323 @@
  *  *****************************************************************************
  */
 .extruder{position:fixed;cursor:default;background:url("../elements/extruder_blank.png")}.extruder .header{height:27px}.extruder .extruder-content{display:none;background:#000}.extruder.open .extruder-content{-moz-box-shadow:2px 0 5px #999;-webkit-box-shadow:2px 0 5px #999;box-shadow:2px 0 5px #999}.extruder .footer{display:none;height:10px;background:#000;-moz-border-radius:0 0 8px 8px;-webkit-border-top-left-radius:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:8px;border-bottom-right-radius:8px;-moz-box-shadow:2px 0 5px #999;-webkit-box-shadow:2px 0 5px #999;box-shadow:2px 0 5px #999}.extruder.top .flap{color:#fff;font:18px/28px Arial,Helvetica,sans-serif;text-align:center;display:block;margin:auto;padding:0 5px 5px 5px;height:30px;width:180px;background:#000;cursor:pointer;-moz-border-radius:0 0 8px 8px;-webkit-border-top-left-radius:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:8px;border-bottom-right-radius:8px;-moz-box-shadow:2px 0 5px #999;-webkit-box-shadow:2px 0 5px #999;box-shadow:2px 0 5px #999;text-shadow:2px 2px 2px #333}.extruder.top .extruder-content{-moz-border-radius:0 0 8px 8px;-webkit-border-top-left-radius:0;-webkit-border-top-right-radius:0;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:8px;border-top-left-radius:0;border-top-right-radius:0;border-bottom-left-radius:8px;border-bottom-right-radius:8px}.extruder.bottom .flap{position:relative;color:white;font:18px/28px Arial,Helvetica,sans-serif;text-align:center;display:block;margin:auto;margin-top:1px;padding:0 5px 5px 5px;height:30px;width:180px;background:#000;cursor:pointer;-moz-border-radius:8px 8px 0 0;-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:0;-webkit-border-bottom-right-radius:0;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:0;border-bottom-right-radius:0;text-shadow:2px 2px 2px #333;-moz-box-shadow:2px 0 5px #999;-webkit-box-shadow:2px 0 5px #999;box-shadow:2px 0 5px #999}.extruder.bottom .footer{-moz-border-radius:8px 8px 0 0;-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:0;-webkit-border-bottom-right-radius:0;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:0;border-bottom-right-radius:0;position:relative;margin-top:-5px}.extruder.bottom .extruder-content{-moz-border-radius:8px 8px 0 0;-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:0;-webkit-border-bottom-right-radius:0;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:0;border-bottom-right-radius:0}.extruder.bottom .ext_wrapper{bottom:0}.extruder.left{height:100%;background:url("../elements/extruder_blank.png")}.extruder.left.open .extruder-content{-moz-box-shadow:2px 0 5px #999;-webkit-box-shadow:2px 0 5px #999;box-shadow:2px 0 5px #999}.extruder.left .extruder-content{border-right:3px solid #000}.extruder.left .ext_wrapper{height:100%}.extruder.left .footer{display:none}.extruder.left .flap{font-size:18px;color:white;top:0;padding:10px 0 10px 10px;margin-right:-37px;background:#000;width:30px;position:absolute;right:0;-moz-border-radius:0 8px 0 8px;-webkit-border-top-left-radius:0;-webkit-border-top-right-radius:8px;-webkit-border-bottom-left-radius:0;-webkit-border-bottom-right-radius:8px;border-top-left-radius:0;border-top-right-radius:8px;border-bottom-left-radius:0;border-bottom-right-radius:8px;-moz-box-shadow:2px 0 5px #999;-webkit-box-shadow:2px 0 5px #999;box-shadow:2px 0 5px #999}.extruder.left .flap .flapLabel{background:#000}.extruder.right{height:100%;background:url("../elements/extruder_blank.png")}.extruder.right .extruder-content{border-left:3px solid #000}.extruder.right.open .extruder-content{-moz-box-shadow:-2px 0 5px #999;-webkit-box-shadow:-2px 0 5px #999;box-shadow:-2px 0 5px #999}.extruder.right .ext_wrapper{height:100%;right:0}.extruder.right .footer{display:none}.extruder.right .flap{font-size:18px;color:white;top:0;padding:10px 0 10px 10px;background:#000;width:30px;position:absolute;left:-37px;-moz-border-radius:8px 0 8px 0;-webkit-border-top-left-radius:8px;-webkit-border-top-right-radius:0;-webkit-border-bottom-left-radius:8px;-webkit-border-bottom-right-radius:0;border-top-left-radius:8px;border-top-right-radius:0;border-bottom-left-radius:8px;border-bottom-right-radius:0;-moz-box-shadow:-2px 0 5px #999;-webkit-box-shadow:-2px 0 5px #999;box-shadow:-2px 0 5px #999}.extruder.right .flap .flapLabel{background:#000}.extruder .voice{font:18px/24px Arial,Helvetica,sans-serif;color:white;padding:5px;padding-left:10px;height:27px;border-bottom:1px solid #333;text-shadow:2px 2px 2px #333}.extruder .voice:last-child{border-bottom:0}.extruder .voice .disabled{cursor:default}.extruder .text{background:#222;font:14px/16px Arial,Helvetica,sans-serif;color:gray;padding:10px;border-bottom:1px solid #333;text-shadow:2px 2px 2px #333}.extruder .voice.hover{background:url("../elements/extruder_voiceHover.png") no-repeat top}.extruder .voice.sel{background:url("../elements/extruder_voiceHover.png") no-repeat top}.extruder .voice img{float:left;margin-right:15px}.extruder .voice a.label{display:block;height:30px;color:white;padding-top:0;text-decoration:none}.extruder .voice span.label{display:block;height:30px;color:#d0cfcf;padding-top:0;text-decoration:none}.extruder .voice{position:relative}.extruder .settingsBtn{display:block;position:absolute;width:36px;height:36px;background:url("../elements/settingsBtn.png") no-repeat bottom;cursor:pointer;right:-3px;top:-4px}.extruder .optionsPanel{background:url("../elements/fuzz.gif");display:none;border-bottom:1px solid #333}.extruder .voice.sel{background:url("../elements/extruder_voiceHover.png") no-repeat top}.optionsPanel .panelVoice a{text-decoration:none;display:block;color:#ccc;padding:8px;padding-left:20px;font-size:16px;text-shadow:2px 2px 2px #333;border-bottom:1px solid #000;cursor:pointer}.optionsPanel .panelVoice a:hover{color:#fff;background:url("../elements/red_op_50.png")}:focus{outline:0}
+
+/*************************************************/
+/********* KMAPS Search Styles Below ********/
+/*************************************************/
+/*------ clear some default Extruder styles -----*/
+.extruder, 
+.extruder.right,
+.extruder .extruder-content, 
+.extruder.right .flap .flapLabel, 
+.extruder .text, 
+.extruder .voice.hover, 
+.extruder .voice.sel, 
+.extruder .settingsBtn, 
+.extruder .optionsPanel,
+.optionsPanel .panelVoice a:hover{
+	background-image:none; background-color:transparent;
+} 
+.extruder.open .extruder-content, 
+.extruder.right.open .extruder-content,
+.extruder.right .flap,
+.extruder .voice,
+.extruder.right .text,
+.optionsPanel .panelVoice a{
+	box-shadow:none; text-transform:none;
+}
+.extruder.right .extruder-content,
+.panel-default .panel-heading,
+.extruder.right .panel-heading,
+.extruder.right .panel-group,
+.extruder.right .panel-group .panel,
+.extruder.right .panel-default>.panel-heading{
+	border:none;
+}
+.extruder .text,
+#kmaps-search .text{
+  border:none; 
+  text-shadow:none; 
+  background-color:white;
+  color:#333;
+  width:100% !important;
+  padding:0;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+
+#kmaps-search{ /*---- SEARCH panel wrapper */
+  margin-top:-65px; /*--- position panel above content-section */
+  box-shadow:none;
+  background-color:#eee;
+}
+#kmaps-search>div{ background-color:#eee;}
+#kmaps-search.extruder.right,
+#kmaps-search.extruder.right.isOpened{ 
+}
+#kmaps-search .ext_wrapper{ height:auto;}
+.extruder{ }
+.extruder.right{ background-color:white;}
+.extruder.right .extruder-content{
+	background-color:white;
+	border:none;
+	width:100%;
+	padding:0;
+	-moz-box-shadow:0 0 5px 0px #999;
+	-webkit-box-shadow:0 0 5px 0px #999; 
+	box-shadow:0px 0px 5px #999;
+}
+/* ------ search button icon ------ */
+/* ------ NOTE styles for icon are loaded via main.js */
+.extruder.right .flap{ 
+  cursor:pointer;
+  display:block;
+  background-color:white;
+  height:50px;
+	width:50px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  padding: 8px 0 8px 8px;
+  border-top-left-radius:50px;
+  border-bottom-left-radius:50px;
+  margin:0px 0px 0px -50px;
+}
+.extruder.right .flap.on-flap{
+	-moz-box-shadow:-1px 0px 2px #bc323d;
+	-webkit-box-shadow:-1px 0px 2px #bc323d; 
+	box-shadow:-1px 0px 2px #bc323d;
+}
+.extruder.right .flap span.flapLabel,
+.extruder.right .flap.on-flap span.flapLabel{ 
+  background-color:#505050;  
+  height:36px;
+  display:block; 
+  padding:18px 40px 18px 0; 
+  margin:-1px 0px 0px 0px;
+  border-top-left-radius:25px;
+  border-bottom-left-radius:25px;
+  overflow:hidden;
+  width:42px !important;
+}
+.extruder.right .flap>span,
+.extruder.right .flap.on-flap>span{
+	color:#ddd;
+}
+
+.extruder.right .flap.on-hover>span,
+.extruder.right .flap.on-hover.on-flap>span{
+	color:white;
+}
+
+object.flip_label{   
+  display:none;
+}
+
+
+
+/*---- search input section -----*/
+#kmaps-search #view-section,
+#kmaps-search #search-section{ width:300px;}
+#kmaps-search #search-section{ margin:7px 0 0 7px;}
+
+#kmaps-search .search-form-view{
+	background-color:#f8f8f8;
+	padding:10px 0 0; 
+	margin:0;
+}
+#kmaps-search .search-form-view textarea{
+	margin: 0 0 5px 10px; 
+	padding:5px 7px 10px 10px;
+	width:93%;
+	font-size:1.06em;
+	color:#333;
+	resize: none;
+	overflow: auto;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+#search-section .search-utils{ padding-top:5px;margin:0;}
+#search-section a.advanced-link{ 
+	font-size:0.93em;
+	display:inline; 
+	color:#dc3c47; 
+	float:right; 
+	font-weight:600;
+	height:15px; 
+	margin:3px 20px 5px 0;
+	padding-left:20px;	
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+#search-section a.advanced-link:hover{ text-decoration:none; color:#555;}
+#search-section a.advanced-link i.icon:before{
+	font-family:'kmaps-icons';
+	content: '\e61d';
+	font-size:0.68em;
+	margin-right:3px;
+}
+#search-section a.advanced-link.show-advanced i.icon:before{content:'\e60a';}
+#search-section a.advanced-link i.icon:hover,
+#search-section a.advanced-link.show-advanced i.icon:hover{ }
+#search-section .advanced-link-view{ padding:0 0 5px 15px; background-color:#f8f8f8;}
+#search-section .advanced-link-view .form-group{ 
+	padding:7px 0 5px;
+	margin:0; 
+	border:1px solid #e0e0e0; 
+	border-width:1px 0 0;
+}
+#search-section .advanced-link-view .form-group.last{
+	padding-bottom:5px;
+}
+#search-section .search-utils .btn{  font-size:1em; padding:4px 12px; margin:0 0 10px 10px !important; }
+
+#search-section .radio-inline input,
+#search-section .radio input[type="radio"], 
+#search-section .radio-inline input[type="radio"]{
+	margin-left:-18px;
+}
+#search-section .checkbox-inline{ 
+	padding-left:23px; 
+	margin-left:-2px;	 
+}
+#search-section label { 
+	color:#505050;
+	font-size:13px;
+	line-height:15px;	
+}
+#search-section .form-group.last{ 
+	
+}
+
+#kmaps-search .radio-inline{ padding-left:0;}
+#kmaps-search .checkbox-inline{ padding-left:2px;}
+
+#kmaps-search .radio-inline>div{ margin-right:1px;margin-bottom:3px;}
+#kmaps-search .checkbox-inline>div{ margin-right:6px;margin-bottom:3px;}
+
+
+
+
+
+
+/*---- START tabs -----*/
+#view-section{ margin:7px 0 7px 7px;}
+#view-section .tab-content{
+	background-color:#f8f8f8;
+	padding:0;
+	border-left: 1px solid #ddd;
+}
+#view-section .tab-content .tab-pane{ padding-bottom:30px;}
+#view-section .tab-content .tab-pane#treeview{ padding-bottom:5px;}
+#view-section .nav-tabs>li{
+	width:35%;
+	font-size:1.06em;
+	line-height:1.5em;
+	letter-spacing:1px;	  
+}
+#view-section .nav-tabs>li>a{
+	color:#777;
+	font-size:14px;
+	line-height:25px;	
+	margin-right: 2px;
+	/* border-radius: 0%; */
+	font-weight:bold;
+	padding:10px 0 5px 0;
+	display:block;
+	text-align:center;
+	border: 1px solid #eee;
+	background-color:white;
+	border-bottom: 1px solid #ddd;
+	transition: background-color 0.4s ease 0s;
+	-webkit-transition: background-color 0.4s ease 0s;
+	-moz-transition: background-color 0.4s ease 0s;
+	-o-transition: background-color 0.4s ease 0s;
+	-webkit-transition: color 0.4s ease 0s;
+	-moz-transition: color 0.4s ease 0s;
+	-o-transition: color 0.4s ease 0s;
+}
+#view-section .nav-tabs>li>a:hover, 
+#view-section .nav-tabs>li>a:focus{
+	color:#333;
+	background-color:white;
+	border: 1px solid #ddd;
+}
+#view-section .nav-tabs>li.active>a, 
+#view-section .nav-tabs>li.active>a:hover, 
+#view-section .nav-tabs>li.active>a:focus{
+	color:#dc3c47;
+	font-size:15px;
+	background-color:#f8f8f8;
+	text-decoration:none;
+	border-color:#ddd;
+	border-bottom-color: transparent;	
+}
+#view-section #treeview>div{ padding:10px 10px 5px 7px;}
+#view-section li.treeview .tab-content{ padding-bottom:0px;}
+
+#view-section .nav-tabs>li> i{ width:16px; height:16px;}
+#view-section .nav-tabs>li> a i:before{ font-size:13px; position:relative; top:0px; right:5px;}
+#view-section .nav-tabs>li.active> a i:before{ font-size:16px; position:relative; top:1px; right:5px;}
+/*---- END tabs -----*/
+
+/*---- list view ----*/
+#view-section #listview>div{ height:450px; /*** SET SEARCH HEIGHT, 2 selectors, see other below ***/ padding:10px 10px 0px;}
+
+#view-section table.table-responsive{ border:none;}
+#view-section table.table-results{ border:none; font-size:15px; line-height:20px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+#view-section table.table-results a{ font-style:italic;}
+#view-section table.table-results tbody>tr>td{ line-height:20px; }
+#view-section table.table-results tbody>tr:hover{ background-color:#fff;}
+#view-section table.table-results{ }
+
+/*---- tree view ----*/
+#view-section ul.fancytree-container{ height:450px; /*** SET SEARCH HEIGHT, 2 selectors, see other above ***/ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+#view-section ul.fancytree-container ul{ padding-top:1px;}
+
+#view-section span.fancytree-icon{ margin:0; padding:0; width:0; height:0; line-height:0; display:none;} /*--- remove checkbox ---*/
+#view-section span.fancytree-node{ border:none; display:block;}
+
+#view-section span.fancytree-expander:before{ }
+#view-section span.fancytree-node.fancytree-active{ background-color:white; border:none;}
+
+#view-section span.fancytree-title{ color:#444; margin-left:-25px; line-height:1.32em; height:1.32em; padding-left:5px;}
+#view-section span.fancytree-title:before{ 
+	color:#aaa;
+	font-family: 'kmaps-icons';
+	content: '\e61a';
+	font-size: 27px;
+	line-height:5px;
+	height:5px; 
+	margin-right:0px;
+	position:relative; top:8px; right:0px;
+}
+#view-section span.fancytree-title:hover,
+#view-section span.fancytree-title:hover:before{ color:#555;}
+
+#view-section span.fancytree-node.fancytree-active{ background-color:transparent;}
+#view-section span.fancytree-node.fancytree-active span.fancytree-title{ color:#000;}
+
+#view-section span.fancytree-node.fancytree-active.fancytree-has-children span.fancytree-title:before{ content:none; text-shadow: none; display:none;}
+#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#f4222c;text-shadow: 0px 0px 1px #555;}
+
+#view-section span.fancytree-node.fancytree-has-children span.fancytree-title{ line-height:1.63em; padding-left:10px; margin-left:-15px; width:100%;}
+#view-section span.fancytree-node.fancytree-has-children span.fancytree-title:before{ content:none;}
+
+#view-section ul.fancytree-container .glyphicon{ color:#777; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
+#view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
+	color:#f4222c;
+	text-shadow: 0px 0px 1px #555;
+	background-color:transparent;
+}
+#view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
+
+
+
+
+
+
+
+
+
+
+/*---- END Search -----*/
+
