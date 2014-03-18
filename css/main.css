@@ -83,6 +83,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	z-index:1001; 
 	margin:0;	
 	padding:0;
+	background-color:#f0f0f0;
 }
 .navbar-nav>li>.dropdown-menu{
 	margin: 0px;
@@ -112,7 +113,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .navbar li.explore a{ padding-right:5px !important;}
 .navbar li.dropdown.options a{ padding-right:0px !important;} 
 #navtop ul.dropdown-menu li{ font-size:1em; line-height:1.68em; height:1.68em;  margin:0; padding:0;}
-#navtop ul.dropdown-menu li.drop-hdr{ text-shadow:1px 1px #ddd; font-size:1.12em; line-height: 2.12em; height:2.12em; font-weight:600; color:#666; background: #eee; padding:0 0 0 14px; margin:8px 0 2px;}
+#navtop ul.dropdown-menu li.drop-hdr{ text-shadow:1px 1px #ddd; font-size:1.12em; line-height: 2.25em; height:2.25em; font-weight:600; color:#666; background-color: #ddd; padding:0 0 0 14px; margin:8px 0 2px;}
 #navtop ul.dropdown-menu li.drop-hdr:first-child{ margin-top:0px;}
 #navtop ul.dropdown-menu li label{ padding:1px 0 0 13px !important;}
 #navtop ul.dropdown-menu>li>label{ font-size:0.88em; margin:0; line-height:2em; height:2em;}
