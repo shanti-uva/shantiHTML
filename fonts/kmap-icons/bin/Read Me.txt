@@ -1,6 +1,0 @@
-
-Build font set with online service app at www.icomoon.io
-
-You can import *selection.json* back to the IcoMoon app using the *Import Icons* button (or via Main Menu > Manage Projects) to retrieve your icon selection.
-
-You also can import the existing SVG files directly, and add new ones from other libraries on the website icomoon, or make new custom ones. 

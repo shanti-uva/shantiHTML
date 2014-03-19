@@ -92,26 +92,11 @@
 /*---- kmaps icon font set -----*/
 
 
-.km-radio-unchecked:before {
-	content: "\e600";
-}
-.km-radio-checked:before {
-	content: "\e601";
-}
-.km-checkbox-partial:before {
-	content: "\e602";
-}
-.km-checkbox-unchecked:before {
-	content: "\e603";
-}
-.km-checkbox-checked:before {
-	content: "\e604";
-}
-.km-menu:before {
-	content: "\e605";
-}
 .km-visuals:before {
 	content: "\e606";
+}
+.km-texts:before {
+	content: "\e603";
 }
 .km-tree:before {
 	content: "\e607";
@@ -199,4 +184,7 @@
 }
 .km-events:before {
 	content: "\e622";
+}
+.km-menu:before {
+	content: "\e605";
 }
