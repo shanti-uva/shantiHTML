@@ -329,6 +329,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 .content-sidebar ul.nav-pills li a:hover{
   color: #333;
+  background-color:#f5f5f5;
 }
 .content-sidebar ul.nav-pills li.active a {
   color: #333;
