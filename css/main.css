@@ -1,7 +1,8 @@
+
 html { -webkit-font-smoothing: antialiased;}
 body {
   background-color: white;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font-family: "Museo Sans", sans-serif;
 }
 /* align checkboxes, radios, text inputs with their label */
 input[type="radio"] { vertical-align: text-bottom; }
@@ -9,8 +10,6 @@ input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
 .ie6 input { vertical-align: text-bottom; }
 /* hand cursor on clickable input elements */
 label, input[type=button], input[type=submit], button { cursor: pointer; }
-
-
 
 .container-fluid {
   background-color: white;
@@ -46,7 +45,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	text-shadow:1px 1px #eee;
 }
 .navbar-default h1 a.navbar-brand:hover{ color:#222;}
-.navbar-default h1 a.navbar-brand span{ position:relative; top:6px; display:inline-block;}
+.navbar-default h1 a.navbar-brand span{ position:relative; top:7px; display:inline-block;}
 .navbar-default h1 a.navbar-brand img { height:auto; width:28%; margin:7px 15px 0 0; }
 
 .navbar-collapse{ padding:0;}
@@ -57,7 +56,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	color:#333; 
 	display:inline-block; 
 	font-weight:600; 
-	font-size:0.88em; 
+	font-size:0.82em; 
 	line-height:1.25em;  
 	margin:0 !important;
 	transition: background-color 0.4s ease 0s;
@@ -83,7 +82,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	z-index:1001; 
 	margin:0;	
 	padding:0;
-	background-color:#f0f0f0;
+	background-color:#f7f7f7;
 }
 .navbar-nav>li>.dropdown-menu{
 	margin: 0px;
@@ -94,7 +93,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 .navbar .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
-	left:-156px;
+	left:-93px;
 	width:255px;
 }
 .navbar .lang ul.dropdown-menu{  /* language dropdown */
@@ -113,7 +112,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .navbar li.explore a{ padding-right:5px !important;}
 .navbar li.dropdown.options a{ padding-right:0px !important;} 
 #navtop ul.dropdown-menu li{ font-size:1em; line-height:1.68em; height:1.68em;  margin:0; padding:0;}
-#navtop ul.dropdown-menu li.drop-hdr{ text-shadow:1px 1px #ddd; font-size:1.12em; line-height: 2.25em; height:2.25em; font-weight:600; color:#666; background-color: #ddd; padding:0 0 0 14px; margin:8px 0 2px;}
+#navtop ul.dropdown-menu li.drop-hdr{ font-size:0.93em; text-transform:uppercase; line-height:2.32em; height:2.32em; font-weight:600; color:#666; background-color: #ddd; padding:2px 0 0 14px; margin:8px 0 2px;}
 #navtop ul.dropdown-menu li.drop-hdr:first-child{ margin-top:0px;}
 #navtop ul.dropdown-menu li label{ padding:1px 0 0 13px !important;}
 #navtop ul.dropdown-menu>li>label{ font-size:0.88em; margin:0; line-height:2em; height:2em;}
@@ -217,7 +216,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 
 }
 .collections .closecollection:before {
-	content: '\e620'; /*--- close ---*/
+	content: '\e61e'; /*--- close ---*/
 	font-family:'kmaps-icons';
 }
 
@@ -227,43 +226,46 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   color: #f9f9f9;
   background-color: #DC3C47;
   position: relative;
-  padding-top:10px;
-  padding-bottom:5px;
+  padding-top:8px;
+  padding-bottom:10px;
 }
 .titlearea .page-title {  
-  font-weight: 400;
+  font-weight: normal;
   font-size:2em;
-  line-height:1em
+  line-height:1.5em;
 }
+.titlearea .page-title span{ }
 .titlearea .page-title .icon {
 	padding:7px;
-  margin-left:-15px;
+  margin:0 10px 0 -15px;
   background-color:#a52d34;
-  height: 25px;
-  width: 25px;
-  line-height:18px;
   font-size:18px;
+  line-height:18px;
+	float:left;
+	position:relative; 
+	top:3px;
 }
 .titlearea .page-title .icon:before {
-	font-size:18px;
-	line-height:18px;
-	position:relative;
-	right:1px;
+	font-size:22px;
+	line-height:22px;
+	position:relative; 
+	top:-1px;
 }
 .titlearea .breadcrumb {
   background-color: inherit;
   font-size: smaller;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-  margin:0;
-  padding:10px 0 5px 5px;
+  margin:0px 60px 0 0;
+  padding:0;
 }
 .titlearea .breadcrumb .tag-before-breadcrumb {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  font-family: "Museo Sans", sans-serif;
   font-size:1.32em;
-  padding-right:5px;
+  padding-right:0px;
+  padding-left:0px;
   font-weight: bold;
 }
-.breadcrumb > li + li:before{ padding:0 3px;}
+.breadcrumb > li + li:before{ padding:0;}
 .titlearea .breadcrumb a {
   color: white;
   text-decoration: none;
@@ -281,7 +283,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   color: #333;
   background-color: #eee;
   position:relative;
-  min-height:800px;
+  min-height:100% !important;
 }
 #main-content>div {
   background-color: #eee;
@@ -291,8 +293,9 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   padding-right: 0;
 }
 .content-sidebar ul.nav-pills {  
-  font-weight: 700;
-  font-size: 0.93em;
+  font-weight: 600;
+  font-size: 1em;
+  line-height:2em;
   text-transform: uppercase;
   border-right: 1px solid #eee;
 }
@@ -308,7 +311,8 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .content-sidebar ul.nav-pills li a{ 
 	padding-left:20px !important; 
 	background-color: white; 
-	font-size:0.83em; 
+	font-size:0.75em; 
+	line-height:2em;
 	border: none;
 	border-bottom:1px solid #ddd;
 	transition: background-color 0.4s ease 0s;
@@ -335,7 +339,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .content-sidebar ul.nav-pills li a { }
 .content-sidebar ul.nav-pills li a i{ margin-right:10px; font-size:18px;}
 .content-sidebar ul.nav-pills li a i:before{
-	position:relative; top:2px;
+	position:relative; top:4px;
 }
 .content-sidebar a.list-group-item.active>.badge, 
 .content-sidebar ul.nav-pills>.active>a>.badge{

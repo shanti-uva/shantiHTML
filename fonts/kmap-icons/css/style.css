@@ -1,0 +1,133 @@
+@font-face {
+	font-family: 'kmaps-icons';
+	src:url('fonts/kmaps-icons.eot?-6ln3zo');
+	src:url('fonts/kmaps-icons.eot?#iefix-6ln3zo') format('embedded-opentype'),
+		url('fonts/kmaps-icons.woff?-6ln3zo') format('woff'),
+		url('fonts/kmaps-icons.ttf?-6ln3zo') format('truetype'),
+		url('fonts/kmaps-icons.svg?-6ln3zo#kmaps-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'kmaps-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-radio-unchecked:before {
+	content: "\e600";
+}
+.icon-radio-checked:before {
+	content: "\e601";
+}
+.icon-checkbox-partial:before {
+	content: "\e602";
+}
+.icon-checkbox-unchecked:before {
+	content: "\e603";
+}
+.icon-checkbox-checked:before {
+	content: "\e604";
+}
+.icon-menu:before {
+	content: "\e605";
+}
+.icon-visuals:before {
+	content: "\e606";
+}
+.icon-tree:before {
+	content: "\e607";
+}
+.icon-terms:before {
+	content: "\e608";
+}
+.icon-subjects:before {
+	content: "\e609";
+}
+.icon-stack:before {
+	content: "\e60a";
+}
+.icon-search:before {
+	content: "\e60c";
+}
+.icon-plus:before {
+	content: "\e60d";
+}
+.icon-places:before {
+	content: "\e60e";
+}
+.icon-overview:before {
+	content: "\e610";
+}
+.icon-directions:before {
+	content: "\e611";
+}
+.icon-mulitply:before {
+	content: "\e612";
+}
+.icon-minus:before {
+	content: "\e613";
+}
+.icon-menu2:before {
+	content: "\e614";
+}
+.icon-maps:before {
+	content: "\e615";
+}
+.icon-list2:before {
+	content: "\e616";
+}
+.icon-list:before {
+	content: "\e617";
+}
+.icon-info2:before {
+	content: "\e618";
+}
+.icon-info:before {
+	content: "\e619";
+}
+.icon-essays:before {
+	content: "\e61a";
+}
+.icon-downarrow:before {
+	content: "\e61b";
+}
+.icon-community:before {
+	content: "\e61c";
+}
+.icon-checkmark:before {
+	content: "\e61d";
+}
+.icon-cancel:before {
+	content: "\e61e";
+}
+.icon-audiovideo:before {
+	content: "\e61f";
+}
+.icon-arrowselect:before {
+	content: "\e620";
+}
+.icon-agents:before {
+	content: "\e621";
+}
+.icon-dot:before {
+	content: "\e625";
+}
+.icon-photos:before {
+	content: "\e60b";
+}
+.icon-sources:before {
+	content: "\e60f";
+}
+.icon-events:before {
+	content: "\e622";
+}

@@ -92,102 +92,111 @@
 /*---- kmaps icon font set -----*/
 
 
+.km-radio-unchecked:before {
+	content: "\e600";
+}
+.km-radio-checked:before {
+	content: "\e601";
+}
+.km-checkbox-partial:before {
+	content: "\e602";
+}
+.km-checkbox-unchecked:before {
+	content: "\e603";
+}
+.km-checkbox-checked:before {
+	content: "\e604";
+}
+.km-menu:before {
+	content: "\e605";
+}
 .km-visuals:before {
-	content: '\e600';
+	content: "\e606";
 }
 .km-tree:before {
-	content: '\e601';
-}
-.km-texts:before {
-	content: '\e602';
+	content: "\e607";
 }
 .km-terms:before {
-	content: '\e603';
+	content: "\e608";
 }
 .km-subjects:before {
-	content: '\e604';
+	content: "\e609";
 }
 .km-stack:before {
-	content: '\e605';
-}
-.km-sources:before {
-	content: '\e606';
+	content: "\e60a";
 }
 .km-search:before {
-	content: '\e607';
-}
-.km-places:before {
-	content: '\e608';
-}
-.km-overview:before {
-	content: '\e609';
-}
-.km-minus:before {
-	content: '\e60a';
-}
-.km-menu2:before {
-	content: '\e60b';
-}
-.km-maps:before {
-	content: '\e60c';
-}
-.km-list2:before {
-	content: '\e60d';
-}
-.km-list:before {
-	content: '\e60e';
-}
-.km-info2:before {
-	content: '\e60f';
-}
-.km-info:before {
-	content: '\e610';
-}
-.km-events:before {
-	content: '\e611';
-}
-.km-essays:before {
-	content: '\e612';
-}
-.km-directions:before {
-	content: '\e613';
-}
-.km-compass:before {
-	content: '\e614';
-}
-.km-community:before {
-	content: '\e615';
-}
-.km-audiovideo:before {
-	content: '\e616';
-}
-.km-arrowselect:before {
-	content: '\e617';
-}
-.km-agents:before {
-	content: '\e618';
-}
-.km-checkmark:before {
-	content: '\e619';
-}
-.km-dot:before {
-	content: '\e61a';
-}
-.km-downarrow:before {
-	content: '\e61b';
-}
-.km-mulitply:before {
-	content: '\e61c';
+	content: "\e60c";
 }
 .km-plus:before {
-	content: '\e61d';
+	content: "\e60d";
 }
-.km-circle:before {
-	content: '\e61e';
+.km-places:before {
+	content: "\e60e";
 }
-.km-photos:before {
-	content: '\e61f';
+.km-overview:before {
+	content: "\e610";
+}
+.km-directions:before {
+	content: "\e611";
+}
+.km-mulitply:before {
+	content: "\e612";
+}
+.km-minus:before {
+	content: "\e613";
+}
+.km-menu2:before {
+	content: "\e614";
+}
+.km-maps:before {
+	content: "\e615";
+}
+.km-list2:before {
+	content: "\e616";
+}
+.km-list:before {
+	content: "\e617";
+}
+.km-info2:before {
+	content: "\e618";
+}
+.km-info:before {
+	content: "\e619";
+}
+.km-essays:before {
+	content: "\e61a";
+}
+.km-downarrow:before {
+	content: "\e61b";
+}
+.km-community:before {
+	content: "\e61c";
+}
+.km-checkmark:before {
+	content: "\e61d";
 }
 .km-cancel:before {
-	content: '\e620';
+	content: "\e61e";
+}
+.km-audiovideo:before {
+	content: "\e61f";
+}
+.km-arrowselect:before {
+	content: "\e620";
+}
+.km-agents:before {
+	content: "\e621";
+}
+.km-dot:before {
+	content: "\e625";
+}
+.km-photos:before {
+	content: "\e60b";
+}
+.km-sources:before {
+	content: "\e60f";
+}
+.km-events:before {
+	content: "\e622";
 }
