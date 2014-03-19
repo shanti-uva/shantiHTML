@@ -56,7 +56,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	color:#333; 
 	display:inline-block; 
 	font-weight:600; 
-	font-size:0.82em; 
+	font-size:0.93em; 
 	line-height:1.25em;  
 	margin:0 !important;
 	transition: background-color 0.4s ease 0s;
@@ -93,7 +93,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 .navbar .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
-	left:-93px;
+	left:-84px;
 	width:255px;
 }
 .navbar .lang ul.dropdown-menu{  /* language dropdown */
@@ -283,7 +283,8 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   color: #333;
   background-color: #eee;
   position:relative;
-  min-height:100% !important;
+  height:100% !important;
+  min-height:800px!important;
 }
 #main-content>div {
   background-color: #eee;
