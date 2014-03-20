@@ -59,10 +59,7 @@
   color:#333;
   width:100% !important;
   padding:0;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
-
-
 #kmaps-search{ /*---- SEARCH panel wrapper */
   margin-top:-65px; /*--- position panel above content-section */
   box-shadow:none;
@@ -111,12 +108,15 @@
   height:36px;
   display:block; 
   padding:18px 40px 18px 0; 
-  margin:-1px 0px 0px 0px;
+  margin:0;
   border-top-left-radius:25px;
   border-bottom-left-radius:25px;
   overflow:hidden;
   width:42px !important;
+  position:relative;
+  top:-1px;
 }
+/*----- find the settings for the search icon in the main-js ---*/
 .extruder.right .flap>span,
 .extruder.right .flap.on-flap>span{
 	color:#ddd;
@@ -168,48 +168,40 @@ object.flip_label{
 #search-section a.advanced-link:hover{ text-decoration:none; color:#555;}
 #search-section a.advanced-link i.icon:before{
 	font-family:'kmaps-icons';
-	content: '\e61d';
+	content: '\e60d';
 	font-size:0.68em;
 	margin-right:3px;
 }
-#search-section a.advanced-link.show-advanced i.icon:before{content:'\e60a';}
+#search-section a.advanced-link.show-advanced i.icon:before{content:'\e613';}
 #search-section a.advanced-link i.icon:hover,
 #search-section a.advanced-link.show-advanced i.icon:hover{ }
 #search-section .advanced-link-view{ padding:0 0 5px 15px; background-color:#f8f8f8;}
 #search-section .advanced-link-view .form-group{ 
-	padding:7px 0 5px;
+	padding:9px 0 3px;
 	margin:0; 
-	border:1px solid #e0e0e0; 
-	border-width:1px 0 0;
+	border-top:1px solid #e0e0e0; 
 }
 #search-section .advanced-link-view .form-group.last{
 	padding-bottom:5px;
 }
-#search-section .search-utils .btn{  font-size:1em; padding:4px 12px; margin:0 0 10px 10px !important; }
+#search-section .search-utils .btn{ font-size:1em; padding:4px 12px; margin:0 0 10px 10px; }
 
 #search-section .radio-inline input,
 #search-section .radio input[type="radio"], 
 #search-section .radio-inline input[type="radio"]{
 	margin-left:-18px;
 }
-#search-section .checkbox-inline{ 
-	padding-left:23px; 
-	margin-left:-2px;	 
-}
 #search-section label { 
 	color:#505050;
 	font-size:13px;
 	line-height:15px;	
 }
-#search-section .form-group.last{ 
-	
-}
+#search-section .form-group.last{ }
 
-#kmaps-search .radio-inline{ padding-left:0;}
-#kmaps-search .checkbox-inline{ padding-left:2px;}
-
-#kmaps-search .radio-inline>div{ margin-right:1px;margin-bottom:3px;}
-#kmaps-search .checkbox-inline>div{ margin-right:6px;margin-bottom:3px;}
+#search-section .radio-inline{ padding-left:0;}
+#search-section .checkbox-inline{ margin-left:-2px; padding-left:2px;}
+#search-section .radio-inline>div,
+#search-section .checkbox-inline>div{ margin-right:1px;margin-bottom:3px;}
 
 
 
@@ -277,7 +269,7 @@ object.flip_label{
 /*---- END tabs -----*/
 
 /*---- list view ----*/
-#view-section #listview>div{ height:450px; /*** SET SEARCH HEIGHT, 2 selectors, see other below ***/ padding:10px 10px 0px;}
+#view-section #listview>div{ height:350px; /*** SET SEARCH HEIGHT, 2 selectors, see other below ***/ padding:10px 10px 0px;}
 
 #view-section table.table-responsive{ border:none;}
 #view-section table.table-results{ border:none; font-size:15px; line-height:20px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
@@ -287,7 +279,7 @@ object.flip_label{
 #view-section table.table-results{ }
 
 /*---- tree view ----*/
-#view-section ul.fancytree-container{ height:450px; /*** SET SEARCH HEIGHT, 2 selectors, see other above ***/ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+#view-section ul.fancytree-container{ height:350px; /*** SET SEARCH HEIGHT, 2 selectors, see other above ***/ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 #view-section ul.fancytree-container ul{ padding-top:1px;}
 
 #view-section span.fancytree-icon{ margin:0; padding:0; width:0; height:0; line-height:0; display:none;} /*--- remove checkbox ---*/
@@ -296,16 +288,16 @@ object.flip_label{
 #view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:white; border:none;}
 
-#view-section span.fancytree-title{ color:#444; margin-left:-25px; line-height:1.32em; height:1.32em; padding-left:5px;}
+#view-section span.fancytree-title{ color:#444; margin-left:-20px; line-height:1.44em; height:1.44em; padding-left:5px;}
 #view-section span.fancytree-title:before{ 
 	color:#aaa;
 	font-family: 'kmaps-icons';
-	content: '\e61a';
-	font-size: 27px;
-	line-height:5px;
-	height:5px; 
-	margin-right:0px;
-	position:relative; top:8px; right:0px;
+	content: '\e625';
+	font-size: 1.12em;
+	line-height:1.44em;
+	height:1.44em; 
+	margin-right:8px;
+	position:relative; top:0px; left:0px;
 }
 #view-section span.fancytree-title:hover,
 #view-section span.fancytree-title:hover:before{ color:#555;}
