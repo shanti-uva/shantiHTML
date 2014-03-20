@@ -348,9 +348,9 @@
 										<legend class="hidden">Search Form</legend>									
 																					
 								  <div class="search-form-view form-group">
-											<textarea id="searchform" class="form-control" rows="3" placeholder="Enter Search..."></textarea>												  																			
+											<textarea id="searchfield" class="form-control" rows="3" placeholder="Enter Search..."></textarea>
 											<div class="search-utils btn-group">
-													<button type="submit" class="btn btn-primary btn-sm">Submit Search</button>
+													<button id="searchbutton" type="submit" class="btn btn-primary btn-sm">Submit Search</button>
 											</div>
 											<a href="#" class="advanced-link advanced-trigger" title="Advanced search options"><i class="icon"></i>Advanced</a>
 								  </div>	
@@ -419,7 +419,8 @@
 									        <thead>
 									            <tr>
 									            	<th>Name</th>
-																<th>Feature Type</th>
+                                                    <th>Id</th>
+												    <th>Caption</th>
 									            </tr>
 									        </thead>
 								          <tbody>
@@ -491,8 +492,13 @@
 	<!-- radio and checkbox graphics -->
 	<link href="js/forms/skins/minimal/red.css" rel="stylesheet">
 	<script src="js/forms/icheck.js"></script>
+    <!-- highlight -->
+    <script type="text/javascript" src="src/jquery.highlight.js"></script>
 
-	<!-- kmaps -->
+    <!-- tablesorter -->
+    <script src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+
+    <!-- kmaps -->
   <script type="text/javascript" src="js/main.js"></script> 
 
 	<!-- below are optional scripts for IE HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

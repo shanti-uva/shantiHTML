@@ -327,10 +327,10 @@ object.flip_label{
 }
 #view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
 
-
-
-
-
+#view-section span.fancytree-title span.fancytree-highlight {
+    line-height:1.32em; height:1.32em;
+    color: #dc3c47;
+}
 
 
 

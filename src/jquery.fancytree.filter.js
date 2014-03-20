@@ -67,6 +67,7 @@ $.ui.fancytree._FancytreeClass.prototype.applyFilter = function(filter){
 			node.visitParents(function(p){
 				p.subMatch = true;
 			});
+            node.makeVisible();
 		}
 	});
 	this.render();
@@ -131,6 +132,7 @@ $.ui.fancytree.registerExtension({
 		}
 		if( node.match ){
 			$span.addClass("fancytree-match");
+            node.makeVisible();
 		}else{
 			$span.removeClass("fancytree-match");
 		}
