@@ -485,7 +485,6 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
   margin: 30px 0;
 }
 
-
 /*--- clears box-sizing bug --*/
 *, *:before, *:after {
   -moz-box-sizing: border-box; 

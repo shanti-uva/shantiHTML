@@ -57,47 +57,51 @@ jQuery(function ($) {
         }
     });
 
-    $("#searchbutton").click(
-        function () {
-            // clear previous styling
-            // (can't simply unwrap because that leaves text nodes in extraneous chunks)
-            $('span.fancytree-title').each(
-                function () {
-                    $(this).text($(this).text());
-                }
+    handleSearch = function handleSearch() {
+
+        // clear previous styling
+        // (can't simply unwrap because that leaves text nodes in extraneous chunks)
+        $('span.fancytree-title').each(
+            function () {
+                $(this).text($(this).text());
+            }
+        );
+        var txt = $("#searchform").val();
+        var tree = $('#tree').fancytree('getTree').applyFilter(txt);
+        // $('span.fancytree-match').removeClass('fancytree-match');
+        $('span.fancytree-title').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
+
+
+
+        // Retrieve matches
+        var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
+            return n.match;
+        });
+
+        // clear the current list.
+        $('div#listview div div.table-responsive table.table-results tr').not(':first').remove();
+
+        // populate list
+        var table = $('div#listview div div.table-responsive table.table-results');
+        $.each(list, function (x, y) {
+            table.append(
+                "<tr>" +
+                    "<td>" + y.title + "</td>" +
+                    "<td>"+ y.data.id + "</td>" +
+                    "<td>" + (y.data.caption?y.data.caption:"<em>n/a</em>") +  "</td>" +
+                    "</tr>"
             );
-            var txt = $("#searchfield").val();
-            var tree = $('#tree').fancytree('getTree').applyFilter(txt);
-            // $('span.fancytree-match').removeClass('fancytree-match');
-            $('span.fancytree-title').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
+        });
 
+        $('table.table-results').tablesorter();
 
+        return false;
+    };
 
-            // Retrieve matches
-            var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
-                return n.match;
-            });
+    $("#searchbutton").click(handleSearch);
 
-            // clear the current list.
-            $('div#listview div div.table-responsive table.table-results tr').not(':first').remove();
+    $("form.form").submit(handleSearch);
 
-            // populate list
-            var table = $('div#listview div div.table-responsive table.table-results');
-            $.each(list, function (x, y) {
-                table.append(
-                    "<tr>" +
-                        "<td>" + y.title + "</td>" +
-                        "<td>"+ y.data.id + "</td>" +
-                        "<td>" + (y.data.caption?y.data.caption:"<em>n/a</em>") +  "</td>" +
-                        "</tr>"
-                );
-            });
-
-            $('table.table-results').tablesorter();
-
-            return false;
-        }
-    );
 });
 
 
