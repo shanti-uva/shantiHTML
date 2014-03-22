@@ -18,7 +18,7 @@ jQuery(function ($) {
     // --- advanced search toggle icons, open/close, view change height
     $(".advanced-link").click(function () {
         $(".advanced-trigger").toggleClass("show-advanced", 'fast');
-        $(".advanced-view").slideToggle('300');
+        $(".advanced-view").slideToggle('200');
         
         $(".long-wrap").toggleClass("short-wrap", 'fast'); // adjusts for height diff w/advanced panel
     });
