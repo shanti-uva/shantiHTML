@@ -128,7 +128,7 @@ jQuery(function($) {
 
 // *** SEARCH *** call function iCheck for form graphics
 jQuery(function ($) {
-    $('input').not('.form-control').each(function () {
+    $('input[type="checkbox"], input[type="radio"]').each(function () {
         var self = $(this),
             label = self.next(),
             label_text = label.text();
