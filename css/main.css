@@ -6,7 +6,7 @@ body {
 }
 /* align checkboxes, radios, text inputs with their label */
 input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+input[type="checkbox"] { vertical-align: bottom; vertical-align: baseline; }
 .ie6 input { vertical-align: text-bottom; }
 /* hand cursor on clickable input elements */
 label, input[type=button], input[type=submit], button { cursor: pointer; }
@@ -42,7 +42,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	font-size:1.18em; 
 	line-height:1.25em;
 	font-weight:normal;
-	text-shadow:1px 1px #eee;
+	text-shadow:1px 1px 1px #eee;
 }
 .navbar-default h1 a.navbar-brand:hover{ color:#222;}
 .navbar-default h1 a.navbar-brand span{ position:relative; top:7px; display:inline-block;}

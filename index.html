@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="src/skin-bootstrap/ui.fancytree.css" class="skinswitcher">
   <link rel="stylesheet" href="css/search-panel.css" media="all">
+	<link rel="stylesheet" href="js/forms/check/skins/minimal/red.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
 </head>
@@ -114,35 +115,35 @@
         <div class="col-sm-8 col-sm-offset-2 lightblue-bg">
           <h4>EXPLORE COLLECTIONS</h4>
           <div class="four-collections">
-            <div class="col-sm-3"><div style="marginleft:8%">
+            <div class="col-sm-3">
               <ul>
                 <li><a href="#"><i class="icon km-subjects"></i>Subjects</a></li>
                 <li><a href="#"><i class="icon km-places"></i>Places</a></li>
                 <li><a href="#"><i class="icon km-agents"></i>Agents</a></li>
                 <li><a href="#"><i class="icon km-events"></i>Events</a></li>
               </ul>
-            </div></div>
-            <div class="col-sm-3"><div style="marginleft:8%">
+            </div>
+            <div class="col-sm-3">
               <ul>
                 <li><a href="#"><i class="icon km-photos"></i>Photos</a></li>
                 <li><a href="#"><i class="icon km-audiovideo"></i>Audio-Video</a></li>
                 <li><a href="#"><i class="icon km-visuals"></i>Visuals</a></li>
               </ul>
-            </div></div>
-            <div class="col-sm-3"><div style="marginleft:8%">
+            </div>
+            <div class="col-sm-3">
               <ul>
                 <li><a href="#"><i class="icon km-essays"></i>Essays</a></li>
                 <li><a href="#"><i class="icon km-texts"></i>Texts</a></li>
                 <li><a href="#"><i class="icon km-maps"></i>Maps</a></li>
               </ul>
-            </div></div>
-            <div class="col-sm-3"><div style="marginleft:8%">
+            </div>
+            <div class="col-sm-3">
               <ul class="last">
                 <li><a href="#"><i class="icon km-community"></i>Community</a></li>
                 <li><a href="#"><i class="icon km-terms"></i>Terms</a></li>
                 <li><a href="#"><i class="icon km-sources"></i>Sources</a></li>
               </ul>
-            </div></div>
+            </div>
           </div>
         </div>
         <div class="closecollection">
@@ -340,23 +341,23 @@
 						
 				<!-- BEGIN Search Panel -->	
 				<div id="kmaps-search">								
-						<div>								
-								<!-- BEGIN search section -->									  
-							  <div id="search-section">									  
-									<form role="form" class="form">
-									<fieldset>												
-										<legend class="hidden">Search Form</legend>									
+						<!-- BEGIN search section -->									  
+					  <div id="input-section">									  
+							<form role="form" class="form">
+							 <fieldset>												
+								<legend class="hidden">Search Form</legend>									
 																					
-								  <div class="search-form-view form-group">
-											<input id="searchform" class="form-control" rows="3" placeholder="Enter Search..."></input>
-											<div class="search-utils btn-group">
-													<button id="searchbutton" type="submit" class="btn btn-primary btn-sm">Submit Search</button>
-											</div>
-											<a href="#" class="advanced-link advanced-trigger" title="Advanced search options"><i class="icon"></i>Advanced</a>
-								  </div>	
+								  <div class="input-group">
+											<input class="form-control" type="text" placeholder="Enter Search...">
+											<span class="input-group-btn">
+												<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+											</span>
+								  </div>
+								  
+									<div><a href="#" class="advanced-link advanced-trigger" title="advanced search options"><i class="icon"></i>Advanced</a></div>										
 											
 										 <!-- advanced search hidden ontent -->
-										 <div class="advanced-link-view" style="display:none;">													    
+										 <div class="advanced-view" style="display:none;">													    
 														  <div class="form-group"> 
 														    <label class="radio-inline" for="radios-0">
 														      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
@@ -388,12 +389,10 @@
 														      <input type="checkbox" name="checkbox" id="checkbox-2" value="7">
 														      	Show feature details</label> 													    
 														  </div>
-														  </div>													  
-											</div>
-											
-									</fieldset>
-									</form>													
-							  </div>	<!-- END search section -->
+														  </div>													  											
+							 </fieldset>
+						 </form>													
+						</div>	<!-- END search section -->
 								
 							  
 							  <!-- START TABS / View section -->																	
@@ -408,53 +407,91 @@
 									  
 									  <!-- TAB - tree view -->
 									  <div id="treeview" class="tab-pane active">	  		
-									  		<div id="tree"></div><!-- tree nav container -->						  
+									  		<div id="tree" class="short-wrap"></div><!-- tree nav container -->						  
 									  </div>
 									  
 									  <!-- TAB - list view -->
 									  <div id="listview" class="tab-pane">		
-									  	<div>				        
+									  	<div class="short-wrap">				        
 								        <div class="table-responsive">
 								         <table class="table table-condensed table-results">
 									        <thead>
 									            <tr>
 									            	<th>Name</th>
-                                                    <th>Id</th>
-												    <th>Caption</th>
+                                <th>Id</th>
+																<th>Caption</th>
 									            </tr>
 									        </thead>
 								          <tbody>
 								          <tr>
 								            <td><a href="#" title="">Jokhang</a></td>
-								            <td><div>Temple</div></td>
+								            <td><span>Temple</span></td>
+								            <td><span></span></td>
 								          </tr>
 								          <tr>
 								            <td><a href="#" title="">Khartrak</a></td>
-								            <td><div>Council</div></td>
+								            <td><span>Council</span></td>
+								            <td><span></span></td>
 								          </tr>
 								          <tr>
 								            <td><a href="#" title="">Lhasa</a></td>
-								            <td><div>Cultural Region</div></td>
+								            <td><span>Cultural Region</span></td>
+								            <td><span></span></td>
 								          </tr>
 								            <tr>
 								            <td><a href="#" title="">Lhasa</a></td>
-								            <td><div>City</div></td>
+								            <td><span>City</span></td>
+								            <td><span></span></td>
 								          </tr>
 								          <tr>
 								            <td><a href="#" title="">Lhasa</a></td>
-								            <td><div>ADM2</div></td>
+								            <td><span>ADM2</span></td>
+								            <td><span></span></td>
 								          </tr>
 								          <tr>
 								            <td><a href="#" title="">Lhasa</a></td>
-								            <td><div>Township (without urban registered population)</div></td>
+								            <td><span>Township (without urban registered population)</span></td>
+								            <td><span></span></td>
 								          </tr>
 								            <tr>
 								            <td><a href="#" title="">Lhasa Stream</a></td>
-								            <td><div>Large Stream</div></td>
+								            <td><span>Large Stream</span></td>
+								            <td><span></span></td>
 								          </tr>
 								          <tr>
 								            <td><a href="#" title="">Lhasa Yerpa</a></td>
-								            <td><div>Sacred Places</div></td>
+								            <td><span>Sacred Places</span></td>
+								            <td><span></span></td>
+								          </tr>
+								          								          <tr>
+								            <td><a href="#" title="">Lhasa</a></td>
+								            <td><span>Cultural Region</span></td>
+								            <td><span></span></td>
+								          </tr>
+								            <tr>
+								            <td><a href="#" title="">Lhasa</a></td>
+								            <td><span>City</span></td>
+								            <td><span></span></td>
+								          </tr>
+								          <tr>
+								            <td><a href="#" title="">Lhasa</a></td>
+								            <td><span>ADM2</span></td>
+								            <td><span></span></td>
+								          </tr>
+								          <tr>
+								            <td><a href="#" title="">Lhasa</a></td>
+								            <td><span>Township (without urban registered population)</span></td>
+								            <td><span></span></td>
+								          </tr>
+								            <tr>
+								            <td><a href="#" title="">Lhasa Stream</a></td>
+								            <td><span>Large Stream</span></td>
+								            <td><span></span></td>
+								          </tr>
+								          <tr>
+								            <td><a href="#" title="">Lhasa Yerpa</a></td>
+								            <td><span>Sacred Places</span></td>
+								            <td><span></span></td>
 								          </tr>
 								          <tbody>
 								        </table>								        						
@@ -464,8 +501,6 @@
 								   
 							   </div>	
 						  </div><!-- END view section -->
-						  
-						</div>	  
 				</div><!-- END kmaps-search --> 
 				
     </div><!-- END main-content row -->
@@ -490,7 +525,6 @@
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
 	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script>
 	<!-- radio and checkbox graphics -->
-	<link href="js/forms/check/skins/minimal/red.css" rel="stylesheet">
 	<script src="js/forms/check/icheck.js"></script>
 
     <!-- highlight -->

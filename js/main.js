@@ -15,15 +15,17 @@ jQuery(function ($) {
         $(".closed").toggleClass("open", 200);
     });
 
-    // --- advanced search toggle
+    // --- advanced search toggle swaps icons and opens
     $(".advanced-link").click(function () {
-        $(".advanced-trigger").toggleClass("show-advanced", 200);
-        $(".advanced-link-view").slideToggle('fast');
+        $(".advanced-trigger").toggleClass("show-advanced", 100);
+        $(".short-wrap").toggleClass("long-wrap", 100);
+        
+        $(".advanced-view").slideToggle('fast');
     });
 
 });
 
-// *** SEARCH *** manage sliding panel
+// *** SEARCH *** sliding panel
 jQuery(function ($) {
     $("#tree").fancytree({
         extensions: ["glyph", "filter"],
@@ -66,7 +68,7 @@ jQuery(function ($) {
                 $(this).text($(this).text());
             }
         );
-        var txt = $("#searchform").val();
+        var txt = $('#searchform').val();
         var tree = $('#tree').fancytree('getTree').applyFilter(txt);
         // $('span.fancytree-match').removeClass('fancytree-match');
         $('span.fancytree-title').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
@@ -105,7 +107,7 @@ jQuery(function ($) {
 });
 
 
-// *** SEARCH *** manage toggle button
+// *** SEARCH *** toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
 			$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:12px; z-index:10;'><i class='icon km-search'></i></span>");

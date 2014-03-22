@@ -51,36 +51,34 @@
 .extruder.right .panel-default>.panel-heading{
 	border:none;
 }
-.extruder .text,
-#kmaps-search .text{
-  border:none; 
-  text-shadow:none; 
-  background-color:white;
-  color:#333;
-  width:100% !important;
-  padding:0;
-}
+
 #kmaps-search{ /*---- SEARCH panel wrapper */
   margin-top:-65px; /*--- position panel above content-section */
   box-shadow:none;
-  background-color:#eee;
 }
-#kmaps-search>div{ background-color:#eee;}
 #kmaps-search.extruder.right,
-#kmaps-search.extruder.right.isOpened{ 
-}
+#kmaps-search.extruder.right.isOpened{ }
 #kmaps-search .ext_wrapper{ height:auto;}
-.extruder{ }
-.extruder.right{ background-color:white;}
-.extruder.right .extruder-content{
+
+#kmaps-search.extruder.right{ background-color:white;}
+#kmaps-search.extruder.right .extruder-content{
 	background-color:white;
 	border:none;
-	width:100%;
 	padding:0;
 	-moz-box-shadow:0 0 5px 0px #999;
 	-webkit-box-shadow:0 0 5px 0px #999; 
 	box-shadow:0px 0px 5px #999;
 }
+#kmaps-search.extruder .text{
+  border:none; 
+  text-shadow:none; 
+  background-color:white;
+  color:#333;
+  width:320px !important;
+  height:600px;
+  max-height:600px;
+}
+
 /* ------ search button icon ------ */
 /* ------ NOTE styles for icon are loaded via main.js */
 .extruder.right .flap{ 
@@ -135,26 +133,74 @@ object.flip_label{
 
 /*---- search input section -----*/
 #kmaps-search #view-section,
-#kmaps-search #search-section{ width:300px;}
-#kmaps-search #search-section{ margin:7px 0 0 7px;}
+#kmaps-search #input-section{ }
 
-#kmaps-search .search-form-view{
+#input-section{
 	background-color:#f8f8f8;
-	padding:10px 0 0; 
-	margin:0;
+	padding:10px 10px 0 10px; 	
 }
-#kmaps-search .search-form-view textarea{
-	margin: 0 0 5px 10px; 
-	padding:5px 7px 10px 10px;
-	width:93%;
-	font-size:1.06em;
-	color:#333;
+#input-section .input-group{ height:35px;}
+#input-section input.form-control{
+	margin: 0; 
+	padding:7px 15px 3px 20px;
+	font-size:1.12em;
+	letter-spacing: 0.05em;
+	color:#505050;
+	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	line-height:1.25em;
+  height:35px;
+  width:100%;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+	/* -webkit-border-bottom-right-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-topright: 0;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0; */ 
 	resize: none;
 	overflow: auto;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+	outline:0;
+	box-sizing: border-box;
+	vertical-align:middle;
+	box-shadow:none;
+	border: 1px solid #ddd;
 }
-#search-section .search-utils{ padding-top:5px;margin:0;}
-#search-section a.advanced-link{ 
+#input-section input.form-control:focus{ 
+	border:1px solid #b4cdee;
+	box-shadow:none;
+	color:#555;
+	-o-transition: border-color 0.4s linear;
+	-moz-transition: border-color 0.4s linear;
+	-webkit-transition: border-color 0.4s linear;
+	transition: border-color 0.4s linear;
+}
+#input-section .btn{ 
+	height:35px; 
+	font-size:1em; 
+	display:inline !important; float:left;
+	line-height:1.25em; 
+	width:50px !important;
+	height:35px !important;
+	 -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+	-webkit-border-bottom-left-radius: 0;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-radius-bottomleft: 0;
+	-moz-border-radius-topleft: 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	position:relative;
+}
+#input-section .input-group-btn{ width:15%; background-color:#555 !important;}
+
+#input-section .advanced-view{ float:left;padding:0; background-color:#f8f8f8;}
+#input-section .advanced-view .form-group{  border-top:1px solid #e0e0e0; margin:0 !important; width:100% !important}
+#input-section .advanced-view .form-group.last{ padding-bottom:5px;}
+
+#input-section a.advanced-link{ 
 	font-size:0.93em;
 	display:inline; 
 	color:#dc3c47; 
@@ -165,43 +211,31 @@ object.flip_label{
 	padding-left:20px;	
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
-#search-section a.advanced-link:hover{ text-decoration:none; color:#555;}
-#search-section a.advanced-link i.icon:before{
+#input-section a.advanced-link:hover{ text-decoration:none; color:#555;}
+#input-section a.advanced-link i.icon:before{
 	font-family:'kmaps-icons';
 	content: '\e60d';
 	font-size:0.68em;
 	margin-right:3px;
 }
-#search-section a.advanced-link.show-advanced i.icon:before{content:'\e613';}
-#search-section a.advanced-link i.icon:hover,
-#search-section a.advanced-link.show-advanced i.icon:hover{ }
-#search-section .advanced-link-view{ padding:0 0 5px 15px; background-color:#f8f8f8;}
-#search-section .advanced-link-view .form-group{ 
-	padding:9px 0 3px;
-	margin:0; 
-	border-top:1px solid #e0e0e0; 
-}
-#search-section .advanced-link-view .form-group.last{
-	padding-bottom:5px;
-}
-#search-section .search-utils .btn{ font-size:1em; padding:4px 12px; margin:0 0 10px 10px; }
+#input-section a.advanced-link.show-advanced i.icon:before{content:'\e613';}
+#input-section a.advanced-link i.icon:hover,
+#input-section a.advanced-link.show-advanced i.icon:hover{ }
 
-#search-section .radio-inline input,
-#search-section .radio input[type="radio"], 
-#search-section .radio-inline input[type="radio"]{
-	margin-left:-18px;
+#input-section .radio-inline input,
+#input-section .radio input[type="radio"], 
+#input-section .radio-inline input[type="radio"]{
+	margin-left:5px;
 }
-#search-section label { 
+#input-section label { 
 	color:#505050;
 	font-size:13px;
-	line-height:15px;	
 }
-#search-section .form-group.last{ }
 
-#search-section .radio-inline{ padding-left:0;}
-#search-section .checkbox-inline{ margin-left:-2px; padding-left:2px;}
-#search-section .radio-inline>div,
-#search-section .checkbox-inline>div{ margin-right:1px;margin-bottom:3px;}
+#input-section .radio-inline{ padding:0;}
+#input-section .checkbox-inline{ margin-left:-2px; padding-left:2px;}
+#input-section .radio-inline>div,
+#input-section .checkbox-inline>div{ margin:8px 0; }
 
 
 
@@ -209,14 +243,14 @@ object.flip_label{
 
 
 /*---- START tabs -----*/
-#view-section{ margin:7px 0 7px 7px;}
+#view-section{ margin-top:10px;}
 #view-section .tab-content{
-	background-color:#f8f8f8;
+	background-color:#f8f8f8; 
 	padding:0;
-	border-left: 1px solid #ddd;
+	border: 1px solid #ddd; border-width:0 1px 1px;
 }
-#view-section .tab-content .tab-pane{ padding-bottom:30px;}
-#view-section .tab-content .tab-pane#treeview{ padding-bottom:5px;}
+#view-section .tab-content .tab-pane{ }
+#view-section .tab-content .tab-pane#treeview{ }
 #view-section .nav-tabs>li{
 	width:35%;
 	font-size:1.06em;
@@ -260,7 +294,13 @@ object.flip_label{
 	border-color:#ddd;
 	border-bottom-color: transparent;	
 }
-#view-section #treeview>div{ padding:10px 10px 5px 7px;}
+#view-section #treeview>div{ padding:10px 5px 0; overflow:auto; }
+#view-section #listview>div{ padding:10px 5px 0; overflow:auto;}
+#view-section #treeview>div.short-wrap,
+#view-section #listview>div.short-wrap{ height:457px;}
+#view-section #treeview>div.long-wrap,
+#view-section #listview>div.long-wrap{ height:312px;}
+
 #view-section li.treeview .tab-content{ padding-bottom:0px;}
 
 #view-section .nav-tabs>li> i{ width:16px; height:16px;}
@@ -268,15 +308,12 @@ object.flip_label{
 #view-section .nav-tabs>li.active> a i:before{ font-size:16px; position:relative; top:1px; right:5px;}
 /*---- END tabs -----*/
 
-/*---- list view ----*/
-#view-section #listview>div{ height:350px; /*** SET SEARCH HEIGHT, 2 selectors, see other below ***/ padding:10px 10px 0px;}
-
+/*---- START list view ----*/}
 #view-section table.table-responsive{ border:none;}
 #view-section table.table-results{ border:none; font-size:15px; line-height:20px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 #view-section table.table-results a{ font-style:italic;}
-#view-section table.table-results tbody>tr>td{ line-height:20px; }
+#view-section table.table-results tbody>tr>td{ line-height:20px; background-color:#f8f8f8;}
 #view-section table.table-results tbody>tr:hover{ background-color:#fff;}
-#view-section table.table-results thead tr th{ /*padding-right:15px*/}
 #view-section table.table-results thead tr th:after{
 	color:#555;
 	font-family: 'kmaps-icons';
@@ -286,9 +323,10 @@ object.flip_label{
 	margin-left:2px;
 	/* position:relative; top:0px; left:0px; */
 }
+/*---- END listview ----*/
 
-/*---- tree view ----*/
-#view-section ul.fancytree-container{ height:350px; /*** SET SEARCH HEIGHT, 2 selectors, see other above ***/ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+/*---- START tree view ----*/
+#view-section ul.fancytree-container{ /*** SET SEARCH HEIGHT, 2 selectors, see other above ***/ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 #view-section ul.fancytree-container ul{ padding-top:1px;}
 
 #view-section span.fancytree-icon{ margin:0; padding:0; width:0; height:0; line-height:0; display:none;} /*--- remove checkbox ---*/
@@ -332,7 +370,7 @@ object.flip_label{
     line-height:1.32em; height:1.32em;
     color: #dc3c47;
 }
-
+/*---- END treeview -----*/
 
 
 
