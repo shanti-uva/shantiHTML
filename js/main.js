@@ -12,15 +12,15 @@ jQuery(function ($) {
     $("li.explore").addClass("closed");
     $("#toggle-collections, .closecollection").click(function () {
         $("#opencollect").slideToggle('fast');
-        $(".closed").toggleClass("open", 200);
+        $(".closed").toggleClass("open", 'fast');
     });
 
-    // --- advanced search toggle swaps icons and opens
+    // --- advanced search toggle icons, open/close, view change height
     $(".advanced-link").click(function () {
-        $(".advanced-trigger").toggleClass("show-advanced", 100);
-        $(".short-wrap").toggleClass("long-wrap", 100);
+        $(".advanced-trigger").toggleClass("show-advanced", 'fast');
+        $(".advanced-view").slideToggle('300');
         
-        $(".advanced-view").slideToggle('fast');
+        $(".long-wrap").toggleClass("short-wrap", 'fast'); // adjusts for height diff w/advanced panel
     });
 
 });
@@ -59,7 +59,7 @@ jQuery(function ($) {
         }
     });
 
-    handleSearch = function handleSearch() {
+		handleSearch = function handleSearch() {
 
         // clear previous styling
         // (can't simply unwrap because that leaves text nodes in extraneous chunks)
@@ -68,10 +68,10 @@ jQuery(function ($) {
                 $(this).text($(this).text());
             }
         );
-        var txt = $('#searchform').val();
+        var txt = $("#searchform").val();
         var tree = $('#tree').fancytree('getTree').applyFilter(txt);
         // $('span.fancytree-match').removeClass('fancytree-match');
-        $('span.fancytree-title').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
+        $('span.fancytree-title').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
 
 
 
@@ -107,6 +107,7 @@ jQuery(function ($) {
 });
 
 
+
 // *** SEARCH *** toggle button
 jQuery(function($) {
 		if (!$(".extruder.right").hasClass("isOpened")) {
@@ -127,7 +128,7 @@ jQuery(function($) {
 
 // *** SEARCH *** call function iCheck for form graphics
 jQuery(function ($) {
-    $('input').each(function () {
+    $('input').not('.form-control').each(function () {
         var self = $(this),
             label = self.next(),
             label_text = label.text();

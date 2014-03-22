@@ -1,7 +1,7 @@
 
 html { -webkit-font-smoothing: antialiased;}
 body {
-  background-color: white;
+  background-color: #f2f2f2;
   font-family: "Museo Sans", sans-serif;
 }
 /* align checkboxes, radios, text inputs with their label */
@@ -11,16 +11,13 @@ input[type="checkbox"] { vertical-align: bottom; vertical-align: baseline; }
 /* hand cursor on clickable input elements */
 label, input[type=button], input[type=submit], button { cursor: pointer; }
 
-.container-fluid {
-  background-color: white;
-}
+
 .navbar{ 
 	padding:0 !important; 
 	margin:0 !important;  
-	background-color:white !important;
 }
 .navbar.navbar-default .navbar-collapse,
-.navbar.navbar-static-top{ border-bottom: none !important;}
+.navbar.navbar-static-top{ background-color: white !important;}
 
 .navbar-default h1 {
  	color:#555; 
@@ -278,6 +275,11 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 }
 .titlearea .breadcrumb .active{ font-weight:bold; color:white; font-size:1.06em;}
 
+
+.container,
+.container-fluid {
+  background-color: #eee !important;
+}
 
 #main-content {
   color: #333;

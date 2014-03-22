@@ -348,9 +348,9 @@
 								<legend class="hidden">Search Form</legend>									
 																					
 								  <div class="input-group">
-											<input class="form-control" type="text" placeholder="Enter Search...">
+											<input id="searchform" class="form-control" type="text" placeholder="Enter Search...">
 											<span class="input-group-btn">
-												<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+												<button id="searchbutton" type="button" class="btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button>
 											</span>
 								  </div>
 								  
@@ -407,12 +407,12 @@
 									  
 									  <!-- TAB - tree view -->
 									  <div id="treeview" class="tab-pane active">	  		
-									  		<div id="tree" class="short-wrap"></div><!-- tree nav container -->						  
+									  		<div id="tree" class="long-wrap"></div><!-- tree nav container -->						  
 									  </div>
 									  
 									  <!-- TAB - list view -->
 									  <div id="listview" class="tab-pane">		
-									  	<div class="short-wrap">				        
+									  	<div class="long-wrap">				        
 								        <div class="table-responsive">
 								         <table class="table table-condensed table-results">
 									        <thead>
@@ -516,25 +516,25 @@
   <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
   <script type="text/javascript"  src="js/vendor/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
-	<!-- sliding search panel Extruder resources -->
+	<!-- searchpanel -->
   <script type="text/javascript" src="js/extruder/jquery.hoverIntent.min.js"></script>
   <script type="text/javascript" src="js/extruder/jquery.mb.flipText.js"></script>
   <script type="text/javascript" src="js/extruder/mbExtruder.js"></script> 
-	<!-- fancy tree resources -->
+	<!-- tree -->
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script>
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
 	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script>
-	<!-- radio and checkbox graphics -->
+	<!-- input -->
 	<script src="js/forms/check/icheck.js"></script>
 
-    <!-- highlight -->
-    <script type="text/javascript" src="src/jquery.highlight.js"></script>
+  <!-- highlight -->
+  <script type="text/javascript" src="src/jquery.highlight.js"></script>
 
-    <!-- tablesorter -->
-    <script src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
+  <!-- tablesorter -->
+  <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
 
-    <!-- kmaps -->
-  <script type="text/javascript" src="js/main.js"></script> 
+  <!-- kmaps -->
+	<script type="text/javascript" src="js/main.js"></script> 
 
 	<!-- below are optional scripts for IE HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>

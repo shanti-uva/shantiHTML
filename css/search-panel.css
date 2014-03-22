@@ -62,7 +62,7 @@
 
 #kmaps-search.extruder.right{ background-color:white;}
 #kmaps-search.extruder.right .extruder-content{
-	background-color:white;
+	background-color:#f8f8f8;
 	border:none;
 	padding:0;
 	-moz-box-shadow:0 0 5px 0px #999;
@@ -137,12 +137,13 @@ object.flip_label{
 
 #input-section{
 	background-color:#f8f8f8;
-	padding:10px 10px 0 10px; 	
+	padding:10px 10px 0 10px;
+	border: 1px solid #eee; 	
 }
-#input-section .input-group{ height:35px;}
+#input-section .input-group{ height:35px;} /* related to button height */
 #input-section input.form-control{
 	margin: 0; 
-	padding:7px 15px 3px 20px;
+	padding:7px 0 3px 15px;
 	font-size:1.12em;
 	letter-spacing: 0.05em;
 	color:#505050;
@@ -150,25 +151,30 @@ object.flip_label{
 	line-height:1.25em;
   height:35px;
   width:100%;
+  
+	border: 1px solid #ddd;
+	border-right:none;  
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
-	/* -webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
 	-webkit-border-top-right-radius: 0;
 	-moz-border-radius-bottomright: 0;
 	-moz-border-radius-topright: 0;
 	border-bottom-right-radius: 0;
-	border-top-right-radius: 0; */ 
+	border-top-right-radius: 0; 
+	
 	resize: none;
 	overflow: auto;
 	outline:0;
 	box-sizing: border-box;
 	vertical-align:middle;
 	box-shadow:none;
-	border: 1px solid #ddd;
 }
+#input-section input.form-control:hover,
 #input-section input.form-control:focus{ 
 	border:1px solid #b4cdee;
+	border-right:none;
 	box-shadow:none;
 	color:#555;
 	-o-transition: border-color 0.4s linear;
@@ -176,14 +182,19 @@ object.flip_label{
 	-webkit-transition: border-color 0.4s linear;
 	transition: border-color 0.4s linear;
 }
+#input-section input.form-control:focus{ color:#555;}
+
+#input-section .input-group-btn{ background-color:transparent;}
 #input-section .btn{ 
-	height:35px; 
 	font-size:1em; 
-	display:inline !important; float:left;
 	line-height:1.25em; 
-	width:50px !important;
-	height:35px !important;
-	 -webkit-border-radius: 25px;
+	padding-right:25px;
+	display:inline-block;
+	width:30px; height:35px; /* related to input height */	
+	color:#aaa;
+	border: 1px solid #ddd;
+	/* border-left:none;  */
+  -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
 	-webkit-border-bottom-left-radius: 0;
@@ -191,10 +202,18 @@ object.flip_label{
 	-moz-border-radius-bottomleft: 0;
 	-moz-border-radius-topleft: 0;
 	border-bottom-left-radius: 0;
-	border-top-left-radius: 0;
+	border-top-left-radius: 0; 
 	position:relative;
+	box-shadow:none;
+	box-sizing: border-box;
 }
-#input-section .input-group-btn{ width:15%; background-color:#555 !important;}
+#input-section .btn:hover,
+#input-section .btn:focus{ 
+		color:#888;
+		border-color:#ccc;
+}
+#input-section .btn:focus{ color:#f00 !important;}
+
 
 #input-section .advanced-view{ float:left;padding:0; background-color:#f8f8f8;}
 #input-section .advanced-view .form-group{  border-top:1px solid #e0e0e0; margin:0 !important; width:100% !important}
@@ -268,7 +287,7 @@ object.flip_label{
 	display:block;
 	text-align:center;
 	border: 1px solid #eee;
-	background-color:white;
+	background-color:#fcfcfc;
 	border-bottom: 1px solid #ddd;
 	transition: background-color 0.4s ease 0s;
 	-webkit-transition: background-color 0.4s ease 0s;
@@ -296,10 +315,10 @@ object.flip_label{
 }
 #view-section #treeview>div{ padding:10px 5px 0; overflow:auto; }
 #view-section #listview>div{ padding:10px 5px 0; overflow:auto;}
-#view-section #treeview>div.short-wrap,
-#view-section #listview>div.short-wrap{ height:457px;}
 #view-section #treeview>div.long-wrap,
-#view-section #listview>div.long-wrap{ height:312px;}
+#view-section #listview>div.long-wrap{ height:457px;}
+#view-section #treeview>div.short-wrap,
+#view-section #listview>div.short-wrap{ height:312px;}
 
 #view-section li.treeview .tab-content{ padding-bottom:0px;}
 
@@ -366,9 +385,13 @@ object.flip_label{
 }
 #view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
 
-#view-section span.fancytree-title span.fancytree-highlight {
-    line-height:1.32em; height:1.32em;
+#view-section span.fancytree-title > em{
+    position:relative; top:-4px;
     color: #dc3c47;
+    font-style:normal;
+}
+#view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{
+    position:relative; top:0px;
 }
 /*---- END treeview -----*/
 
