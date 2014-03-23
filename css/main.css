@@ -1,7 +1,7 @@
 
 html { -webkit-font-smoothing: antialiased;}
 body {
-  background-color:white;
+  background-color: white;
   font-family: "Museo Sans", sans-serif;
 }
 /* align checkboxes, radios, text inputs with their label */
@@ -11,13 +11,16 @@ input[type="checkbox"] { vertical-align: bottom; vertical-align: baseline; }
 /* hand cursor on clickable input elements */
 label, input[type=button], input[type=submit], button { cursor: pointer; }
 
-
+.container-fluid {
+  background-color: white;
+}
 .navbar{ 
 	padding:0 !important; 
 	margin:0 !important;  
+	background-color:white !important;
 }
 .navbar.navbar-default .navbar-collapse,
-.navbar.navbar-static-top{ background-color: white !important;}
+.navbar.navbar-static-top{ border-bottom: none !important;}
 
 .navbar-default h1 {
  	color:#555; 
@@ -247,6 +250,7 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 	line-height:22px;
 	position:relative; 
 	top:-1px;
+	right:2px;
 }
 .titlearea .breadcrumb {
   background-color: inherit;
@@ -276,21 +280,14 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 .titlearea .breadcrumb .active{ font-weight:bold; color:white; font-size:1.06em;}
 
 
-.container,
-.container-fluid {
-  background-color: #eee !important;
-}
-
 #main-content {
   color: #333;
-  background-color: #eee !important;
+  background-color: #eee;
   position:relative;
   height:100% !important;
   min-height:800px!important;
 }
-#main-content>div {
-  background-color: #eee;
-}
+#main-content>div { }
 .content-sidebar {
   padding-left: 0;
   padding-right: 0;

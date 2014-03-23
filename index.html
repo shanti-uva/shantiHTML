@@ -342,7 +342,7 @@
 				<!-- BEGIN Search Panel -->	
 				<div id="kmaps-search">								
 						<!-- BEGIN search section -->									  
-					  <div id="input-section">									  
+					  <div id="input-section" style="display:none;">									  
 							<form role="form" class="form">
 							 <fieldset>												
 								<legend class="hidden">Search Form</legend>									
@@ -541,6 +541,12 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
+  
+	<script>
+	jQuery(function ($) {
+			$("#input-section").css("display","block");
+	});
+	</script>
     
 </body>
 </html>

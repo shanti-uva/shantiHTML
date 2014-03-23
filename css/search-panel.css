@@ -136,10 +136,15 @@ object.flip_label{
 #kmaps-search #input-section{ }
 
 #input-section{
+	background-color:transparent; 	
+	border:none;
+}
+.isOpened #input-section{ 
 	background-color:#f8f8f8;
 	padding:10px 10px 0 10px;
-	border: 1px solid #eee; 	
+	border: 1px solid #eee;
 }
+
 #input-section .input-group{ height:35px;} /* related to button height */
 #input-section input.form-control{
 	margin: 0; 
