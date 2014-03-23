@@ -40,7 +40,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 .navbar-collapse ul>li{ border-left:1px solid #e0e0e0;}
 .navbar-default .navbar-nav>li{ height:48px;}
 .navbar-default .navbar-nav>li>a{ 
-	color:#333; 
+	color:#505050; 
 	display:inline-block; 
 	font-weight:600; 
 	font-size:0.88em; 
@@ -49,7 +49,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 	font-weight:600;
 	background-color:#fff;
 	transition: background-color 0.4s ease 0s;
-	-webkit-transition: background-color 0.4s ease 0s; /* safari */
+	-webkit-transition: background-color 0.4s ease 0s; 
 	-moz-transition: background-color 0.4s ease 0s;
 	-o-transition: background-color 0.4s ease 0s;
 }
@@ -200,7 +200,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
   cursor:pointer;
   display:inline-block;
 	transition: color 0.6s ease 0s;
-	-webkit-transition: color 0.6s ease 0s; /* safari */
+	-webkit-transition: color 0.6s ease 0s; 
 	-moz-transition: color 0.6s ease 0s;
 	-o-transition: color 0.6s ease 0s;
 }
@@ -309,7 +309,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 	border-bottom:1px solid #ddd;
 	background-color:#fff;
 	transition: background-color 0.4s ease 0s;
-	-webkit-transition: background-color 0.4s ease 0s; /* safari */
+	-webkit-transition: background-color 0.4s ease 0s; 
 	-moz-transition: background-color 0.4s ease 0s;
 	-o-transition: background-color 0.4s ease 0s;
 }
