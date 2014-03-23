@@ -140,6 +140,3 @@ jQuery(function ($) {
     });
 });
 
-
-
-
