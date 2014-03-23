@@ -74,9 +74,9 @@
   text-shadow:none; 
   background-color:white;
   color:#333;
-  width:320px !important;
+  width:320px !important; /*----- set width for panel container ------*/
   height:600px;
-  max-height:600px;
+  max-height:600px; /*----- set height for panel container, coordinate with the height of listview, treeview containers below */
 }
 
 /* ------ search button icon ------ */
@@ -145,7 +145,7 @@ object.flip_label{
 	border: 1px solid #eee;
 }
 
-#input-section .input-group{ height:35px;} /* related to button height */
+#input-section .input-group{ }
 #input-section input.form-control{
 	margin: 0; 
 	padding:7px 0 3px 15px;
@@ -154,9 +154,8 @@ object.flip_label{
 	color:#505050;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 	line-height:1.25em;
-  height:35px;
-  width:100%;
-  
+  height:37px;  /*------ related to button height */
+  width:100%;  
 	border: 1px solid #ddd;
 	border-right:none;  
   -webkit-border-radius: 25px;
@@ -167,8 +166,7 @@ object.flip_label{
 	-moz-border-radius-bottomright: 0;
 	-moz-border-radius-topright: 0;
 	border-bottom-right-radius: 0;
-	border-top-right-radius: 0; 
-	
+	border-top-right-radius: 0; 	
 	resize: none;
 	overflow: auto;
 	outline:0;
@@ -195,9 +193,9 @@ object.flip_label{
 	line-height:1.25em; 
 	padding-right:25px;
 	display:inline-block;
-	width:30px; height:35px; /* related to input height */	
+	width:30px; height:37px; /*-------------- coordinate with search input height */	
 	color:#aaa;
-	border: 1px solid #ddd;
+	border: 1px solid #e0e0e0;
 	/* border-left:none;  */
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
@@ -211,13 +209,26 @@ object.flip_label{
 	position:relative;
 	box-shadow:none;
 	box-sizing: border-box;
+	transition: background-color 0.4s ease 0s;
+	-webkit-transition: background-color 0.4s ease 0s;
+	-moz-transition: background-color 0.4s ease 0s;
+	-o-transition: background-color 0.4s ease 0s;
+	-webkit-transition: color 0.4s ease 0s;
+	-moz-transition: color 0.4s ease 0s;
+	-o-transition: color 0.4s ease 0s;
 }
 #input-section .btn:hover,
 #input-section .btn:focus{ 
 		color:#888;
-		border-color:#ccc;
+		border-color:#d0d0d0;
 }
 #input-section .btn:focus{ color:#f00 !important;}
+#input-section .btn i:before{ position:relative; right:3px;
+	-o-transition: background-color 0.4s ease 0s;
+	-webkit-transition: border-color 0.4s ease 0s;
+	-moz-transition: border-color 0.4s ease 0s;
+	-o-transition: border-color 0.4s ease 0s;
+}
 
 
 #input-section .advanced-view{ float:left;padding:0; background-color:#f8f8f8;}
@@ -231,7 +242,7 @@ object.flip_label{
 	float:right; 
 	font-weight:600;
 	height:15px; 
-	margin:3px 20px 5px 0;
+	margin:4px 0px 5px 0;
 	padding-left:20px;	
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
@@ -318,12 +329,12 @@ object.flip_label{
 	border-color:#ddd;
 	border-bottom-color: transparent;	
 }
-#view-section #treeview>div{ padding:10px 5px 0; overflow:auto; }
+#view-section #treeview>div{ padding:0px 5px 0; overflow:auto;}
 #view-section #listview>div{ padding:10px 5px 0; overflow:auto;}
 #view-section #treeview>div.long-wrap,
-#view-section #listview>div.long-wrap{ height:457px;}
+#view-section #listview>div.long-wrap{ height:450px;} /*------------ set the HEIGHT here ------------*/
 #view-section #treeview>div.short-wrap,
-#view-section #listview>div.short-wrap{ height:312px;}
+#view-section #listview>div.short-wrap{ height:305px;} /*------------ and here / note: jquery sets classes ------------*/
 
 #view-section li.treeview .tab-content{ padding-bottom:0px;}
 
@@ -334,7 +345,7 @@ object.flip_label{
 
 /*---- START list view ----*/}
 #view-section table.table-responsive{ border:none;}
-#view-section table.table-results{ border:none; font-size:15px; line-height:20px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+#view-section table.table-results{ border:none; font-size:13px; line-height:20px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 #view-section table.table-results a{ font-style:italic;}
 #view-section table.table-results tbody>tr>td{ line-height:20px; background-color:#f8f8f8;}
 #view-section table.table-results tbody>tr:hover{ background-color:#fff;}
@@ -359,7 +370,7 @@ object.flip_label{
 #view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:white; border:none;}
 
-#view-section span.fancytree-title{ color:#444; margin-left:-20px; line-height:1.44em; height:1.44em; padding-left:5px;}
+#view-section span.fancytree-title{ color:#505050; margin-left:-20px; line-height:1.44em; height:1.44em; padding-left:5px;}
 #view-section span.fancytree-title:before{ 
 	color:#aaa;
 	font-family: 'kmaps-icons';
@@ -385,7 +396,6 @@ object.flip_label{
 #view-section ul.fancytree-container .glyphicon{ color:#777; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
 #view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
 	color:#f4222c;
-	text-shadow: 0px 0px 1px #555;
 	background-color:transparent;
 }
 #view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
@@ -394,6 +404,7 @@ object.flip_label{
     position:relative; top:-4px;
     color: #dc3c47;
     font-style:normal;
+    padding:0 1px;
 }
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{
     position:relative; top:0px;

@@ -18,9 +18,9 @@ jQuery(function ($) {
     // --- advanced search toggle icons, open/close, view change height
     $(".advanced-link").click(function () {
         $(".advanced-trigger").toggleClass("show-advanced", 'fast');
-        $(".advanced-view").slideToggle('200');
+        $(".advanced-view").slideToggle('100');
         
-        $(".long-wrap").toggleClass("short-wrap", 'fast'); // adjusts for height diff w/advanced panel
+        $(".long-wrap").toggleClass("short-wrap", '100'); // adjusts for height diff w/advanced panel
     });
 
 });
