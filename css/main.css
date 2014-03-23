@@ -43,7 +43,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 	color:#505050; 
 	display:inline-block; 
 	font-weight:600; 
-	font-size:0.88em; 
+	font-size:0.88em;
 	line-height:1.32em;  
 	margin:0;
 	font-weight:600;
@@ -69,7 +69,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 /*--- BEGIN dropdown menu ---*/
 .navbar.navbar-default ul.dropdown-menu { 
 	position:absolute;  
-	top:52px;
+	top:51px;
 	z-index:1001; 
 	margin:0;	
 	padding:0;
@@ -85,12 +85,13 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 	padding:0 0 10px;
 	border:none;
 }
+.navbar-default .navbar-nav>li>ul>li:first-child{ border-top:1px solid #fff;}
 .navbar.navbar-default .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
 	left:-89px;
 	width:255px;
 }
-.navbar.navbar-default .lang ul.dropdown-menu{  /* language dropdown */
+.navbar.navbar-default .lang ul.dropdown-menu{  /* lang dropdown */
 	position:absolute; 
 	left:-42px;
 	width:110px;
@@ -106,7 +107,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 .navbar.navbar-default li.explore a{ padding-right:5px !important;}
 .navbar.navbar-default li.dropdown.options a{ padding-right:0px !important;} 
 #navtop ul.dropdown-menu li{ font-size:1em; line-height:1.68em; height:1.68em;  margin:0; padding:0;}
-#navtop ul.dropdown-menu li.drop-hdr{ font-size:0.93em; text-transform:uppercase; line-height:2.32em; height:2.32em; font-weight:600; color:#666; background-color: #ddd; padding:2px 0 0 14px; margin:8px 0 2px;}
+#navtop ul.dropdown-menu li.drop-hdr{ font-size:0.93em; text-transform:uppercase; line-height:2.32em; height:2.32em; font-weight:600; color:#666; background-color: #ddd; padding:0 0 0 14px; margin:8px 0 2px;}
 #navtop ul.dropdown-menu li.drop-hdr:first-child{ margin-top:0px;}
 #navtop ul.dropdown-menu li label{ padding:1px 0 0 13px !important;}
 #navtop ul.dropdown-menu>li>label{ font-size:0.88em; margin:0; line-height:2em; height:2em;}
@@ -490,11 +491,11 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
    box-sizing: border-box;
 }
 /*-----  decisions about  ----*/
-/*---
+
 *:focus{
   outline: 0 !important;
   outline: -2px auto -webkit-focus-ring-color !important;
-} ---*/
+}
 .content-sidebar ul.nav-pills li.active a:focus{
   outline: 0 !important;
   outline: -2px auto -webkit-focus-ring-color !important;
