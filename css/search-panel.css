@@ -41,7 +41,7 @@
 .extruder .voice,
 .extruder.right .text,
 .optionsPanel .panelVoice a{
-	box-shadow:none; text-transform:none;
+	-webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; text-transform:none;
 }
 .extruder.right .extruder-content,
 .panel-default .panel-heading,
@@ -54,7 +54,7 @@
 
 #kmaps-search{ /*---- SEARCH panel wrapper */
   margin-top:-65px; /*--- position panel above content-section */
-  box-shadow:none;
+  -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;
 }
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ }
@@ -91,9 +91,13 @@
   left:0px;
   top:0px;
   padding: 8px 0 8px 8px;
+  margin:0px 0px 0px -50px;  
+  -webkit-top-left-radius: 50px;
+  -webkit-bottom-left-radius: 50px;
+  -moz-top-left-radius: 50px;
+  -moz-bottom-left-border-radius: 50px;
   border-top-left-radius:50px;
   border-bottom-left-radius:50px;
-  margin:0px 0px 0px -50px;
 }
 .extruder.right .flap.on-flap{
 	-moz-box-shadow:-1px 0px 2px #bc323d;
@@ -105,8 +109,12 @@
   background-color:#505050;  
   height:36px;
   display:block; 
-  padding:18px 40px 18px 0; 
-  margin:0;
+  padding:18px 40px 18px 0 !important; 
+  margin:0 !important;
+  -webkit-top-left-radius: 25px;
+  -webkit-bottom-left-radius: 25px;
+  -moz-top-left-radius: 25px;
+  -moz-bottom-left-border-radius: 25px;
   border-top-left-radius:25px;
   border-bottom-left-radius:25px;
   overflow:hidden;
@@ -172,12 +180,16 @@ object.flip_label{
 	outline:0;
 	box-sizing: border-box;
 	vertical-align:middle;
+	-webkit-box-shadow:none; 
+	-moz-box-shadow:none; 
 	box-shadow:none;
 }
 #input-section input.form-control:hover,
 #input-section input.form-control:focus{ 
 	border:1px solid #b4cdee;
 	border-right:none;
+	-webkit-box-shadow:none; 
+	-moz-box-shadow:none; 
 	box-shadow:none;
 	color:#555;
 	-o-transition: border-color 0.4s linear;
@@ -207,6 +219,8 @@ object.flip_label{
 	border-bottom-left-radius: 0;
 	border-top-left-radius: 0; 
 	position:relative;
+	-webkit-box-shadow:none; 
+	-moz-box-shadow:none; 
 	box-shadow:none;
 	box-sizing: border-box;
 	transition: background-color 0.4s ease 0s;
@@ -223,7 +237,8 @@ object.flip_label{
 		border-color:#d0d0d0;
 }
 #input-section .btn:focus{ color:#f00 !important;}
-#input-section .btn i:before{ position:relative; right:3px;
+#input-section .btn i:before{ 
+	position:relative; right:3px;
 	-o-transition: background-color 0.4s ease 0s;
 	-webkit-transition: border-color 0.4s ease 0s;
 	-moz-transition: border-color 0.4s ease 0s;
@@ -297,13 +312,12 @@ object.flip_label{
 	font-size:14px;
 	line-height:25px;	
 	margin-right: 2px;
-	/* border-radius: 0%; */
 	font-weight:bold;
 	padding:10px 0 5px 0;
 	display:block;
 	text-align:center;
-	border: 1px solid #eee;
 	background-color:#fcfcfc;
+	border: 1px solid #eee;
 	border-bottom: 1px solid #ddd;
 	transition: background-color 0.4s ease 0s;
 	-webkit-transition: background-color 0.4s ease 0s;
@@ -329,12 +343,14 @@ object.flip_label{
 	border-color:#ddd;
 	border-bottom-color: transparent;	
 }
+#view-section #listview>div,
 #view-section #treeview>div{ padding:0px 5px 0; overflow:auto;}
-#view-section #listview>div{ padding:10px 5px 0; overflow:auto;}
+#view-section #listview>div{ padding-top:7px;}
+
 #view-section #treeview>div.long-wrap,
-#view-section #listview>div.long-wrap{ height:450px;} /*------------ set the HEIGHT here ------------*/
+#view-section #listview>div.long-wrap{ height:450px;} /*------------ set the view container HEIGHT here ***/
 #view-section #treeview>div.short-wrap,
-#view-section #listview>div.short-wrap{ height:305px;} /*------------ and here / note: jquery sets classes ------------*/
+#view-section #listview>div.short-wrap{ height:305px;} /*------------ and here, note: jquery sets the classes | the height changes when the advanced interface is open-closed ***/
 
 #view-section li.treeview .tab-content{ padding-bottom:0px;}
 
@@ -343,25 +359,29 @@ object.flip_label{
 #view-section .nav-tabs>li.active> a i:before{ font-size:16px; position:relative; top:1px; right:5px;}
 /*---- END tabs -----*/
 
-/*---- START list view ----*/}
+/*---- START list table view ----*/}
 #view-section table.table-responsive{ border:none;}
 #view-section table.table-results{ border:none; font-size:13px; line-height:20px; margin-bottom:0; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 #view-section table.table-results a{ font-style:italic;}
-#view-section table.table-results tbody>tr>td{ line-height:20px; background-color:#f8f8f8;}
-#view-section table.table-results tbody>tr:hover{ background-color:#fff;}
+#view-section table.table-results tbody>tr,
+#view-section table.table-results tbody>tr>td{ line-height:20px;}
+/* #view-section table.table-results tr:nth-child(even) {background-color: #fcfcfc;} */
+#view-section table.table-results tbody tr:hover{ background-color: #fdfdfd !important;}
 #view-section table.table-results thead tr th:after{
 	color:#555;
 	font-family: 'kmaps-icons';
-	content: "\e61b";
-	font-size: 10px;
-	line-height:12px;
-	margin-left:2px;
-	/* position:relative; top:0px; left:0px; */
+	content: "\e620";
+	font-size: 14px;
+	margin-left:0px;
+	position:relative; top:2px;
 }
+#view-section table.table-results thead tr th{ color:#333;}
+#view-section table.table-results thead tr th:hover,
+#view-section table.table-results thead tr th:hover:after{ color:#dc3c47;}
 /*---- END listview ----*/
 
 /*---- START tree view ----*/
-#view-section ul.fancytree-container{ /*** SET SEARCH HEIGHT, 2 selectors, see other above ***/ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+#view-section ul.fancytree-container{ background-color:transparent; border:none; font-size: 1em; line-height:1em; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
 #view-section ul.fancytree-container ul{ padding-top:1px;}
 
 #view-section span.fancytree-icon{ margin:0; padding:0; width:0; height:0; line-height:0; display:none;} /*--- remove checkbox ---*/
@@ -370,7 +390,7 @@ object.flip_label{
 #view-section span.fancytree-expander:before{ }
 #view-section span.fancytree-node.fancytree-active{ background-color:white; border:none;}
 
-#view-section span.fancytree-title{ color:#505050; margin-left:-20px; line-height:1.44em; height:1.44em; padding-left:5px;}
+#view-section span.fancytree-title{ color:#444; margin-left:-20px; line-height:1.44em; height:1.44em; padding-left:5px;}
 #view-section span.fancytree-title:before{ 
 	color:#aaa;
 	font-family: 'kmaps-icons';

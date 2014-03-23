@@ -30,10 +30,8 @@ jQuery(function ($) {
     $("#tree").fancytree({
         extensions: ["glyph", "filter"],
         checkbox: false,
-        selectMode: 2,
         autoCollapse: false,
         closeOnExternalClick: false,
-        flapMargin: 5,
         filter: {
             mode: 'hide'
         },
