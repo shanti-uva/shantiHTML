@@ -158,7 +158,7 @@ object.flip_label{
 	margin: 10px 0 0; 
 	padding:7px 1px 3px 15px;
 	font-size:1.12em;
-	color:#eee;
+	color:#777;
 	/* font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; */
 	line-height:1.25em;
   height:35px;  /*------ related to button height below ---*/
@@ -186,7 +186,7 @@ object.flip_label{
 	border-color: #bbc3f8;
 	color:#eee;
 }
-#input-section input.form-control:focus{ border-color::#999; color:#eee;}
+#input-section input.form-control:focus{ border-color::#999; color:#555;}
 
 #input-section .input-group-btn{ background-color:transparent;}
 #input-section .btn{ 
