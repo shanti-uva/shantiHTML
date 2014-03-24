@@ -61,7 +61,7 @@ jQuery(function ($) {
 
         // clear previous styling
         // (can't simply unwrap because that leaves text nodes in extraneous chunks)
-        $('span.fancytree-title').each(
+        $('span.fancytree-title,span.title-field').each(
             function () {
                 $(this).text($(this).text());
             }
@@ -69,9 +69,6 @@ jQuery(function ($) {
         var txt = $("#searchform").val();
         var tree = $('#tree').fancytree('getTree').applyFilter(txt);
         // $('span.fancytree-match').removeClass('fancytree-match');
-        $('span.fancytree-title').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
-
-
 
         // Retrieve matches
         var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
@@ -86,12 +83,14 @@ jQuery(function ($) {
         $.each(list, function (x, y) {
             table.append(
                 "<tr>" +
-                    "<td>" + y.title + "</td>" +
+                    "<td><span class='title-field'>" + y.title + "</span></td>" +
                     "<td>"+ y.data.id + "</td>" +
                     "<td>" + (y.data.caption?y.data.caption:"<em>n/a</em>") +  "</td>" +
                     "</tr>"
             );
         });
+
+        $('span.fancytree-title,span.title-field').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
 
         $('table.table-results').tablesorter();
 
