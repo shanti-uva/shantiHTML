@@ -184,7 +184,7 @@ object.flip_label{
 #input-section input.form-control:hover,
 #input-section input.form-control:focus{ 
 	border-color: #bbc3f8;
-	color:#eee;
+	color:#555;
 }
 #input-section input.form-control:focus{ border-color::#999; color:#555;}
 
@@ -225,6 +225,7 @@ object.flip_label{
 #input-section .btn i:before{ 
 	position:relative; 
 	right:2px;
+	top:-1px;
 }
 
 
