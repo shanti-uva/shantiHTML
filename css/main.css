@@ -40,8 +40,8 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 .navbar-collapse ul>li{ border-left:1px solid #e0e0e0;}
 .navbar-default .navbar-nav>li{ height:48px;}
 .navbar-default .navbar-nav>li>a{ 
-	color:#505050; 
-	display:inline-block; 
+	color:#666; 
+	display:block; 
 	font-weight:600; 
 	font-size:0.88em;
 	line-height:1.32em;  
@@ -86,6 +86,9 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 	border:none;
 }
 .navbar-default .navbar-nav>li>ul>li:first-child{ border-top:1px solid #fff;}
+.navbar-default .navbar-nav>li.lang>ul>li:first-child{ border-top:none;}
+.navbar-default .navbar-nav>li.lang>ul{ border-top:1px solid #fff;}
+
 .navbar.navbar-default .options ul.dropdown-menu{  /* options dropdown */
 	position:absolute; 
 	left:-89px;
@@ -596,7 +599,7 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 		padding-left:0px;	
 	}
 	.nav.navbar-nav li a{
-		background-color:white;
+		background-color:#f2f2f2;
 	}
 	.table-responsive>.table{ background-color:transparent;}
 	
@@ -647,6 +650,9 @@ label, input[type=button], input[type=submit],button{ cursor:pointer;}
 	}
 	.navbar-default h1 a img{ 
 		width:32%;		
+	}
+	.navbar-default .navbar-nav>li>a{
+		background-color:transparent
 	}
   .navbar-collapse .navbar-nav.navbar-right:last-child{
 	  margin-right:0;
