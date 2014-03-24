@@ -180,13 +180,14 @@ object.flip_label{
 	-moz-transition: border-color 0.4s linear;
 	-webkit-transition: border-color 0.4s linear;
 	transition: border-color 0.4s linear;
+	/* box-shadow: 1px 2px 1px #eee inset; */
 }
 #input-section input.form-control:hover,
 #input-section input.form-control:focus{ 
 	border-color: #bbc3f8;
 	color:#555;
 }
-#input-section input.form-control:focus{ border-color::#999; color:#555;}
+#input-section input.form-control:focus{ box-shadow: 0px 0px 3px 0px #949bd8;}
 
 #input-section .input-group-btn{ background-color:transparent;}
 #input-section .btn{ 
@@ -199,7 +200,7 @@ object.flip_label{
 	height:33px; /*-------------- coordinate with search input height above ---*/	
 	color:#aaa;
 	border: 1px solid #eee;
-	/* border-left:none;  */
+	border-width:0 0 0 1px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
