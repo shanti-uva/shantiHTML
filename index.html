@@ -544,6 +544,20 @@
 	jQuery(function ($) {
 			$("#input-section").css("display","block");
 	});
+	
+	jQuery(function($) {		
+		var searchBoxes = $(".form-control");
+		var searchBox = $("input#searchform");
+		var searchButton = $("input#searchbutton");
+		var searchBoxDefault = "Enter Search...";
+		
+		searchBox.focus(function(){
+			if($(this).attr("placeholder") == searchBoxDefault) $(this).attr("placeholder", "");
+		});
+		searchBox.blur(function(){
+			if($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
+		});
+	});
 	</script>
     
 </body>
