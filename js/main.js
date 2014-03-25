@@ -140,3 +140,17 @@ jQuery(function ($) {
     });
 });
 
+
+// *** SEARCH *** remove watermark on focus
+jQuery(function($) {		
+	var searchBox = $("input#searchform");
+	var searchButton = $("input#searchbutton");
+	var searchBoxDefault = "Enter Search...";
+	
+	searchBox.focus(function(){
+		if($(this).attr("placeholder") == searchBoxDefault) $(this).attr("placeholder", "");
+	});
+	searchBox.blur(function(){
+		if($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
+	});
+});

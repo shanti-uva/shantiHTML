@@ -149,7 +149,7 @@ object.flip_label{
 }
 .isOpened #input-section{ 
 	background-color:#f8f8f8;
-	padding:0 10px 0 10px;
+	padding:0 12px 0 12px;
 	border: 1px solid #eee;
 }
 
@@ -185,13 +185,13 @@ object.flip_label{
 #input-section input.form-control:hover,
 #input-section input.form-control:focus{ 
 	border-color: #bbc3f8;
-	color:#555;
+	color:#777;
 }
 #input-section input.form-control:focus{ box-shadow: 0px 0px 3px 0px #949bd8;}
 
 #input-section .input-group-btn{ background-color:transparent;}
 #input-section .btn{ 
-	position:absolute; top:11px; right:3px; 
+	position:absolute; top:11px; right:2px; 
 	font-size:1em; 
 	line-height:1em; 
 	text-align:center;
@@ -329,9 +329,9 @@ object.flip_label{
 #view-section #listview>div{ padding-top:7px;}
 
 #view-section #treeview>div.long-wrap,
-#view-section #listview>div.long-wrap{ height:450px;} /*------------ set the view container HEIGHT here ***/
+#view-section #listview>div.long-wrap{ height:454px;} /*------------ set the view container HEIGHT here ***/
 #view-section #treeview>div.short-wrap,
-#view-section #listview>div.short-wrap{ height:305px;} /*------------ and here, note: jquery sets the classes | the height changes when the advanced interface is open-closed ***/
+#view-section #listview>div.short-wrap{ height:309px;} /*------------ and here, note: jquery sets the classes | the height changes when the advanced interface is open-closed ***/
 
 #view-section li.treeview .tab-content{ padding-bottom:0px;}
 
@@ -398,7 +398,7 @@ object.flip_label{
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title{ line-height:1.63em; padding-left:10px; margin-left:-15px; width:100%;}
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title:before{ content:none;}
 
-#view-section ul.fancytree-container .glyphicon{ color:#777; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
+#view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
 #view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
 	color:#f4222c;
 	background-color:transparent;
