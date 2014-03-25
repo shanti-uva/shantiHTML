@@ -230,7 +230,7 @@ object.flip_label{
 }
 
 
-#input-section .advanced-view{ float:left;padding:0; background-color:#f8f8f8;}
+#input-section .advanced-view{ float:left;padding:0; background-color:#f8f8f8;width:100%;margin-right:4px;}
 #input-section .advanced-view .form-group{  border-top:1px solid #e0e0e0; margin:0 !important; width:100% !important}
 #input-section .advanced-view .form-group.last{ padding-bottom:5px;}
 
@@ -241,7 +241,7 @@ object.flip_label{
 	float:right; 
 	font-weight:600;
 	height:15px; 
-	margin:6px 0px 5px 0;
+	margin:6px 20px 4px 0;
 	padding-left:20px;	
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
@@ -250,7 +250,7 @@ object.flip_label{
 	font-family:'kmaps-icons';
 	content: '\e60d';
 	font-size:0.68em;
-	margin-right:3px;
+	margin-right:4px;
 }
 #input-section a.advanced-link.show-advanced i.icon:before{content:'\e613';}
 #input-section a.advanced-link i.icon:hover,
@@ -261,13 +261,16 @@ object.flip_label{
 #input-section .radio-inline input[type="radio"]{
 	margin-left:5px;
 }
-#input-section label { 
+#input-section label{ 
 	color:#505050;
 	font-size:13px;
+	line-height:20px;
+	height:35px;
+	padding-top:3px !important;
 }
-
+#input-section label>div{ position:relative; top:-2px;}
 #input-section .radio-inline{ padding:0;}
-#input-section .checkbox-inline{ margin-left:-2px; padding-left:2px;}
+#input-section .checkbox-inline{ margin-left:-2px; padding-left:5px;}
 #input-section .radio-inline>div,
 #input-section .checkbox-inline>div{ margin:8px 0; }
 
@@ -406,13 +409,13 @@ object.flip_label{
 #view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
 
 #view-section span.fancytree-title > em{
-    position:relative; top:-4px;
-    color: #dc3c47;
-    font-style:normal;
-    padding:0;
+  position:relative; top:-4px;
+  color: #dc3c47;
+  font-style:normal;
+  padding:0;
 }
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{
-    position:relative; top:0px;
+  position:relative; top:0px;
 }
 /*---- END treeview -----*/
 
