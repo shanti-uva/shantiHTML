@@ -264,9 +264,8 @@ object.flip_label{
 #input-section label{ 
 	color:#505050;
 	font-size:13px;
-	line-height:20px;
 	height:35px;
-	padding-top:3px !important;
+	padding-top:3px;
 }
 #input-section label>div{ position:relative; top:-2px;}
 #input-section .radio-inline{ padding:0;}
