@@ -19,7 +19,7 @@ jQuery(function ($) {
     $(".advanced-link").click(function () {
         $(".advanced-trigger").toggleClass("show-advanced", 'fast');
         $(".advanced-view").slideToggle('100');
-        
+
         $(".long-wrap").toggleClass("short-wrap", '100'); // adjusts for height diff w/advanced panel
     });
 
@@ -32,6 +32,7 @@ jQuery(function ($) {
         checkbox: false,
         autoCollapse: false,
         closeOnExternalClick: false,
+        debugLevel: 0,
         filter: {
             mode: 'hide'
         },
@@ -57,7 +58,7 @@ jQuery(function ($) {
         }
     });
 
-		handleSearch = function handleSearch() {
+    handleSearch = function handleSearch() {
 
         // clear previous styling
         // (can't simply unwrap because that leaves text nodes in extraneous chunks)
@@ -67,34 +68,37 @@ jQuery(function ($) {
             }
         );
         var txt = $("#searchform").val();
-        var tree = $('#tree').fancytree('getTree').applyFilter(txt);
-        // $('span.fancytree-match').removeClass('fancytree-match');
-        $('span.fancytree-title').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
 
-        // Retrieve matches
-        var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
-            return n.match;
-        });
+        if (txt) {
+            var tree = $('#tree').fancytree('getTree').applyFilter(txt);
+            // $('span.fancytree-match').removeClass('fancytree-match');
 
-        // clear the current list.
-        $('div#listview div div.table-responsive table.table-results tr').not(':first').remove();
+            // Retrieve matches
+            var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
+                return n.match;
+            });
 
-        // populate list
-        var table = $('div#listview div div.table-responsive table.table-results');
-        $.each(list, function (x, y) {
-            table.append(
-                "<tr>" +
-                    "<td><span class='title-field'>" + y.title + "</span></td>" +
-                    "<td>"+ y.data.id + "</td>" +
-                    "<td>" + (y.data.caption?y.data.caption:"<em>n/a</em>") +  "</td>" +
-                    "</tr>"
-            );
-        });
+            // clear the current list.
+            $('div#listview div div.table-responsive table.table-results tr').not(':first').remove();
 
-        $('span.fancytree-title,span.title-field').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
+            // populate list
+            var table = $('div#listview div div.table-responsive table.table-results');
+            $.each(list, function (x, y) {
+                table.append(
+                    "<tr>" +
+                        "<td><span class='title-field'>" + y.title + "</span></td>" +
+                        "<td>" + y.data.id + "</td>" +
+                        "<td>" + (y.data.caption ? y.data.caption : "<em>n/a</em>") + "</td>" +
+                        "</tr>"
+                );
+            });
 
-        $('table.table-results').tablesorter();
+            $('span.fancytree-title,span.title-field').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
+            $('span.fancytree-title,span.title-field').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
 
+            $('table.table-results').tablesorter();
+
+        }
         return false;
     };
 
@@ -107,20 +111,20 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** toggle button
-jQuery(function($) {
-		if (!$(".extruder.right").hasClass("isOpened")) {
-			$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:12px; z-index:10;'><i class='icon km-search'></i></span>");
-			$(".flap").addClass("on-flap");			
-		}
-			
-	// --- set class on dropdown menu for icon
-	$(".extruder.right .flap").hover( function () {
-	    $(this).addClass('on-hover');
-	    },                 
-	      function () {              
-	    $(this).removeClass('on-hover');
-	    }
-	);
+jQuery(function ($) {
+    if (!$(".extruder.right").hasClass("isOpened")) {
+        $(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:12px; z-index:10;'><i class='icon km-search'></i></span>");
+        $(".flap").addClass("on-flap");
+    }
+
+    // --- set class on dropdown menu for icon
+    $(".extruder.right .flap").hover(function () {
+            $(this).addClass('on-hover');
+        },
+        function () {
+            $(this).removeClass('on-hover');
+        }
+    );
 });
 
 

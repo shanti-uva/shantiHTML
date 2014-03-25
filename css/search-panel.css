@@ -405,6 +405,12 @@ object.flip_label{
     font-style:normal;
     padding:0 1px;
 }
+
+#view-section span.title-field > em {
+    color: #dc3c47;
+    font-style:normal;
+}
+
 #view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{
     position:relative; top:0px;
 }
