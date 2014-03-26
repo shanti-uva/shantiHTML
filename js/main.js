@@ -27,40 +27,41 @@ jQuery(function ($) {
 
 // *** SEARCH *** sliding panel
 jQuery(function ($) {
-    $("#tree").fancytree({
-        extensions: ["glyph", "filter"],
-				checkbox: false,
-				selectMode: 2,
-				autoCollapse: true,
-				closeOnExternalClick:false,
-				flapMargin:5,
-                debugLevel: 0,
-        filter: {
-            mode: 'hide'
-        },
-        glyph: {
-            map: {
-                doc: "",
-                docOpen: "",
-                error: "glyphicon glyphicon-warning-sign",
-                expanderClosed: "glyphicon glyphicon-plus-sign",
-                expanderLazy: "glyphicon glyphicon-plus-sign",
-                // expanderLazy: "glyphicon glyphicon-expand",
-                expanderOpen: "glyphicon glyphicon-minus-sign",
-                // expanderOpen: "glyphicon glyphicon-collapse-down",
-                folder: "",
-                folderOpen: "",
-                loading: "glyphicon glyphicon-refresh"
-                // loading: "icon-spinner icon-spin"
+    $("#tree").fancytree(
+        {
+            extensions: ["glyph", "filter"],
+            checkbox: false,
+            selectMode: 2,
+            autoCollapse: false,
+            closeOnExternalClick: false,
+            flapMargin: 5,
+            debugLevel: 1,
+            filter: {
+                mode: 'hide'
+            },
+            glyph: {
+                map: {
+                    doc: "",
+                    docOpen: "",
+                    error: "glyphicon glyphicon-warning-sign",
+                    expanderClosed: "glyphicon glyphicon-plus-sign",
+                    expanderLazy: "glyphicon glyphicon-plus-sign",
+                    // expanderLazy: "glyphicon glyphicon-expand",
+                    expanderOpen: "glyphicon glyphicon-minus-sign",
+                    // expanderOpen: "glyphicon glyphicon-collapse-down",
+                    folder: "",
+                    folderOpen: "",
+                    loading: "glyphicon glyphicon-refresh"
+                    // loading: "icon-spinner icon-spin"
+                }
+            },
+            source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
+            lazyload: function (event, ctx) {
+                ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
             }
-        },
-        source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
-        lazyload: function (event, ctx) {
-            ctx.result = {url: "src/json/ajax-sub2.json", debugDelay: 1000};
-        }
-    });
+        });
 
-    handleSearch = function handleSearch() {
+    var handleSearch = function handleSearch() {
 
         // clear previous styling
         // (can't simply unwrap because that leaves text nodes in extraneous chunks)
