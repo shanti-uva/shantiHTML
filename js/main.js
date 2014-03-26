@@ -29,10 +29,12 @@ jQuery(function ($) {
 jQuery(function ($) {
     $("#tree").fancytree({
         extensions: ["glyph", "filter"],
-        checkbox: false,
-        autoCollapse: false,
-        closeOnExternalClick: false,
-        debugLevel: 0,
+				checkbox: false,
+				selectMode: 2,
+				autoCollapse: true,
+				closeOnExternalClick:false,
+				flapMargin:5,
+                debugLevel: 0,
         filter: {
             mode: 'hide'
         },
@@ -144,3 +146,17 @@ jQuery(function ($) {
     });
 });
 
+
+// *** SEARCH *** remove watermark on focus
+jQuery(function($) {		
+	var searchBox = $("input#searchform");
+	var searchButton = $("input#searchbutton");
+	var searchBoxDefault = "Enter Search...";
+	
+	searchBox.focus(function(){
+		if($(this).attr("placeholder") == searchBoxDefault) $(this).attr("placeholder", "");
+	});
+	searchBox.blur(function(){
+		if($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
+	});
+});

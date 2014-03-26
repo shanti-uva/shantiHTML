@@ -17,7 +17,11 @@
   <link rel="stylesheet" href="css/search-panel.css" media="all">
 	<link rel="stylesheet" href="js/forms/check/skins/minimal/red.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
+	<!-- IE HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 	<a href="#main-content" class="sr-only">Skip to main content</a>
@@ -206,7 +210,7 @@
             </p>
             <h6>Map</h6>
             <div class="google-maps">
-                  <iframe src="https://mapsengine.google.com/map/embed?mid=zCEqriyJd8A0.kM1pQfphj0Ns" width="640" height="480" style="border:0"></iframe>
+                  <!-- <iframe src="https://mapsengine.google.com/map/embed?mid=zCEqriyJd8A0.kM1pQfphj0Ns" width="640" height="480" style="border:0"></iframe> -->
             </div>
             <div class="panel-group" id="accordion">
               <div class="panel panel-default">
@@ -511,10 +515,11 @@
       <p>&copy; COPYRIGHT 2014</p>
     </div>
   </div>  
+  <script type="text/javascript" src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
 
   <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
   <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-  <script type="text/javascript"  src="js/vendor/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
 	<!-- searchpanel -->
   <script type="text/javascript" src="js/extruder/mbExtruder.js"></script> 
@@ -523,7 +528,7 @@
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
 	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script>
 	<!-- input -->
-	<script src="js/forms/check/icheck.js"></script>
+	<script type="text/javascript" src="js/forms/check/icheck.js"></script>
 
   <!-- highlight -->
   <script type="text/javascript" src="src/jquery.highlight.js"></script>
@@ -533,12 +538,6 @@
 
   <!-- kmaps -->
 	<script type="text/javascript" src="js/main.js"></script> 
-
-	<!-- below are optional scripts for IE HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
   
 	<script>
 	jQuery(function ($) {
