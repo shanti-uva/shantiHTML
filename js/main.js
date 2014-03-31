@@ -8,22 +8,7 @@ jQuery(function ($) {
       top: 0
   });
 
-  // --- collections toggle
-  $("li.explore").addClass("closed");
-  $(".explore>a, .closecollection").click(function () {
-      $(".opencollect").slideToggle('fast');
-      $(".closed").toggleClass("open", 'fast');
-  });
-
-  // --- advanced search toggle icons, open/close, view change height
-  $(".advanced-link").click(function () {
-      $(this).toggleClass("show-advanced", 100 );
-      $(".advanced-view").slideToggle( 'fast' ); 
-			$(".advanced-view").toggleClass( "show-options" );
-			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing heights below
-  });
 });
-
 
 
 
@@ -107,6 +92,7 @@ jQuery(function($) {
 	    $(this).removeClass('on-hover');
 	    }
 	);
+
 });
 
   
@@ -231,6 +217,23 @@ jQuery(function($) {
 // *** SEARCH *** prevent flash onload
 jQuery(function ($) {
 	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
+
+
+  // --- collections toggle
+  $("li.explore").addClass("closed");
+  $(".explore>a, .closecollection").click(function () {
+      $(".opencollect").slideToggle('fast');
+      $(".closed").toggleClass("open", 'fast');
+  });
+
+  // --- advanced search toggle icons, open/close, view change height
+  $(".advanced-link").click(function () {
+      $(this).toggleClass("show-advanced", 100 );
+      $(".advanced-view").slideToggle( 'fast' ); 
+			$(".advanced-view").toggleClass( "show-options" );
+			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing heights below
+  });
+  
 });
 		
 
@@ -297,7 +300,5 @@ jQuery(function ($) {
   //select.wait(1000, select.open).wait(1000, select.moveDown);
 
 });
-
-
 
 
