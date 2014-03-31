@@ -5,17 +5,19 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shanti App</title>
+  <title>Shanti Kmaps</title>
   <meta name="description" content="template">
   <link rel="stylesheet" href="fonts/font-awesome-4.0.3/css/font-awesome.css">
   <link rel="stylesheet" href="fonts/kmaps-icons/css/kmaps-icons.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
 	<link rel="stylesheet" href="src/skin-bootstrap/ui.fancytree.css" class="skinswitcher">
   <link rel="stylesheet" href="css/search-panel.css" media="all">
 	<link rel="stylesheet" href="js/forms/check/skins/minimal/red.css">
+	<link rel="stylesheet" href="js/forms/select/css/jquery.selectBoxIt.css">
   <link rel="stylesheet" href="css/main.css">
 	<!-- IE HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -24,11 +26,11 @@
   <![endif]-->
 </head>
 <body>
-	<a href="#main-content" class="sr-only">Skip to main content</a>
+	<a href=".main-content" class="sr-only">Skip to main content</a>
   <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container-fluid">  
        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navtop">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navtop">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -38,53 +40,53 @@
         	<span><span class="hidden">SHANTI</span>Scholarly Collections at the University of Virginia</span></a></h1>
       </div>
       
-      <div class="navbar-collapse collapse" id="navtop">
+      <div class="navbar-collapse collapse navtop">
       <form role="form" class="form">
 			 <fieldset>	        
         <ul class="nav navbar-nav navbar-right">
-          <li class="explore"><a href="#" id="toggle-collections">EXPLORE<i class="icon km-directions"></i></a></li>
+          <li class="explore"><a href="#">EXPLORE<i class="icon km-directions"></i></a></li>
           <li class="login"><a href="">LOGIN</a></li>
           <li class="dropdown options">
           		<a href="" class="dropdown-toggle" data-toggle="dropdown">OPTIONS<i class="icon km-arrowselect"></i></a>
 	          		<ul class="dropdown-menu dropdown-features">
 	                
 	                <li class="drop-hdr">Perspective</li>
-                    <li class="form-group"><label class="radio-inline" for="options1a">
-												<input type="radio" name="options1" id="options1a" value="options1a" checked>General</label>
+                    <li class="form-group"><label class="radio-inline" for="option1a">
+												<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
 										</li>
-	                  <li class="last form-group"><label class="radio-inline" for="options1b">
-												<input type="radio" name="options1" id="options1b" value="options1b">Tibetan</label>
+	                  <li class="last form-group"><label class="radio-inline" for="option1b">
+												<input type="radio" name="option1" id="option1b" value="option1b">Tibetan</label>
 										</li>
 	                  
 	                <li class="drop-hdr">Subject Language</li>
-                    <li class="form-group"><label class="radio-inline" for="options2a">
-												<input type="radio" name="options2" id="options2a" value="options2a">Chinese Characters (simplified)</label>
+                    <li class="form-group"><label class="radio-inline" for="option2a">
+												<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="options2b">
-												<input type="radio" name="options2" id="options2b" value="options2b">Chinese Characters (traditional)</label>
+                    <li class="form-group"><label class="radio-inline" for="option2b">
+												<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="options2c">
-												<input type="radio" name="options2" id="options2c" value="options2c">Devangiri Script</label>
+                    <li class="form-group"><label class="radio-inline" for="option2c">
+												<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="options2d">
-												<input type="radio" name="options2" id="options2d" value="options2d" checked>Popular Standard (romanization)</label>
+                    <li class="form-group"><label class="radio-inline" for="option2d">
+												<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="options2e">
-												<input type="radio" name="options2" id="options2e" value="options2e">Scholarly Standard (romanization)</label>
+                    <li class="form-group"><label class="radio-inline" for="option2e">
+												<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
 										</li>										
-                    <li class="form-group"><label class="radio-inline" for="options2f">
-												<input type="radio" name="options2" id="options2f" value="options2f">Tibetan Script (simplified)</label>
+                    <li class="form-group"><label class="radio-inline" for="option2f">
+												<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
 										</li>										
-                    <li class="last form-group"><label class="radio-inline" for="options2g">
-												<input type="radio" name="options2" id="options2g" value="options2g">Tibetan Script (romanization)</label>
+                    <li class="last form-group"><label class="radio-inline" for="option2g">
+												<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
 										</li>
 	                
 	                <li class="drop-hdr">Show Subject Details</li>		                    
-	                  <li class="form-group"><label class="radio-inline" for="options3a">
-												<input type="radio" name="options3" id="options3a" value="options3a" checked>Yes</label>
+	                  <li class="form-group"><label class="radio-inline" for="option3a">
+												<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
 										</li>
-                    <li class="last form-group"><label class="radio-inline" for="options3b">
-												<input type="radio" name="options3" id="options3b" value="options3b">No</label>
+                    <li class="last form-group"><label class="radio-inline" for="option3b">
+												<input type="radio" name="option3" id="option3b" value="option3b">No</label>
 										</li>
 	          	  </ul>	
           </li>
@@ -114,7 +116,7 @@
   </div><!-- END navbar -->
   
 	<div class="container-fluid"> <!-- BEGIN dropdown panel -->
-    <div class="row collections collapse" id="opencollect">
+    <div class="row collections collapse opencollect">
       <div class="lightblue-bg">
         <div class="col-sm-8 col-sm-offset-2 lightblue-bg">
           <h4>EXPLORE COLLECTIONS</h4>
@@ -177,7 +179,7 @@
 	
 	<!-- BEGIN content -->
   <div class="container-fluid">
-    <div class="row" id="main-content">
+    <div class="row main-content">
     
       <div class="col-sm-2 content-sidebar">
         <ul class="nav nav-pills nav-stacked">
@@ -343,98 +345,114 @@
 
 					
 						
-				<!-- BEGIN Search Panel -->	
-				<div id="kmaps-search">								
-						<!-- BEGIN search section -->									  
-					  <div id="input-section" style="display:none;">									  
-							<form role="form" class="form">
-							 <fieldset>												
-								<legend class="hidden">Search Form</legend>									
-																					
-								  <div class="input-group">
-											<input id="searchform" class="form-control" type="text" placeholder="Enter Search...">
-											<span class="input-group-btn">
-												<button id="searchbutton" type="button" class="btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button>
-											</span>
-								  </div>
-								  
-									<div><a href="#" class="advanced-link advanced-trigger" title="advanced search options"><i class="icon"></i>Advanced</a></div>										
-											
-										 <!-- advanced search hidden ontent -->
-										 <div class="advanced-view" style="display:none;">													    
-														  <div class="form-group"> 
-														    <label class="radio-inline" for="radios-0">
-														      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-														      	All Text</label> 
-														    <label class="radio-inline" for="radios-1">
-														      <input type="radio" name="radios" id="radios-1" value="2">
-														      	Name </label> 
-														  </div>
-														  													  
-														  <div class="form-group">
-														    <label class="radio-inline" for="radios-2">
-														      <input type="radio" name="radios2" id="radios-2" value="3" checked="checked">
-														      	Contains</label> 
-														    <label class="radio-inline" for="radios-3">
-														      <input type="radio" name="radios2" id="radios-3" value="4">
-														      	Starts With</label>
-														    <label class="radio-inline" for="radios-4">
-														      <input type="radio" name="radios2" id="radios-4" value="5">
-														      	Exactly</label>													    
-														  </div>
-														  
-														  <div class="form-group">
-														    <label class="checkbox-inline" for="checkbox-1">
-														      <input type="checkbox" name="checkbox" id="checkbox-1" value="6">
-														      	Show only entries with essays</label> 
-														  </div>
-														  <div class="form-group last">    														    
-														    <label class="checkbox-inline" for="checkbox-2">
-														      <input type="checkbox" name="checkbox" id="checkbox-2" value="7">
-														      	Show feature details</label> 													    
-														  </div>
-														  </div>													  											
-							 </fieldset>
-						 </form>													
-						</div>	<!-- END search section -->
-								
-							  
-							  <!-- START TABS / View section -->																	
-							  <div id="view-section">						 
-								  <ul class="nav nav-tabs" id="search-tabs">
-									  <li class="treeview active"><a href="#treeview" data-toggle="tab"><i class="icon km-tree"></i>Tree</a></li>
-									  <li class="listview"><a href="#listview" data-toggle="tab"><i class="icon km-list"></i>List</a></li>
-									</ul>
-									
-									
-									<div class="tab-content">
-									  
-									  <!-- TAB - tree view -->
-									  <div id="treeview" class="tab-pane active">	  		
-									  		<div id="tree" class="long-wrap"></div><!-- tree nav container -->						  
+					<!-- BEGIN Search Panel -->	
+					<div id="kmaps-search">								
+							<!-- BEGIN search section -->									  
+						  <div class="input-section" style="display:none;">									  
+								<form role="form" class="form">
+								 <fieldset>												
+									<legend class="hidden">Search Form</legend>									
+																						
+									  <div class="input-group">
+												<input id="searchform" class="form-control" type="text" placeholder="Enter Search...">
+												<span class="input-group-btn">
+													<button id="searchbutton" type="button" class="btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button>
+												</span>
 									  </div>
 									  
-									  <!-- TAB - list view -->
-									  <div id="listview" class="tab-pane">		
-									  	<div class="long-wrap">				        
-								        <div class="table-responsive">
-								         <table class="table table-condensed table-results">
-									        <thead>
-									            <tr>
-									            	<th>Name</th>
-																<th>Caption</th>
-									            </tr>
-									        </thead>
-								          <tbody></tbody>
-								        </table>								        						
-								       </div>
-								     </div>
-						       </div>										  
-								   
-							   </div>	
-						  </div><!-- END view section -->
-				</div><!-- END kmaps-search --> 
-				
+										<a href="#" class="advanced-link advanced-trigger" title="advanced search options"><i class="icon"></i>Advanced</a>									
+												
+											 <!-- advanced search hidden ontent -->
+											 <div class="advanced-view" style="display:none;">													    
+															  <div class="form-group"> 
+															    <label class="radio-inline" for="radios-0">
+															      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
+															      	All Text</label> 
+															    <label class="radio-inline" for="radios-1">
+															      <input type="radio" name="radios" id="radios-1" value="2">
+															      	Name </label> 
+															  </div>
+															  													  
+															  <div class="form-group">
+															    <label class="radio-inline" for="radios-2">
+															      <input type="radio" name="radios2" id="radios-2" value="3" checked="checked">
+															      	Contains</label> 
+															    <label class="radio-inline" for="radios-3" style="width:35%:">
+															      <input type="radio" name="radios2" id="radios-3" value="4">
+															      	Starts With</label>
+															    <label class="radio-inline" for="radios-4">
+															      <input type="radio" name="radios2" id="radios-4" value="5">
+															      	Exactly</label>													    
+															  </div>
+															  
+															  <div class="form-group">
+															    <label class="checkbox-inline" for="checkbox-1">
+															      <input type="checkbox" name="checkbox" id="checkbox-1" value="6">
+															      	Show only entries with essays</label> 
+															  </div>
+															  
+															  <div class="form-group">    														    
+															    <label class="checkbox-inline" for="checkbox-2">
+															      <input type="checkbox" name="checkbox" id="checkbox-2" value="7">
+															      	Show feature details</label> 													    
+															  </div>
+
+                                <div class="form-group last"> 
+															        <select id="selector1" name="selector1" data-size="9">
+																	      <option style="width:270px; overflow:hidden;">Selector One</option>
+																	      <option>Selector</option>
+																	      <option>Selector</option>
+																	      <option>Selector Text</option>
+																		    <option>Selector Text Text</option>
+																		    <option>Selector Very Long Text</option>
+																		    <option>Selector Very Long Long Text</option>
+																	      <option>Shorter</option>
+																	      <option>Shorter</option>
+																	      <option>Shorter Text</option>
+																		    <option>Shorter Text Text</option>
+																	    </select>
+															  </div>
+															  </div>													  											
+								 </fieldset>
+							 </form>													
+							</div>	<!-- END search section -->
+								
+							  
+						  <!-- START TABS / View section -->																	
+						  <div class="view-section">						 
+							  <ul class="nav nav-tabs">
+								  <li class="treeview active"><a href=".treeview" data-toggle="tab"><i class="icon km-tree"></i>Tree</a></li>
+								  <li class="listview"><a href=".listview" data-toggle="tab"><i class="icon km-list"></i>List</a></li>
+								</ul>
+								
+								
+								<div class="tab-content">
+																  
+								  <!-- TAB - tree view -->
+								  <div class="treeview tab-pane active">	  		
+								  		<div id="tree" class="view-wrap"> <!-- tree navigation | view-wrap controls container height --> </div>						  
+								  </div>
+								  
+								  <!-- TAB - list view -->
+								  <div class="listview tab-pane">		
+								  	<div class="view-wrap">	<!-- view-wrap controls container height -->			        
+							        <div class="table-responsive">
+							         <table class="table table-condensed table-results">
+								        <thead>
+								            <tr>
+								            	<th>Name</th>
+															<th>Caption</th>
+								            </tr>
+								        </thead>
+                                        <tbody></tbody>
+							        </table>								        						
+							       </div>
+							     </div>
+					       </div>										  
+							   
+						   </div>	
+					   </div><!-- END view section -->
+				  </div><!-- END kmaps-search -->			
     </div><!-- END main-content row -->
   </div><!-- END container-fluid -->
   
@@ -442,40 +460,24 @@
     <div>
       <p>&copy; COPYRIGHT 2014</p>
     </div>
-  </div>  
-  <script type="text/javascript" src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>	
-
-  <script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+  </div> 
+  
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-  <script type="text/javascript" src="js/vendor/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
-	<!-- searchpanel -->
-  <script type="text/javascript" src="js/extruder/mbExtruder.js"></script> 
-	<!-- tree -->
-	<script type="text/javascript" src="src/jquery.fancytree.js"></script>
-	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script>  
-	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script>
-	<!-- input -->
-	<script type="text/javascript" src="js/forms/check/icheck.js"></script>
-
-  <!-- highlight -->
-  <script type="text/javascript" src="src/jquery.highlight.js"></script>
-
-  <!-- tablesorter -->
-  <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script>
-
-  <!-- dataTables -->
+  <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>	
+  <script type="text/javascript" src="js/extruder/mbExtruder.js"></script> <!-- searchpanel -->	
+	<script type="text/javascript" src="src/jquery.fancytree.js"></script> <!-- tree -->
+	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script> <!-- tree -->  
+	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script> <!-- tree -->	
+	<script type="text/javascript" src="js/forms/check/icheck.min.js"></script> <!-- input -->
+	<script type="text/javascript" src="js/forms/select/jquery.selectBoxIt.min.js"></script> <!-- input -->  
+  <script type="text/javascript" src="src/jquery.highlight.js"></script> <!-- highlight -->  
+  <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script> <!-- tablesorter -->  
   <script type="text/javascript" src="src/jquery.dataTables.min.js"></script>
   <script type="text/javascript" src="src/dataTables.bootstrap.js"></script>
-
-    <!-- kmaps -->
-	<script type="text/javascript" src="js/main.js"></script> 
-  
-	<script>
-	jQuery(function ($) {
-			$("#input-section").css("display","block");
-	});
-	</script>
+	<script type="text/javascript" src="js/main.js"></script> <!-- kmaps fx -->
     
 </body>
 </html>
