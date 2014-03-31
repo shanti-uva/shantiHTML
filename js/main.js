@@ -27,6 +27,27 @@ jQuery(function ($) {
 
 // *** SEARCH *** sliding panel
 jQuery(function ($) {
+
+    $('table.table-results').dataTable(
+        {
+            "oLanguage": {
+                "oPaginate": {
+                    "sNext": ">",
+                    "sPrevious": "<"
+                }
+            },
+            "fnDrawCallback":function(){
+                if ($("table.table-results div.dataTables_paginate").length > 0) {
+                if($("table.table-results").find("tr:not(.ui-widget-header)").length<=5){
+                    $('table.table-results div.dataTables_paginate')[0].style.display = "none";
+                } else {
+                    $('table.table-results div.dataTables_paginate')[0].style.display = "block";
+                }
+                }
+            }
+        }
+    );
+
     $("#tree").fancytree(
         {
             extensions: ["glyph", "filter"],
@@ -61,7 +82,11 @@ jQuery(function ($) {
             }
         });
 
-    var handleSearch = function handleSearch() {
+
+
+
+
+        var handleSearch = function handleSearch() {
 
         // clear previous styling
         // (can't simply unwrap because that leaves text nodes in extraneous chunks)
@@ -73,6 +98,9 @@ jQuery(function ($) {
         var txt = $("#searchform").val();
 
         if (txt) {
+
+            $('table.table-results').dataTable().fnDestroy();
+
             var tree = $('#tree').fancytree('getTree').applyFilter(txt);
             // $('span.fancytree-match').removeClass('fancytree-match');
 
@@ -90,16 +118,37 @@ jQuery(function ($) {
                 table.append(
                     "<tr>" +
                         "<td><span class='title-field'>" + y.title + "</span></td>" +
-                        "<td>" + y.data.id + "</td>" +
                         "<td>" + (y.data.caption ? y.data.caption : "<em>n/a</em>") + "</td>" +
                         "</tr>"
                 );
             });
 
-            $('span.fancytree-title,span.title-field').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
-            $('span.fancytree-title,span.title-field').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
 
-            $('table.table-results').tablesorter();
+            $('table.table-results').dataTable(
+                {
+                    "oLanguage": {
+                        "oPaginate": {
+                            "sNext": ">",
+                            "sPrevious": "<"
+                        }
+                    }
+//                    ,
+//                    "fnDrawCallback":function(){
+//                        if ($("div.dataTables_paginate").length > 0) {
+//                            if($("div.dataTables_paginate")[0].find(".paginate-button").length<=5){
+//                            $('div.dataTables_paginate').style.display = "none";
+//                        } else {
+//                            $('div.dataTables_paginate').style.display = "block";
+//                        }
+//                        }
+//                    }
+
+                }
+            );
+
+
+            $('span.fancytree-title,span.title-field').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
+//            $('span.fancytree-title,span.title-field').highlight(txt, { element: 'span', className: 'fancytree-highlight' });
 
         }
         return false;
@@ -110,7 +159,6 @@ jQuery(function ($) {
     $("form.form").submit(handleSearch);
 
 });
-
 
 
 // *** SEARCH *** toggle button
@@ -149,15 +197,15 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** remove watermark on focus
-jQuery(function($) {		
-	var searchBox = $("input#searchform");
-	var searchButton = $("input#searchbutton");
-	var searchBoxDefault = "Enter Search...";
-	
-	searchBox.focus(function(){
-		if($(this).attr("placeholder") == searchBoxDefault) $(this).attr("placeholder", "");
-	});
-	searchBox.blur(function(){
-		if($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
-	});
+jQuery(function ($) {
+    var searchBox = $("input#searchform");
+    var searchButton = $("input#searchbutton");
+    var searchBoxDefault = "Enter Search...";
+
+    searchBox.focus(function () {
+        if ($(this).attr("placeholder") == searchBoxDefault) $(this).attr("placeholder", "");
+    });
+    searchBox.blur(function () {
+        if ($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
+    });
 });

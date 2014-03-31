@@ -424,8 +424,26 @@ object.flip_label{
 }
 /*---- END treeview -----*/
 
+/*---- START listview ----*/
 
+#view-section .col-xs-6 {
+    width: 100%;
+    font-size: .6em;
+}
 
+#view-section .pagination>li>a, .pagination>li>span {
+    padding: .5em 1em;
+}
+
+#view-section .pagination {
+    margin: 0.7em;
+}
+
+#view-section td.sorting_1 {
+    min-width: 12em;
+}
+
+/*---- END listview ----*/
 
 /*---- END Search -----*/
 
