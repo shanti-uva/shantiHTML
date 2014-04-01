@@ -253,6 +253,56 @@ object.flip_label{ display:none;}
 .view-section table.table-results thead tr th:hover,
 .view-section table.table-results thead tr th:hover:after{ color:#dc3c47; cursor:pointer;}
 /* .view-section table.table-results tr:nth-child(even) {background-color: #fcfcfc;} */
+
+/* trunk8 */
+#kmaps-search .col-xs-6 {
+    width: 85%;
+    font-size: .6em;
+    padding-right: 0em;
+    /*padding-left: 0em;*/
+    /*margin-left: -2em;*/
+}
+
+
+#kmaps-search .pagination>li>a, .pagination>li>span {
+    padding: .5em .8em;
+}
+
+#kmaps-search .pagination {
+    margin-left: 1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+    margin-right: -0.5em;
+}
+
+#kmaps-search .dataTables_info {
+    font-size: 1.3em;
+    margin-left: 1em;
+}
+
+#kmaps-search .row {
+    margin-right: 0em;
+    /*margin-left: 0em;*/
+}
+
+/*#kmaps-search td.sorting_1 {*/
+    /*min-width: 12em;*/
+/*}*/
+
+#kmaps-search div.title-field {
+    width: 85%;
+    max-height: 1.3em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#kmaps-search .row {
+    /*margin: 1em 1em 1em 1em;*/
+}
+
+/* END trunk8 */
+
 /*---- END listview ----*/
 
 /*---- START tree view ----*/
@@ -268,7 +318,7 @@ object.flip_label{ display:none;}
 
 .view-section span.fancytree-title{ color:#444; margin:0 0 0 -24px; padding-left:15px; line-height:22px; height:20px; /* vertical-align:top; */}
 .view-section span.fancytree-title:hover{ color:#000;}
-.view-section span.fancytree-title:before{ 
+.view-section span.fancytree-title:before{
 	background: #fff;
 	color:transparent;
 	font-family: 'kmaps-icons';
@@ -337,7 +387,8 @@ object.flip_label{ display:none;}
     background-color: transparent;
 }
 /*--- hihglight search text ---*/
-.view-section span.fancytree-title > em {
+.view-section span.fancytree-title > em,
+.view-section em.fancytree-highlight {
     color: #dc3c47;
     font-style: normal;
     padding: 0;

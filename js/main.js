@@ -173,10 +173,9 @@ jQuery(function ($) {
             var table = $('div.listview div div.table-responsive table.table-results');
             $.each(list, function (x, y) {
                 table.append(
-                    "<tr>" +
+                   $("<tr>" +
                         "<td><div class='title-field'>" + y.title + "</div></td>" +
-//                        "<td>" + (y.data.caption ? y.data.caption : "<em>n/a</em>") + "</td>" +
-                        "</tr>"
+                        "</tr>").highlight(txt,{ element: 'em', className: 'fancytree-highlight' })
                 );
             });
 
@@ -184,8 +183,8 @@ jQuery(function ($) {
                 {
                     "oLanguage": {
                         "oPaginate": {
-                            "sNext": ">",
-                            "sPrevious": "<"
+                            "sNext": "&gt;",
+                            "sPrevious": "&lt;"
                         }
                     }
 //                    ,
