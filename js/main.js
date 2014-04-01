@@ -1,5 +1,5 @@
 
-// *** SEARCH *** initiate extrude function, toggle collections & search options
+// *** SEARCH *** initiate sliding container, toggle collections & search options
 jQuery(function ($) {
   $("#kmaps-search").buildMbExtruder({
       positionFixed: false,
@@ -7,7 +7,6 @@ jQuery(function ($) {
       width: 295,
       top: 0
   });
-
 
   // --- collections toggle
   $("li.explore").addClass("closed");
@@ -21,11 +20,9 @@ jQuery(function ($) {
       $(this).toggleClass("show-advanced", 100 );
       $(".advanced-view").slideToggle( 'fast' ); 
 			$(".advanced-view").toggleClass( "show-options" );
-			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing heights below
+			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing view-section height
   });
 });
-
-
 
 
 
@@ -52,9 +49,6 @@ jQuery(function($) {
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -396 });	// ----- adjust for changes in height of advanced options when open	3/3
   });
 });
-
-
-
 
 
 
@@ -206,10 +200,6 @@ jQuery(function ($) {
 
 
 
-
-
-
-
 // *** SEARCH *** remove watermark on focus
 jQuery(function($) {		
 	var searchBox = $("input#searchform");
@@ -226,17 +216,11 @@ jQuery(function($) {
 
 
 
-
-
-
 // *** SEARCH *** prevent flash onload
 jQuery(function ($) {
 	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
 });
 		
-
-
-
 
 
 

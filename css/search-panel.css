@@ -273,81 +273,72 @@ object.flip_label{ display:none;}
 	color:transparent;
 	font-family: 'kmaps-icons';
 	content: '\e625';
-<<<<<<< HEAD
 	font-size: 1em;
-	float: left;
+	margin-right:8px;
+	float:left;
 	position:relative; top:4px; left:1px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
   width: 12px;
   height: 12px;
   display: block;
   margin-right:7px;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -moz-box-shadow: 0 0 4px 3px #ddd;    
-  -webkit-box-shadow: 0 0 4px 3px #ddd;
-  box-shadow: 0 0 3px 0 #ddd;
 }
-.view-section span.fancytree-title:hover:before{ background: #555;}
-
-.view-section span.fancytree-has-children>span.fancytree-title{  padding-left:10px; margin-left:-15px; }
-.view-section span.fancytree-has-children span.fancytree-title:before{ content:none;position:relative; top:0;}
-
-.view-section span.fancytree-active{ display:block; background-color:#fff; -webkit-box-shadow:0 0 3px 0 #aaa; -moz-box-shadow:0 0 3px 0 #aaa; box-shadow:0 0 3px 0 #aaa;}
-.view-section span.fancytree-active span.fancytree-title{ color:#000;}
-
-.view-section span.fancytree-active.fancytree-has-children span.fancytree-title:before{ content:none; text-shadow: none; display:none;}
-.view-section span.fancytree-active span.fancytree-title:before{ background: #f4222c;}
-	
-.view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 15px; margin-right:12px; position:relative; top:1px;}
-.view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
+.view-section span.fancytree-title:hover:before {
+    background: #555;
+}
+.view-section span.fancytree-has-children>span.fancytree-title {
+    padding-left: 10px;
+    margin-left: -15px;
+}
+.view-section span.fancytree-has-children span.fancytree-title:before {
+    content: none;
+    position: relative;
+    top: 0;
+}
+.view-section span.fancytree-active {
+    display: block;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 3px 0 #aaa;
+    -moz-box-shadow: 0 0 3px 0 #aaa;
+    box-shadow: 0 0 3px 0 #aaa;
+}
+.view-section span.fancytree-active span.fancytree-title {
+    color: #000;
+}
+.view-section span.fancytree-active.fancytree-has-children span.fancytree-title:before {
+    content: none;
+    text-shadow: none;
+    display: none;
+}
+.view-section span.fancytree-active span.fancytree-title:before {
+    background: #f4222c;
+}
+.view-section ul.fancytree-container .glyphicon {
+    color: #888;
+    font-family: 'Glyphicons Halflings';
+    font-size: 15px;
+    margin-right: 12px;
+    position: relative;
+    top: 1px;
+}
+.view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon {
+    color: #333;
+}
 .view-section ul.fancytree-container span.fancytree-node.fancytree-active:active > .glyphicon,
-.view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{ color:#f4222c; background-color:transparent;}
+.view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon {
+    color: #f4222c;
+    background-color: transparent;
+}
 /*--- hihglight search text ---*/
-.view-section span.fancytree-title > em{ color: #dc3c47; font-style:normal; padding:0;}
-.view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{ }
-=======
-	font-size: 1.12em;
-	line-height:1.44em;
-	height:1.44em; 
-	margin-right:8px;
-	position:relative; top:0px; left:0px;
-}
-#view-section span.fancytree-title:hover,
-#view-section span.fancytree-title:hover:before{ color:#555;}
-
-#view-section span.fancytree-node.fancytree-active{ display:block; background-color:#fff; box-shadow:0px 0px 3px 0px #aaa;}
-#view-section span.fancytree-node.fancytree-active span.fancytree-title{ color:#000;}
-
-#view-section span.fancytree-node.fancytree-active.fancytree-has-children span.fancytree-title:before{ content:none; text-shadow: none; display:none;}
-#view-section span.fancytree-node.fancytree-active span.fancytree-title:before{ color:#f4222c;text-shadow: 0px 0px 1px #555;}
-
-#view-section span.fancytree-node.fancytree-has-children span.fancytree-title{ line-height:1.63em; padding-left:10px; margin-left:-15px; width:100%;}
-#view-section span.fancytree-node.fancytree-has-children span.fancytree-title:before{ content:none;}
-
-#view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 15px; line-height:16px; margin-right:12px;}
-#view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{
-	color:#f4222c;
-	background-color:transparent;
-}
-#view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
-
-#view-section span.fancytree-title > em{
-  position:relative; top:-4px;
-  color: #dc3c47;
-  font-style:normal;
-  padding:0;
-}
-
-#view-section span.title-field > em {
+.view-section span.fancytree-title > em {
     color: #dc3c47;
-    font-style:normal;
+    font-style: normal;
+    padding: 0;
 }
+.view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em {}
 
-#view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{
-  position:relative; top:0px;
-}
->>>>>>> FETCH_HEAD
 /*---- END treeview -----*/
 
 
