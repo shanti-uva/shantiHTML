@@ -242,11 +242,11 @@ object.flip_label{ display:none;}
 
 /*---- START list table view ----*/
 .view-section table.table-responsive{ text-align:center; border:none;}
-.table-responsive>.table>tbody>tr>td{ white-space:normal; }
+.table-responsive>.table>tbody>tr>td{ white-space:normal;}
 .view-section table.table-results{ border:none; font-size:13px; line-height:20px; height:20px; margin-bottom:0; margin:0 2%; width:96%; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .view-section table.table-results a{ font-style:italic;}
 .view-section table.table-results tbody>tr,
-.view-section table.table-results tbody>tr>td{ line-height:20px;text-align:left;overflow: hidden; }
+.view-section table.table-results tbody>tr>td{ line-height:20px;text-align:left; }
 .view-section table.table-results tbody tr:hover{ background-color: #fdfdfd;}
 .view-section table.table-results thead tr th:after{ color:#555; font-family: 'kmaps-icons'; content: "\e620"; font-size: 14px; margin-left:0; position:relative; top:2px;}
 .view-section table.table-results thead tr th{ color:#333;}
@@ -266,81 +266,86 @@ object.flip_label{ display:none;}
 .view-section span.fancytree-expander:before{ }
 .view-section span.fancytree-node.fancytree-active{ background-color:white !important; border:none;}
 
-.view-section span.fancytree-title{ color:#444; margin:0 0 0 -28px; padding-left:15px; line-height:22px; height:20px; /* vertical-align:top; */}
+.view-section span.fancytree-title{ color:#444; margin:0 0 0 -24px; padding-left:15px; line-height:22px; height:20px; /* vertical-align:top; */}
 .view-section span.fancytree-title:hover{ color:#000;}
 .view-section span.fancytree-title:before{ 
-	background: #ccc;
+	background: #fff;
 	color:transparent;
 	font-family: 'kmaps-icons';
 	content: '\e625';
 	font-size: 1em;
-	float: left;
-	position:relative; top:4px; left:1px;
-  width: 12px;
-  height: 12px;
-  display: block;
-  margin-right:7px;
+	margin-right:8px;
+	float:left;
+	position:relative; top:5px; right:1px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-box-shadow: 0 0 4px 3px #ddd;
-  -webkit-box-shadow: 0 0 4px 3px #ddd;
-  box-shadow: 0 0 3px 0 #ddd;
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin-right:9px;
+  box-shadow:0px 0px 2px 1px #aaa;
 }
-.view-section span.fancytree-title:hover:before{ background: #555;}
-
-.view-section span.fancytree-has-children>span.fancytree-title{  padding-left:10px; margin-left:-15px; }
-.view-section span.fancytree-has-children span.fancytree-title:before{ content:none;position:relative; top:0;}
-
-.view-section span.fancytree-active{ display:block; background-color:#fff; -webkit-box-shadow:0 0 3px 0 #aaa; -moz-box-shadow:0 0 3px 0 #aaa; box-shadow:0 0 3px 0 #aaa;}
-.view-section span.fancytree-active span.fancytree-title{ color:#000;}
-
-.view-section span.fancytree-active.fancytree-has-children span.fancytree-title:before{ content:none; text-shadow: none; display:none;}
-.view-section span.fancytree-active span.fancytree-title:before{ background: #f4222c;}
-
-.view-section ul.fancytree-container .glyphicon{ color:#888; font-family: 'Glyphicons Halflings'; font-size: 15px; margin-right:12px; position:relative; top:1px;}
-.view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color:#333;}
+@-moz-document url-prefix() { /*--- firefox fx ----*/
+	.view-section span.fancytree-title{ margin:0 0 0 -25px;}
+}
+.view-section span.fancytree-title:hover:before {
+    background: #777; box-shadow:none;
+}
+.view-section span.fancytree-has-children>span.fancytree-title {
+    padding-left: 10px;
+    margin-left: -15px;
+}
+.view-section span.fancytree-has-children span.fancytree-title:before {
+    content: none;
+    position: relative;
+    top: 0;
+}
+.view-section span.fancytree-active {
+    display: block;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 3px 0 #aaa;
+    -moz-box-shadow: 0 0 3px 0 #aaa;
+    box-shadow: 0 0 3px 0 #aaa;
+}
+.view-section span.fancytree-active span.fancytree-title {
+    color: #000;
+}
+.view-section span.fancytree-active.fancytree-has-children span.fancytree-title:before {
+    content: none;
+    text-shadow: none;
+    display: none;
+}
+.view-section span.fancytree-active span.fancytree-title:before {
+    background: #f4222c;
+    box-shadow: none;
+}
+.view-section ul.fancytree-container .glyphicon {
+    color: #888;
+    font-family: 'Glyphicons Halflings';
+    font-size: 15px;
+    margin-right: 12px;
+    position: relative;
+    top: 1px;
+}
+.view-section ul.fancytree-container span.fancytree-node:hover > .glyphicon {
+    color: #333;
+}
 .view-section ul.fancytree-container span.fancytree-node.fancytree-active:active > .glyphicon,
-.view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon{ color:#f4222c; background-color:transparent;}
+.view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon {
+    color: #f4222c;
+    background-color: transparent;
+}
 /*--- hihglight search text ---*/
-.view-section span.fancytree-title > em{ color: #dc3c47; font-style:normal; padding:0;}
-.view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em{ }
+.view-section span.fancytree-title > em {
+    color: #dc3c47;
+    font-style: normal;
+    padding: 0;
+}
+.view-section span.fancytree-node.fancytree-has-children span.fancytree-title > em {}
+
 
 /*---- END treeview -----*/
 
-/*---- START listview ----*/
-
-#kmaps-search .col-xs-6 {
-    width: 85%;
-    font-size: .6em;
-}
-
-
-#kmaps-search .pagination>li>a, .pagination>li>span {
-    /*padding: .5em 1em;*/
-}
-
-#kmaps-search .pagination {
-    margin: -2em;
-}
-
-#kmaps-search td.sorting_1 {
-    min-width: 12em;
-}
-
- #kmaps-search div.title-field {
-    width: 85%;
-    max-height: 1.3em;
-     white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-
-}
-
- #kmaps-search .row {
-     margin: 1em 1em 1em 1em;
- }
-
-/*---- END listview ----*/
 
 /*---- END Search -----*/
