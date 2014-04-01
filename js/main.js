@@ -124,6 +124,7 @@ jQuery(function ($) {
       extensions: ["glyph", "filter"],
 			checkbox: false,
 			selectMode: 2,
+            debugLevel: 0,
 			autoScroll: true,
 			closeOnExternalClick:false,
 			flapMargin:0,
@@ -178,8 +179,8 @@ jQuery(function ($) {
             $.each(list, function (x, y) {
                 table.append(
                     "<tr>" +
-                        "<td><span class='title-field'>" + y.title + "</span></td>" +
-                        "<td>" + (y.data.caption ? y.data.caption : "<em>n/a</em>") + "</td>" +
+                        "<td><div class='title-field'>" + y.title + "</div></td>" +
+//                        "<td>" + (y.data.caption ? y.data.caption : "<em>n/a</em>") + "</td>" +
                         "</tr>"
                 );
             });
@@ -205,6 +206,9 @@ jQuery(function ($) {
 
                 }
             );
+
+            $("#kmaps-search.title-field").trunk8();
+
         }
 
         return false;
