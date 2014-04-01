@@ -374,6 +374,10 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	font-size:9px;
 	letter-spacing:0.06em;
 }
+.content-sidebar ul.nav-pills li.active a:focus{
+  outline: 0 !important;
+   outline: -2px auto -webkit-focus-ring-color !important; 
+}
 /*--- END side col ---*/
 
 
@@ -494,7 +498,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 
 
 
-
+/*---- footer ----*/
 .footer {
   color: #777;
   width: 100%;
@@ -503,33 +507,40 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
   padding: 40px 0 20px 15px;
   background-color:#444;
 }
+
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-.chromeframe { /*-- for the ie browserhappy --*/
+.chromeframe { /*-- for browsehappy message --*/
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
 
-/*--- clears box-sizing bug --*/
-*, *:before, *:after {
+
+*, *:before, *:after { /*--- clears box-sizing bug --*/
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
    box-sizing: border-box;
 }
-/*-----  decisions about  ----*/
-
 *:focus{
   outline: 0 !important;
-  /* outline: -2px auto -webkit-focus-ring-color !important; */
+   outline: -2px auto -webkit-focus-ring-color !important; 
 }
-.content-sidebar ul.nav-pills li.active a:focus{
-  outline: 0 !important;
-  /* outline: -2px auto -webkit-focus-ring-color !important; */
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

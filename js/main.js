@@ -112,7 +112,6 @@ jQuery(function ($) {
       extensions: ["glyph", "filter"],
 			checkbox: false,
 			selectMode: 2,
-			autoScroll: true,
 			closeOnExternalClick:false,
 			flapMargin:0,
       filter: { mode: 'hide' },
