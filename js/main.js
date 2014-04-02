@@ -32,20 +32,20 @@ jQuery(function($) {
   var winHeight = $(window).height(); 	
 	// set initial div height
 	$("div.text").css({ "height": winHeight -100 }); // ----- main outside height setting for search panel	1/2 
-	$(".view-wrap").css({ "height": winHeight -220 });	// ----- default height setting for search panel view-section	
+	$(".view-wrap").css({ "height": winHeight -222 });	// ----- default height setting for search panel view-section	
 	$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });  // ----- adjust for changes in height of advanced options when open 1/3, a larger number shortens the view-section length
 				
 	// make sure div stays full width/height on resize
 	$(window).resize(function(){
 		$("div.text").css({ "height": winHeight -100 });	// ----- main outside height setting for search panel	2/2
-		$(".view-wrap").css({ "height": winHeight -220 });	// ----- default height setting for search panel view-section	
+		$(".view-wrap").css({ "height": winHeight -222 });	// ----- default height setting for search panel view-section	
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });	// ----- adjust for changes in height of advanced options when open 2/3
 	});
 	
 	// toggle heights with search options
 	$(".advanced-link").click(function () {
     var winHeight = $(window).height();
-		$(".view-wrap").css({ "height": winHeight -220 });	// ----- default height setting for search panel view-section
+		$(".view-wrap").css({ "height": winHeight -222 });	// ----- default height setting for search panel view-section
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });	// ----- adjust for changes in height of advanced options when open	3/3
   });
 });
@@ -96,6 +96,7 @@ jQuery(function($) {
 jQuery(function($) {
 	if (!$(".extruder.right").hasClass("isOpened")) {
 				$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:12px; z-index:10;'><i class='icon km-search'></i></span>");
+				$(".flap").addClass("on-flap");
 	}
 							
 	// --- set class on dropdown menu for icon
@@ -106,6 +107,7 @@ jQuery(function($) {
 	    $(this).removeClass('on-hover');
 	    }
 	);
+
 
 });
 
