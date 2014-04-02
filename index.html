@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="src/skin-bootstrap/ui.fancytree.css" class="skinswitcher">
   <link rel="stylesheet" href="css/search-panel.css" media="all">
 	<link rel="stylesheet" href="js/forms/check/skins/minimal/red.css">
-	<link rel="stylesheet" href="js/forms/select/css/jquery.selectBoxIt.css">
+	<link rel="stylesheet" href="js/forms/select/bootstrap-select.min.css">
   <link rel="stylesheet" href="css/main.css">
   <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
@@ -395,10 +395,11 @@
 															  </div>
 
                                 <div class="form-group last"> 
-															        <select id="selector1" name="selector1" data-size="9">
-																	      <option style="width:270px; overflow:hidden;">Selector One</option>
+															        <select class="selectpicker" id="selector1" name="selector1" multiple data-selected-text-format="count" data-header='Select from the following...' data-width="100%">
+																	      <option>Selector One</option>
 																	      <option>Selector</option>
 																	      <option>Selector</option>
+																		    <option data-divider="true"></option>																	      
 																	      <option>Selector Text</option>
 																		    <option>Selector Text Text</option>
 																		    <option>Selector Very Long Text</option>
@@ -460,14 +461,14 @@
   
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-  <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>	
   <script type="text/javascript" src="js/extruder/mbExtruder.js"></script> <!-- searchpanel -->	
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script> <!-- tree -->
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script> <!-- tree -->  
 	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script> <!-- tree -->	
 	<script type="text/javascript" src="js/forms/check/icheck.min.js"></script> <!-- input -->
-	<script type="text/javascript" src="js/forms/select/jquery.selectBoxIt.min.js"></script> <!-- input -->  
+	<script type="text/javascript" src="js/forms/select/bootstrap-select.min.js"></script> <!-- input -->  
   <script type="text/javascript" src="src/jquery.highlight.js"></script> <!-- highlight -->  
   <script type="text/javascript" src="http://tablesorter.com/__jquery.tablesorter.min.js"></script> <!-- tablesorter -->  
   <script type="text/javascript" src="src/jquery.dataTables.min.js"></script>

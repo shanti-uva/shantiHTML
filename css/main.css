@@ -228,7 +228,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 /*--- BEGIN banner header ---*/
 .titlearea {
   color: #f9f9f9;
-  background-color: #DC3C47;
+  background-color: #dc3c47;
   position: relative;
   padding-top:8px;
   padding-bottom:10px;
@@ -329,13 +329,13 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	border-bottom:1px solid #ddd;
 	background-color:#fff;
 	-moz-transition-property: all;
-	-moz-transition-duration: 400ms;
+	-moz-transition-duration: 200ms;
 	-webkit-transition-property: all;
-	-webkit-transition-duration: 400ms;
+	-webkit-transition-duration: 200ms;
 	-o-transition-property: all;
-	-o-transition-duration: 400ms;
+	-o-transition-duration: 200ms;
 	transition-property: all;
-	transition-duration: 400ms;
+	transition-duration: 200ms;
 }
 .content-sidebar ul.nav-pills li a,
 .content-sidebar ul.nav-pills li a:hover {
@@ -376,7 +376,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 }
 .content-sidebar ul.nav-pills li.active a:focus{
   outline: 0 !important;
-   outline: -2px auto -webkit-focus-ring-color !important; 
+  outline: -2px auto -webkit-focus-ring-color !important; 
 }
 /*--- END side col ---*/
 

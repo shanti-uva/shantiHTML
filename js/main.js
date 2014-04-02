@@ -24,25 +24,29 @@ jQuery(function ($) {
   });
 });
 
+
+
+  
+// *** SEARCH *** adapt search panel height to viewport
 jQuery(function($) { 
   var winHeight = $(window).height(); 	
 	// set initial div height
 	$("div.text").css({ "height": winHeight -100 }); // ----- main outside height setting for search panel	1/2 
 	$(".view-wrap").css({ "height": winHeight -220 });	// ----- default height setting for search panel view-section	
-	$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -396 });  // ----- adjust for changes in height of advanced options when open 1/3, a larger number shortens the view-section length
+	$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });  // ----- adjust for changes in height of advanced options when open 1/3, a larger number shortens the view-section length
 				
 	// make sure div stays full width/height on resize
 	$(window).resize(function(){
 		$("div.text").css({ "height": winHeight -100 });	// ----- main outside height setting for search panel	2/2
 		$(".view-wrap").css({ "height": winHeight -220 });	// ----- default height setting for search panel view-section	
-		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -396 });	// ----- adjust for changes in height of advanced options when open 2/3
+		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });	// ----- adjust for changes in height of advanced options when open 2/3
 	});
 	
 	// toggle heights with search options
 	$(".advanced-link").click(function () {
     var winHeight = $(window).height();
 		$(".view-wrap").css({ "height": winHeight -220 });	// ----- default height setting for search panel view-section
-		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -396 });	// ----- adjust for changes in height of advanced options when open	3/3
+		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });	// ----- adjust for changes in height of advanced options when open	3/3
   });
 });
 
@@ -75,7 +79,13 @@ jQuery(function($) {
   // Bind event listener
   $(".extruder-content").resize(checkWidth);  
     
-  // $(window).on("resize",function(){ location.reload(); });  -- need to debug drag event ---
+  // $(window).on("resize",function(){ location.reload(); } ); // forces height refersh on browser-size change
+	// $(".ui-resizable-w").mousedown(function() {
+	//    	$(window).mousemove(function() {
+	//        $(window).on("resize",function(){ location.reload(); } );
+	//			});
+	// })
+
 
 	if (!$(".extruder.right").hasClass("isOpened")) {
 				$(".flap").click( function() {
@@ -264,69 +274,9 @@ jQuery(function($) {
 
 // *** SEARCH *** prevent flash onload
 jQuery(function ($) {
+	$(".selectpicker").selectpicker();
 	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
 });
-		
 
-
-
-jQuery(function ($) {
-	// var select = $("select").selectBoxIt({ populate: '{ "text": "Testing shit", "value": "yea buddy", "class": "please add", "data-iconurl": "https://twimg0-a.akamaihd.net/profile_images/2633978789/80508321d8ce3ba8aa264380bb7eba33.png", "selected": "selected" }' }).data("selectBox-selectBoxIt");
-	
-  // var select = $("select").selectBoxIt({ populate: '<option value="test">test</option>' }).data('selectBox-selectBoxIt').remove(0);
-
-  $('#selector1').selectBoxIt({ 
-  
-  	showEffect: "slideDown", 
-  	showEffectSpeed: "fast",
-  	nativeMousedown: true,
-  	aggressiveChange: true,
-  	theme: "bootstrap"
-	  
-  });
-
-  // $('form').removeClass('hidden');
-
-  // $('select').last().selectBoxIt({
-  //   defaultText: "Greg Franko Repos",
-  //   populate: function() {
-  //       var deferred = $.Deferred(),
-  //           arr = [],
-  //           x = -1;
-  //       $.ajax({
-  //           url: 'https://api.github.com/users/gfranko/repos'
-  //       }).done(function(data) {
-  //           while(++x < data.length) {
-  //               arr.push(data[x].name);
-  //           }
-  //           //console.log('arr', arr);
-  //           deferred.resolve(arr);
-  //       });
-  //       return deferred;
-  //   }
-  // });
-
-  // $.ajax({
-  //   url: 'https://api.github.com/users/gfranko',
-  //   success: function(data) {
-  //       console.log('data', data);
-  //   }
-  // });
-
-  // $.ajax({
-  //   url: 'https://api.github.com/users/gfranko/repos'
-  // }).done(function(data) {
-  //   console.log('data', data);
-  // });
-
-  // $.get('https://api.github.com/users/gfranko/repos').done(function(data) {
-  //   console.log('data', data);
-  // });
-
-  //select.refresh();
-
-  //select.wait(1000, select.open).wait(1000, select.moveDown);
-
-});
 
 
