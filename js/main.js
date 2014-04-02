@@ -53,7 +53,11 @@ jQuery(function($) {
 // *** SEARCH *** corrections for widths
 jQuery(function($) {
 
-  $("#kmaps-search div.text").resizable({ handles: "w" });	// ----- initiate jquery resize
+  $("#kmaps-search div.text").resizable({ handles: "w",
+          resize: function (event, ui) {
+              $('.title-field').trunk8({fill: "...0"});
+          }
+      });	// ----- initiate jquery resize
 
 	function checkWidth() {
 	var panelWidth = $(".text").width();
@@ -102,18 +106,35 @@ jQuery(function($) {
 // *** SEARCH *** sliding panel
 jQuery(function ($) {
 
-    if ($('table.table-results')) {
-    $('table.table-results').dataTable(
-        {
-            "oLanguage": {
-                "oPaginate": {
-                    "sNext": ">",
-                    "sPrevious": "<"
-                }
+    // set the dataTable defaults
+    $.extend( true, $.fn.dataTable.defaults,        {
+        "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
+            "t" +
+            "<'row'>",
+        "oLanguage": {
+            "sEmptyTable": "No results.  Enter new search query above.",
+            "oPaginate": {
+                "sPrevious": "&lt;",
+                "sNext": "&gt;"
             }
+        },
+        // this hides the pagination navigation when there is only one page.
+        "fnDrawCallback": function() {
+            var dtable = $('table.table-results').dataTable();
+            if (dtable.fnSettings().fnRecordsDisplay() < dtable.fnSettings()._iDisplayLength) {
+                $('div.dataTables_paginate').hide();
+            } else {
+                $('.dataTables_paginate').show();
+            }
+        },
+        "fnInitComplete": function() {
+            alert("foo");
+            $('.title-field').trunk8({ fill: "...2"});
         }
-    );
-    }
+    });
+
+    // init dataTable
+    $('table.table-results').dataTable();
 
     $("#tree").fancytree({
       extensions: ["glyph", "filter"],
@@ -155,10 +176,10 @@ jQuery(function ($) {
       );
       var txt = $("#searchform").val();
 
-        $('table.table-results').dataTable().fnDestroy();
 
         if (txt) {
 
+            $('table.table-results').dataTable().fnDestroy();
             var tree = $('#tree').fancytree('getTree').applyFilter(txt);
             // $('span.fancytree-match').removeClass('fancytree-match');
             $('span.fancytree-title').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
@@ -180,31 +201,19 @@ jQuery(function ($) {
             });
 
             $('table.table-results').dataTable(
-                {
-                    "oLanguage": {
-                        "oPaginate": {
-                            "sNext": "&gt;",
-                            "sPrevious": "&lt;"
-                        }
-                    }
-//                    ,
-//                    "fnDrawCallback":function(){
-//                        if ($("div.dataTables_paginate").length > 0) {
-//                            if($("div.dataTables_paginate")[0].find(".paginate-button").length<=5){
-//                            $('div.dataTables_paginate').style.display = "none";
-//                        } else {
-//                            $('div.dataTables_paginate').style.display = "block";
-//                        }
-//                        }
-//                    }
 
+                {
+//                    fnInitComplete: function() {
+//                        $(".title-field").trunk8({fill: "...3"});
+//                    }
                 }
             );
 
-            $("#kmaps-search.title-field").trunk8();
+            $('table.table-results').on('click', ".title-field", function() { $(this).trunk8({fill: "...X"})})
+
+            // $(".title-field").trunk8({fill: "...X"});
 
         }
-
         return false;
   };
   $("#searchbutton").click(handleSearch);

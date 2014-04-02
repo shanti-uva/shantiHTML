@@ -289,12 +289,14 @@ object.flip_label{ display:none;}
     /*min-width: 12em;*/
 /*}*/
 
-#kmaps-search div.title-field {
-    width: 85%;
-    max-height: 1.3em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+#kmaps-search .title-field {
+    position: static;
+    float: none;
+    /*width: 85%;*/
+    /*max-height: 1.3em;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
 }
 
 #kmaps-search .row {
