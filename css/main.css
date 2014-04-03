@@ -204,7 +204,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
   font-size: 1.5em;
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 10px;
   cursor:pointer;
   display:inline-block;
 	-moz-transition-property: all;
@@ -217,7 +217,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	transition-duration: 400ms;
 }
 .collections .closecollection:hover {
-	color: #eee;
+	color: #eee; 
+	text-decoration:none;
 }
 .collections .closecollection:before {
 	content: '\e61e'; /*--- close ---*/
@@ -239,6 +240,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
   font-weight: normal;
   font-size:2em;
   line-height:1.5em;
+  margin:0;
+  padding:0;
 }
 .titlearea .page-title span{ }
 .titlearea .page-title .icon {
@@ -361,11 +364,6 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 .content-sidebar ul.nav-pills li a i:before{
 	position:relative; top:4px;
 }
-.content-sidebar a.list-group-item.active>.badge, 
-.content-sidebar ul.nav-pills>.active>a>.badge{
-	color:white;
-	background:#606060;
-}
 .content-sidebar ul.nav-pills>li>a>.badge{
 	background:#888;
 	line-height:7px;
@@ -374,10 +372,12 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	font-size:9px;
 	letter-spacing:0.06em;
 }
-.content-sidebar ul.nav-pills li.active a:focus{
-  outline: 0 !important;
-  outline: -2px auto -webkit-focus-ring-color !important; 
+.content-sidebar a.list-group-item.active>.badge, 
+.content-sidebar ul.nav-pills>.active>a>.badge{
+	color:white;
+	background:#606060;
 }
+
 /*--- END side col ---*/
 
 
@@ -512,13 +512,12 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
   margin: 30px 0;
 }
 
-.chromeframe { /*-- for browsehappy message --*/
+.progressive { /*-- for browsehappy message --*/
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
 }
-
 
 *, *:before, *:after { /*--- clears box-sizing bug --*/
   -moz-box-sizing: border-box; 
