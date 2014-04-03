@@ -17,6 +17,9 @@
 #kmaps-search.extruder.right .extruder-content{ background-color:#fff; border:10px solid #fff; padding:0;	-moz-box-shadow:0 0 5px 0 #999; -webkit-box-shadow:0 0 5px 0 #999; box-shadow:0 0 5px #999; width:100%;}
 #kmaps-search.extruder.right.isOpened .extruder-content{ }
 #kmaps-search.extruder .text{ border:none; padding:0; text-shadow:none; background-color:#f8f8f8; color:#333; width:275px; min-width:275px !important; /*---- default panel container width is set ----*/}
+
+#kmaps-search.extruder.right.open-collections{ margin-top:282px;}
+
 /*--- resize panel ---*/
 #kmaps-search div.text.ui-resizable{ }
 #kmaps-search div.text.ui-resizable,
