@@ -13,7 +13,7 @@
 .extruder.right .extruder-content,.panel-default .panel-heading,.extruder.right .panel-heading,.extruder.right .panel-group,.extruder.right .panel-group .panel,.extruder.right .panel-default>.panel-heading{ border:none;}
 
 /*--- BEGIN search panel ---*/
-#kmaps-search.extruder.right{ padding:0; border:none; background-color:transparent; margin-top:16px; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;}
+#kmaps-search.extruder.right{ padding:0; border:none; background-color:transparent; margin-top:65px; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;}
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ }
 #kmaps-search .ext_wrapper{ height:auto; padding:0; }

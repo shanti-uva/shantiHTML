@@ -23,7 +23,7 @@
 <body>
   <!--[if lte IE 7]> <p class="progressive">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser.</a></p> <![endif]-->
   <a href=".main-content" class="sr-only">Skip to main content</a>
-  <header class="navbar navbar-default navbar-static-top">
+  <header class="navbar navbar-default navbar-static-top" role="banner">
     <div class="container-fluid">  
        <nav class="navbar-header" role="navigation">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navtop">
@@ -33,7 +33,7 @@
           <span class="icon-bar"></span>
         </button>        
       </nav>      
-      <h1 class="navbar-title" role="banner"><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo" /><span><span class="hidden">SHANTI</span>Scholarly Collections at the University of Virginia</span></a></h1>        	     
+      <h1 class="navbar-title"><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo" /><span><span class="hidden">SHANTI</span>Scholarly Collections at the University of Virginia</span></a></h1>        	     
       <nav class="navbar-collapse collapse navtop" role="navigation">
       <form role="form" class="form">
 			 <fieldset>	        
@@ -112,7 +112,7 @@
 	<section class="container-fluid"> <!-- BEGIN dropdown panel -->
     <div class="row collections collapse opencollect">
       <div class="lightblue-bg">
-        <nav class="col-sm-8 col-sm-offset-2 lightblue-bg" role="menu">
+        <nav class="col-sm-8 col-sm-offset-2 lightblue-bg">
           
           <h4>EXPLORE COLLECTIONS</h4>
           <section class="four-collections">
@@ -178,7 +178,7 @@
         </nav>
     </aside>
               
-    <aside class="col-sm-2 content-sidebar" role="menu">
+    <section class="col-sm-2 content-sidebar">
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="icon km-overview"></i>Overview</a></li>
         <li><a href="#tab-essays" data-toggle="pill"><i class="icon km-essays"></i>Essays<span class="badge">1</span></a></li>
@@ -195,14 +195,14 @@
         <li><a href="#tab-terms" data-toggle="pill"><i class="icon km-terms"></i>Terms</a></li>
         <li><a href="#tab-sources" data-toggle="pill"><i class="icon km-sources"></i>Sources</a></li>
       </ul>
-    </aside> 
+    </section> 
                       
     <section  class="col-sm-10 content-section">
       <div class="tab-content">
         <article class="tab-pane active" id="tab-overview">
           <header>
           	<h6>Overview</h6>
-          <header>
+          </header>
           
           <p>Lhasa is the most important city in modern and historical Tibet religiously and politically. Located in the geographical center of central Tibet, it is home of the sacred center of Tibet in the Jokhang Temple and the famed Potala Palace from which the Dalai Lamas ruled over Tibet.
           </p>
@@ -271,7 +271,7 @@
               </div>
             </div>
           </section>
-        </article><!-- END tab-pane active -->
+        </article> <!-- END tab-pane active -->
 
         <article class="tab-pane" id="tab-essays">
           <h6>Essays</h6>
@@ -341,8 +341,21 @@
     </section><!-- END content-page --> 				  
 
 
+		  			
+    </div><!-- END main-content -->
+  </main><!-- END container-fluid -->
+
+
+
+
+
+
+
+
+
+
 			<!-- BEGIN Search Panel -->	
-			<landmark id="kmaps-search">								
+			<div id="kmaps-search">								
 					<!-- BEGIN input section -->									  
 				  <section class="input-section" style="display:none;">									  
 						<form role="form" class="form">
@@ -398,7 +411,6 @@
 															      <option>Selector One</option>
 															      <option>Selector</option>
 															      <option>Selector</option>
-																    <option data-divider="true"></option>																	      
 															      <option>Selector Text</option>
 																    <option>Selector Text Text</option>
 																    <option>Selector Very Long Text</option>
@@ -448,10 +460,13 @@
 					   
 				    </div>	
 			   </section><!-- END view section -->
-		  </landmark><!-- END kmaps-search -->
-		  			
-    </div><!-- END main-content -->
-  </main><!-- END container-fluid -->
+		  </div><!-- END kmaps-search -->
+
+
+
+
+
+
 
 
 
@@ -463,7 +478,7 @@
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="js/extruder/mbExtruder.js"></script> <!-- searchpanel -->	
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script> <!-- tree -->

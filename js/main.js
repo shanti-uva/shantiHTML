@@ -76,6 +76,7 @@ jQuery(function($) {
   $(".extruder-content").resize(checkWidth);  
     
   // $(window).on("resize",function(){ location.reload(); } ); // forces height refersh on browser-size change
+	
 	// $(".ui-resizable-w").mousedown(function() {
 	//    	$(window).mousemove(function() {
 	//        $(window).on("resize",function(){ location.reload(); } );
@@ -107,9 +108,9 @@ jQuery(function($) {
 	    $(this).removeClass('on-hover');
 	    }
 	);
-
-
 });
+
+
 
 // *** SEARCH *** sliding panel
 jQuery(function ($) {
