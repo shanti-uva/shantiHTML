@@ -135,7 +135,7 @@ jQuery(function ($) {
         // this hides the pagination navigation when there is only one page.
         "fnDrawCallback": function() {
             var dtable = $('table.table-results').dataTable();
-            if (dtable.fnSettings().fnRecordsDisplay() < dtable.fnSettings()._iDisplayLength) {
+            if (dtable.fnSettings().fnRecordsDisplay() <= dtable.fnSettings()._iDisplayLength) {
                 $('div.dataTables_paginate').hide();
             } else {
                 $('.dataTables_paginate').show();
@@ -172,7 +172,8 @@ jQuery(function ($) {
               // loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
+      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json", debugDelay: 1000},
+//      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
       lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
       focus: function(event, data){ data.node.scrollIntoView(true); }
   });
@@ -221,9 +222,10 @@ jQuery(function ($) {
             );
 
             // dumb dumb dumb
-            $('.listview').click(function () { $(".title-field").trunk8({fill: "..."}); });
+//            $('.listview').click(function () { $(".title-field").trunk8({fill: "...burp"}); });
 
 
+            $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8(); })
         }
         return false;
   };
