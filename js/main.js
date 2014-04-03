@@ -219,7 +219,7 @@ jQuery(function ($) {
             );
 
             // dumb dumb dumb
-            $('.listview').click(function () { $(".title-field").trunk8({fill: "...X"}); });
+            $('.listview').click(function () { $(".title-field").trunk8({fill: "..."}); });
 
 
         }

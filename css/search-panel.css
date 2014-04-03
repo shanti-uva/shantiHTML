@@ -273,6 +273,7 @@ object.flip_label{ display:none;}
 
 /* trunk8 */
 #kmaps-search .col-xs-6 {
+    width: 85%;
     font-size: .6em; 
     padding-right: 0em;
     /*padding-left: 0em;*/
