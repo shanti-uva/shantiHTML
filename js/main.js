@@ -59,7 +59,7 @@ jQuery(function($) {
 
   $("#kmaps-search div.text").resizable({ handles: "w",
           resize: function (event, ui) {
-              $('.title-field').trunk8({fill: "...0"});
+              $('.title-field').trunk8();
           }
       });	// ----- initiate jquery resize
 
@@ -136,15 +136,12 @@ jQuery(function ($) {
             } else {
                 $('.dataTables_paginate').show();
             }
+            $('.title-field').trunk8();
         },
         "fnInitComplete": function() {
-            alert("foo");
-            $('.title-field').trunk8({ fill: "...2"});
+            $('.title-field').trunk8();
         }
     });
-
-    // init dataTable
-    $('table.table-results').dataTable();
 
     $("#tree").fancytree({
       extensions: ["glyph", "filter"],
@@ -219,9 +216,9 @@ jQuery(function ($) {
                 }
             );
 
-            $('table.table-results').on('click', ".title-field", function() { $(this).trunk8({fill: "...X"})})
+            // dumb dumb dumb
+            $('.listview').click(function () { $(".title-field").trunk8({fill: "...X"}); });
 
-            // $(".title-field").trunk8({fill: "...X"});
 
         }
         return false;
