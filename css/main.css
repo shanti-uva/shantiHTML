@@ -141,8 +141,6 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
   border:8px solid #39373f;
   margin-left: 0;
   margin-right: 0;
-}
-.collections .lightblue-bg {
   overflow: auto;
   position: relative;
 }
@@ -203,8 +201,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
   color: #aaa;
   font-size: 1.5em;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   cursor:pointer;
   display:inline-block;
 	-moz-transition-property: all;
@@ -371,6 +369,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	position:relative; top:-3px;
 	font-size:9px;
 	letter-spacing:0.06em;
+	text-shadow: 1px 1px #888;
 }
 .content-sidebar a.list-group-item.active>.badge, 
 .content-sidebar ul.nav-pills>.active>a>.badge{

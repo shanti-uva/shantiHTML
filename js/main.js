@@ -10,17 +10,17 @@ jQuery(function ($) {
 
   // --- collections toggle
   $("li.explore").addClass("closed");
-  $(".explore>a, .closecollection").click(function () {
+  $(".explore>a, .closecollection").click(function(){
       $(".opencollect").slideToggle('fast');
       $(".closed").toggleClass("open", 'fast');
-      $("#kmaps-search").toggleClass("hidden", 'slow' );
+      $("#kmaps-search").toggleClass("hidden", 300);
   });
 
   // --- advanced search toggle icons, open/close, view change height
   $(".advanced-link").click(function () {
-      $(this).toggleClass("show-advanced", 'fast' );
-      $(".advanced-view").slideToggle( 'fast' ); 
-			$(".advanced-view").toggleClass( "show-options" );
+      $(this).toggleClass("show-advanced",'fast');
+      $(".advanced-view").slideToggle('fast'); 
+			$(".advanced-view").toggleClass("show-options");
 			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing view-section height
   });
 });
