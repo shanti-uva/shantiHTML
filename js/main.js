@@ -213,18 +213,7 @@ jQuery(function ($) {
                 );
             });
 
-            $('table.table-results').dataTable(
-
-                {
-//                    fnInitComplete: function() {
-//                        $(".title-field").trunk8({fill: "...3"});
-//                    }
-                }
-            );
-
-            // dumb dumb dumb
-//            $('.listview').click(function () { $(".title-field").trunk8({fill: "...burp"}); });
-
+            $('table.table-results').dataTable();
 
             $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8(); })
         }
@@ -232,6 +221,12 @@ jQuery(function ($) {
   };
   $("#searchbutton").click(handleSearch);
   $("form.form").submit(handleSearch);
+
+    // untruncate on mouseover
+    $('.listview').on({
+        'mouseover': function () { $(this).trunk8('revert'); },
+        'mouseout': function () { $(this).trunk8(); }
+    },'.title-field');
 
 });
 
