@@ -195,7 +195,7 @@ jQuery(function ($) {
             $('table.table-results').dataTable().fnDestroy();
             var tree = $('#tree').fancytree('getTree').applyFilter(txt);
             // $('span.fancytree-match').removeClass('fancytree-match');
-            $('span.fancytree-title').highlight(txt, { element: 'em', className: 'fancytree-highlight' });
+            $('span.fancytree-title').highlight(txt, { element: 'mark' });
             // Retrieve matches
             var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
                 return n.match;
@@ -209,7 +209,7 @@ jQuery(function ($) {
                 table.append(
                    $("<tr>" +
                         "<td><div class='title-field'>" + y.title + "</div></td>" +
-                        "</tr>").highlight(txt,{ element: 'em', className: 'fancytree-highlight' })
+                        "</tr>").highlight(txt,{ element: 'mark' })
                 );
             });
 

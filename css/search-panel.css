@@ -405,10 +405,11 @@ object.flip_label{ display:none;}
 }
 /*--- hihglight search text ---*/
 .view-section span.fancytree-title > em,
-.view-section em.fancytree-highlight {
+.view-section mark {
     color: #dc3c47;
     font-style: normal;
     padding: 0;
+    background: #eee;
 }
 /*---- END treeview -----*/
 
