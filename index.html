@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="fonts/kmaps-icons/css/kmaps-icons.css">
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="src/skin-bootstrap/ui.fancytree.css" class="skinswitcher">
   <link rel="stylesheet" href="css/search-panel.css" media="all">
 	<link rel="stylesheet" href="js/forms/check/skins/minimal/red.css">
@@ -23,8 +23,8 @@
 <body>
   <!--[if lte IE 7]> <p class="progressive">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser.</a></p> <![endif]-->
   <a href=".main-content" class="sr-only">Skip to main content</a>
-  <header class="navbar navbar-default navbar-static-top" role="banner">
-    <div class="container-fluid">  
+  <nav class="navbar navbar-default navbar-static-top">
+    <header class="container-fluid" role="banner">  
        <nav class="navbar-header" role="navigation">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navtop">
           <span class="sr-only">Toggle navigation</span>
@@ -33,7 +33,7 @@
           <span class="icon-bar"></span>
         </button>        
       </nav>      
-      <h1 class="navbar-title"><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo" /><span><span class="hidden">SHANTI</span>Scholarly Collections at the University of Virginia</span></a></h1>        	     
+      <h1 class="navbar-title"><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo"><span><span class="hidden">SHANTI</span>Scholarly Collections at the University of Virginia</span></a></h1>        	     
       <nav class="navbar-collapse collapse navtop" role="navigation">
       <form role="form" class="form">
 			 <fieldset>	        
@@ -106,8 +106,8 @@
 			 </form>		       
       </nav><!-- END navbar-collapse -->
       
-    </div><!-- END container-fluid -->
-  </header><!-- END navbar -->
+    </header><!-- END container-fluid -->
+  </nav><!-- END navbar -->
   
 	<section class="container-fluid"> <!-- BEGIN dropdown panel -->
     <div class="row collections collapse opencollect">
