@@ -306,7 +306,7 @@ object.flip_label{ display:none;}
 /*}*/
 
 #kmaps-search div.title-field {
-    width: 270px;
+    width: 250px;
     max-height: 1.3em;
     white-space: nowrap;
     overflow: hidden;
