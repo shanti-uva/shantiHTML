@@ -32,7 +32,7 @@
 .extruder.right .flap.on-flap{ -moz-box-shadow:-1px 0 2px #bc323d;-webkit-box-shadow:-1px 0 2px #bc323d; box-shadow:-1px 0 2px #bc323d;}
 .extruder.right .flap span.flapLabel,
 .extruder.right .flap.on-flap span.flapLabel{ background-color:#505050; height:36px;display:block; padding:18px 41px 18px 0; margin:0;-webkit-top-left-radius: 25px;-webkit-bottom-left-radius: 25px;-moz-top-left-radius: 25px;-moz-bottom-left-border-radius: 25px;border-top-left-radius:25px;border-bottom-left-radius:25px;overflow:hidden;width:41px !important;position:relative;top:-1px;left:0;}
-/*----- find the settings for the search icon in the main-js ---*/
+/*----- css for the flap are inserted inline, see js/main ---*/
 .extruder.right .flap>span,
 .extruder.right .flap.on-flap>span{ color:#ddd;}
 .extruder.right .flap.on-hover>span,
