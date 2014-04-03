@@ -13,7 +13,8 @@ jQuery(function ($) {
   $(".explore>a, .closecollection").click(function(){
       $(".opencollect").slideToggle('fast');
       $(".closed").toggleClass("open", 'fast');
-      $("#kmaps-search").toggleClass("hidden", 300);
+      // $("#kmaps-search").toggleClass("hidden", 300);
+      $("#kmaps-search").toggleClass("open-collections", 200);
   });
 
   // --- advanced search toggle icons, open/close, view change height

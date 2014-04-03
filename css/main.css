@@ -56,7 +56,9 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	transition-duration: 400ms;
 }
 .navbar-default .navbar-nav>.open>a{ background-color:#f0f0f0;}
-.navbar-default .navbar-nav>li>a:hover{ }
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li.login>a,
+.navbar-default .navbar-nav>li.open>a{ background: transparent; background: -moz-linear-gradient(top, #ccc,  #f7f7f7); background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#f7f7f7)); background: -webkit-linear-gradient(top, #ccc,  #f7f7f7); background: -o-linear-gradient(top, #ccc,  #f7f7f7); background: linear-gradient(to bottom, #ccc,  #f7f7f7);}
 .navbar-default .navbar-nav>li.login>a{ position:relative;left:0;top:0; height:2em; line-height:2em;} 
 
 .navbar-default .explore a{ padding-right:5px;}
