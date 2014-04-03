@@ -57,17 +57,11 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 }
 .navbar-default .navbar-nav>.open>a{ background-color:#f0f0f0;}
 .navbar-default .navbar-nav>li>a:hover,
-.navbar-default .navbar-nav>li.login>a,
-.navbar-default .navbar-nav>li.open>a{ background: transparent; background: -moz-linear-gradient(top, #ccc,  #f7f7f7); background: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#f7f7f7)); background: -webkit-linear-gradient(top, #ccc,  #f7f7f7); background: -o-linear-gradient(top, #ccc,  #f7f7f7); background: linear-gradient(to bottom, #ccc,  #f7f7f7);}
-.navbar-default .navbar-nav>li.login>a{ position:relative;left:0;top:0; height:2em; line-height:2em;} 
-
+.navbar-default .navbar-nav>li.login>a:hover,
+.navbar-default .navbar-nav>li.open>a{ background: transparent; background: -moz-linear-gradient(top, #ddd,  #f7f7f7); background: -webkit-gradient(linear, 0 0, 0 100%, from(#ddd), to(#f7f7f7)); background: -webkit-linear-gradient(top, #ddd,  #f7f7f7); background: -o-linear-gradient(top, #ddd,  #f7f7f7); background: linear-gradient(to bottom, #ddd,  #f7f7f7);}
+.navbar-default .navbar-nav>li.login>a{ padding-top:18px;} 
 .navbar-default .explore a{ padding-right:5px;}
-.navbar-default .navbar-nav .explore>a>i{ 
-	font-size:17px; 
-	position:relative;
-	left:4px;
-	top:2px;
-}
+.navbar-default .navbar-nav .explore>a>i{ font-size:17px; position:relative;left:4px;top:2px;}
 .navbar-default .navbar-nav li>a>i.km-arrowselect{ font-size:17px; position:relative;left:2px;top:4px;}
 .navbar-default .navbar-nav>li>a .icon{ margin-right:10px;}
 .navbar-default .navbar-nav>li.lang>a .icon{ margin-right:-5px;}
