@@ -321,6 +321,10 @@ object.flip_label{ display:none;}
     font-family: sans-serif;
     font-size: smaller;
 }
+
+#kmaps-search h3.popover-title {
+    font-size: medium;
+}
 /* END trunk8 */
 
 /*---- END listview ----*/

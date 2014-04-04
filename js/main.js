@@ -61,7 +61,7 @@ jQuery(function($) {
 
   $("#kmaps-search div.text").resizable({ handles: "w",
           resize: function (event, ui) {
-              $('.title-field').trunk8({ tooltip:false }).popover();
+              $('.title-field').trunk8({ tooltip:false });
           }
       });	// ----- initiate jquery resize
 
@@ -116,7 +116,18 @@ jQuery(function($) {
 	);
 });
 
-
+function decorateElementWithPopover(elem, node) {
+    jQuery(elem).attr('rel', 'popover');
+    var path = "/" + $.makeArray(node.getParentList(false, true).map(function (x) {
+        return x.title;
+    })).join("/");
+    var caption = (node.data.caption ? ("<blockquote>" + node.data.caption + "</blockquote>") : "");
+    jQuery(elem).attr('data-content', path + caption);
+    jQuery(elem).attr('title', node.title);
+    jQuery(elem).popover();
+    jQuery(elem).find(".fancytree-title");
+    return elem;
+}
 
 // *** SEARCH *** sliding panel
 jQuery(function ($) {
@@ -141,10 +152,10 @@ jQuery(function ($) {
             } else {
                 $('.dataTables_paginate').show();
             }
-            $('.title-field').trunk8({ tooltip:false }).popover();
+            $('.title-field').trunk8({ tooltip:false });// .popover();
         },
         "fnInitComplete": function() {
-            $('.title-field').trunk8({ tooltip:false }).popover();
+            $('.title-field').trunk8({ tooltip:false }); // .popover();
         }
     });
 
@@ -175,9 +186,14 @@ jQuery(function ($) {
       },
       source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json", debugDelay: 1000},
 //      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
-      lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
-      focus: function(event, data){ data.node.scrollIntoView(true); }
-  });
+      //lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
+      focus: function(event, data){ data.node.scrollIntoView(true); },
+        renderNode: function(event,d) {
+            var node = d.node;
+            var elem=node.span
+            decorateElementWithPopover(elem, node);
+        }
+   });
 
 	var handleSearch = function handleSearch() {
       // clear previous styling
@@ -206,33 +222,42 @@ jQuery(function ($) {
             // populate list
             var table = $('div.listview div div.table-responsive table.table-results');
             $.each(list, function (x, y) {
-                var path = "/" + $.makeArray(y.getParentList(false,true).map(function(x) {
-                    return x.title;
-                })).join("/");
+//                var path = "/" + $.makeArray(y.getParentList(false,true).map(function(n) {
+//                    return n.title;
+//                })).join("/");
 
                 table.append(
-                   $("<tr>" +
-                        "<td><div rel='popover' title='" + y.title + "' data-content='" + path + (y.data.caption?("<blockquote>" + y.data.caption + "</blockquote>"):"") + "' class='title-field'>" + y.title + "</div></td>" +
-                        "</tr>").highlight(txt,{ element: 'mark' })
-                )
+                    $('<tr>')
+                        .append(decorateElementWithPopover($('<td>'),y)
+                            .append(
+                                $('<span class="title-field">').text(y.title)
+                                    .highlight(txt, { element: 'mark' }).trunk8({ tooltip:false })
+                            )
+                        )
 
+                );
 
-
+//                table.append(
+//                   $("<tr>" +
+//                        "<td><span rel='popover' title='" + y.title + "' data-content='" + path + (y.data.caption?("<blockquote>" + y.data.caption + "</blockquote>"):"") + "' class='title-field'>" + y.title + "</span></td>" +
+//                        "</tr>").highlight(txt,{ element: 'mark' })
+//                )
             });
 
 
             $('table.table-results').dataTable();
 
-            $('.tab-content').on('shown.bs.tab', '.title-field', function() {this.popover().trunk8({ tooltip:false }); });
-
-            $('.tab-content').on('mouseenter', '.title-field',  function (e) {
-                $('.title-field').not(this).popover('hide');
-            });
+//            $('.tab-content').on('mouseenter', '.title-field',  function (e) {
+//                $('.title-field').not(this).popover('hide');
+//            });
         }
         return false;
   };
   $("#searchbutton").click(handleSearch);
   $("form.form").submit(handleSearch);
+
+//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
+    $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8({ tooltip:false }); });
 
     $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
     $.fn.popover.Constructor.DEFAULTS.placement = 'left';
@@ -240,10 +265,10 @@ jQuery(function ($) {
     $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
 
     // untruncate on mouseover
-    $('.listview').on({
-        'mouseenter': function () { $(this).trunk8('revert'); },
-        'mouseout': function () { $(this).trunk8({ tooltip:false }).popover(); }
-    },'.title-field');
+//    $('.listview').on({
+////        'mouseenter': function () { $(this).trunk8('revert'); },
+////        'mouseout': function () { $(this).trunk8({ tooltip:false }).popover(); }
+//    },'.title-field');
 
 });
 
@@ -277,6 +302,8 @@ jQuery(function($) {
 	searchBox.blur(function(){
 		if($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
 	});
+
+    searchBox.attr("autocomplete","off");
 });
 
 
