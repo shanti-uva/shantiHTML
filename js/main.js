@@ -61,7 +61,7 @@ jQuery(function($) {
 
   $("#kmaps-search div.text").resizable({ handles: "w",
           resize: function (event, ui) {
-              $('.title-field').trunk8();
+              $('.title-field').trunk8({ tooltip:false }).popover();
           }
       });	// ----- initiate jquery resize
 
@@ -141,10 +141,10 @@ jQuery(function ($) {
             } else {
                 $('.dataTables_paginate').show();
             }
-            $('.title-field').trunk8();
+            $('.title-field').trunk8({ tooltip:false }).popover();
         },
         "fnInitComplete": function() {
-            $('.title-field').trunk8();
+            $('.title-field').trunk8({ tooltip:false }).popover();
         }
     });
 
@@ -206,35 +206,46 @@ jQuery(function ($) {
             // populate list
             var table = $('div.listview div div.table-responsive table.table-results');
             $.each(list, function (x, y) {
+                var path = "/" + $.makeArray(y.getParentList(false,true).map(function(x) {
+                    return x.title;
+                })).join("/");
+
                 table.append(
                    $("<tr>" +
-                        "<td><div class='title-field'>" + y.title + "</div></td>" +
+                        "<td><div rel='popover' title='" + y.title + "' data-content='" + path + (y.data.caption?("<blockquote>" + y.data.caption + "</blockquote>"):"") + "' class='title-field'>" + y.title + "</div></td>" +
                         "</tr>").highlight(txt,{ element: 'mark' })
-                );
+                )
+
+
+
             });
+
 
             $('table.table-results').dataTable();
 
-            $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8(); })
+            $('.tab-content').on('shown.bs.tab', '.title-field', function() {this.popover().trunk8({ tooltip:false }); });
+
+            $('.tab-content').on('mouseenter', '.title-field',  function (e) {
+                $('.title-field').not(this).popover('hide');
+            });
         }
         return false;
   };
   $("#searchbutton").click(handleSearch);
   $("form.form").submit(handleSearch);
 
+    $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
+    $.fn.popover.Constructor.DEFAULTS.placement = 'left';
+    $.fn.popover.Constructor.DEFAULTS.html = true;
+    $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
+
     // untruncate on mouseover
     $('.listview').on({
-        'mouseover': function () { $(this).trunk8('revert'); },
-        'mouseout': function () { $(this).trunk8(); }
+        'mouseenter': function () { $(this).trunk8('revert'); },
+        'mouseout': function () { $(this).trunk8({ tooltip:false }).popover(); }
     },'.title-field');
 
 });
-
-
-
-
-
-
 
 // *** SEARCH *** call function iCheck for form graphics
 jQuery(function ($) {
