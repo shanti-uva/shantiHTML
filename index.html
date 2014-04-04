@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="js/forms/check/skins/minimal/red.css">
   <link rel="stylesheet" href="css/search-panel.css" media="all">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico">
   <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
@@ -37,66 +38,66 @@
       <nav class="navbar-collapse collapse navtop" role="navigation">
        <form role="form" class="form">
 			 <fieldset>	        
-        <ul class="nav navbar-nav navbar-right">
-          <li class="explore"><a href="#">EXPLORE<i class="icon km-directions"></i></a></li>
-          <li class="login"><a href="">LOGIN</a></li>
-          <li class="dropdown options">
-          		<a href="" class="dropdown-toggle" data-toggle="dropdown">OPTIONS<i class="icon km-arrowselect"></i></a>
+        <ul class="nav navbar-nav navbar-right" role="menubar">
+          <li class="explore" role="menuitem" aria-haspopup="false"><a href="#">EXPLORE<i class="icon km-directions"></i></a></li>
+          <li class="login" role="menuitem" aria-haspopup="false"><a href="">LOGIN</a></li>
+          <li class="dropdown options" role="menuitem" aria-haspopup="true">
+          		<a href="" class="dropdown-toggle" data-toggle="dropdown" role="menuitem" aria-haspopup="true">OPTIONS<i class="icon km-arrowselect"></i></a>
 	          		<ul class="dropdown-menu dropdown-features" role="menu">
 	                
-	                <li class="drop-hdr">Perspective</li>
-                    <li class="form-group"><label class="radio-inline" for="option1a">
+	                <li class="drop-hdr" role="menuitem" aria-haspopup="true">Perspective</li>
+                    <li class="form-group"><label class="radio-inline" for="option1a" role="menuitem" aria-haspopup="false">
 												<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
 										</li>
-	                  <li class="last form-group"><label class="radio-inline" for="option1b">
+	                  <li class="last form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option1b" role="menuitem" aria-haspopup="false">
 												<input type="radio" name="option1" id="option1b" value="option1b">Tibetan</label>
-										</li>
-	                  
-	                <li class="drop-hdr">Subject Language</li>
-                    <li class="form-group"><label class="radio-inline" for="option2a">
+										</li>	                  
+										
+										<li class="drop-hdr" role="menuitem" aria-haspopup="false">Subject Language</li>
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2a">
 												<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2b">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2b">
 												<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2c">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2c">
 												<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2d">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2d">
 												<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2e">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2e">
 												<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
 										</li>										
-                    <li class="form-group"><label class="radio-inline" for="option2f">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2f">
 												<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
 										</li>										
-                    <li class="last form-group"><label class="radio-inline" for="option2g">
+                    <li class="last form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option2g">
 												<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
 										</li>
 	                
-	                <li class="drop-hdr">Show Subject Details</li>		                    
-	                  <li class="form-group"><label class="radio-inline" for="option3a">
+	                <li class="drop-hdr" role="menuitem" aria-haspopup="false">Show Subject Details</li>		                    
+	                  <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option3a">
 												<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
 										</li>
-                    <li class="last form-group"><label class="radio-inline" for="option3b">
+                    <li class="last form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="option3b">
 												<input type="radio" name="option3" id="option3b" value="option3b">No</label>
 										</li>
 	          	  </ul>	
           </li>
-          <li class="dropdown lang">										
+          <li class="dropdown lang" role="menuitem" aria-haspopup="true">										
 	          			<a href="" class="dropdown-toggle" data-toggle="dropdown">ENG<i class="icon km-arrowselect"></i></a>
 		          		<ul class="dropdown-menu dropdown-features" role="menu">
-                    <li class="form-group"><label class="radio-inline" for="optionlang1">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="optionlang1">
 												<input type="radio" name="radios" id="optionlang1" value="lang1">Tibetan</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="optionlang2">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="optionlang2">
 												<input type="radio" name="radios" id="optionlang2" value="lang2" checked>English</label>
 										</li>
-                    <li class="form-group"><label class="radio-inline" for="optionlang3">
+                    <li class="form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="optionlang3">
 												<input type="radio" name="radios" id="optionlang3" value="lang3">French</label>
 										</li>
-                    <li class="last form-group"><label class="radio-inline" for="optionlang4">
+                    <li class="last form-group" role="menuitem" aria-haspopup="false"><label class="radio-inline" for="optionlang4">
 												<input type="radio" name="radios" id="optionlang4" value="lang4">Chinese</label>
 										</li>
 		              </ul>      
@@ -340,7 +341,7 @@
 
 
 	<!-- BEGIN Search Panel -->	
-	<div id="kmaps-search">								
+	<section id="kmaps-search">								
 			<!-- BEGIN input section -->									  
 		  <section class="input-section" style="display:none;">									  
 				<form role="form" class="form">
@@ -441,7 +442,7 @@
 			   
 		    </div>	
 	   </section><!-- END view section -->
-  </div><!-- END kmaps-search -->
+  </section><!-- END kmaps-search -->
 
 	<footer class="footer">
 	  <div>
