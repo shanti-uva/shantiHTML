@@ -365,7 +365,9 @@ object.flip_label{ display:none;}
 .view-section span.fancytree-node{ border:none; display:block;}
 
 .view-section span.fancytree-expander:before{ }
-.view-section span.fancytree-node.fancytree-active{ background-color:white !important; border:none;}
+.view-section span.fancytree-node.fancytree-active{ background-color:white !important; border:none;     -webkit-box-shadow: 0 0 3px 0 #aaa;
+    -moz-box-shadow: 0 0 3px 0 #aaa;
+    box-shadow: 0 0 3px 0 #aaa;}
 
 .view-section span.fancytree-title{ 
 	color:#444; 
@@ -410,9 +412,6 @@ object.flip_label{ display:none;}
   box-shadow:none;	
   background:transparent;
 }
-
-
-
 .view-section span.fancytree-has-children>span.fancytree-title {
     padding-left: 10px;
     margin-left: -15px;
@@ -422,7 +421,7 @@ object.flip_label{ display:none;}
     position: relative;
     top: 0;
 }
-.view-section span.fancytree-active,tr.row_selected {
+.view-section span.fancytree-active tr.row_selected {
     display: block;
     background-color: #fff;
     -webkit-box-shadow: 0 0 3px 0 #aaa;
@@ -437,7 +436,7 @@ object.flip_label{ display:none;}
     text-shadow: none;
     display: none;
 }
-.view-section span.fancytree-active, span.fancytree-title:before {
+.view-section span.fancytree-active span.fancytree-title:before {
     background: #f4222c;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -456,7 +455,7 @@ object.flip_label{ display:none;}
 }
 .view-section ul.fancytree-container span.fancytree-node.fancytree-active:focus > .glyphicon,
 .view-section ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon {
-    color: #f4222c;
+    color: #dc3c47;
     background-color: transparent;
 }
 /*--- hihglight search text ---*/

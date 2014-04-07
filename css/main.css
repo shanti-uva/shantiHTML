@@ -47,13 +47,14 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 .navbar-collapse{ padding:0;}
 .navbar-collapse ul>li{ border-left:1px solid #e0e0e0;}
 .navbar-collapse ul>li:first-child{ /*border-left:none;*/}
-.navbar-default .navbar-nav>li{ height:48px;}
+.navbar-default .navbar-nav>li{ line-height:1.25em; height:3.5em;}
 .navbar-default .navbar-nav>li>a{ 
-	color:#555; 
+	color:#666; 
 	display:inline-block; 
 	font-weight:600; 
 	font-size:0.92em; 
-	line-height:1.25em;  
+	line-height:1.25em; 
+	height:3.88em; 
 	margin:0;
 	font-weight:600;
 	background-color:white;
@@ -99,6 +100,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	border-bottom-left-radius: 10px;
 	padding:10px 0 10px;
 	/* border:none !important; */
+	border:1px solid #ccc;
+	border-top:2px solid #ddd;
 	-webkit-box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
 	-moz-box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
 	box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
@@ -360,7 +363,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 }
 .content-sidebar ul.nav-pills li a:hover{
   color: #333;
-  background-color:#f0f0f0;
+  background-color:#f7f7f7;
 }
 .content-sidebar ul.nav-pills li.active a {
   color: #333;
@@ -633,6 +636,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 /*-------------------------------------------------*/
 /*----- top-menu override default styles here -----*/
 /*-------------------------------------------------*/
+/*--- create the menu toggle button ---*/
 .menu-toggle{ background:white; width:60px; text-align:center;}
 .menu-toggle a{ display:block; line-height:1.5em; height:3.88em;}
 .menu-toggle a:hover{ }
@@ -642,7 +646,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 .menu-toggle a:active i:before{ color:#404040;}
 
 /*---- top-menu wrapper ----*/
-#menu{ position:absolute;z-index:200;top:50px;right:0px;border:none;padding:0;}
+#menu{ position:absolute;z-index:200;top:50px;right:0px;border:none;border-top:2px solid #eee;padding:0;}
 #menu h3,
 #menu h2{ 
 	cursor:default; 

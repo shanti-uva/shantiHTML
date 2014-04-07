@@ -199,7 +199,7 @@ jQuery(function ($) {
       extensions: ["glyph", "filter"],
 			checkbox: false,
 			selectMode: 2,
-            		debugLevel: 0,
+      debugLevel: 0,
 			autoScroll: true,
 			closeOnExternalClick:false,
 			flapMargin:0,
