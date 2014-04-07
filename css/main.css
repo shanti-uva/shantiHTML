@@ -114,17 +114,17 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 .navbar-default .navbar-nav>li>ul>li.dropdown{ }
 .navbar-default .navbar-nav>li>ul>li:first-child{ /*border-top:1px solid #fff;*/}
 .navbar-default .navbar-nav>li>ul{ /*border-top:1px solid #fff;*/}
-.navbar-default .navbar-nav>li>ul>li:first-child{ border-top:none;}
+.navbar-default .navbar-nav>li>ul>li:first-child{ }
 
-.navtop ul.dropdown-menu li{ font-size:1em; line-height:2em; height:1.75em;  margin:0; padding:0; border-left:none;}
-.navtop ul.dropdown-menu li:hover{ background:#f0f0f0; color:#333; /* background:  linear-gradient(to bottom, #ddd 0%, #fafafa 50%,  #f5f5f5 65%,  #ddd 100%); */ }
+.navtop ul.dropdown-menu li{ font-size:1em; line-height:1em; height:1.88em; margin:0; padding:0; border-left:none; border-top:1px solid #ddd;border-bottom:1px solid #ddd;border-color:transparent;}
+.navtop ul.dropdown-menu li:hover{ background:#f0f0f0; color:#333; border-color:#e7e7e7; /* background:  linear-gradient(to bottom, #ddd 0%, #fafafa 50%,  #f5f5f5 65%,  #ddd 100%); */ }
 .navtop ul.dropdown-menu>li>label{ font-size:0.88em; line-height:2em; height:1.75em; margin:0; display:block; padding:0 0 0 13px;}
 
 .navtop ul.dropdown-menu li.last{ padding-bottom:15px;}
 
 .navtop ul.dropdown-menu li .radio-inline{ padding-left:20px;} /*--- graphic replacement --*/
 .navtop ul.dropdown-menu label>div{ position:relative; top:-1px; right:6px;}
-
+/*--- class drop-hdr is small header on the Preferences Menu ---*/
 .navtop ul.dropdown-menu li.drop-hdr{ font-size:0.93em; text-transform:uppercase; line-height:2.5em; height:2.5em; font-weight:600; color:#555; background-color: #eee; padding:1px 0 0 14px; margin:8px 0 2px;}
 .navtop ul.dropdown-menu li.drop-hdr:first-child{ margin-top:0;}
 /*--- END dropdown menu ---*/
@@ -636,20 +636,21 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 /*----- top-menu override default styles here -----*/
 /*-------------------------------------------------*/
 /*--- create the menu toggle button ---*/
-.menu-toggle{ background:white; text-align:center; vertical-align:middle;}
-.menu-toggle a{ display:block; width:55px; line-height:1.5em; height:50px; margin:0;}
+.menu-toggle{ background:white; text-align:center;}
+.menu-toggle a{ display:block; width:55px; height:50px; vertical-align:middle;}
 .menu-toggle a:hover{ }
-.menu-toggle i{ line-height:1.5em; height:3.88em;}
-.menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2em;}
+.menu-toggle i{ line-height:1.5em;height:50px; vertical-align:middle;}
+.menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2em; line-height:0.88em;height:50px;}
 .menu-toggle a:hover i:before{ color:#808080;}
 .menu-toggle a:active i:before{ color:#404040;}
 
 /*---- top-menu wrapper ----*/
-#menu{ position:absolute;z-index:200;top:50px;right:0px;border:none;border-top:2px solid #eee;padding:0;}
+#menu{ position:absolute;z-index:200;top:50px;right:0px;border:none;padding:0;}
 #menu h3,
 #menu h2{ 
 	cursor:default; 
 	background:white;
+	border-top:2px solid #e0e0e0;
 	color:#222;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; 
 	font-weight:normal; 
