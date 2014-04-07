@@ -130,6 +130,14 @@ function decorateElementWithPopover(elem, node) {
     return elem;
 }
 
+function clearSearch() {
+    $('#tree').fancytree('getTree').clearFilter();
+    $('#tree').fancytree("getRootNode").visit(function (node) {
+        node.setExpanded(false);
+    });
+    $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
+}
+
 // *** SEARCH *** sliding panel
 jQuery(function ($) {
 
@@ -187,7 +195,7 @@ jQuery(function ($) {
           }
       },
       source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
-          cache: true,
+          cache: false,
           debugDelay: 1000,
           complete: function(xhr, status) {
 //              $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
@@ -202,7 +210,7 @@ jQuery(function ($) {
         }
    });
 
-	var handleSearch = function handleSearch() {
+    var handleSearch = function handleSearch() {
       // clear previous styling
       // (can't simply unwrap because that leaves text nodes in extraneous chunks)
       $('span.fancytree-title').each(
@@ -212,8 +220,9 @@ jQuery(function ($) {
       );
       var txt = $("#searchform").val();
 
-
-        if (txt) {
+        if (!txt) {
+            clearSearch();
+        } else {
 
             $('table.table-results').dataTable().fnDestroy();
             var tree = $('#tree').fancytree('getTree').applyFilter(txt);
