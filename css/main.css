@@ -640,7 +640,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 .menu-toggle a:hover{ }
 .menu-toggle i{ line-height:1.5em; height:3.88em;}
 .menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2.25em;}
-.menu-toggle a:hover i:before{ color:#555;}
+.menu-toggle a:hover i:before{ color:#808080;}
 .menu-toggle a:active i:before{ color:#404040;}
 
 /*---- top-menu wrapper ----*/
