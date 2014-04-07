@@ -122,7 +122,8 @@ function decorateElementWithPopover(elem, node) {
         return x.title;
     })).join("/");
     var caption = (node.data.caption ? ("<blockquote>" + node.data.caption + "</blockquote>") : "");
-    jQuery(elem).attr('data-content', path + caption);
+    var kmapid = "<span class='kmapid-display'>" + node.key + "</span>";
+    jQuery(elem).attr('data-content', path + caption + kmapid);
     jQuery(elem).attr('title', node.title);
     jQuery(elem).popover();
     jQuery(elem).find(".fancytree-title");
@@ -137,6 +138,7 @@ jQuery(function ($) {
         "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
             "t" +
             "<'row'>",
+        "iTabIndex": 1,
         "oLanguage": {
             "sEmptyTable": "No results.  Enter new search query above.",
             "oPaginate": {
@@ -181,17 +183,22 @@ jQuery(function ($) {
               folder: "",
               folderOpen: "",
               loading: "glyphicon glyphicon-refresh"
-              // loading: "icon-spinner icon-spin"
+//              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json", debugDelay: 1000},
+      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+          cache: true,
+          debugDelay: 1000,
+          complete: function(xhr, status) {
+//              $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
+//              $(".alert").alert();
+          }
+      },
 //      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
       //lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
       focus: function(event, data){ data.node.scrollIntoView(true); },
-        renderNode: function(event,d) {
-            var node = d.node;
-            var elem=node.span
-            decorateElementWithPopover(elem, node);
+        renderNode: function(event,data) {
+            decorateElementWithPopover(data.node.span, data.node);
         }
    });
 
@@ -244,6 +251,10 @@ jQuery(function ($) {
 //                )
             });
 
+            $("table.table-results tbody tr").click(function(event) {
+                $('.row_selected').removeClass('row_selected');
+                $(event.target).closest('tr').addClass('row_selected');
+            });
 
             $('table.table-results').dataTable();
 
@@ -258,6 +269,9 @@ jQuery(function ($) {
 
 //    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8({ tooltip:false }); });
+    $('#tree').on('click', '.fancytree-statusnode-error', function () {
+
+    });
 
     $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
     $.fn.popover.Constructor.DEFAULTS.placement = 'left';

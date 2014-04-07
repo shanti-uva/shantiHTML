@@ -276,7 +276,7 @@ object.flip_label{ display:none;}
 .view-section table.table-results tbody>tr>td quote{ font-size:.5em !important;}
 
 /* trunk8 */
-#kmaps-search .col-xs-6 {
+.listview .col-xs-6 {
     width: 85%;
     font-size: .6em; 
     padding-right: 0em;
@@ -284,32 +284,32 @@ object.flip_label{ display:none;}
     /*margin-left: -2em;*/
 }
 
-#kmaps-search .pagination>li>a, .pagination>li>span {
+.listview .pagination>li>a, .pagination>li>span {
     padding: .5em .8em;
 }
 
-#kmaps-search .pagination {
+.listview .pagination {
     margin-left: 1em;
     margin-top: 0.3em;
     margin-bottom: 0.1em;
     margin-right: -0.5em;
 }
 
-#kmaps-search .dataTables_info {
+.listview .dataTables_info {
     font-size: 1.3em;
     margin-left: 1em;
 }
 
-#kmaps-search .row {
+.listview .row {
     margin-right: 0em;
     /*margin-left: 0em;*/
 }
 
-/*#kmaps-search td.sorting_1 {*/
+/*.listview td.sorting_1 {*/
     /*min-width: 12em;*/
 /*}*/
 
-#kmaps-search div.title-field {
+.listview div.title-field {
     position: static;
     float: none;
     /*width: 85%;*/
@@ -319,18 +319,40 @@ object.flip_label{ display:none;}
     /*text-overflow: ellipsis;*/
 }
 
-#kmaps-search .row {
+.listview .row {
     /*margin: 1em 1em 1em 1em;*/
 }
 
-#kmaps-search .popover-content {
+.listview .popover-content {
     font-family: sans-serif;
     font-size: smaller;
 }
 
-#kmaps-search h3.popover-title {
+.popover-content > blockquote p {
+    font-size: 13px;
+}
+
+.popover-content .kmapid-display {
+    display: block;
+    float: right;
+    clear: both;
+    font-size: smaller;
+    white-space:nowrap;
+    margin-left: 50%;
+    margin-right: 0;
+    color: #888;
+}
+
+.popover-content .kmapid-display:before {
+    color: #888;
+    content: "kmapid: "
+}
+
+
+.listview h3.popover-title {
     font-size: medium;
 }
+
 /* END trunk8 */
 
 /*---- END listview ----*/
@@ -383,7 +405,7 @@ object.flip_label{ display:none;}
     position: relative;
     top: 0;
 }
-.view-section span.fancytree-active {
+.view-section span.fancytree-active,tr.row_selected {
     display: block;
     background-color: #fff;
     -webkit-box-shadow: 0 0 3px 0 #aaa;
@@ -398,7 +420,7 @@ object.flip_label{ display:none;}
     text-shadow: none;
     display: none;
 }
-.view-section span.fancytree-active span.fancytree-title:before {
+.view-section span.fancytree-active, span.fancytree-title:before {
     background: #f4222c;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -426,7 +448,7 @@ object.flip_label{ display:none;}
     color: #dc3c47;
     font-style: normal;
     padding: 0;
-    background: #eee;
+    background: transparent;
 }
 /*---- END treeview -----*/
 
