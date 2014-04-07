@@ -635,8 +635,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 /*----- top-menu override default styles here -----*/
 /*-------------------------------------------------*/
 /*--- create the menu toggle button ---*/
-.menu-toggle{ background:white; width:60px; text-align:center;}
-.menu-toggle a{ display:block; line-height:1.5em; height:3.88em; margin:0; padding-left:0;}
+.menu-toggle{ background:white; text-align:center; vertical-align:middle; padding:0; line-height:1.38em; height:50px;}
+.menu-toggle a{ display:block; width:55px; line-height:1.5em; height:45px; margin:0;}
 .menu-toggle a:hover{ }
 .menu-toggle i{ line-height:1.5em; height:3.88em;}
 .menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2em;}
@@ -696,8 +696,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	color:#555;
 }
 .multilevelpushmenu_wrapper li a{ 
-	color:#707070;
-	font-size:.88em;
+	color:#606060;
+	font-size:.93em;
 	line-height:3em; 
 	height:4em;
 	font-weight:600;
