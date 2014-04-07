@@ -28,27 +28,61 @@ jQuery(function ($) {
 
 
 
+// *** NAVIGATION *** top drilldown menu
+jQuery(function ($) {	
+	$( '#menu' ).multilevelpushmenu({
+		menuWidth: 250,
+		menuHeight: '30em',
+		mode: 'cover',
+		direction: 'rtl',
+    backItemIcon: 'fa fa-angle-left',
+    groupIcon: 'fa fa-angle-right',
+    collapsed: true
+	});
+	// --- expand
+	$( '.menu-toggle' ).click(function(){
+		$('#menu').toggleClass('show-topmenu');
+		$('#menu').css('display','block');
+		$('#menu').multilevelpushmenu( 'expand' );		
+	});	
+	// --- collapse	
+	$( '.menu-toggle' ).click(function(){	
+		if($('#menu').hasClass('show-topmenu')) {
+			
+			$( '#menu' ).multilevelpushmenu( 'collapse' );
+			$( '#menu' ).css('display','none');
+					
+		}
+	});		
+	// --- align the text
+	$('#menu ul>li, #menu h2').css('text-align','left');
+	$('#menu ul>li.levelHolderClass.rtl').css('text-align','right');
+});
+
+
   
 // *** SEARCH *** adapt search panel height to viewport
 jQuery(function($) { 
-  var winHeight = $(window).height(); 	
+  var winHeight = $(window).height(); 
+  var panelHeight = winHeight -100; // ----- height of container for search panel - minus top and bottom space outside search panel
+  var viewHeight = winHeight -222; // ----- height for view-section with search options - CLOSED
+  var shortHeight = winHeight -406;  // ----- height for view-section with search options - OPEN 
+    	
 	// set initial div height
-	$("div.text").css({ "height": winHeight -100 }); // ----- main outside height setting for search panel	1/2 
-	$(".view-wrap").css({ "height": winHeight -222 });	// ----- default height setting for search panel view-section	
-	$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });  // ----- adjust for changes in height of advanced options when open 1/3, a larger number shortens the view-section length
-				
+	$("div.text").css({ "height": panelHeight }); 
+	$(".view-wrap").css({ "height": viewHeight });
+	$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight }); 				
 	// make sure div stays full width/height on resize
 	$(window).resize(function(){
-		$("div.text").css({ "height": winHeight -100 });	// ----- main outside height setting for search panel	2/2
-		$(".view-wrap").css({ "height": winHeight -222 });	// ----- default height setting for search panel view-section	
-		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });	// ----- adjust for changes in height of advanced options when open 2/3
-	});
-	
+		$("div.text").css({ "height": panelHeight });
+		$(".view-wrap").css({ "height": viewHeight });
+		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
+	});	
 	// toggle heights with search options
 	$(".advanced-link").click(function () {
     var winHeight = $(window).height();
-		$(".view-wrap").css({ "height": winHeight -222 });	// ----- default height setting for search panel view-section
-		$("#kmaps-search .view-wrap.short-wrap").css({ "height": winHeight -406 });	// ----- adjust for changes in height of advanced options when open	3/3
+		$(".view-wrap").css({ "height": viewHeight });
+		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
 });
 
@@ -176,7 +210,7 @@ jQuery(function ($) {
       extensions: ["glyph", "filter"],
 			checkbox: false,
 			selectMode: 2,
-            		debugLevel: 0,
+      debugLevel: 0,
 			autoScroll: true,
 			closeOnExternalClick:false,
 			flapMargin:0,
@@ -340,6 +374,7 @@ jQuery(function ($) {
 	$(".selectpicker").selectpicker();
 	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
 });
+
 
 
 
