@@ -26,7 +26,7 @@
 #kmaps-search div.text.ui-resizable,
 #kmaps-search.isOpened div.text.ui-resizable{ position:static;} /*--- keep the right edge pinned */
 
-#kmaps-search .ui-resizable-handle.ui-resizable-w{ opacity:0.4; position:absolute; left:-28px; top:85%; z-index:900; width:28px; height:25px; background: white url(../fonts/kmaps-icons/bin/PNG/expand.png) no-repeat 6px 3px; background-size:16px 16px;  border:1px solid #999; -moz-top-left-border-radius: 6px; -webkit-border-top-left-radius:6px;border-top-left-radius:6px; -moz-bottom-left-border-radius: 6px; -webkit-border-bottom-left-radius:6px;border-bottom-left-radius:6px; /* -moz-box-shadow:-5px 0 3px 0 #999; -webkit-box-shadow:-5px 0 3px 0 #999; box-shadow:-2px 0 2px 0 #999; */}
+#kmaps-search .ui-resizable-handle.ui-resizable-w{ opacity:0.4; position:absolute; left:-28px; top: 68px; /* top:85%; */ z-index:900; width:28px; height:25px; background: white url(../fonts/kmaps-icons/bin/PNG/expand.png) no-repeat 6px 3px; background-size:16px 16px;  border:1px solid #999; -moz-top-left-border-radius: 6px; -webkit-border-top-left-radius:6px;border-top-left-radius:6px; -moz-bottom-left-border-radius: 6px; -webkit-border-bottom-left-radius:6px;border-bottom-left-radius:6px; /* -moz-box-shadow:-5px 0 3px 0 #999; -webkit-box-shadow:-5px 0 3px 0 #999; box-shadow:-2px 0 2px 0 #999; */}
 #kmaps-search .ui-resizable-handle.ui-resizable-w:hover{ opacity:0.6;}
 #kmaps-search .ui-resizable-handle.ui-resizable-w:active{ opacity:0.4;}
 
@@ -101,20 +101,17 @@ object.flip_label{ display:none;}
 	-moz-box-shadow:none; 
 	box-shadow:none;
 	-moz-transition-property: all;
-	-moz-transition-duration: 400ms;
+	-moz-transition-duration: 200ms;
 	-webkit-transition-property: all;
-	-webkit-transition-duration: 400ms;
+	-webkit-transition-duration: 200ms;
 	-o-transition-property: all;
-	-o-transition-duration: 400ms;
+	-o-transition-duration: 200ms;
 	transition-property: all;
-	transition-duration: 400ms;
+	transition-duration: 200ms;
 	background-clip: padding-box; /* Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners */
 }
-.input-section .input-group .btn.btn-default:hover{ color:#7e8dff; border-color:#f0f0f0; }
-.input-section .input-group .btn.btn-default:focus{ 
-
-}
-.btn-default:active, .btn-default.active{ 
+.input-section .input-group .btn.btn-default:hover{ color:#dc3c47; border-color:#f0f0f0;}
+.btn-default:active, .btn-default.active{  
 	background: -moz-linear-gradient(top, #ccc 0%, #eee 40%,  #f0f0f0 70%,  #f0f0f0 100%);
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f0f0f0));
 	background: -webkit-linear-gradient(top, #fff 0%, #f7f7f7 50%,  #f0f0f0 55%,  #e0e0e0 100%);
@@ -370,8 +367,16 @@ object.flip_label{ display:none;}
 .view-section span.fancytree-expander:before{ }
 .view-section span.fancytree-node.fancytree-active{ background-color:white !important; border:none;}
 
-.view-section span.fancytree-title{ color:#444; margin:0 0 0 -24px; padding-left:15px; line-height:22px; height:20px; /* vertical-align:top; */   -moz-box-sizing: content-box;
-       box-sizing: content-box;}
+.view-section span.fancytree-title{ 
+	color:#444; 
+	margin:0 0 0 -24px; 
+	padding-left:15px; 
+	line-height:22px; 
+	height:20px; 
+	/* vertical-align:top; */   
+	-moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
 .view-section span.fancytree-title:hover{ color:#000;}
 .view-section span.fancytree-title:before{
 	background: #fff;
@@ -396,6 +401,18 @@ object.flip_label{ display:none;}
 .view-section span.fancytree-title:hover:before {
     background: #777; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none;
 }
+.view-section .fancytree-statusnode-wait span.fancytree-title:before,
+.view-section .fancytree-statusnode-error span.fancytree-title:before{ 
+  width:0;
+  height:0;
+  display: none;
+  color:transparent;
+  box-shadow:none;	
+  background:transparent;
+}
+
+
+
 .view-section span.fancytree-has-children>span.fancytree-title {
     padding-left: 10px;
     margin-left: -15px;

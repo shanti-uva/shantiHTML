@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="fonts/kmaps-icons/css/kmaps-icons.css">
+  <link rel="stylesheet" href="fonts/font-awesome-4.0.3/css/font-awesome.css">
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="src/skin-bootstrap/ui.fancytree.css" class="skinswitcher">
 	<link rel="stylesheet" href="js/forms/select/bootstrap-select.min.css">
@@ -24,8 +25,9 @@
 <body>
   <!--[if lte IE 7]> <p class="progressive">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser.</a></p> <![endif]-->
   <a href=".main-content" class="sr-only">Skip to main content</a>
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
-    <header role="banner">  
+  
+  <header role="banner">
+		<div class="navbar navbar-default navbar-static-top" role="navigation">  
       <nav class="navbar-header" role="navigation">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navtop">
           <span class="sr-only">Toggle navigation</span>
@@ -39,54 +41,9 @@
        <form role="form" class="form">
 			 <fieldset>	        
         <ul class="nav navbar-nav navbar-right">
-          <li class="explore"><a href="#">EXPLORE<i class="icon km-directions"></i></a></li>
-          <li class="login"><a href="">LOGIN</a></li>
-          <li class="dropdown options">
-          		<a href="" class="dropdown-toggle" data-toggle="dropdown">OPTIONS<i class="icon km-arrowselect"></i></a>
-	          		<ul class="dropdown-menu dropdown-features" role="menu">
-	                
-	                <li class="drop-hdr">Perspective</li>
-                    <li class="form-group"><label class="radio-inline" for="option1a">
-												<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
-										</li>
-	                  <li class="last form-group"><label class="radio-inline" for="option1b">
-												<input type="radio" name="option1" id="option1b" value="option1b">Tibetan</label>
-										</li>
-	                  
-	                <li class="drop-hdr">Subject Language</li>
-                    <li class="form-group"><label class="radio-inline" for="option2a">
-												<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
-										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2b">
-												<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
-										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2c">
-												<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
-										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2d">
-												<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
-										</li>
-                    <li class="form-group"><label class="radio-inline" for="option2e">
-												<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
-										</li>										
-                    <li class="form-group"><label class="radio-inline" for="option2f">
-												<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
-										</li>										
-                    <li class="last form-group"><label class="radio-inline" for="option2g">
-												<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
-										</li>
-	                
-	                <li class="drop-hdr">Show Subject Details</li>		                    
-	                  <li class="form-group"><label class="radio-inline" for="option3a">
-												<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
-										</li>
-                    <li class="last form-group"><label class="radio-inline" for="option3b">
-												<input type="radio" name="option3" id="option3b" value="option3b">No</label>
-										</li>
-	          	  </ul>	
-          </li>
+          <li class="explore"><a href="#">Explore Collections<i class="icon km-directions"></i></a></li>
           <li class="dropdown lang">										
-	          			<a href="" class="dropdown-toggle" data-toggle="dropdown">ENG<i class="icon km-arrowselect"></i></a>
+	          	<a href="" class="dropdown-toggle" data-toggle="dropdown">Eng<i class="icon km-arrowselect"></i></a>
 		          		<ul class="dropdown-menu dropdown-features" role="menu">
                     <li class="form-group"><label class="radio-inline" for="optionlang1">
 												<input type="radio" name="radios" id="optionlang1" value="lang1">Tibetan</label>
@@ -102,13 +59,15 @@
 										</li>
 		              </ul>      
           </li>
+          <li class="menu-toggle">
+          	  <a href="#"><i class="icon km-menu"></i></a>
+          </li>
         </ul>
 			 </fieldset>  
 			 </form>		       
-      </nav><!-- END navbar-collapse -->
-      
-    </header><!-- END container-fluid -->
-  </nav><!-- END navbar -->
+     </nav><!-- END navbar-collapse -->
+    </div><!-- END navbar -->
+  </header><!-- END container-fluid -->
   
 	<section class="container-fluid"> <!-- BEGIN dropdown panel -->
     <nav class="row collections collapse opencollect" role="navigation">
@@ -151,6 +110,82 @@
 	</section> <!-- END -->
 
 
+	<section id="menu" style="display:none;">
+	<nav role="navigation">                
+	 <ul>
+	 	<li>
+	 			<h3><span>Main Menu</span></h3>
+	 	</li>
+	   <li>
+	      <a href="#">My Account</a>
+	      <h2>My Account</h2>
+	      <ul>
+	        <li><a href="#">Logout</a></li>  
+	        <li><a href="#">Edit Account Details</a></li>   
+	        <li><a href="#">Another Link</a></li>
+	        <li><a href="#">Another Link</a></li>
+	        <li class="topmenu-last"></li>
+	      </ul>
+	   </li>                  
+	   <li>
+	      <a href="#">Preferences</a>
+	      <h2>Preferences</h2>
+			  <ul>
+			  	
+			  	<!-- header -->              
+					<li class="drop-hdr"><span>Perspective</span></li>
+						<li class="form-group"><label class="radio-inline" for="option1a">
+							<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option1b">
+							<input type="radio" name="option1" id="option1b" value="option1b">Tibetan</label>
+						</li>
+						<li class="form-group last"></li>
+					
+					<!-- header -->
+					<li class="drop-hdr"><span>Subject Language</span></li>
+						<li class="form-group"><label class="radio-inline" for="option2a">
+							<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2b">
+							<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2c">
+							<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2d">
+							<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2e">
+							<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
+						</li>										
+						<li class="form-group"><label class="radio-inline" for="option2f">
+							<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
+						</li>										
+						<li class="form-group"><label class="radio-inline" for="option2g">
+							<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
+						</li>
+						<li class="form-group last"></li>
+					
+					<!-- header -->
+					<li class="drop-hdr"><span>Show Subject Details</span></li>                     
+						<li class="form-group"><label class="radio-inline" for="option3a">
+							<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option3b">
+							<input type="radio" name="option3" id="option3b" value="option3b">No</label>
+						</li>
+						<li class="form-group last"></li>
+				</ul>	                        
+	    </li>    
+	    <li><a href="#">Help</a></li>
+	    
+	    <li><a href="#">Contact Us</a></li>
+	    <li class="bottom-last"></li>
+	 </ul>	  
+	</nav>
+	</section>
+
 
 	
 	<!-- BEGIN content -->
@@ -158,6 +193,7 @@
     <article class="row main-content">
      	
     <header class="col-sm-12 titlearea">
+     <div>
 	    <h2 class="page-title"><i class="icon km-places"></i><span>Lhasa</span></h2>
         <nav class="breadcrumbs-wrapper" role="navigation">
           <ol class="breadcrumb">
@@ -171,6 +207,7 @@
             <li class="active">Lhasa</li>
           </ol>
         </nav>
+      </div>
     </header>
               
     <aside class="col-sm-2 content-sidebar">
@@ -453,6 +490,8 @@
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>	
+	<script type="text/javascript" src="js/menus/jquery.multilevelpushmenu.min.js"></script>
+
 	<script type="text/javascript" src="js/extruder/mbExtruder.js"></script><!-- searchpanel(3) -->	
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script><!-- tree -->
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script><!-- tree -->  
