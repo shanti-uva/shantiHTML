@@ -47,7 +47,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 .navbar-collapse{ padding:0;}
 .navbar-collapse ul>li{ border-left:1px solid #e0e0e0;}
 .navbar-collapse ul>li:first-child{ /*border-left:none;*/}
-.navbar-default .navbar-nav>li{ line-height:1.25em; height:3.5em;}
+.navbar-default .navbar-nav>li{ /* line-height:1.25em; height:3.5em; height:50px; */}
 .navbar-default .navbar-nav>li>a{ 
 	color:#666; 
 	display:inline-block; 
@@ -55,6 +55,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	font-size:0.88em; 
 	line-height:1.25em; 
 	height:3.88em; 
+	height:50px;
 	margin:0;
 	font-weight:600;
 	background-color:white;
@@ -635,8 +636,8 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 /*----- top-menu override default styles here -----*/
 /*-------------------------------------------------*/
 /*--- create the menu toggle button ---*/
-.menu-toggle{ background:white; text-align:center; vertical-align:middle; padding:0; line-height:1.38em; height:50px;}
-.menu-toggle a{ display:block; width:55px; line-height:1.5em; height:45px; margin:0;}
+.menu-toggle{ background:white; text-align:center; vertical-align:middle;}
+.menu-toggle a{ display:block; width:55px; line-height:1.5em; height:50px; margin:0;}
 .menu-toggle a:hover{ }
 .menu-toggle i{ line-height:1.5em; height:3.88em;}
 .menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2em;}
