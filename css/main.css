@@ -99,8 +99,6 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	padding:10px 0 10px;
-	/* border:none !important; */
-	border:1px solid #ccc;
 	border-top:2px solid #ddd;
 	-webkit-box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
 	-moz-box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
@@ -651,7 +649,7 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 #menu h2{ 
 	cursor:default; 
 	background:white;
-	color:#444;
+	color:#222;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; 
 	font-weight:normal; 
 	font-style:italic;

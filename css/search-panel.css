@@ -27,8 +27,8 @@
 #kmaps-search.isOpened div.text.ui-resizable{ position:static;} /*--- keep the right edge pinned */
 
 #kmaps-search .ui-resizable-handle.ui-resizable-w{ opacity:0.4; position:absolute; left:-28px; top: 68px; /* top:85%; */ z-index:900; width:28px; height:25px; background: white url(../fonts/kmaps-icons/bin/PNG/expand.png) no-repeat 6px 3px; background-size:16px 16px;  border:1px solid #999; -moz-top-left-border-radius: 6px; -webkit-border-top-left-radius:6px;border-top-left-radius:6px; -moz-bottom-left-border-radius: 6px; -webkit-border-bottom-left-radius:6px;border-bottom-left-radius:6px; /* -moz-box-shadow:-5px 0 3px 0 #999; -webkit-box-shadow:-5px 0 3px 0 #999; box-shadow:-2px 0 2px 0 #999; */}
-#kmaps-search .ui-resizable-handle.ui-resizable-w:hover{ opacity:0.6;}
-#kmaps-search .ui-resizable-handle.ui-resizable-w:active{ opacity:0.4;}
+#kmaps-search .ui-resizable-handle.ui-resizable-w:hover{ opacity:0.1; border-color:#ddd;}
+#kmaps-search .ui-resizable-handle.ui-resizable-w:active{ opacity:0.6; border-color:#888;}
 
 /* --- Search toggle ------ */
 /* --------------------------- inline styles with icon markup are loaded via main.js */
@@ -161,7 +161,7 @@ object.flip_label{ display:none;}
 .input-section .bootstrap-select .selectpicker{ line-height:27px; height:27px; padding:0; border:1px solid #ddd; width:100% !important;}
 .input-section .bootstrap-select .btn{ 
 	padding-left: 15px;
-	color:#666 !important;
+	color:#666;
 	background: transparent;
 	background: -moz-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f0f0f0));
@@ -186,26 +186,30 @@ object.flip_label{ display:none;}
 
 .input-section .bootstrap-select.btn-group .dropdown-menu{ height:200px;}
 
-.input-section .selectpicker .caret{ border:none !important; }
-.input-section .selectpicker .caret:before{ color:#dc3c47 !important; font-size:17px; font-family: 'kmaps-icons'; content: "\e620"; position:absolute; top:-10px; right:0px;}
+.input-section .selectpicker .caret{ border:none; }
+.input-section .selectpicker .caret:before{ color:#dc3c47; font-size:17px; font-family: 'kmaps-icons'; content: "\e620"; position:absolute; top:-10px; right:0px;}
 
 .input-section .selectpicker li{ padding:0; overflow:hidden;}
-.input-section .selectpicker li a{ color:#444 !important; padding:0 15px; overflow:hidden; line-height:25px;}
+.input-section .selectpicker li a{ color:#444; padding:0 15px; overflow:hidden; display:block; line-height:25px; height:25px;}
 .input-section .selectpicker li a,
 .input-section .selectpicker li a span,
 .input-section .selectpicker li.selected a,
-.input-section .selectpicker li.selected a span.text{ border-bottom:1px solid #fff; background-color:transparent !important; color:#555 !important;}
-.input-section .selectpicker li.selected a span.text{ border-bottom:1px solid #ccc !important; color:#000 !important;}
+.input-section .selectpicker li.selected a span.text{ background-color:transparent !important; color:#555;}
+.input-section .selectpicker li.selected a span.text{  color:#000;}
+
+.input-section .selectpicker li.selected a:hover,
+.input-section .selectpicker li.selected a:active{ color:#fff;}
 
 .input-section .selectpicker li a span.text:hover,
 .input-section .selectpicker li.selected a span.text:hover{ color:#fff !important;}
 
-.input-section .selectpicker li a:hover span.text,
-.input-section .selectpicker li a:focus span.text{ border-color:transparent !important;  color:#fff !important;}
+.input-section .selectpicker li:hover span.text,
+.input-section .selectpicker li:active span.text{ color:#fff !important; background-color:transparent !important; }
 
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a i.check-mark{ color:#dc3c47;}
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:hover i.check-mark,
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:focus i.check-mark{ color:#fff;}
+
 
 
 
