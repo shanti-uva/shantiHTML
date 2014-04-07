@@ -135,7 +135,10 @@ function clearSearch() {
     $('#tree').fancytree("getRootNode").visit(function (node) {
         node.setExpanded(false);
     });
+    $('table.table-results').dataTable().fnDestroy();
     $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
+    $('table.table-results').dataTable();
+
 }
 
 // *** SEARCH *** sliding panel
