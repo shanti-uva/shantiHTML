@@ -68,9 +68,10 @@
      </nav><!-- END navbar-collapse -->
     </div><!-- END navbar -->
   </header><!-- END container-fluid -->
-  
-	<section class="container-fluid"> <!-- BEGIN dropdown panel -->
-    <nav class="row collections collapse opencollect" role="navigation">
+	
+	<!-- BEGIN dropdown panel -->  
+  <nav class="row collections collapse opencollect" role="navigation">
+		<div class="container-fluid"> 
        <div class="col-sm-8 col-sm-offset-2">          
           <h4>EXPLORE COLLECTIONS</h4>
           <div class="four-collections">
@@ -106,87 +107,8 @@
           </div>          
        </div>
         <span class="closecollection"><i class="icon km-close"></i></span>
-    </nav><!-- END dropdown panel -->
-	</section> <!-- END -->
-
-
-	<section id="menu" style="display:none;">
-	<nav role="navigation">                
-	 <ul>
-	 	<li>
-	 			<h3><span>Main Menu</span></h3>
-	 	</li>
-	   <li>
-	      <a href="#">My Account</a>
-	      <h2>My Account</h2>
-	      <ul>
-	        <li><a href="#">Logout</a></li>  
-	        <li><a href="#">Edit Account Details</a></li>   
-	        <li><a href="#">Another Link</a></li>
-	        <li><a href="#">Another Link</a></li>
-	        <li class="topmenu-last"></li>
-	      </ul>
-	   </li>                  
-	   <li>
-	      <a href="#">Preferences</a>
-	      <h2>Preferences</h2>
-			  <ul>
-			  	
-			  	<!-- header -->              
-					<li class="drop-hdr"><span>Perspective</span></li>
-						<li class="form-group"><label class="radio-inline" for="option1a">
-							<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
-						</li>
-						<li class="form-group"><label class="radio-inline" for="option1b">
-							<input type="radio" name="option1" id="option1b" value="option1b">Tibetan</label>
-						</li>
-						<li class="form-group last"></li>
-					
-					<!-- header -->
-					<li class="drop-hdr"><span>Subject Language</span></li>
-						<li class="form-group"><label class="radio-inline" for="option2a">
-							<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
-						</li>
-						<li class="form-group"><label class="radio-inline" for="option2b">
-							<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
-						</li>
-						<li class="form-group"><label class="radio-inline" for="option2c">
-							<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
-						</li>
-						<li class="form-group"><label class="radio-inline" for="option2d">
-							<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
-						</li>
-						<li class="form-group"><label class="radio-inline" for="option2e">
-							<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
-						</li>										
-						<li class="form-group"><label class="radio-inline" for="option2f">
-							<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
-						</li>										
-						<li class="form-group"><label class="radio-inline" for="option2g">
-							<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
-						</li>
-						<li class="form-group last"></li>
-					
-					<!-- header -->
-					<li class="drop-hdr"><span>Show Subject Details</span></li>                     
-						<li class="form-group"><label class="radio-inline" for="option3a">
-							<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
-						</li>
-						<li class="form-group"><label class="radio-inline" for="option3b">
-							<input type="radio" name="option3" id="option3b" value="option3b">No</label>
-						</li>
-						<li class="form-group last"></li>
-				</ul>	                        
-	    </li>    
-	    <li><a href="#">Help</a></li>
-	    
-	    <li><a href="#">Contact Us</a></li>
-	    <li class="bottom-last"></li>
-	 </ul>	  
-	</nav>
-	</section>
-
-
+	  </section>
+  </nav><!-- END dropdown panel -->
 	
 	<!-- BEGIN content -->
   <main class="container-fluid" role="main">
@@ -483,6 +405,84 @@
 				</div>  										  
 	    </section><!-- END view section -->
   </section><!-- END kmaps-search -->
+
+
+
+	<section id="menu" style="display:none;">
+	<nav role="navigation">                
+	 <ul>
+	 	 <li>
+	 			<h3><span>Main Menu</span></h3>
+	 	 </li>
+	   <li class="menu-shadow">
+	      <a href="#">My Account</a>
+	      <h2>My Account</h2>
+	      <ul class="myaccount">
+	        <li><a href="#">Logout</a></li>  
+	        <li><a href="#">Edit Account Details</a></li>   
+	        <li><a href="#">Another Link</a></li>
+	        <li><a href="#">Another Link</a></li>
+	      </ul>
+	   </li>                  
+	   <li class="menu-shadow">
+	      <a href="#">Preferences</a>
+	      <h2>Preferences</h2>
+			  <ul>			  	
+			  	<!-- header -->              
+					<li class="drop-hdr"><span>Perspective</span></li>
+						<li class="form-group"><label class="radio-inline" for="option1a">
+							<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option1b">
+							<input type="radio" name="option1" id="option1b" value="option1b">Tibetan</label>
+						</li>
+						<li class="form-group last"></li>
+					
+					<!-- header -->
+					<li class="drop-hdr"><span>Subject Language</span></li>
+						<li class="form-group"><label class="radio-inline" for="option2a">
+							<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2b">
+							<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2c">
+							<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2d">
+							<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option2e">
+							<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
+						</li>										
+						<li class="form-group"><label class="radio-inline" for="option2f">
+							<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
+						</li>										
+						<li class="form-group"><label class="radio-inline" for="option2g">
+							<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
+						</li>
+						<li class="form-group last"></li>
+					
+					<!-- header -->
+					<li class="drop-hdr"><span>Show Subject Details</span></li>                     
+						<li class="form-group"><label class="radio-inline" for="option3a">
+							<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
+						</li>
+						<li class="form-group"><label class="radio-inline" for="option3b">
+							<input type="radio" name="option3" id="option3b" value="option3b">No</label>
+						</li>
+						<li class="form-group last"></li>
+				</ul>	                        
+	    </li>   
+	     
+	    <li><a href="#">Help</a></li>
+	    
+	    <li><a href="#">Contact Us</a></li>
+	 </ul>	  
+	</nav>
+	</section>
+
+
 
 	<footer class="footer">
 	  <div>

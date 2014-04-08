@@ -101,15 +101,9 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	border-bottom-left-radius: 10px;
 	padding:10px 0 10px;
 	border-top:2px solid #ddd;
-	-webkit-box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
-	-moz-box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
-	box-shadow: inset 0px 12px 15px -10px rgba(0,0,0,0.175);
- 
- /* -webkit-drop-shadow: (4px 4px 5px rgba(0, 0, 0, 0.5));
- -moz-drop-shadow: (4px 4px 5px rgba(0, 0, 0, 0.5));
- -ms-drop-shadow: (4px 4px 5px rgba(0, 0, 0, 0.5));
- -o-drop-shadow: (4px 4px 5px rgba(0, 0, 0, 0.5)); */
+	background:  linear-gradient(to bottom, #eee 0px, #fafafa 8px,  #fff 25px);
 }
+
 .navbar .lang ul.dropdown-menu{ /* language dropdown */ width:110px; min-width:110px; }
 .navbar-default .navbar-nav>li>ul>li.dropdown{ }
 .navbar-default .navbar-nav>li>ul>li:first-child{ /*border-top:1px solid #fff;*/}
@@ -650,19 +644,23 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 #menu h2{ 
 	cursor:default; 
 	background:white;
-	border-top:2px solid #e0e0e0;
+	border-top:1px solid #e0e0e0;
+	border-bottom:1px solid #c0c0c0;
 	color:#222;
 	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; 
 	font-weight:normal; 
 	font-style:italic;
-	padding:0 0 0 17px; 
-	margin:0 ; font-size:1.5em; 
-	line-height:3em; 
+	text-indent:17px;
+	padding:0; 
+	margin:0; 
+	font-size:1.5em; 
+	line-height:2.93em; 
 	height:2.88em;
+	position:relative;
+	z-index:200;
 	vertical-align:middle; 
-	-webkit-box-shadow: inset 0px 15px 21px -10px rgba(0,0,0,0.11);
-	-moz-box-shadow: inset 0px 15px 21px -10px rgba(0,0,0,0.11);
-	box-shadow: inset 0px 15px 21px -10px rgba(0,0,0,0.11);
+	background:  linear-gradient(to bottom, #eee 0px, #fafafa 8px,  #fff 25px);
+	box-shadow:-10px 0 18px -10px srgb(0,0,0,0.5);
 }
 #menu h2 a{ 
 	display:block; 
@@ -680,9 +678,26 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	vertical-align:middle;
 	zoom:1;
 }
-#menu .multilevelpushmenu_wrapper ul>li>ul,
 #menu .multilevelpushmenu_wrapper ul{ background:white;}
-#menu .multilevelpushmenu_wrapper ul:first-child{ /* -webkit-filter: drop-shadow(-3px 3px 10px rgba(0,0,0,0.11)); */ }
+#menu,
+#menu .multilevelpushmenu_wrapper,
+#menu .multilevelpushmenu_wrapper ul,
+#menu .multilevelpushmenu_wrapper div{ 
+	overflow:visible;
+}
+
+#menu .multilevelpushmenu_wrapper ul{
+	box-shadow:-3px 3px 18px -10px rgba(0,0,0,0.5);
+	/*-webkit-filter: drop-shadow(-3px 3px 10px rgba(0,0,0,0.11)); 
+	filter: url(../images/shadow.svg#drop-shadow); */
+}
+#menu .multilevelpushmenu_wrapper ul:first-child{
+	}
+
+
+
+
+
 
 .multilevelpushmenu_wrapper li { 
 	border-top: none;
@@ -697,8 +712,9 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	background:#f7f7f7;
 	color:#555;
 }
+
 .multilevelpushmenu_wrapper li a{ 
-	color:#606060;
+	color:#777;
 	font-size:.93em;
 	line-height:3em; 
 	height:4em;
@@ -713,12 +729,21 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	color:#707070;
 	/* background:#f00; */
 }
+.multilevelpushmenu_wrapper li:first-child a{ border-top:none;}
+/* .multilevelpushmenu_wrapper li.last{ border-bottom:1px solid #ddd;} */
+
+
+
 /* .multilevelpushmenu_wrapper li a:hover{ background:#fff;color:#777;} */
 /* .multilevelpushmenu_wrapper>ul>li:first-child>a{ border-top:none;} */
-#menu .multilevelpushmenu_wrapper li.bottom-last{ line-height:5px; height:5px;padding:0;margin:0;border-top:none;box-shadow:none;}
-#menu .multilevelpushmenu_wrapper li.bottom-last:hover{ background:white; cursor:default; }
-#menu .multilevelpushmenu_wrapper li.topmenu-last{ height:5px ;line-height:5px; padding:0;margin:0;border-top:none;box-shadow:none;}
-#menu .multilevelpushmenu_wrapper li.topmenu-last:hover{ background:white; cursor:default; }
+/* .multilevelpushmenu_wrapper li.myaccount-last{ line-height:5px; height:5px; line-height:5px; padding:0;margin:0; box-shadow:none;}
+.multilevelpushmenu_wrapper li.myaccount-last:hover{ background:white; cursor:default; } */
+
+/* .multilevelpushmenu_wrapper li.preferences-last{ line-height:5px; height:5px; padding:0;margin:0; box-shadow:none;}
+.multilevelpushmenu_wrapper li.preferences-last:hover{ background:white; cursor:default; } */
+
+
+
 
 .multilevelpushmenu_wrapper li i {
 	font-size:2em;
@@ -735,13 +760,12 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	margin:0;
 	display:block;
 }
-.multilevelpushmenu_wrapper li.form-group.last:hover{ background:#fafafa;}
-
+.multilevelpushmenu_wrapper li:last-child{ border-bottom:none;}
 .multilevelpushmenu_wrapper li.form-group.last{ line-height:0.5em; height:0.5em;}
+.multilevelpushmenu_wrapper li.form-group.last:hover{ background:#fafafa;}
 
 .multilevelpushmenu_wrapper .form-group .radio-inline{ padding:0 0 0 20px; display:block;}
 .multilevelpushmenu_wrapper .form-group .radio-inline>div{ position:relative; top:-2px; right:5px;} /* graphic replacement */
-
 
 .multilevelpushmenu_wrapper li.drop-hdr{
 	border-top: 1px solid #ddd;
@@ -749,15 +773,14 @@ body{ background-color:white; font-family: "Museo Sans", sans-serif;}
 	color:#707070;	
 	font-size:0.88em;
 	font-weight:bold;
-	line-height:1em; height:1.88em;
+	line-height:1em; 
+	height:1.88em;
 }
 .multilevelpushmenu_wrapper li.drop-hdr span{ display:block; padding:7px 0 2px 12px;}
 .multilevelpushmenu_wrapper li.drop-hdr:hover{ background:white; color:#555;}
-.multilevelpushmenu_wrapper li.drop-hdr:first-child{ -webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none; margin-top:0;}
+.multilevelpushmenu_wrapper li.drop-hdr:first-child{ -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; border-top:none;}
 
-.multilevelpushmenu_wrapper li:last-child{ border-bottom: none; margin-bottom:10px;}
-
-.multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass{ position:absolute; top:0; right:0;}
+.multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass{ position:absolute; top:0; right:0; z-index:202;}
 .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a{ 
 	color:#dc3c47; 
 	font-size:.83em; 
