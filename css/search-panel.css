@@ -425,7 +425,7 @@ object.flip_label{ display:none;}
     position: relative;
     top: 0;
 }
-.view-section span.fancytree-active tr.row_selected {
+.view-section tr.row_selected {
     display: block;
     background-color: #fff;
     -webkit-box-shadow: 0 0 3px 0 #aaa;

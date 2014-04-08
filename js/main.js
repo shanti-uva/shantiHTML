@@ -157,10 +157,12 @@ function decorateElementWithPopover(elem, node) {
     })).join("/");
     var caption = (node.data.caption ? ("<blockquote>" + node.data.caption + "</blockquote>") : "");
     var kmapid = "<span class='kmapid-display'>" + node.key + "</span>";
-    jQuery(elem).attr('data-content', path + caption + kmapid);
+    var lazycounts = "<span class='resource-counts'></span>";
+    jQuery(elem).attr('data-content', path + caption + kmapid + lazycounts);
     jQuery(elem).attr('title', node.title);
     jQuery(elem).popover();
     jQuery(elem).find(".fancytree-title");
+//    jQuery(elem).on('show.bs.popover', function(x) {this.find('.resource-counts').html("blargy:  "+ node.key) });
     return elem;
 }
 
@@ -175,9 +177,37 @@ function clearSearch() {
 
 }
 
-// *** SEARCH *** sliding panel
-jQuery(function ($) {
 
+var notify = {
+    warn: function (warnid, warnhtml) {
+        var wonk = function () {
+            if ($('div#' + warnid).length) {
+                $('div#' + warnid).fadeIn();
+            } else {
+                jQuery('<div id="' + warnid + '" class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + warnhtml + '</div>').fadeIn().appendTo('#notification-wrapper');
+            }
+        }
+
+        if ($('#notification-wrapper div#' + warnid).length) {
+            $('#notification-wrapper div#' + warnid).fadeOut('slow', wonk);
+        } else {
+            wonk();
+        }
+    },
+
+    clear: function (warnid) {
+
+        if (warnid) {
+            $('#notification-wrapper div#' + warnid).fadeOut('slow').remove()
+        } else {
+            $('#notification-wrapper div').fadeOut('slow').remove()
+        }
+    }
+}
+
+// *** SEARCH *** sliding panel
+
+jQuery(function ($) {
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
         "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
@@ -256,11 +286,14 @@ jQuery(function ($) {
           }
       );
       var txt = $("#searchform").val();
-
         if (!txt) {
             clearSearch();
+            notify.clear();
+        } else if (txt.length < 3) {
+            notify.clear();
+            notify.warn('warntooshort', 'You are pudding head! Search query is too short!');
         } else {
-
+            notify.clear();
             $('table.table-results').dataTable().fnDestroy();
             var tree = $('#tree').fancytree('getTree').applyFilter(txt);
             // $('span.fancytree-match').removeClass('fancytree-match');
@@ -269,6 +302,10 @@ jQuery(function ($) {
             var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
                 return n.match;
             });
+
+            if (list.length === 0) {
+                notify.warn("warnnoresults", "There are no matches.  Try to modify your search.");
+            }
             // clear the current list.
 
             $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
@@ -281,10 +318,10 @@ jQuery(function ($) {
 
                 table.append(
                     $('<tr>')
-                        .append(decorateElementWithPopover($('<td>'),y)
+                        .append(decorateElementWithPopover($('<td>'), y)
                             .append(
                                 $('<span class="title-field">').text(y.title)
-                                    .highlight(txt, { element: 'mark' }).trunk8({ tooltip:false })
+                                    .highlight(txt, { element: 'mark' }).trunk8({ tooltip: false })
                             )
                         )
 
@@ -297,16 +334,13 @@ jQuery(function ($) {
 //                )
             });
 
-            $("table.table-results tbody tr").click(function(event) {
+            $("table.table-results tbody tr").click(function (event) {
                 $('.row_selected').removeClass('row_selected');
                 $(event.target).closest('tr').addClass('row_selected');
             });
 
             $('table.table-results').dataTable();
 
-//            $('.tab-content').on('mouseenter', '.title-field',  function (e) {
-//                $('.title-field').not(this).popover('hide');
-//            });
         }
         return false;
   };
