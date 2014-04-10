@@ -333,6 +333,14 @@ object.flip_label{ display:none;}
     font-size: 13px;
 }
 
+.popover-content > blockquote {
+    border-left: none;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
 .popover-content .kmapid-display,.counts-display {
     display: block;
     float: right;
@@ -379,6 +387,9 @@ object.flip_label{ display:none;}
     letter-spacing: 0.06em;
 }
 
+.popover-content span.associated+span.associated:before {
+    content: '|';
+}
 
 .listview h3.popover-title {
     font-size: medium;
