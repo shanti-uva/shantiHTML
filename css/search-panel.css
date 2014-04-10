@@ -333,20 +333,50 @@ object.flip_label{ display:none;}
     font-size: 13px;
 }
 
-.popover-content .kmapid-display {
+.popover-content .kmapid-display,.counts-display {
     display: block;
     float: right;
     clear: both;
     font-size: smaller;
     white-space:nowrap;
-    margin-left: 50%;
+    margin-left: 0;
     margin-right: 0;
     color: #888;
 }
 
-.popover-content .kmapid-display:before {
+.popover-content .info-wrap {
+    min-width: 18em;
+}
+
+.popover-content .counts-display {
+    height: 2em;
+}
+
+.popover-title .kmapid-display {
+    display: block;
+    float: right;
+    clear: both;
+    font-size: x-small;
+    white-space:nowrap;
+    margin-left: 0;
+    margin-right: 0;
     color: #888;
-    content: "kmapid: "
+}
+
+
+.popover-title .kmapid-display:before {
+    color: #888;
+    /*content: "kmapid: "*/
+}
+
+.popover-content .badge {
+    line-height: 7px;
+    margin-left: 5px;
+    position: relative;
+    top: -3px;
+    font-size: 9px;
+    font-family: sans-serif;
+    letter-spacing: 0.06em;
 }
 
 

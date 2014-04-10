@@ -157,12 +157,38 @@ function decorateElementWithPopover(elem, node) {
     })).join("/");
     var caption = (node.data.caption ? ("<blockquote>" + node.data.caption + "</blockquote>") : "");
     var kmapid = "<span class='kmapid-display'>" + node.key + "</span>";
-    var lazycounts = "<span class='resource-counts'></span>";
-    jQuery(elem).attr('data-content', path + caption + kmapid + lazycounts);
-    jQuery(elem).attr('title', node.title);
+    var lazycounts = "<div class='counts-display'></div>";
+    jQuery(elem).attr('data-content', path + caption + "<div class='info-wrap'>" + lazycounts + "</div>");
+    jQuery(elem).attr('title', node.title + kmapid);
     jQuery(elem).popover();
-    jQuery(elem).find(".fancytree-title");
-//    jQuery(elem).on('show.bs.popover', function(x) {this.find('.resource-counts').html("blargy:  "+ node.key) });
+    jQuery(elem).on('shown.bs.popover', function(x) {
+
+        var counts = jQuery(elem.parentNode||elem).find('.info-wrap .counts-display');
+        // alert(node.key + counts);
+        $.ajax({
+            type: "GET",
+            url: "http://dev-subjects.kmaps.virginia.edu/features/" + node.key + ".xml",
+            dataType: "xml",
+            success: function (xml) {
+                // force the counts to be evaluated as numbers.
+                var related_count = Number($(xml).find('related_feature_count').text());
+                var description_count = Number($(xml).find('description_count').text());
+                var place_count = Number($(xml).find('place_count').text());
+                var picture_count = Number($(xml).find('picture_count').text());
+                var video_count = Number($(xml).find('video_count').text());
+                var document_count = Number($(xml).find('document_count').text());
+
+                // perhaps instead of vertical bars this should be done as spans then styled via css
+                if (related_count) counts.html("<i class='icon km-places'></i><span class='badge' + (related_count)?' alert-success':''>" + related_count + "</span>");
+                if (description_count) counts.append("|<i class='icon km-essays'></i><span class='badge' + (description_count)?' alert-success':'>" + description_count + "</span>");
+                if (place_count) counts.append("|<i class='icon km-texts'></i><span class='badge' + (place_count)?' alert-success':'>" + place_count + "</span>");
+                if (picture_count) counts.append("|<i class='icon km-photos'></i><span class='badge' + (picture_count)?' alert-success':'>" + picture_count + "</span>");
+                if (video_count) counts.append("|<i class='icon km-audiovideo'></i><span class='badge' + (video_count)?' alert-success':'>" + video_count + "</span>");
+                if (document_count) counts.append("|<i class='icon km-essays'></i><span class='badge' + (document_count)?' alert-success':'>" + document_count + "</span>");
+
+            }
+        });
+    });
     return elem;
 }
 
