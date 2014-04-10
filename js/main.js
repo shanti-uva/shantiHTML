@@ -234,6 +234,12 @@ var notify = {
 // *** SEARCH *** sliding panel
 
 jQuery(function ($) {
+    // set the popover defaults
+    $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
+    $.fn.popover.Constructor.DEFAULTS.placement = 'left';
+    $.fn.popover.Constructor.DEFAULTS.html = true;
+    $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
+
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
         "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
@@ -299,7 +305,9 @@ jQuery(function ($) {
       //lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
       focus: function(event, data){ data.node.scrollIntoView(true); },
         renderNode: function(event,data) {
-            decorateElementWithPopover(data.node.span, data.node);
+            if (!data.node.isStatusNode) {
+                decorateElementWithPopover(data.node.span, data.node);
+            }
         }
    });
 
@@ -376,13 +384,8 @@ jQuery(function ($) {
 //    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8({ tooltip:false }); });
     $('#tree').on('click', '.fancytree-statusnode-error', function () {
-
+        $('#tree').fancytree();
     });
-
-    $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
-    $.fn.popover.Constructor.DEFAULTS.placement = 'left';
-    $.fn.popover.Constructor.DEFAULTS.html = true;
-    $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
 
     // untruncate on mouseover
 //    $('.listview').on({
