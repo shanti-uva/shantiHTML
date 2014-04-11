@@ -1,6 +1,6 @@
 
 // *** NAVIGATION *** top drilldown menu
-jQuery(function ($) {	
+jQuery(function ($) {
 	$( '#menu' ).multilevelpushmenu({
 		menuWidth: 250,
 		menuHeight: '32em', // this height set by longest menu length, preferences
@@ -13,17 +13,17 @@ jQuery(function ($) {
 	// --- expand
 	$( '.menu-toggle' ).click(function(){
 		$('#menu').toggleClass('show-topmenu');
-		$('#menu').multilevelpushmenu( 'expand' );		
-	
+		$('#menu').multilevelpushmenu( 'expand' );
+
 		if($('#menu').hasClass('show-topmenu')) {
-			$(this).multilevelpushmenu( 'collapse' );					
+			$(this).multilevelpushmenu( 'collapse' );
 		}
-	});		
+	});
 	// --- align the text
 	$('#menu ul>li, #menu h2').css('text-align','left');
 	$('#menu ul>li.levelHolderClass.rtl').css('text-align','right');
 
-	
+
 	// --- close the menu on outside click except button
   $('.menu-toggle').click( function(event){
       event.stopPropagation();
@@ -60,31 +60,31 @@ jQuery(function ($) {
   // --- advanced search toggle icons, open/close, view change height
   $(".advanced-link").click(function () {
       $(this).toggleClass("show-advanced",'fast');
-      $(".advanced-view").slideToggle('fast'); 
+      $(".advanced-view").slideToggle('fast');
 			$(".advanced-view").toggleClass("show-options");
 			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing view-section height
   });
 });
 
 
-  
+
 // *** SEARCH *** adapt search panel height to viewport
-jQuery(function($) { 
-  var winHeight = $(window).height(); 
+jQuery(function($) {
+  var winHeight = $(window).height();
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus top and bottom space outside search panel
   var viewHeight = winHeight -225; // ----- height for view-section with search options - CLOSED
-  var shortHeight = winHeight -410;  // ----- height for view-section with search options - OPEN 
-    	
+  var shortHeight = winHeight -410;  // ----- height for view-section with search options - OPEN
+
 	// set initial div height
-	$("div.text").css({ "height": panelHeight }); 
+	$("div.text").css({ "height": panelHeight });
 	$(".view-wrap").css({ "height": viewHeight });
-	$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight }); 				
+	$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
 	// make sure div stays full width/height on resize
 	$(window).resize(function(){
 		$("div.text").css({ "height": panelHeight });
 		$(".view-wrap").css({ "height": viewHeight });
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
-	});	
+	});
 	// toggle heights with search options
 	$(".advanced-link").click(function () {
     var winHeight = $(window).height();
@@ -106,22 +106,22 @@ jQuery(function($) {
 
 	function checkWidth() {
 	var panelWidth = $(".text").width();
-		
+
 		if( panelWidth > 275 ) {
-				$(".extruder-content").css("width","100%");		
-			} else 		
-		if( panelWidth <= 275 ) {		
+				$(".extruder-content").css("width","100%");
+			} else
+		if( panelWidth <= 275 ) {
 				$(".extruder-content").css("width","100% !important");
-			}	
+			}
 	}
-	
+
   // Execute on load
-  checkWidth();  
+  checkWidth();
   // Bind event listener
-  $(".extruder-content").resize(checkWidth);  
-    
+  $(".extruder-content").resize(checkWidth);
+
   // $(window).on("resize",function(){ location.reload(); } ); // forces height refersh on browser-size change
-	
+
 	// $(".ui-resizable-w").mousedown(function() {
 	//    	$(window).mousemove(function() {
 	//        $(window).on("resize",function(){ location.reload(); } );
@@ -134,7 +134,7 @@ jQuery(function($) {
 					$(".extruder .text").css("width","100%");
 				});
 	}
-		  
+
 });
 
 
@@ -150,8 +150,8 @@ jQuery(function($) {
 	// --- set class on dropdown menu for icon
 	$(".extruder.right .flap").hover( function() {
 	    $(this).addClass('on-hover');
-	    },                 
-	      function () {              
+	    },
+	      function () {
 	    $(this).removeClass('on-hover');
 	    }
 	);
@@ -170,12 +170,19 @@ function decorateElementWithPopover(elem, node) {
     jQuery(elem).popover();
     jQuery(elem).on('shown.bs.popover', function(x) {
 
-        var counts = jQuery(elem.parentNode||elem).find('.info-wrap .counts-display');
+        var counts = jQuery(elem.parentNode||elem[0].parentNode).find('.info-wrap .counts-display');
         // alert(node.key + counts);
         $.ajax({
             type: "GET",
             url: "http://dev-subjects.kmaps.virginia.edu/features/" + node.key + ".xml",
             dataType: "xml",
+            timeout: 5000,
+            beforeSend: function(){
+                counts.html("<span class='assoc-resources-loading'>loading...</span>");
+            },
+            error: function(e) {
+                counts.html("<i class='glyphicon glyphicon-warning-sign' title='"+ e.statusText);
+            },
             success: function (xml) {
                 // force the counts to be evaluated as numbers.
                 var related_count = Number($(xml).find('related_feature_count').text());
@@ -197,19 +204,19 @@ function decorateElementWithPopover(elem, node) {
         });
     });
     return elem;
-}
+};
 
-function clearSearch() {
-    $('#tree').fancytree('getTree').clearFilter();
-    $('#tree').fancytree("getRootNode").visit(function (node) {
-        node.setExpanded(false);
-    });
-    $('table.table-results').dataTable().fnDestroy();
-    $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
-    $('table.table-results').dataTable();
-
-}
-
+var searchUtil = {
+    clearSearch: function() {
+        $('#tree').fancytree('getTree').clearFilter();
+        $('#tree').fancytree("getRootNode").visit(function (node) {
+            node.setExpanded(false);
+        });
+        $('table.table-results').dataTable().fnDestroy();
+        $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
+        $('table.table-results').dataTable();
+    }
+};
 
 var notify = {
     warn: function (warnid, warnhtml) {
@@ -238,13 +245,13 @@ var notify = {
     }
 }
 
-
-
-
-
 // *** SEARCH *** sliding panel
 
 jQuery(function ($) {
+
+    // search min length
+    const SEARCH_MIN_LENGTH = 3;
+
     // set the popover defaults
     $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';
     $.fn.popover.Constructor.DEFAULTS.placement = 'left';
@@ -330,17 +337,14 @@ jQuery(function ($) {
               $(this).text($(this).text());
           }
       );
-      
 
-
-      
       var txt = $("#searchform").val();
         if (!txt) {
-            clearSearch();
+            searchUtil.clearSearch();
             notify.clear();
-        } else if (txt.length < 3) {
+        } else if (txt.length < SEARCH_MIN_LENGTH) {
             notify.clear();
-            notify.warn('warntooshort', 'You are pudding head! <br>Search query is too short!');
+            notify.warn('warntooshort', 'Search string must be ' + SEARCH_MIN_LENGTH + ' characters or longer.');
         } else {
             notify.clear();
             $('table.table-results').dataTable().fnDestroy();
@@ -394,6 +398,7 @@ jQuery(function ($) {
         return false;
   };
   $("#searchbutton").click(handleSearch);
+  $('#searchform').attr('autocomplete','off'); // turn off browser autocomplete
   $("form.form").submit(handleSearch);
 
 //    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
@@ -415,29 +420,31 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** clear search input & support for placeholder on older
-jQuery(function($) {			
-	/*--- placeholder ---*/		
-	$('#searchform').data('holder',$('.form-control').attr('placeholder'));		
+jQuery(function($) {
+
+	/*--- placeholder ---*/
+	$('#searchform').data('holder',$('.form-control').attr('placeholder'));
 	$('input.form-control').focusin(function(){
 	    $('input.form-control').attr('placeholder','');
 	    // $('.searchreset').show('fast');
 	});
 	$('input.form-control').focusout(function(){
-	    $('#searchform').attr('placeholder',$('.form-control').data('holder'));	
-	    $('.searchreset').hide();        
-	});	
+	    $('#searchform').attr('placeholder',$('.form-control').data('holder'));
+	    $('.searchreset').hide();
+	});
 	$('.searchreset').click(function(){
 		$('input.form-control').attr('placeholder','');
 		$('#searchform').attr('placeholder',$('.form-control').data('holder'));
 		$('.searchreset').hide();
-	});	
+        searchUtil.clearSearch();
+	});
 });
 
 jQuery(function($) {
 	$('input.form-control').focusout(function() {
 		var str = 'Enter Search...';
 		var txt = $('input.form-control').val();
-		
+
 		if (str.indexOf(txt) > -1) {
 			$('.searchreset').hide();
 		return true;
@@ -468,9 +475,9 @@ jQuery(function ($) {
           insert: "<div class='icheck_line-icon'></div>" + label_text
       });
   });
-  
+
   $(".selectpicker").selectpicker();
-  
+
 });
 
 
@@ -487,7 +494,7 @@ jQuery(function ($) {
 
 
 // *** CONTENT *** Back to Top link
-jQuery(function ($) { 
+jQuery(function ($) {
 	var offset = 220;
   var duration = 500;
   jQuery(window).scroll(function() {
@@ -497,7 +504,7 @@ jQuery(function ($) {
           jQuery('.back-to-top').fadeOut(duration);
       }
   });
-  
+
   jQuery('.back-to-top').click(function(event) {
       event.preventDefault();
       jQuery('html, body').animate({scrollTop: 0}, duration);
@@ -509,7 +516,7 @@ jQuery(function ($) {
 
 
 /*** new twist on things ***
-jQuery(function ($) {	
+jQuery(function ($) {
 	$("body").css({
 	  "background": "linear-gradient(#ccc, #666)",
 	  "box-shadow": "inset 0 0 5px black",
