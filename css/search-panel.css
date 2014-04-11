@@ -45,7 +45,7 @@ object.flip_label{ display:none;}
 /*----------------------------------------------*/
 .input-section{ padding:0;border: 1px solid #eee;display:block;width:100%;}
 .input-section .input-group input.form-control:first-child{ -webkit-border-bottom-right-radius: 25px;-webkit-border-top-right-radius: 25px;border-bottom-right-radius: 25px;border-top-right-radius: 25px;}
-.input-section .input-group{ height:45px; max-height:45px; padding: 0 10px; display:block; width:100%; background:#f8f8f8;}
+.input-section .input-group{ height:45px; padding: 0 10px; display:block; width:100%; background:#f8f8f8;}
 .input-section .input-group input.form-control{
 	color:#777;
 	border: 1px solid #ddd;
@@ -121,7 +121,7 @@ object.flip_label{ display:none;}
 .input-section .input-group .searchreset i{ border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:5px;font-family:'kmaps-icons'; }
 .input-section .input-group .searchreset i:before{ content: "\e612";background:transparent; color:#ccc;}
 
-.input-section .advanced-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:inline;float:right; font-weight:600; height:13px; max-height:13px; margin:6px 20px 4px 0;padding:0 0 0 20px;	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+.input-section .advanced-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:inline;float:right; font-weight:600; height:13px; max-height:13px; margin:3px 20px 4px 0;padding:0 0 0 20px;	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .input-section .advanced-link:hover{ text-decoration:none !important; color:#555;}
 .input-section .advanced-link i.icon:before{ font-family:'kmaps-icons'; content: '\e60d'; font-size:0.68em; margin-right:4px;}
 .input-section .advanced-link.show-advanced i.icon:before{content:'\e613';}
