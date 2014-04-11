@@ -10,12 +10,15 @@ jQuery(function ($) {
     groupIcon: 'fa fa-angle-right',
     collapsed: true
 	});
+	
+	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li:last').addClass('highlight');
+	
 	// --- expand
 	$( '.menu-toggle' ).click(function(){
-		$('#menu').toggleClass('show-topmenu');
+		$('.menu-toggle').toggleClass('show-topmenu');
 		$('#menu').multilevelpushmenu( 'expand' );		
 	
-		if($('#menu').hasClass('show-topmenu')) {
+		if($('.menu-toggle').hasClass('show-topmenu')) {
 			$(this).multilevelpushmenu( 'collapse' );					
 		}
 	});		
@@ -30,13 +33,23 @@ jQuery(function ($) {
       $('#menu').toggle();
   });
   $(document).click( function(){
-      $('#menu').hide();
+  		$('#menu').hide();
+  		$('.menu-toggle').removeClass('show-topmenu');
+      $('#menu').multilevelpushmenu( 'collapse' );
   });
-
 });
 
 
+//jQuery(function ($) {
 
+	//var menulist = $('#menu ul').css('display') == 'block'
+	
+	//$(menulist).filter(function() {
+	  // return $(menulist).css('display') == 'block';
+	//})
+	//.css('box-shadow','none');
+
+//});
 
 
 // *** SEARCH *** initiate sliding container, toggle collections & search options
@@ -72,8 +85,8 @@ jQuery(function ($) {
 jQuery(function($) { 
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus top and bottom space outside search panel
-  var viewHeight = winHeight -225; // ----- height for view-section with search options - CLOSED
-  var shortHeight = winHeight -410;  // ----- height for view-section with search options - OPEN 
+  var viewHeight = winHeight -219; // ----- height for view-section & search options - CLOSED
+  var shortHeight = winHeight -390;  // ----- height for view-section & search options - OPEN 
     	
 	// set initial div height
 	$("div.text").css({ "height": panelHeight }); 

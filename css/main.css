@@ -1,7 +1,7 @@
 html{ -webkit-font-smoothing: antialiased; overflow-y:scroll;}
 body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 *, *:before, *:after { 
-   -webkit-box-sizing: border-box; box-sizing: border-box;
+   -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
 }
 *:focus{
   outline: 0 !important;
@@ -41,7 +41,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 .navbar-default h1 a.navbar-brand span{ position:relative; top:7px; display:inline-block;}
 .navbar-default h1 a.navbar-brand img { height:auto; width:28%; margin:7px 15px 0 0; }
 .navbar-collapse{ padding:0;}
-.navbar-collapse ul>li{ border-left:1px solid #e0e0e0;}
+.navbar-collapse ul>li{ border-left:1px solid #ddd;}
 .navbar-collapse ul>li:first-child{ /*border-left:none;*/}
 .navbar-default .navbar-nav>li{ /* line-height:1.25em; height:3.5em; height:50px; */}
 .navbar-default .navbar-nav>li>a{ 
@@ -49,14 +49,13 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	display:inline-block; 
 	font-weight:600; 
 	font-size:0.88em; 
-	line-height:1.25em; 
-	height:3.88em; 
+	line-height:12px; 
 	height:50px;
 	margin:0;
 	font-weight:600;
 	background:#fff;
-	
-	transition: background-color 0.4s ease 0s;
+	-webkit-transition: background-color 0.2s ease 0s;
+	transition: background-color 0.2s ease 0s;
 	text-transform:uppercase;
 }
 .navbar-default .navbar-nav>.open>a,
@@ -68,6 +67,11 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	left:6px;
 	top:2px;
 }
+
+.navbar-default .navbar-nav>li.highlight>a{ background:#f0f0f0;}
+.navbar-default .navbar-nav>li.highlight.show-topmenu a{ background:#555;color:#fff;}
+.navbar-default .navbar-nav>li.highlight.show-topmenu a i:before{ color:#fff; font-weight:normal !important;}
+
 .navbar-default .navbar-nav>li.lang>a{ padding-right:10px;}
 .navbar-default .navbar-nav li.explore>a{ padding-right:20px;}
 .navbar-default .navbar-nav li>a>i.km-arrowselect{ font-size:17px; position:relative;left:2px;top:4px;}
@@ -188,8 +192,8 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
   right: 15px;
   cursor:pointer;
   display:inline-block;
-	transition-property: all;
-	transition-duration: 400ms;
+  -webkit-transition: color 400ms;
+	transition: color 400ms;
 }
 .collections .closecollection:hover {
 	color: #eee; 
@@ -211,13 +215,13 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
   padding-right:0;
   margin-left: 0;
   margin-right: 0;
-  -moz-box-shadow: inset 0px 15px 21px -10px hsla(0, 0%, 0.0000%, 0.1110);
+  -webkit-box-shadow: inset 0px 15px 21px -10px hsla(0, 0%, 0.0000%, 0.1110);
 	box-shadow: inset 0px 15px 21px -10px hsla(0, 0%, 0.0000%, 0.1110);
 }
 .titlearea>div{
   padding-top:8px;
   padding-bottom:10px;
-  -moz-box-shadow: inset 0px -10px 15px -7px hsla(0, 0%, 0.0000%, 0.1110);
+  -webkit-box-shadow: inset 0px -10px 15px -7px hsla(0, 0%, 0.0000%, 0.1110);
 	box-shadow: inset 0px -10px 15px -7px hsla(0, 0%, 0.0000%, 0.1110);
 }
 .titlearea .page-title {  
@@ -358,8 +362,8 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	border: none;
 	border-bottom:1px solid #ddd;
 	background:#fff;
-	transition-property: all;
-	transition-duration: 200ms;
+	-webkit-transition: background-color 200ms;
+	transition: background-color 200ms;
 }
 .content-sidebar ul.nav-pills li a,
 .content-sidebar ul.nav-pills li a:hover {
@@ -422,7 +426,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 .panel-group .panel+.panel{ margin-top:0;}
 .panel-group .panel{ 
   border:none;
-	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
   box-shadow:none;
   border-radius:0; 
   width:100%; 
@@ -461,7 +465,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
   position: relative;
   top: 19px;
   left: 0;
-  -moz-box-shadow: 0 0 4px 3px #ddd;
+  -webkit-box-shadow: 0 0 4px 3px #ddd;
   box-shadow: 0 0 4px 3px #ddd;
   border-collapse:separate;
 }
@@ -541,20 +545,17 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 
 
 
-
-
-
 /*--------------------*/
 /*----- top-menu -----*/
 /*--------------------*/
 /*--- create the menu toggle button ---*/
-.menu-toggle{ background:#fff; text-align:center;}
-.menu-toggle a{ display:block; width:55px; height:50px; vertical-align:middle;}
+.menu-toggle{ text-align:center;}
+.menu-toggle a{ display:block;width:50px;height:50px; vertical-align:middle; padding:0;margin:0;zoom:1;}
 .menu-toggle a:hover{ }
-.menu-toggle i{ line-height:1.5em;height:50px; vertical-align:middle;}
-.menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2em; line-height:0.88em;height:50px;}
-.menu-toggle a:hover i:before{ color:#808080;}
-.menu-toggle a:active i:before{ color:#404040;}
+.menu-toggle i{ display:block; font-size:1em;padding:0;margin:0; zoom:1;}
+.menu-toggle i:before{ content: "\e605"; color:#707070; font-size:2em; line-height:0.93em;height:50px;}
+.menu-toggle a:hover i:before{ color:#555;}
+.menu-toggle a:active i:before{ color:#000;}
 
 /*---- top-menu wrapper ----*/
 #menu{ position:absolute;z-index:200;top:50px;right:0px;border:none;padding:0;overflow:visible;}
@@ -578,7 +579,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	z-index:200;
 	vertical-align:middle; 
 	background: linear-gradient(to bottom, #eee 0px, #fafafa 8px, #fff 25px);
-	-moz-box-shadow:-10px 0 18px -10px srgb(0,0,0,1);
+	-webkit-box-shadow:-10px 0 18px -10px srgb(0,0,0,1);
 	box-shadow:-10px 0 18px -10px srgb(0,0,0,1);
 	border-collapse:separate; /* for ie with box-shadow */
 	overflow:visible;
@@ -597,6 +598,8 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	margin:0; 
 	vertical-align:middle;
 }
+#menu a.link-blocker{ position:absolute; top:0px; right:0; z-index:99999; width:100%;height:54px;} /* prevent clicking the search button through the h3 */
+
 #menu .multilevelpushmenu_wrapper ul{ background:#fff;}
 
 #menu .multilevelpushmenu_wrapper,
@@ -605,7 +608,13 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 
 #menu .multilevelpushmenu_wrapper ul{
-	box-shadow:-3px 3px 18px -10px hsla(0, 0%, 0.0000%, 0.5); border-collapse:separate; /* needed by ie9+ with box-shadow */
+	-webkit-box-shadow:-3px 3px 18px -10px hsla(0, 0%, 0.0000%, 0.5);
+	box-shadow:-3px 3px 18px -10px hsla(0, 0%, 0.0000%, 0.5); 
+	border-collapse:separate; /* needed by ie9+ with box-shadow */
+}
+#menu .multilevelpushmenu_wrapper ul.hideshadow{
+	-webkit-box-shadow:none;
+	box-shadow:none;
 }
 
 .multilevelpushmenu_wrapper li { 
@@ -643,7 +652,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 
 .multilevelpushmenu_wrapper li i {
 	font-size:2em;
-	line-height:1.25em; 
+	line-height:1.18em; 
 	height:4em;
 	margin-right:15px;
 }
@@ -674,7 +683,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 .multilevelpushmenu_wrapper li.drop-hdr em{ display:block; font-style:normal; padding:7px 0 2px 12px;}
 .multilevelpushmenu_wrapper li.drop-hdr:hover{ background:#fff; color:#555;}
-.multilevelpushmenu_wrapper li.drop-hdr:first-child{ box-shadow:none; border-top:none;}
+.multilevelpushmenu_wrapper li.drop-hdr:first-child{ -webkit-box-shadow:none;box-shadow:none; border-top:none;}
 
 .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass{ position:absolute; top:0; right:0; z-index:202;}
 .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a{ 
@@ -692,10 +701,10 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a:hover{ color:#555; }
 .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass a:active{ color:#dc3c47; }
 
-.multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass i{ font-size:1.25em; line-height:1.83em; height:3em; font-weight:bold; margin-right:5px;}
+.multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass i{ font-size:1.25em; line-height:1.93em; height:3em; font-weight:bold; margin-right:5px;}
 .multilevelpushmenu_wrapper .levelHolderClass.rtl .backItemClass i:before{ }
 .multilevelpushmenu_wrapper .backItemClass, 
-.multilevelpushmenu_wrapper .levelHolderClass.rtl{ font-family:"Museo Sans",sans-serif; font-weight:500; background:transparent !important; border:none !important; box-shadow:none;}
+.multilevelpushmenu_wrapper .levelHolderClass.rtl{ font-family:"Museo Sans",sans-serif; font-weight:500; background:transparent !important; border:none !important; -webkit-box-shadow:none; box-shadow:none;}
 
 /*----- END top-menu override styles -----*/
 
