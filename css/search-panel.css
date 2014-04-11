@@ -276,6 +276,12 @@ object.flip_label{ display:none;}
 .view-section table.table-results tbody>tr>td blockquote,
 .view-section table.table-results tbody>tr>td quote{ font-size: 0.5em !important;}
 
+th.sorting_asc,
+table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-width:0; }
+
+
+
+
 /* trunk8 */
 .listview .col-xs-6 {
     width: 85%;

@@ -3,7 +3,7 @@
 jQuery(function ($) {	
 	$( '#menu' ).multilevelpushmenu({
 		menuWidth: 250,
-		menuHeight: '30em',
+		menuHeight: '32em', // this height set by longest menu length, preferences
 		mode: 'cover',
 		direction: 'rtl',
     backItemIcon: 'fa fa-angle-left',

@@ -571,8 +571,8 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	text-indent:17px;
 	padding:0; 
 	margin:0; 
-	font-size:1.5em; 
-	line-height:2.88em; 
+	font-size:1.56em; 
+	line-height:2.68em; 
 	height:2.63em;
 	position:relative;
 	z-index:200;
@@ -584,15 +584,14 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	overflow:visible;
 }
 #menu h2 a{ 
-	display:block; 
 	cursor:default; 
 	background:transparent; 
 	color:#444;
 	display:block;
-	font-size:1.5em; 
+	font-size:1.56em; 
 	font-weight:normal; 
 	font-style:italic;
-	line-height:2.88em; 
+	line-height:2.75em; 
 	height:2.63em; 
 	padding:0; 
 	margin:0; 
@@ -624,19 +623,19 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 
 .multilevelpushmenu_wrapper li a{ 
-	color:#777;
+	color:#505050;
 	font-size:.93em;
 	line-height:2.44em; 
 	height:4em;
 	font-weight:600;
-	padding: 1em .25em .1em 1.5em;
+	padding: 1em .25em .1em 1.32em;
 	text-transform:uppercase;
 	vertical-align:middle;
 	border-top: 1px solid #ddd;
 	display:block;
 }
 .multilevelpushmenu_wrapper li a:hover{ 
-	color:#707070;
+	color:#444;
 	/* background:#f00; */
 }
 .multilevelpushmenu_wrapper li:first-child a{ border-top:none;}
@@ -650,7 +649,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 .multilevelpushmenu_wrapper li.form-group {
 	font-size:0.88em;
-	line-height:2.12em; 
+	line-height:2em; 
 	height:2em;
 	vertical-align:middle;
 	padding: 1px 5px 1px 25px;
@@ -673,7 +672,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	line-height:1em; 
 	height:1.88em;
 }
-.multilevelpushmenu_wrapper li.drop-hdr span{ display:block; padding:7px 0 2px 12px;}
+.multilevelpushmenu_wrapper li.drop-hdr em{ display:block; font-style:normal; padding:7px 0 2px 12px;}
 .multilevelpushmenu_wrapper li.drop-hdr:hover{ background:#fff; color:#555;}
 .multilevelpushmenu_wrapper li.drop-hdr:first-child{ box-shadow:none; border-top:none;}
 
