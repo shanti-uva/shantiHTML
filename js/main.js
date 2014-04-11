@@ -1,4 +1,44 @@
 
+// *** NAVIGATION *** top drilldown menu
+jQuery(function ($) {	
+	$( '#menu' ).multilevelpushmenu({
+		menuWidth: 250,
+		menuHeight: '30em',
+		mode: 'cover',
+		direction: 'rtl',
+    backItemIcon: 'fa fa-angle-left',
+    groupIcon: 'fa fa-angle-right',
+    collapsed: true
+	});
+	// --- expand
+	$( '.menu-toggle' ).click(function(){
+		$('#menu').toggleClass('show-topmenu');
+		$('#menu').multilevelpushmenu( 'expand' );		
+	
+		if($('#menu').hasClass('show-topmenu')) {
+			$(this).multilevelpushmenu( 'collapse' );					
+		}
+	});		
+	// --- align the text
+	$('#menu ul>li, #menu h2').css('text-align','left');
+	$('#menu ul>li.levelHolderClass.rtl').css('text-align','right');
+
+	
+	// --- close the menu on outside click except button
+  $('.menu-toggle').click( function(event){
+      event.stopPropagation();
+      $('#menu').toggle();
+  });
+  $(document).click( function(){
+      $('#menu').hide();
+  });
+
+});
+
+
+
+
+
 // *** SEARCH *** initiate sliding container, toggle collections & search options
 jQuery(function ($) {
   $("#kmaps-search").buildMbExtruder({
@@ -27,46 +67,13 @@ jQuery(function ($) {
 });
 
 
-
-// *** NAVIGATION *** top drilldown menu
-jQuery(function ($) {	
-	$( '#menu' ).multilevelpushmenu({
-		menuWidth: 250,
-		menuHeight: '30em',
-		mode: 'cover',
-		direction: 'rtl',
-    backItemIcon: 'fa fa-angle-left',
-    groupIcon: 'fa fa-angle-right',
-    collapsed: true
-	});
-	// --- expand
-	$( '.menu-toggle' ).click(function(){
-		$('#menu').toggleClass('show-topmenu');
-		$('#menu').css('display','block');
-		$('#menu').multilevelpushmenu( 'expand' );		
-	});	
-	// --- collapse	
-	$( '.menu-toggle' ).click(function(){	
-		if($('#menu').hasClass('show-topmenu')) {
-			
-			$( '#menu' ).multilevelpushmenu( 'collapse' );
-			$( '#menu' ).css('display','none');
-					
-		}
-	});		
-	// --- align the text
-	$('#menu ul>li, #menu h2').css('text-align','left');
-	$('#menu ul>li.levelHolderClass.rtl').css('text-align','right');
-});
-
-
   
 // *** SEARCH *** adapt search panel height to viewport
 jQuery(function($) { 
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus top and bottom space outside search panel
-  var viewHeight = winHeight -222; // ----- height for view-section with search options - CLOSED
-  var shortHeight = winHeight -406;  // ----- height for view-section with search options - OPEN 
+  var viewHeight = winHeight -225; // ----- height for view-section with search options - CLOSED
+  var shortHeight = winHeight -410;  // ----- height for view-section with search options - OPEN 
     	
 	// set initial div height
 	$("div.text").css({ "height": panelHeight }); 
@@ -85,8 +92,6 @@ jQuery(function($) {
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
 });
-
-
 
 
 
@@ -131,6 +136,8 @@ jQuery(function($) {
 	}
 		  
 });
+
+
 
 
 // *** SEARCH *** toggle button
@@ -231,6 +238,10 @@ var notify = {
     }
 }
 
+
+
+
+
 // *** SEARCH *** sliding panel
 
 jQuery(function ($) {
@@ -302,7 +313,7 @@ jQuery(function ($) {
           }
       },
 //      source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
-      //lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
+      // lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
       focus: function(event, data){ data.node.scrollIntoView(true); },
         renderNode: function(event,data) {
             if (!data.node.isStatusNode) {
@@ -319,13 +330,17 @@ jQuery(function ($) {
               $(this).text($(this).text());
           }
       );
+      
+
+
+      
       var txt = $("#searchform").val();
         if (!txt) {
             clearSearch();
             notify.clear();
         } else if (txt.length < 3) {
             notify.clear();
-            notify.warn('warntooshort', 'You are pudding head! Search query is too short!');
+            notify.warn('warntooshort', 'You are pudding head! <br>Search query is too short!');
         } else {
             notify.clear();
             $('table.table-results').dataTable().fnDestroy();
@@ -338,7 +353,7 @@ jQuery(function ($) {
             });
 
             if (list.length === 0) {
-                notify.warn("warnnoresults", "There are no matches.  Try to modify your search.");
+                notify.warn("warnnoresults", "There are no matches.  <br>Try to modify your search.");
             }
             // clear the current list.
 
@@ -395,7 +410,51 @@ jQuery(function ($) {
 
 });
 
-// *** SEARCH *** call function iCheck for form graphics
+
+
+
+
+// *** SEARCH *** clear search input & support for placeholder on older
+jQuery(function($) {			
+	/*--- placeholder ---*/		
+	$('#searchform').data('holder',$('.form-control').attr('placeholder'));		
+	$('input.form-control').focusin(function(){
+	    $('input.form-control').attr('placeholder','');
+	    // $('.searchreset').show('fast');
+	});
+	$('input.form-control').focusout(function(){
+	    $('#searchform').attr('placeholder',$('.form-control').data('holder'));	
+	    $('.searchreset').hide();        
+	});	
+	$('.searchreset').click(function(){
+		$('input.form-control').attr('placeholder','');
+		$('#searchform').attr('placeholder',$('.form-control').data('holder'));
+		$('.searchreset').hide();
+	});	
+});
+
+jQuery(function($) {
+	$('input.form-control').focusout(function() {
+		var str = 'Enter Search...';
+		var txt = $('input.form-control').val();
+		
+		if (str.indexOf(txt) > -1) {
+			$('.searchreset').hide();
+		return true;
+		} else {
+			$('.searchreset').show('fast');
+		return false;
+		}
+	});
+});
+
+
+
+
+
+
+
+// *** SEARCH *** Select-Form & iCheck form graphics
 jQuery(function ($) {
   $("input[type='checkbox'], input[type='radio']").each(function () {
       var self = $(this),
@@ -409,35 +468,52 @@ jQuery(function ($) {
           insert: "<div class='icheck_line-icon'></div>" + label_text
       });
   });
+  
+  $(".selectpicker").selectpicker();
+  
 });
 
-
-
-
-// *** SEARCH *** remove watermark on focus
-jQuery(function($) {		
-	var searchBox = $("input#searchform");
-	var searchBoxDefault = "Enter Search...";
-	
-	searchBox.focus(function(){
-		if($(this).attr("placeholder") == searchBoxDefault) $(this).attr("placeholder", "");
-	});
-	searchBox.blur(function(){
-		if($(this).attr("placeholder") == "") $(this).attr("placeholder", searchBoxDefault);
-	});
-
-    searchBox.attr("autocomplete","off");
-});
 
 
 
 
 // *** SEARCH *** prevent flash onload
 jQuery(function ($) {
-	$(".selectpicker").selectpicker();
 	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
 });
 
 
 
 
+
+// *** CONTENT *** Back to Top link
+jQuery(function ($) { 
+	var offset = 220;
+  var duration = 500;
+  jQuery(window).scroll(function() {
+      if (jQuery(this).scrollTop() > offset) {
+          jQuery('.back-to-top').fadeIn(duration);
+      } else {
+          jQuery('.back-to-top').fadeOut(duration);
+      }
+  });
+  
+  jQuery('.back-to-top').click(function(event) {
+      event.preventDefault();
+      jQuery('html, body').animate({scrollTop: 0}, duration);
+      return false;
+  })
+});
+
+
+
+
+/*** new twist on things ***
+jQuery(function ($) {	
+	$("body").css({
+	  "background": "linear-gradient(#ccc, #666)",
+	  "box-shadow": "inset 0 0 5px black",
+	  "transform" : "rotate(5deg)"
+	});
+});
+***/
