@@ -12,6 +12,7 @@ jQuery(function ($) {
 	});
 	
 	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li:last').addClass('highlight');
+  // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));	
 	
 	// --- expand
 	$( '.menu-toggle' ).click(function(){
@@ -455,7 +456,7 @@ jQuery(function($) {
 			$('.searchreset').hide();
 		return true;
 		} else {
-			$('.searchreset').show('fast');
+			$('.searchreset').show(100);
 		return false;
 		}
 	});

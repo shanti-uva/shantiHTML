@@ -23,7 +23,7 @@
 #kmaps-search div.text.ui-resizable,
 #kmaps-search.isOpened div.text.ui-resizable{ position:static;} /*--- keep the right edge pinned */
 
-#kmaps-search .ui-resizable-handle.ui-resizable-w{ opacity:0.4; position:absolute; left:-28px; top: 68px; /* top:85%; */ z-index:900; width:28px; height:25px; background: #fff url(../fonts/kmaps-icons/bin/PNG/expand.png) no-repeat 6px 3px; background-size:16px 16px;  overflow:hidden; border:1px solid #999; border-top-left-radius:6px; border-bottom-left-radius:6px;}
+#kmaps-search .ui-resizable-handle.ui-resizable-w{ cursor:ew-resize; opacity:0.4; position:absolute; left:-28px; top: 68px; /* top:85%; */ z-index:900; width:28px; height:25px; background: #fff url(../fonts/kmaps-icons/bin/PNG/expand.png) no-repeat 6px 3px; background-size:16px 16px;  overflow:hidden; border:1px solid #999; border-top-left-radius:6px; border-bottom-left-radius:6px;}
 #kmaps-search .ui-resizable-handle.ui-resizable-w:hover{ opacity:0.1; border-color:#ddd;}
 #kmaps-search .ui-resizable-handle.ui-resizable-w:active{ opacity:0.3; border-color:#888;}
 
@@ -48,7 +48,7 @@ object.flip_label{ display:none;}
 .input-section .input-group{ height:45px; padding: 0 10px; display:block; width:100%; background:#f8f8f8;}
 .input-section .input-group input.form-control{
 	color:#777;
-	border: 1px solid #ddd;
+	border: 1px solid #ccc;
 	border-radius: 25px;
 	font-size:1.06em;
 	height:35px; /* coordinate with button height below */
@@ -70,11 +70,11 @@ object.flip_label{ display:none;}
 	transition-duration: 400ms;
 	zoom:1;
 }
-.input-section .input-group input.form-control:hover{ border: 1px solid #ccc; color:#777 !important;}
+.input-section .input-group input.form-control:hover{ border: 1px solid #ccc; color:#777;}
 .input-section .input-group input.form-control:focus{ border: 1px solid #9097d3; -webkit-box-shadow: 0 0 4px #949bd8;box-shadow: 0 0 4px #949bd8;}
 
 /*--- button group ---*/
-.input-section .input-group .input-group-btn{ width:45px; position:absolute; top:11px; right:11px; background:transparent; padding:0; margin:0;}
+.input-section .input-group .input-group-btn{ width:45px; /* set button width and position */ position:absolute; top:11px; right:11px; background:transparent; padding:0; margin:0;}
 
 /*--- button ---*/
 .input-section .input-group .btn.btn-default{ 
@@ -89,20 +89,16 @@ object.flip_label{ display:none;}
 	border-top-left-radius: 0; 
 	-webkit-box-shadow:none;
 	box-shadow:none;
-	-webkit-transition-property: all;
-	-webkit-transition-duration: 200ms;
-	transition-property: all;
-	transition-duration: 200ms;
 	background-clip: padding-box; /* Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners */
 }
-.input-section .input-group .btn.btn-default:hover{ color:#dc3c47; border-color:#f0f0f0;}
-.btn-default:active, .btn-default.active{
-	background: #eee;  
-	background-image:none;
-	background: linear-gradient(to bottom, #ddd 0%, #f0f0f0 50%,  #f0f0f0 60%,  #ddd 100%);
+.input-section .input-group .btn.btn-default:hover{ color:#dc3c47;}
+.input-section .input-group .btn-default:active, .input-section .input-group .btn-default.active{
+	background: transparent; border-color:#fff; /* active state for button */
 }
 .input-section .input-group .btn i.icon{ font-family: 'Glyphicons Halflings';}
 .input-section .input-group .btn i:before{ content: "\e080"; position:relative; right:2px; top:1px;}
+.input-section .input-group .btn.btn-default:active i.icon, 
+.input-section .input-group .btn.btn-default.active i.icon{ color:#777;}
 
 /*--- clear all button ---*/
 .input-section .input-group .searchreset{ 
@@ -118,7 +114,7 @@ object.flip_label{ display:none;}
 	border:none;
 	/* border:1px solid #aaa; */
 }
-.input-section .input-group .searchreset i{ border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:5px;font-family:'kmaps-icons'; }
+.input-section .input-group .searchreset i{ border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:1px;font-family:'kmaps-icons'; }
 .input-section .input-group .searchreset i:before{ content: "\e612";background:transparent; color:#ccc;}
 
 .input-section .advanced-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:inline;float:right; font-weight:600; height:13px; max-height:13px; margin:3px 20px 4px 0;padding:0 0 0 20px;	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
@@ -164,7 +160,16 @@ object.flip_label{ display:none;}
 	color:#666;
 	background: transparent;
 	background-image:none;
-	background: linear-gradient(to bottom, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);		
+	
+	background-image: -webkit-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%); 
+  background-image: -moz-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
+  background-image: -ms-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
+  background-image: -o-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
+  background-image: linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
+  background-image: linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
+	
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF5A00, endColorstr=#FFAE00);  
+	
 	background-repeat: repeat-x;
 	border: 1px solid #ddd;
 	border-radius:25px;  	
@@ -182,7 +187,7 @@ object.flip_label{ display:none;}
 	background: linear-gradient(to bottom, #e1e1e1,  #eff0ef);
 }
 
-
+/*--- dropdown ---*/
 .input-section .dropdown-menu.open{ border-radius:10px;}
 .input-section .selectpicker .dropdown-menu>li>a span.text{ margin-right:0; padding-left:18px; overflow:hidden;}
 
@@ -195,12 +200,13 @@ object.flip_label{ display:none;}
 .input-section .selectpicker li a{ color:#444; padding:0 15px; overflow:hidden; display:block; line-height:25px; height:25px;}
 .input-section .selectpicker li a,
 .input-section .selectpicker li a span,
-.input-section .selectpicker li.selected a,
-.input-section .selectpicker li.selected a span.text{ background:transparent !important; color:#555;}
-.input-section .selectpicker li.selected a span.text{  color:#000;}
+.input-section .selectpicker li.selected a{ color:#555;}
+.input-section .selectpicker li.selected a span.text{ color:#000;}
 
+.input-section .selectpicker li,
+.input-section .selectpicker li a:active,
 .input-section .selectpicker li.selected a:hover,
-.input-section .selectpicker li.selected a:active{ color:#fff;}
+.input-section .selectpicker li.selected a:active{ color:#444 !important;}
 
 .input-section .selectpicker li a span.text:hover,
 .input-section .selectpicker li.selected a span.text:hover{ color:#fff !important;}
@@ -211,8 +217,7 @@ object.flip_label{ display:none;}
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a i.check-mark{ color:#dc3c47;}
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:hover i.check-mark,
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:focus i.check-mark{ color:#fff;}
-
-
+ /* search errors */
 .notification-wrapper{ padding: 0 15px; margin:0;}
 
 
