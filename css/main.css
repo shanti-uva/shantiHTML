@@ -5,7 +5,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 *:focus{
   outline: 0 !important;
-  outline: -2px auto -webkit-focus-ring-color !important; 
+  /* outline: -2px auto -webkit-focus-ring-color !important; */
 }
 .container,
 .container-fluid{ background:#eee;}
@@ -20,9 +20,7 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 .navbar-default h1 a.navbar-brand span{ position:relative; top:7px; display:inline-block;}
 .navbar-default h1 a.navbar-brand img { height:auto; width:28%; margin:7px 15px 0 0; }
 .navbar-collapse{ padding:0;}
-.navbar-collapse ul>li{ border-left:1px solid #ddd;}
-.navbar-collapse ul>li:first-child{ /*border-left:none;*/}
-.navbar-default .navbar-nav>li{ /* line-height:1.25em; height:3.5em; height:50px; */}
+.navbar-default .navbar-nav>li{ border-left:1px solid #ddd; /* line-height:1.25em; height:3.5em; height:50px; */}
 .navbar-default .navbar-nav>li>a{ 
 	color:#666; 
 	display:inline-block; 
@@ -68,7 +66,11 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	border-bottom-left-radius: 10px;
 	padding:10px 0 10px;
 	border-top:2px solid #ddd;
-	background: linear-gradient(to bottom, #e0e0e0 0px, #f7f7f7 8px, #fff 20px);
+	background-image: -webkit-linear-gradient(top, #e0e0e0 0px, #f7f7f7 8px, #fff 20px);
+	background-image: -moz-linear-gradient(top, #e0e0e0 0px, #f7f7f7 8px, #fff 20px);
+	background-image: -ms-linear-gradient(top, #e0e0e0 0px, #f7f7f7 8px, #fff 20px);
+	background-image: -o-linear-gradient(top, #e0e0e0 0px, #f7f7f7 8px, #fff 20px);
+	background-image: linear-gradient(top, #e0e0e0 0px, #f7f7f7 8px, #fff 20px);
 }
 .navbar .lang ul.dropdown-menu{ /* language dropdown */ left:-42px; width:110px; min-width:110px;}
 
@@ -203,21 +205,10 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 .titlearea .page-title span{ }
 .titlearea .page-title .icon {
-	padding:7px;
+	padding:8px 9px 8px 7px;
   margin:0 10px 0 0;
   background:#a52d34;
-  font-size:18px;
-  line-height:18px;
-	float:left;
-	position:relative; 
-	top:0;
-}
-.titlearea .page-title .icon:before {
-	font-size:22px;
-	line-height:22px;
-	position:relative; 
-	top:-1px;
-	right:2px;
+  font-size:0.88em;
 }
 .titlearea .breadcrumb {
   background: inherit;
@@ -544,15 +535,17 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 	font-weight:normal; 
 	font-style:italic;
 	text-indent:0.75em;
-	padding:0; 
-	margin:0; 
 	font-size:1.56em; 
-	line-height:2.68em; 
-	height:2.63em;
-	position:relative;
-	z-index:200;
-	vertical-align:middle; 
-	background: linear-gradient(to bottom, #eee 0px, #fafafa 8px, #fff 25px);
+	line-height:2.68em; height:2.63em;
+	position:relative; z-index:200;
+	vertical-align:middle;
+	padding:0; 
+	margin:0;  
+	background-image: -webkit-linear-gradient(top, #eee 0px, #fafafa 8px, #fff 25px);
+	background-image: -moz-linear-gradient(top, #eee 0px, #fafafa 8px, #fff 25px);
+	background-image: -ms-linear-gradient(top, #eee 0px, #fafafa 8px, #fff 25px);
+	background-image: -o-linear-gradient(top, #eee 0px, #fafafa 8px, #fff 25px);
+	background-image: linear-gradient(top, #eee 0px, #fafafa 8px, #fff 25px);
 	-webkit-box-shadow:-10px 0 18px -10px srgb(0,0,0,1);
 	box-shadow:-10px 0 18px -10px srgb(0,0,0,1);
 	border-collapse:separate; /* for ie with box-shadow */

@@ -12,28 +12,31 @@
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ }
 #kmaps-search .ext_wrapper{ height:auto; padding:0; }
-#kmaps-search.extruder.right .extruder-content{ background:#fff; border:10px solid #fff; padding:0;	width:100%; -webkit-box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500);box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500); border-collapse:separate; /* needed by ie9+ with box-shadow */}
+#kmaps-search.extruder.right .extruder-content{ background:#fff; border:7px solid #fff; padding:0;	width:100%; -webkit-box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500);box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500); border-collapse:separate; /* needed by ie9+ with box-shadow */}
 #kmaps-search.extruder.right.isOpened .extruder-content{ }
 #kmaps-search.extruder .text{ border:none; padding:0; text-shadow:none; background:#f8f8f8; color:#333; width:275px; min-width:275px !important; /*---- default panel container width is set ----*/}
 
 #kmaps-search.extruder.right.open-collections{ margin-top:280px;}
 
-/*--- resize panel ---*/
+/*--- Resize handle ---*/
 #kmaps-search div.text.ui-resizable{ }
 #kmaps-search div.text.ui-resizable,
 #kmaps-search.isOpened div.text.ui-resizable{ position:static;} /*--- keep the right edge pinned */
 
-#kmaps-search .ui-resizable-handle.ui-resizable-w{ cursor:ew-resize; opacity:0.4; position:absolute; left:-28px; top: 68px; /* top:85%; */ z-index:900; width:28px; height:25px; background: #fff url(../fonts/kmaps-icons/bin/PNG/expand.png) no-repeat 6px 3px; background-size:16px 16px;  overflow:hidden; border:1px solid #999; border-top-left-radius:6px; border-bottom-left-radius:6px;}
-#kmaps-search .ui-resizable-handle.ui-resizable-w:hover{ opacity:0.1; border-color:#ddd;}
-#kmaps-search .ui-resizable-handle.ui-resizable-w:active{ opacity:0.3; border-color:#888;}
+#kmaps-search .ui-resizable-handle.ui-resizable-w{ cursor:col-resize; position:absolute; left:1px; top:10px; /* top:85%; */ z-index:900; width:6px; height:97%;}
+#kmaps-search .ui-resizable-handle.ui-resizable-w:hover{ }
+#kmaps-search .ui-resizable-handle.ui-resizable-w:active{ background:#fafafa;}
 
 /* --- Search toggle ------ */
 /* --------------------------- inline styles with icon markup are loaded via main.js */
-.extruder.right .flap{ cursor:pointer;display:block;background:#fff;height:50px;width:49px;position:absolute;left:0;top:0;padding: 8px 0 8px 8px;margin:0 0 0 -48px; border-top-left-radius:50px;border-bottom-left-radius:50px;}
-.extruder.right .flap.on-flap{ -webkit-box-shadow:-1px 0 2px #bc323d;box-shadow:-1px 0 2px #bc323d; border-collapse:separate; /* needed by ie9+ with box-shadow */}
+.extruder.right .flap{ cursor:pointer;display:block;background:#fff;height:50px;width:50px;position:absolute;left:-1px;top:0;padding: 8px 0 8px 8px;margin:0 0 0 -48px; border-top-left-radius:50px;border-bottom-left-radius:50px;}
+.extruder.right .flap.on-flap{ -webkit-box-shadow:-1px 0 1px #bc323d;box-shadow:-1px 0 1px #bc323d; border-collapse:separate; /* needed by ie9+ with box-shadow */}
 .extruder.right .flap span.flapLabel,
-.extruder.right .flap.on-flap span.flapLabel{ background:#505050; height:36px;display:block; padding:18px 41px 18px 0; margin:0;border-top-left-radius:25px;border-bottom-left-radius:25px;overflow:hidden;width:41px !important;position:relative;top:-1px;left:0;}
-/*----- css for the flap are inserted inline, see js/main ---*/
+.extruder.right .flap.on-flap span.flapLabel{ width:42px !important;position:relative;top:-1px;left:0; background:#505050; height:36px;display:block; padding:18px 40px 18px 0; margin:0;border-top-left-radius:25px;border-bottom-left-radius:25px;overflow:hidden;}
+
+.extruder.right.isOpened .flap{width:49px;}
+.extruder.right.isOpened .flap.on-flap span.flapLabel{ width:41px !important;}
+/*----- css for the flap is inserted inline, see js/main ---*/
 .extruder.right .flap>span,
 .extruder.right .flap.on-flap>span{ color:#ddd;}
 .extruder.right .flap.on-hover>span,
@@ -43,9 +46,9 @@ object.flip_label{ display:none;}
 /*----------------------------------------------*/
 /*--- Search Panel: Input & View ---*/
 /*----------------------------------------------*/
-.input-section{ padding:0;border: 1px solid #eee;display:block;width:100%;}
+.input-section{ padding:0;border: 1px solid #e0e0e0;display:block;width:100%;}
 .input-section .input-group input.form-control:first-child{ -webkit-border-bottom-right-radius: 25px;-webkit-border-top-right-radius: 25px;border-bottom-right-radius: 25px;border-top-right-radius: 25px;}
-.input-section .input-group{ height:45px; padding: 0 10px; display:block; width:100%; background:#f8f8f8;}
+.input-section .input-group{ height:47px; padding: 0 10px; display:block; width:100%; background:#f8f8f8;}
 .input-section .input-group input.form-control{
 	color:#777;
 	border: 1px solid #ccc;
@@ -63,7 +66,8 @@ object.flip_label{ display:none;}
 	-webkit-box-shadow:0px 2px 5px #eee inset;
 	box-shadow:0px 2px 5px #eee inset; 
 	background: #fff;
-	background-size: 7px;
+	-webkit-background-size: 7px 7px;
+	background-size: 7px 7px;
 	-webkit-transition-property: all;
 	-webkit-transition-duration: 400ms;
 	transition-property: all;
@@ -117,7 +121,7 @@ object.flip_label{ display:none;}
 .input-section .input-group .searchreset i{ border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:1px;font-family:'kmaps-icons'; }
 .input-section .input-group .searchreset i:before{ content: "\e612";background:transparent; color:#ccc;}
 
-.input-section .advanced-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:inline;float:right; font-weight:600; height:13px; max-height:13px; margin:3px 20px 4px 0;padding:0 0 0 20px;	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+.input-section .advanced-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:inline;float:right; font-weight:600; height:15px; margin:0 35px 4px 0;padding:0 0 0 20px;	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .input-section .advanced-link:hover{ text-decoration:none !important; color:#555;}
 .input-section .advanced-link i.icon:before{ font-family:'kmaps-icons'; content: '\e60d'; font-size:0.68em; margin-right:4px;}
 .input-section .advanced-link.show-advanced i.icon:before{content:'\e613';}
@@ -134,7 +138,7 @@ object.flip_label{ display:none;}
 .input-section .radio input[type="radio"], 
 .input-section .radio-inline input[type="radio"]{ margin-left:5px;}
 
-.input-section label{ color:#222; font-size:13px; line-height:30px; height:30px; padding-right:0; margin-right:0;}
+.input-section label{ color:#222; font-size:13px; line-height:30px; height:28px; padding-right:0; margin-right:0;}
 
 .input-section .checkbox-inline{ padding:0 0 0 3px;}
 .input-section .radio-inline{ padding:0;}
@@ -144,7 +148,7 @@ object.flip_label{ display:none;}
 .input-section .checkbox-inline+.checkbox-inline{ margin-left:3px;}
 
 .input-section .radio-inline>div,
-.input-section .checkbox-inline>div{ position:relative; top:-5px; margin:8px 0 0;} /* graphic */
+.input-section .checkbox-inline>div{ position:relative; top:-2px; margin:0;padding:0;} /* graphic icon */
 
 .input-section label.radio-inline:first-child{ width:80px; min-width:80px; max-width:30%; padding-left:4px;}
 
@@ -160,16 +164,12 @@ object.flip_label{ display:none;}
 	color:#666;
 	background: transparent;
 	background-image:none;
-	
 	background-image: -webkit-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%); 
   background-image: -moz-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
   background-image: -ms-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
   background-image: -o-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
   background-image: linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
-  background-image: linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
-	
-	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF5A00, endColorstr=#FFAE00);  
-	
+	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF5A00, endColorstr=#FFAE00); */
 	background-repeat: repeat-x;
 	border: 1px solid #ddd;
 	border-radius:25px;  	
@@ -179,12 +179,22 @@ object.flip_label{ display:none;}
 	-webkit-box-shadow:none;
 	box-shadow:none;
 }
-.input-section .bootstrap-select .btn:hover{ border: 1px solid #ddd; background: #f1f1f1; background-image:none; background: linear-gradient(to bottom, #f1f1f1,  #e2e2e2);} 
+.input-section .bootstrap-select .btn:hover{ 
+	border: 1px solid #ddd; 
+	background: #f1f1f1; 
+}
+	
 .input-section .bootstrap-select .btn:focus,
 .input-section .bootstrap-select .btn.active{ outline:none !important; border: 1px solid #9097d3; -webkit-box-shadow: 0 0 4px 0 #5764de; box-shadow: 0 0 4px 0 #5764de; 
 	background: #e1e1e1;
 	background-image:none;
-	background: linear-gradient(to bottom, #e1e1e1,  #eff0ef);
+	background-image: -webkit-linear-gradient(top, #e1e1e1,  #eff0ef); 
+  background-image: -moz-linear-gradient(top, #e1e1e1,  #eff0ef); 
+  background-image: -ms-linear-gradient(top, #e1e1e1,  #eff0ef);
+  background-image: -o-linear-gradient(top, #e1e1e1,  #eff0ef); 
+  background-image: linear-gradient(top, #e1e1e1,  #eff0ef);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e1e1e1, endColorstr=#eff0ef);
+
 }
 
 /*--- dropdown ---*/
@@ -198,10 +208,12 @@ object.flip_label{ display:none;}
 
 .input-section .selectpicker li{ padding:0; overflow:hidden;}
 .input-section .selectpicker li a{ color:#444; padding:0 15px; overflow:hidden; display:block; line-height:25px; height:25px;}
+
 .input-section .selectpicker li a,
 .input-section .selectpicker li a span,
 .input-section .selectpicker li.selected a{ color:#555;}
 .input-section .selectpicker li.selected a span.text{ color:#000;}
+.input-section .selectpicker li>a:hover{ }
 
 .input-section .selectpicker li,
 .input-section .selectpicker li a:active,
@@ -219,6 +231,9 @@ object.flip_label{ display:none;}
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:focus i.check-mark{ color:#fff;}
  /* search errors */
 .notification-wrapper{ padding: 0 15px; margin:0;}
+
+.input-section .selectpicker li a span{ background:transparent !important; color:#444;}
+.input-section .selectpicker li a span:hover{ color:#fff;}
 
 
 

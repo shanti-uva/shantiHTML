@@ -52,6 +52,11 @@ jQuery(function ($) {
 
 //});
 
+// *** SEARCH *** prevent flash onload
+jQuery(function ($) {
+	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
+});
+
 
 // *** SEARCH *** initiate sliding container, toggle collections & search options
 jQuery(function ($) {
@@ -85,9 +90,9 @@ jQuery(function ($) {
 // *** SEARCH *** adapt search panel height to viewport
 jQuery(function($) { 
   var winHeight = $(window).height(); 
-  var panelHeight = winHeight -100; // ----- height of container for search panel - minus top and bottom space outside search panel
-  var viewHeight = winHeight -216; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -386;  // ----- height for view-section & search options - OPEN 
+  var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
+  var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
+  var shortHeight = winHeight -387;  // ----- height for view-section & search options - OPEN 
     	
 	// set initial div height
 	$("div.text").css({ "height": panelHeight }); 
@@ -157,7 +162,7 @@ jQuery(function($) {
 // *** SEARCH *** toggle button
 jQuery(function($) {
 	if (!$(".extruder.right").hasClass("isOpened")) {
-				$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:12px; z-index:10;'><i class='icon km-search'></i></span>");
+				$(".flap").prepend("<span style='font-size:20px; position:absolute; left:19px; top:13px; z-index:10;'><i class='icon km-search'></i></span>");
 				$(".flap").addClass("on-flap");
 	}
 
@@ -434,7 +439,7 @@ jQuery(function($) {
 	$('#searchform').data('holder',$('.form-control').attr('placeholder'));		
 	$('input.form-control').focusin(function(){
 	    $('input.form-control').attr('placeholder','');
-	    // $('.searchreset').show('fast');
+	    $('.searchreset').show('fast');
 	});
 	$('input.form-control').focusout(function(){
 	    $('#searchform').attr('placeholder',$('.form-control').data('holder'));	
@@ -445,9 +450,8 @@ jQuery(function($) {
 		$('#searchform').attr('placeholder',$('.form-control').data('holder'));
 		$('.searchreset').hide();
 	});	
-});
-
-jQuery(function($) {
+	
+	
 	$('input.form-control').focusout(function() {
 		var str = 'Enter Search...';
 		var txt = $('input.form-control').val();
@@ -491,10 +495,7 @@ jQuery(function ($) {
 
 
 
-// *** SEARCH *** prevent flash onload
-jQuery(function ($) {
-	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
-});
+
 
 
 
