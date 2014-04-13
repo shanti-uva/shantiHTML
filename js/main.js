@@ -373,7 +373,7 @@ jQuery(function ($) {
                     $('<tr>')
                         .append(decorateElementWithPopover($('<td>'), y)
                             .append(
-                                $('<span class="title-field">').text(y.title)
+                                $('<span class="title-field">').text(y.title).attr('kid', y.key)
                                     .highlight(txt, { element: 'mark' }).trunk8({ tooltip: false })
                             )
                         )
@@ -387,9 +387,21 @@ jQuery(function ($) {
 //                )
             });
 
+
+
             $("table.table-results tbody tr").click(function (event) {
+
+                var kid = $(event.target).closest('.title-field').attr('kid') || $($(event.target).find('.title-field')[0]).attr('kid');
+
+                // notify.warn('debug',"kid: " +  kid);
+
                 $('.row_selected').removeClass('row_selected');
                 $(event.target).closest('tr').addClass('row_selected');
+                $('#tree')
+                    .fancytree('getTree')
+                    .activateKey(
+                        kid
+                    ).scrollIntoView();
             });
 
             $('table.table-results').dataTable();
