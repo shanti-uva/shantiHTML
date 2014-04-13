@@ -38,11 +38,12 @@ body{ font-family: "Museo Sans",sans-serif; font-weight:300;}
 }
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>li>a:hover{ background:#f0f0f0;}
+.navbar-default .navbar-nav>li:last-child>a{ padding-left:15px;padding-right:40px;}
+
 .navbar-default .navbar-nav>li.login>a{ padding-top:20px; } 
 .navbar-default .navbar-nav>li.highlight>a{ background:#eee;color:#444;}
 .navbar-default .navbar-nav li.explore>a>i.icon{ font-size:17px; position:relative;left:6px;top:2px;}
 .navbar-default .navbar-nav>li.highlight:last-child{ border-left-color:#d0d0d0;}
-.navbar-default .navbar-nav>li.highlight:last-child>a{ padding-left:15px;padding-right:40px;}
 
 .navbar-default .navbar-nav>li.highlight>a:hover{ background:#fff;color:#444;}
 .navbar-default .navbar-nav>li.highlight.show-topmenu a{ background:#555; color:#fff;}

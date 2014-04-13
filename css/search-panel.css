@@ -12,8 +12,8 @@
 #kmaps-search.extruder.right,
 #kmaps-search.extruder.right.isOpened{ }
 #kmaps-search .ext_wrapper{ height:auto; padding:0; }
-#kmaps-search.extruder.right .extruder-content{ background:#fff; border:7px solid #fff; border-right-width:12px;  padding:0;	width:100%; -webkit-box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500);box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500); border-collapse:separate; /* needed by ie9+ with box-shadow */}
-#kmaps-search.extruder.right.isOpened .extruder-content{ }
+#kmaps-search.extruder.right .extruder-content{ background:#fff; border:7px solid #fff; border-right-width:0px;  padding:0;	width:100%; -webkit-box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500);box-shadow:0 0 5px hsla(0, 0.0000%, 60.0000%, 0.7500); border-collapse:separate; /* needed by ie9+ with box-shadow */}
+#kmaps-search.extruder.right.isOpened .extruder-content{ border-right-width:12px;}
 #kmaps-search.extruder .text{ border:none; padding:0; text-shadow:none; background:#f8f8f8; color:#333; width:275px; min-width:275px !important; /*---- default panel container width is set ----*/}
 
 #kmaps-search.extruder.right.open-collections{ margin-top:280px;}
@@ -48,7 +48,7 @@ object.flip_label{ display:none;}
 /*----------------------------------------------*/
 .input-section{ padding:0;border: 1px solid #e0e0e0;display:block;width:100%;}
 .input-section .input-group input.form-control:first-child{ -webkit-border-bottom-right-radius: 25px;-webkit-border-top-right-radius: 25px;border-bottom-right-radius: 25px;border-top-right-radius: 25px;}
-.input-section .input-group{ height:47px; padding: 0 10px; display:block; width:100%; background:#f8f8f8;}
+.input-section .input-group{ height:47px; padding: 0 12px 0 10px; display:block; width:100%; background:#f8f8f8;}
 .input-section .input-group input.form-control{
 	color:#777;
 	border: 1px solid #ccc;
@@ -56,7 +56,7 @@ object.flip_label{ display:none;}
 	font-size:1.06em;
 	height:35px; /* coordinate with button height below */
 	line-height:1.44em;
-	margin: 10px 0 0; 
+	margin: 8px 0 0; 
 	padding:2px 60px 0 15px;
   width:100%;  
   border-radius: 25px;
@@ -72,13 +72,12 @@ object.flip_label{ display:none;}
 	-webkit-transition-duration: 400ms;
 	transition-property: all;
 	transition-duration: 400ms;
-	zoom:1;
 }
 .input-section .input-group input.form-control:hover{ border: 1px solid #ccc; color:#777;}
 .input-section .input-group input.form-control:focus{ border: 1px solid #9097d3; -webkit-box-shadow: 0 0 4px #949bd8;box-shadow: 0 0 4px #949bd8;}
 
 /*--- button group ---*/
-.input-section .input-group .input-group-btn{ width:45px; /* set button width and position */ position:absolute; top:11px; right:11px; background:transparent; padding:0; margin:0;}
+.input-section .input-group .input-group-btn{ width:45px; /* set button width and position */ position:absolute; top:9px; right:13px; background:transparent; padding:0; margin:0;}
 
 /*--- button ---*/
 .input-section .input-group .btn.btn-default{ 

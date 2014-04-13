@@ -153,7 +153,7 @@ jQuery(function($) {
 					$(".extruder .text").css("width","100%");
 				});
 	}
-		  
+	 
 });
 
 
