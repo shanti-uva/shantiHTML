@@ -10,13 +10,17 @@ jQuery(function ($) {
     groupIcon: 'fa fa-angle-right',
     collapsed: true
 	});
+	
+	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li:last').addClass('highlight');
+  // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));	
+	
 	// --- expand
 	$( '.menu-toggle' ).click(function(){
-		$('#menu').toggleClass('show-topmenu');
-		$('#menu').multilevelpushmenu( 'expand' );
-
-		if($('#menu').hasClass('show-topmenu')) {
-			$(this).multilevelpushmenu( 'collapse' );
+		$('.menu-toggle').toggleClass('show-topmenu');
+		$('#menu').multilevelpushmenu( 'expand' );		
+	
+		if($('.menu-toggle').hasClass('show-topmenu')) {
+			$(this).multilevelpushmenu( 'collapse' );					
 		}
 	});
 	// --- align the text
@@ -30,13 +34,28 @@ jQuery(function ($) {
       $('#menu').toggle();
   });
   $(document).click( function(){
-      $('#menu').hide();
+  		$('#menu').hide();
+  		$('.menu-toggle').removeClass('show-topmenu');
+      $('#menu').multilevelpushmenu( 'collapse' );
   });
-
 });
 
 
+//jQuery(function ($) {
 
+	//var menulist = $('#menu ul').css('display') == 'block'
+	
+	//$(menulist).filter(function() {
+	  // return $(menulist).css('display') == 'block';
+	//})
+	//.css('box-shadow','none');
+
+//});
+
+// *** SEARCH *** prevent flash onload
+jQuery(function ($) {
+	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
+});
 
 
 // *** SEARCH *** initiate sliding container, toggle collections & search options
@@ -69,12 +88,12 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** adapt search panel height to viewport
-jQuery(function($) {
-  var winHeight = $(window).height();
-  var panelHeight = winHeight -100; // ----- height of container for search panel - minus top and bottom space outside search panel
-  var viewHeight = winHeight -225; // ----- height for view-section with search options - CLOSED
-  var shortHeight = winHeight -410;  // ----- height for view-section with search options - OPEN
-
+jQuery(function($) { 
+  var winHeight = $(window).height(); 
+  var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
+  var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
+  var shortHeight = winHeight -387;  // ----- height for view-section & search options - OPEN 
+    	
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
 	$(".view-wrap").css({ "height": viewHeight });
@@ -134,7 +153,7 @@ jQuery(function($) {
 					$(".extruder .text").css("width","100%");
 				});
 	}
-
+	 
 });
 
 
@@ -143,7 +162,7 @@ jQuery(function($) {
 // *** SEARCH *** toggle button
 jQuery(function($) {
 	if (!$(".extruder.right").hasClass("isOpened")) {
-				$(".flap").prepend("<span style='font-size:21px; position:absolute; left:19px; top:12px; z-index:10;'><i class='icon km-search'></i></span>");
+				$(".flap").prepend("<span style='font-size:20px; position:absolute; left:19px; top:13px; z-index:10;'><i class='icon km-search'></i></span>");
 				$(".flap").addClass("on-flap");
 	}
 
@@ -438,7 +457,7 @@ jQuery(function($) {
 	$('#searchform').data('holder',$('.form-control').attr('placeholder'));
 	$('input.form-control').focusin(function(){
 	    $('input.form-control').attr('placeholder','');
-	    // $('.searchreset').show('fast');
+	    $('.searchreset').show('fast');
 	});
 	$('input.form-control').focusout(function(){
 	    $('#searchform').attr('placeholder',$('.form-control').data('holder'));
@@ -449,10 +468,9 @@ jQuery(function($) {
 		$('#searchform').attr('placeholder',$('.form-control').data('holder'));
 		$('.searchreset').hide();
         searchUtil.clearSearch();
-	});
-});
-
-jQuery(function($) {
+	});	
+	
+	
 	$('input.form-control').focusout(function() {
 		var str = 'Enter Search...';
 		var txt = $('input.form-control').val();
@@ -461,7 +479,7 @@ jQuery(function($) {
 			$('.searchreset').hide();
 		return true;
 		} else {
-			$('.searchreset').show('fast');
+			$('.searchreset').show(100);
 		return false;
 		}
 	});
@@ -496,10 +514,7 @@ jQuery(function ($) {
 
 
 
-// *** SEARCH *** prevent flash onload
-jQuery(function ($) {
-	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
-});
+
 
 
 
