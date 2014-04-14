@@ -227,6 +227,7 @@ function decorateElementWithPopover(elem, node) {
 
 var searchUtil = {
     clearSearch: function() {
+        $('#tree').fancytree('getActiveNode').setActive(false);
         $('#tree').fancytree('getTree').clearFilter();
         $('#tree').fancytree("getRootNode").visit(function (node) {
             node.setExpanded(false);
@@ -241,6 +242,7 @@ var searchUtil = {
                 $(this).text($(this).text());
             }
         );
+
     }
 };
 
@@ -445,11 +447,11 @@ jQuery(function ($) {
     });
     $('.treeview').on('shown.bs.tab', function () {
 
-	// This doesn't always scroll correctly
-        $('#tree')
-            .fancytree("getTree")
-            .getActiveNode()
-            .makeVisible();
+        // This doesn't always scroll correctly
+        var activeNode = $('#tree').fancytree("getTree").getActiveNode();
+        if (activeNode) {
+            activeNode.makeVisible();
+        }
     });
     $('#tree').on('click', '.fancytree-statusnode-error', function () {
         $('#tree').fancytree();
