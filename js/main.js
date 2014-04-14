@@ -234,6 +234,13 @@ var searchUtil = {
         $('table.table-results').dataTable().fnDestroy();
         $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
         $('table.table-results').dataTable();
+
+        // "unwrap" the <mark>ed text
+        $('span.fancytree-title').each(
+            function () {
+                $(this).text($(this).text());
+            }
+        );
     }
 };
 
@@ -433,10 +440,21 @@ jQuery(function ($) {
   $("form.form").submit(handleSearch);
 
 //    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
-    $('.listview').on('shown.bs.tab', function() {$(".title-field").trunk8({ tooltip:false }); });
+    $('.listview').on('shown.bs.tab', function() {
+        $(".title-field").trunk8({ tooltip:false });
+    });
+    $('.treeview').on('shown.bs.tab', function () {
+
+	// This doesn't always scroll correctly
+        $('#tree')
+            .fancytree("getTree")
+            .getActiveNode()
+            .makeVisible();
+    });
     $('#tree').on('click', '.fancytree-statusnode-error', function () {
         $('#tree').fancytree();
     });
+
 
     // untruncate on mouseover
 //    $('.listview').on({
