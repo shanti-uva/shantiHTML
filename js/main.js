@@ -41,25 +41,26 @@ jQuery(function ($) {
 });
 
 
-//jQuery(function ($) {
 
-	//var menulist = $('#menu ul').css('display') == 'block'
+// jQuery(function ($) {
+
+	// var menulist = $('#menu ul').css('display') == 'block'
 	
-	//$(menulist).filter(function() {
+	// $(menulist).filter(function() {
 	  // return $(menulist).css('display') == 'block';
-	//})
-	//.css('box-shadow','none');
+	// })
+	// .css('box-shadow','none');
 
-//});
+// });
 
-// *** SEARCH *** prevent flash onload
-jQuery(function ($) {
-	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
-});
+
 
 
 // *** SEARCH *** initiate sliding container, toggle collections & search options
 jQuery(function ($) {
+	// --- prevent flash onload
+	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
+	
   $("#kmaps-search").buildMbExtruder({
       positionFixed: false,
       position: "right",
@@ -92,8 +93,9 @@ jQuery(function($) {
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
   var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -387;  // ----- height for view-section & search options - OPEN 
+  var shortHeight = winHeight -387; // ----- height for view-section & search options - OPEN 
     	
+
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
 	$(".view-wrap").css({ "height": viewHeight });
@@ -121,7 +123,7 @@ jQuery(function($) {
           resize: function (event, ui) {
               $('.title-field').trunk8({ tooltip:false });
           }
-      });	// ----- initiate jquery resize
+      });	// --- initiate jquery resize
 
 	function checkWidth() {
 	var panelWidth = $(".text").width();
@@ -147,7 +149,6 @@ jQuery(function($) {
 	//			});
 	// })
 
-
 	if (!$(".extruder.right").hasClass("isOpened")) {
 				$(".flap").click( function() {
 					$(".extruder .text").css("width","100%");
@@ -155,6 +156,7 @@ jQuery(function($) {
 	}
 	 
 });
+
 
 
 
@@ -274,7 +276,6 @@ var notify = {
 }
 
 // *** SEARCH *** sliding panel
-
 jQuery(function ($) {
 
     // search min length

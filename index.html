@@ -19,9 +19,9 @@
   <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <!--[if lte IE 8]> <p class="progressive">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser.</a></p> <![endif]-->
+  <!--[if lte IE 8]><p class="progressive">It appears you are using an older browser. Please consider a upgrading to a modern version of your browser to best appreciate this website. Thank you -<i class="icon km-close"></i></p><![endif]-->
   <a href=".main-content" class="sr-only">Skip to main content</a>
-  
+	<div class="wrap">
   <header role="banner">
 		<div class="navbar navbar-default navbar-static-top" role="navigation">  
       <nav class="navbar-header" role="navigation">
@@ -308,7 +308,7 @@
 					<legend class="hidden">Search Form</legend>									
 																		
 					  <div class="input-group">
-								<input id="searchform" class="form-control" type="text" placeholder="Enter Search...">
+								<input id="searchform" class="form-control kms" type="text" placeholder="Enter Search...">
 								<span class="input-group-btn">
 									<button type="reset" class="searchreset" style="display:none;"><i class="icon"></i></button>
 									<button id="searchbutton" type="button" class="btn btn-default"><i class="icon"></i></button>
@@ -316,7 +316,7 @@
 
 					  </div>
 
-						<a href="#" class="advanced-link" title="advanced search options"><i class="icon"></i>Advanced</a>	
+						<a href="#" class="advanced-link toggle-link" title="advanced search options"><i class="icon"></i>Advanced</a>	
 								
 							 <!-- advanced search hidden ontent -->
 							 <div class="advanced-view" style="display:none;">													    
@@ -346,15 +346,37 @@
 								      <input type="checkbox" name="checkbox" id="checkbox-1" value="6">
 								      	Show only entries with essays</label> 
 								  </div>
-								  
+
 								  <div class="form-group">    														    
 								    <label class="checkbox-inline" for="checkbox-2">
 								      <input type="checkbox" name="checkbox" id="checkbox-2" value="7" checked="checked">
 								      	Show feature details</label> 													    
 								  </div>
-
-                  <div class="form-group last"> 
-								        <select class="selectpicker" id="selector1" name="selector1" multiple data-selected-text-format="count" data-header='Select from the following...' data-width="100%">
+								  
+								  <div class="form-group km-input feature-group dropdown">
+								  		<a href="#" class="dropdown-toggle feature-link toggle-link" data-toggle="dropdown"><i class="icon"></i>Feature Tree</a>								  		 								  		 														    
+								      <input class="form-control" id="feature-select" type="text" placeholder="Filter by Feature Name">								      
+								      <div class="dropdown-menu features-open">
+									  			<div class="tree-wrap">										  			
+										  			  <a href="#" class="feature-help"><i class="icon km-info"></i></a>
+										  				<p class="feature-message">Please select one or more feature types from the list below. For each type, click on the left box to select the type and its subcategories; click on the right box to select only the type without its subcategories.</p>
+										  			<div class="feature-container">
+										  				<div id="feature-tree"></div> <!-- features tree -->
+										  			</div> 										  			
+										  			<div class="feature-submit">
+										  				<button type="button" class="btn btn-default">Select</button>
+										  				<button type="button" class="btn btn-default clear-form">Cancel</button>
+										  			</div>										  			
+									  			</div>									  		
+								  		</div> 
+								  </div> 
+								  
+								  <div class="form-group km-input">    														    
+								      <input class="form-control" id="feature-id" type="text" placeholder="Filter by Feature ID">
+								  </div>               
+                  
+                  <div class="form-group"> 
+								        <select class="selectpicker" id="selector1" name="selector1" multiple data-selected-text-format="count" data-header="Select from the following..." data-width="100%">
 										      <option>Selector One</option>
 										      <option>Selector</option>
 										      <option>Selector</option>
@@ -368,6 +390,7 @@
 											    <option>Shorter Text Text</option>
 										    </select>
 								  </div>
+
 							 </div>
 				 </fieldset>
          <div id="notification-wrapper"></div>
@@ -489,7 +512,7 @@
 	 </ul>	  
 	</nav>
 	</section>
-
+	</div>
 
 
 	<footer class="footer">
