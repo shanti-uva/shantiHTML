@@ -563,12 +563,122 @@ jQuery(function ($) {
 
 
 
-/*** new twist on things ***
-jQuery(function ($) {
-	$("body").css({
-	  "background": "linear-gradient(#ccc, #666)",
-	  "box-shadow": "inset 0 0 5px black",
-	  "transform" : "rotate(5deg)"
+
+
+// *** SEARCH *** clear search input & support for placeholder on older
+jQuery(function($) {			
+	/*--- placeholder ---*/		
+	$('#searchform').data('holder',$('.kms.form-control').attr('placeholder'));		
+	$('input.kms.form-control').focusin(function(){
+	    $('input.kms.form-control').attr('placeholder','');
+	    $('.searchreset').show('fast');
+	});
+	$('input.kms.form-control').focusout(function(){
+	    $('#searchform').attr('placeholder',$('.kms.form-control').data('holder'));	
+	    $('.searchreset').hide();        
+	});	
+
+
+
+	$('.searchreset').click(function(){
+		$('input.form-control').attr('placeholder','');
+		$('#searchform').attr('placeholder',$('.kms.form-control').data('holder'));
+		$('.searchreset').hide();
+        searchUtil.clearSearch();
+	});	
+	
+	
+	$('input.form-control').focusout(function() {
+		var str = 'Enter Search...';
+		var txt = $('input.kms.form-control').val();
+		var txt = $('input.form-control').val();
+
+		if (str.indexOf(txt) > -1) {
+			$('.searchreset').hide();
+		return true;
+		} else {
+			$('.searchreset').show(100);
+		return false;
+		}
 	});
 });
-***/
+
+
+
+
+
+// *** SEARCH *** Select-Form & iCheck form graphics
+jQuery(function ($) {
+  $("input[type='checkbox'], input[type='radio']").each(function () {
+      var self = $(this),
+          label = self.next(),
+          label_text = label.text();
+
+      label.remove();
+      self.iCheck({
+          checkboxClass: "icheckbox_minimal-red",
+          radioClass: "iradio_minimal-red",
+          insert: "<div class='icheck_line-icon'></div>" + label_text
+      });
+  });
+
+  $(".selectpicker").selectpicker();
+
+});
+
+
+
+// *** CONTENT *** top link
+jQuery(function ($) {
+	var offset = 220;
+  var duration = 500;
+  jQuery(window).scroll(function() {
+      if (jQuery(this).scrollTop() > offset) {
+          jQuery('.back-to-top').fadeIn(duration);
+      } else {
+          jQuery('.back-to-top').fadeOut(duration);
+      }
+  });
+
+  jQuery('.back-to-top').click(function(event) {
+      event.preventDefault();
+      jQuery('html, body').animate({scrollTop: 0}, duration);
+      return false;
+  })
+});
+
+
+// *** SEARCH *** feature types
+jQuery(function ($) {
+	// manually initiate dropdown w/bstrap
+  $(".dropdown-toggle").dropdown();
+
+  // controls clicking in dropdown & feature input
+	$(function () {	
+		$(document).on('click', '#feature-select, .dropdown-menu.features-open', function(e) {
+		   e.stopPropagation()
+		})
+	});
+	
+	// hiding the help message
+	// $(".feature-message").delay( 10000 ).slideUp( 300 );
+	
+  $(".feature-help").toggle( 
+  	function () {
+					$(".feature-message").slideDown( 300 ).delay( 9000 ).slideUp( 300 );	
+			},
+	  function () {
+					$(".feature-message").slideUp( 300 );	
+			}
+	);
+});
+
+
+
+// *** GLOBAL ** template
+jQuery(function ($) {	
+	// show-hide the IE message for older browsers
+	// this could be improved with conditional for - lte IE7 - so it does not self-hide
+  $(".progressive").delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
+});
+
