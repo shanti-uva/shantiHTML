@@ -93,7 +93,7 @@ jQuery(function($) {
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
   var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -387; // ----- height for view-section & search options - OPEN 
+  var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN 
     	
 
 	// set initial div height
@@ -675,7 +675,7 @@ jQuery(function ($) {
 
 
 
-// *** GLOBAL ** template
+// *** GLOBAL ** conditional IE message
 jQuery(function ($) {	
 	// show-hide the IE message for older browsers
 	// this could be improved with conditional for - lte IE7 - so it does not self-hide
