@@ -94,7 +94,10 @@ jQuery(function($) {
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
   var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
   var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN 
-    	
+
+		if($("#btnResetSearch").hasClass("show")){ 
+			$("#kmaps-search .view-wrap.short-wrap").css({ "height": "508px" });
+		}    	
 
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
@@ -112,6 +115,7 @@ jQuery(function($) {
 		$(".view-wrap").css({ "height": viewHeight });
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
+
 });
 
 
@@ -476,21 +480,45 @@ jQuery(function ($) {
 
 // *** SEARCH *** clear search input & support for placeholder on older
 jQuery(function($) {	
-	var kms = $('#searchform');				// the main search input
 	var fsname = $('#feature-name');  // feature type name
 	var fsid = $('#feature-id');	    // feature type id
-		
-	// --- placeholder data	
-	$(kms).data('holder',$(kms).attr('placeholder'));			
 	$(fsname).data('holderfname',$(fsname).attr('placeholder'));		
 	$(fsid).data('holderfid',$(fsid).attr('placeholder'));		
 	
 	// --- feature type name
-	$(fsname).focusin(function(){ $(fsname).attr('placeholder',''); });
-	$(fsname).focusout(function(){ $(fsname).attr('placeholder',$(fsname).data('holderfname')); });		
+	$(fsname).focusin(function(){ 
+		$(fsname).attr('placeholder','');
+		$('.feature-treeButtons').show(100);
+		$('.featurereset').css('margin-right','0'); 
+	});
+	$(fsname).focusout(function(){
+	    $(fsname).attr('placeholder',$(fsname).data('holderfname'));	
+	    $('.featurereset').css('margin-right','-50px');         
+	});
+	$('.featurereset').click(function(){
+		$(fsname).attr('placeholder','');
+		$(fsname).attr('placeholder',$(fsname).data('holderfname'));
+		$('.featurereset').hide();
+	});
+	$(fsname).focusout(function(){ 	
+		var str = 'Filter by Feature Name';
+		var txt = $(fsname).val();
+
+		if (str.indexOf(txt) > -1) {
+			$('.featurereset').hide(100);
+			$('.feature-treeButtons').hide();
+		return true;
+		} else {
+			$('.featurereset').show(100);
+			$('.feature-treeButtons').show(100);
+		return false;
+		}
+	});		
+	
+
 	// --- feature type id
-	$(fsid).focusin(function(){ $(fsid).attr('placeholder',''); });
-	$(fsid).focusout(function(){ $(fsid).attr('placeholder',$(fsid).data('holderfid'));	});	
+	var kms = $('#searchform');	// the main search input
+	$(kms).data('holder',$(kms).attr('placeholder'));			
 	
 	// --- everything below is for the main searchform with the clear all button
 	$(kms).focusin(function(){
@@ -519,22 +547,100 @@ jQuery(function($) {
 		return false;
 		}
 	});
+
+
+
+	// Initialize Fancytree
+	$("#feature-tree").fancytree({
+		extensions: ["glyph", "edit", "filter"],
+		checkbox: true,
+		selectMode: 2,
+		glyph: {
+			map: {
+				// doc: "glyphicon glyphicon-file",
+				// docOpen: "glyphicon glyphicon-file",
+				checkbox: "glyphicon glyphicon-unchecked",
+				checkboxSelected: "glyphicon glyphicon-check",
+				checkboxUnknown: "glyphicon glyphicon-share",
+				error: "glyphicon glyphicon-warning-sign",
+				expanderClosed: "glyphicon glyphicon-plus-sign",
+				expanderLazy: "glyphicon glyphicon-plus-sign",
+				// expanderLazy: "glyphicon glyphicon-expand",
+				expanderOpen: "glyphicon glyphicon-minus-sign",
+				// expanderOpen: "glyphicon glyphicon-collapse-down",
+				// folder: "glyphicon glyphicon-folder-close",
+				// folderOpen: "glyphicon glyphicon-folder-open",
+				loading: "glyphicon glyphicon-refresh"
+				// loading: "icon-spinner icon-spin"
+			}
+		},
+				// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
+		source: {url: "js/fancy_nested.json", debugDelay: 1000},
+		filter: {
+				//	mode: "hide"
+		},
+		activate: function(event, data) {
+				//	alert("activate " + data.node);
+		},			
+		lazyLoad: function(event, ctx) {
+	 			ctx.result = {url: "ajax-sub2.json", debugDelay: 1000};
+		 },
+		click: function(e, data) {
+			// We should not toggle, if target was "checkbox", because this
+			// would result in double-toggle (i.e. no toggle)
+			if( $.ui.fancytree.getEventTargetType(e) == "title" ){
+				data.node.toggleSelected();
+			}
+		},
+		keydown: function(e, data) {
+			if( e.which === 32 ) {
+				data.node.toggleSelected();
+				return false;
+			}
+		},
+		cookieId: "kmaps2tree", // set cookies for features, the second fancytree
+		idPrefix: "kmaps2tree"
+	});
+	
+	
+	var tree = $("#feature-tree").fancytree("getTree");
+	/*
+	 * Event handlers for input interface
+	 */
+	$("input[name=features]").keyup(function(e){
+		var match = $(this).val();
+		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
+			$("button#btnResetSearch").click();
+			return;
+		}
+		// Pass text as filter string (will be matched as substring in the node title)
+		var n = tree.applyFilter(match);
+			$("button#btnResetSearch").attr("disabled", false); 
+			$("span#matches").text("(" + n + " matches)"); 
+		}).focus();
+
+	$("input#hideMode").change(function(e){
+		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
+		tree.clearFilter();
+		$("input[name=features]").keyup();
+		//			tree.render();
+	});
+	
+	$("button#btnResetSearch, button#featurereset").click(function(event){
+		$("input[name=features]").val("");
+		$("span#matches").text("");
+		tree.clearFilter();
+		
+		$("#feature-tree").fancytree();
+		$(".feature-treeButtons").slideUp( 300 ); 
+		$(this).addClass("show");
+	});
+	
+	$("input#feature-name").focusin(function(){ 
+		$(".feature-treeButtons").slideDown( 300 ); 
+	});
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -600,92 +706,7 @@ jQuery(function ($) {
 			}
 	);
 });
-
-
-// *** SEARCH *** feature types
-jQuery(function ($) {
-		// Initialize Fancytree
-		$("#feature-tree").fancytree({
-			extensions: ["glyph", "edit", "filter"],
-			checkbox: true,
-			selectMode: 2,
-			glyph: {
-				map: {
-					// doc: "glyphicon glyphicon-file",
-					// docOpen: "glyphicon glyphicon-file",
-					checkbox: "glyphicon glyphicon-unchecked",
-					checkboxSelected: "glyphicon glyphicon-check",
-					checkboxUnknown: "glyphicon glyphicon-share",
-					error: "glyphicon glyphicon-warning-sign",
-					expanderClosed: "glyphicon glyphicon-plus-sign",
-					expanderLazy: "glyphicon glyphicon-plus-sign",
-					// expanderLazy: "glyphicon glyphicon-expand",
-					expanderOpen: "glyphicon glyphicon-minus-sign",
-					// expanderOpen: "glyphicon glyphicon-collapse-down",
-					// folder: "glyphicon glyphicon-folder-close",
-					// folderOpen: "glyphicon glyphicon-folder-open",
-					loading: "glyphicon glyphicon-refresh"
-					// loading: "icon-spinner icon-spin"
-				}
-			},
-					// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-			source: {url: "js/fancy_nested.json", debugDelay: 1000},
-			filter: {
-					//	mode: "hide"
-			},
-			activate: function(event, data) {
-					//	alert("activate " + data.node);
-			},			
-			lazyLoad: function(event, ctx) {
-		 			ctx.result = {url: "ajax-sub2.json", debugDelay: 1000};
-			 },
-  		cookieId: "kmaps2tree", // set cookies for features, the second fancytree
-			idPrefix: "kmaps2tree"
-		});
-		
-		
-		var tree = $("#feature-tree").fancytree("getTree");
-		/*
-		 * Event handlers for input interface
-		 */
-		$("input[name=features]").keyup(function(e){
-			var match = $(this).val();
-			if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
-				$("button#btnResetSearch").click();
-				return;
-			}
-			// Pass text as filter string (will be matched as substring in the node title)
-			var n = tree.applyFilter(match);
-			$("button#btnResetSearch").attr("disabled", false);
-			$("span#matches").text("(" + n + " matches)");
-		}).focus();
-
-		$("button#btnResetSearch").click(function(e){
-			$("input[name=features]").val("");
-			$("span#matches").text("");
-			tree.clearFilter();
-		}).attr("disabled", true);
-
-		$("input#hideMode").change(function(e){
-			tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
-			tree.clearFilter();
-			$("input[name=features]").keyup();
-	//			tree.render();
-		});
-		
-		$("button#btnResetSearch").click(function(event){
-				$("#feature-tree").fancytree();
-				$(".feature-treeButtons").slideUp( 300 ); 
-		});
-
-		$("input#feature-name").focusin(function(){ 
-			$(".feature-treeButtons").slideDown( 300 ); 
-		});
-
-		if($("input#feature-name").length === 0 ) (function(){ $("body").css('margin','20px'); } );
-
-});		
-		
+	
 
 
 // *** GLOBAL ** conditional IE message
