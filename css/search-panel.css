@@ -132,11 +132,9 @@ object.flip_label{ display:none;}
 
 .feature-group .feature-treeButtons{ height:18px;width:100%; display:block; position:relative;top:-2px; display:none;}
 
-#kmaps-search .text .feature-treeButtons{ color:#666;}
+#kmaps-search .text .feature-treeButtons label:first-child{ color:#707070;}
 .feature-group .feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
-.feature-group .feature-treeButtons label.radio-inline div{ margin:4px;}
-
-.feature-group .feature-treeButtons input#hideMode{ }
+.feature-group .feature-treeButtons label.radio-inline div{ margin:0 4px 0 0;}
 
 .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
@@ -237,7 +235,7 @@ object.flip_label{ display:none;}
 .feature-group{ padding:0; padding-bottom: 8px;}
 .feature-group .form-control{ margin:0;}
 
-.feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:70px; left:0; width:100%; min-width:220px;}
+.feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:50px; left:0; width:100%; min-width:220px;}
 .feature-group .dropdown-menu p{ font-size:.82em; line-height:normal; color:#222;}
 
 #kmaps-search .text .feature-message{ background-color:#fff; font-size:12px;padding:10px 17px 10px; margin:0; border-bottom:1px solid #ccc; position:relative; z-index:99999;} /*--- feature intro text ---*/ 
@@ -260,7 +258,7 @@ object.flip_label{ display:none;}
 .feature-group .fancytree-title{ }
 
 #kmaps-search .text .feature-group { color:#606060;}
-#kmaps-search .text input.feature-name { margin-top:35px;}
+#kmaps-search .text input.feature-name { }
 
 .feature-group span.fancytree-icon{ background-image:none; margin:0; padding:0; width:0; height:0; line-height:0; display:none;}
 
