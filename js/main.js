@@ -340,7 +340,7 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-	       source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+      		source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
           complete: function(xhr, status) {
@@ -586,6 +586,74 @@ jQuery(function ($) {
 	);
 });
 
+
+// *** SEARCH *** feature types
+jQuery(function ($) {
+		$("#feature-tree").fancytree({
+			//	extensions: ["select"],
+			checkbox: true,
+			selectMode: 2,
+			      glyph: {
+          map: {
+              doc: "",
+              docOpen: "",
+              error: "glyphicon glyphicon-warning-sign",
+              expanderClosed: "glyphicon glyphicon-plus-sign",
+              expanderLazy: "glyphicon glyphicon-plus-sign",
+              // expanderLazy: "glyphicon glyphicon-expand",
+              expanderOpen: "glyphicon glyphicon-minus-sign",
+              // expanderOpen: "glyphicon glyphicon-collapse-down",
+              folder: "",
+              folderOpen: "",
+              loading: "glyphicon glyphicon-refresh"
+			//    loading: "icon-spinner icon-spin"
+          }
+      },
+      source: {url: "./js/fancy_nested.json",
+
+      //    source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+          cache: false,
+          debugDelay: 1000,
+          complete: function(xhr, status) {
+			//    $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
+			//    $(".alert").alert();
+          }
+      },
+			//    source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
+      //    lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
+      focus: function(event, data){ data.node.scrollIntoView(true); },
+        renderNode: function(event,data) {
+            if (!data.node.isStatusNode) {
+                decorateElementWithPopover(data.node.span, data.node);
+            }
+        },
+			select: function(e, data) {
+			// Display list of selected nodes
+				var selNodes = data.tree.getSelectedNodes();
+			// convert to title/key array
+				var selKeys = $.map(selNodes, function(node){
+					   return "[" + node.key + "]: '" + node.title + "'";
+					});
+				$("#echoSelection2").text(selKeys.join(", "));
+			},
+			click: function(e, data) {
+			// We should not toggle, if target was "checkbox", because this
+			// would result in double-toggle (i.e. no toggle)
+				if( $.ui.fancytree.getEventTargetType(e) == "title" ){
+					data.node.toggleSelected();
+				}
+			},
+			keydown: function(e, data) {
+				if( e.which === 32 ) {
+					data.node.toggleSelected();
+					return false;
+				}
+			},
+			cookieId: "kmaps2tree",
+			idPrefix: "kmaps2tree"
+		});
+});		
+		
 
 
 // *** GLOBAL ** conditional IE message

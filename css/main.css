@@ -377,14 +377,7 @@ body div.wrap{ position:relative;}
 
 
 /*--- bootstrap overide & accordion ------ */
-.panel-group{
-  border:none;
-  width:100%;
-  background:#fff;
-  /*margin:-10px -20px 0 -2px;*/
-}
 .panel-body{ 
-  background:#f0f0f0;
   border:none; 
   border-radius:0; 
   width:100%; 
@@ -395,16 +388,23 @@ body div.wrap{ position:relative;}
   margin:0;
   padding:0;
 }
-.panel-group .panel+.panel{ margin-top:0;}
 .panel-group .panel{ 
   border:none;
 	-webkit-box-shadow:none;
   box-shadow:none;
   border-radius:0; 
   width:100%; 
-  background:#fff;
   margin:0;
   padding:0;
+}
+.panel-group,
+.panel-default>.panel-heading+.panel-collapse .panel-body,
+.panel-group .panel-heading+.panel-collapse .panel-body{ background-color:#eee;}
+.panel-group .panel+.panel{ margin-top:0;}
+.panel-group{
+  border:none;
+  width:100%;
+  /*margin:-10px -20px 0 -2px;*/
 }
 #accordion .panel h6{ 
 	font-size:1em; 
