@@ -119,7 +119,7 @@ object.flip_label{ display:none;}
 .input-section .feature-group .featurereset i:before,
 .input-section .input-group .searchreset i:before{ content: "\e612";background:transparent; color:#ccc;}
 
-.feature-group .featurereset i.icon{ position:relative; top:-5px;right:7px;}
+.feature-group .featurereset i.icon{ position:relative; top:-5px;right:-45px;}
 
 /*-----------------------------------------------*/
 /*----- Advanced Options -----*/

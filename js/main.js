@@ -478,7 +478,7 @@ jQuery(function ($) {
 
 
 
-// *** SEARCH *** clear search input & support for placeholder on older
+// *** SEARCH *** clear search input & support for placeholder
 jQuery(function($) {	
 	var fsname = $('#feature-name');  // feature type name
 	var fsid = $('#feature-id');	    // feature type id
@@ -489,11 +489,11 @@ jQuery(function($) {
 	$(fsname).focusin(function(){ 
 		$(fsname).attr('placeholder','');
 		$('.feature-treeButtons').show(100);
-		$('.featurereset').css('margin-right','0'); 
+		$('.featurereset').show(100); 
 	});
 	$(fsname).focusout(function(){
 	    $(fsname).attr('placeholder',$(fsname).data('holderfname'));	
-	    $('.featurereset').css('margin-right','-50px');         
+	    $('.featurereset').hide(100);         
 	});
 	$('.featurereset').click(function(){
 		$(fsname).attr('placeholder','');
