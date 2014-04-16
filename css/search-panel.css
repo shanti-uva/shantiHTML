@@ -127,10 +127,21 @@ object.flip_label{ display:none;}
 .input-section .toggle-link i.icon:before{ color:#dc3c47; font-family:'kmaps-icons'; content:'\e60d'; font-size:0.68em; margin-right:4px;}
 /*---------------------------*/
 /*--- custom sizes ---*/
+.feature-group .toggle-link.features-link{ margin:0 10px 0 0;}
+.input-section .toggle-link.advanced-link{ margin-right:25px}
+
+.feature-group .feature-treeButtons{ height:18px;width:100%; display:block; position:relative;top:-2px; display:none;}
+
+#kmaps-search .text .feature-treeButtons{ color:#666;}
+.feature-group .feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
+.feature-group .feature-treeButtons label.radio-inline div{ margin:4px;}
+
+.feature-group .feature-treeButtons input#hideMode{ }
+
 .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
 
-.input-section .toggle-link.advanced-link{ margin-right:25px}
+
 
 /*--- iCheck :: radio and checkbox style overrides ---*/
 .input-section .radio-inline input,
@@ -226,7 +237,7 @@ object.flip_label{ display:none;}
 .feature-group{ padding:0; padding-bottom: 8px;}
 .feature-group .form-control{ margin:0;}
 
-.feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:45px; left:0; width:100%; min-width:220px;}
+.feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:70px; left:0; width:100%; min-width:220px;}
 .feature-group .dropdown-menu p{ font-size:.82em; line-height:normal; color:#222;}
 
 #kmaps-search .text .feature-message{ background-color:#fff; font-size:12px;padding:10px 17px 10px; margin:0; border-bottom:1px solid #ccc; position:relative; z-index:99999;} /*--- feature intro text ---*/ 
@@ -235,13 +246,32 @@ object.flip_label{ display:none;}
 .show-feature-tree .form-group{ border-top:1px solid #e0e0e0; margin:0 8px;}
 .show-feature-tree .form-group.last{ /* padding-bottom:5px; */}
 
+.feature-group ul.fancytree-container{ border:none; margin-top:12px;}
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
+.feature-group span.fancytree-node.fancytree-selected:hover{ background:transparent;border:none;}
+
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active, 
+.feature-group span.fancytree-node.fancytree-active:hover{ background:transparent;border:none;}
+
+.feature-group #feature-tree{ height:auto;}
+
+.feature-group span.fancytree-node{ border:none; display:block;}
+
+.feature-group .fancytree-title{ }
+
+#kmaps-search .text .feature-group { color:#606060;}
+#kmaps-search .text input.feature-name { margin-top:35px;}
+
+.feature-group span.fancytree-icon{ background-image:none; margin:0; padding:0; width:0; height:0; line-height:0; display:none;}
+
+
 /*--- bottom buttons ---*/
 .feature-submit{ padding:7px 17px; border-top:1px solid #ccc; width:100%; background-color:#fff; height:45px; min-height:45px;
 	border-radius-bottom-left:12px; border-radius-bottom-right:12px; position:absolute; bottom:-7px; z-index:9999;
 }
-.feature-group .tree-wrap{ position:relative; height:315px; min-height:315px; }
-.feature-container{  height:315px; min-height:315px;}
-.feature-container #tree{ padding:0; height:325px; min-height:325px; margin-top:5px;}
+.feature-group .tree-wrap{ position:relative; height:305px; min-height:305px; }
+.feature-container{  height:305px; min-height:305px;}
+.feature-container #feature-tree{ padding:0; height:305px; min-height:305px; margin-top:5px;}
 
 .feature-help{ color:#555;position:relative;top:20px;right:20px; z-index:9999; height:12px;width:12px;}
 .feature-help i{ font-size:1.18em; color:#555;background:#fff;}
@@ -278,7 +308,6 @@ object.flip_label{ display:none;}
 .advanced-view .form-group.km-input .form-control:hover{ border: 1px solid #ccc; color:#777;}
 .advanced-view .form-group.km-input .form-control:focus{ border: 1px solid #9097d3; -webkit-box-shadow: 0 0 4px #949bd8; box-shadow: 0 0 4px #949bd8;}
 
-/* #feature-tree{ height:auto;overflow:auto;} */
 
 /*--- END advanced ---*/
 /*----------------------------------------------------*/

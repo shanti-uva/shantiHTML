@@ -358,7 +358,7 @@ jQuery(function ($) {
         },
    			// The following options are only required, if we have more than one tree on one page:
 	 			// initId: "treeData",
-			cookieId: "kmaps1tree",
+			cookieId: "kmaps1tree", // set cookies for search-browse tree, the first fancytree loaded
 			idPrefix: "kmaps1tree"
    });
 
@@ -525,6 +525,21 @@ jQuery(function($) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // *** SEARCH *** Select-Form & iCheck form graphics
 jQuery(function ($) {
   $("input[type='checkbox'], input[type='radio']").each(function () {
@@ -540,7 +555,7 @@ jQuery(function ($) {
       });
   });
 
-  $(".selectpicker").selectpicker();
+  $(".selectpicker").selectpicker(); // initiates jq-bootstrap-select
 
 });
 
@@ -572,7 +587,7 @@ jQuery(function ($) {
   $(".dropdown-toggle").dropdown();
   // controls clicking in dropdown & feature input
 	$(function () {	
-		$(document).on('click', '#feature-select, .dropdown-menu.features-open', function(e) {
+		$(document).on('click', '#feature-name, .dropdown-menu.features-open', function(e) {
 		   e.stopPropagation()
 		})
 	});	
@@ -589,69 +604,86 @@ jQuery(function ($) {
 
 // *** SEARCH *** feature types
 jQuery(function ($) {
+		// Initialize Fancytree
 		$("#feature-tree").fancytree({
-			//	extensions: ["select"],
+			extensions: ["glyph", "edit", "filter"],
 			checkbox: true,
 			selectMode: 2,
-			      glyph: {
-          map: {
-              doc: "",
-              docOpen: "",
-              error: "glyphicon glyphicon-warning-sign",
-              expanderClosed: "glyphicon glyphicon-plus-sign",
-              expanderLazy: "glyphicon glyphicon-plus-sign",
-              // expanderLazy: "glyphicon glyphicon-expand",
-              expanderOpen: "glyphicon glyphicon-minus-sign",
-              // expanderOpen: "glyphicon glyphicon-collapse-down",
-              folder: "",
-              folderOpen: "",
-              loading: "glyphicon glyphicon-refresh"
-			//    loading: "icon-spinner icon-spin"
-          }
-      },
-      source: {url: "./js/fancy_nested.json",
-
-      //    source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
-          cache: false,
-          debugDelay: 1000,
-          complete: function(xhr, status) {
-			//    $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
-			//    $(".alert").alert();
-          }
-      },
-			//    source: {url: "src/json/nested-formatted.json", debugDelay: 1000},
-      //    lazyload: function (event, ctx) { ctx.result = { url: "src/json/ajax-sub2.json", debugDelay: 1000}; },
-      focus: function(event, data){ data.node.scrollIntoView(true); },
-        renderNode: function(event,data) {
-            if (!data.node.isStatusNode) {
-                decorateElementWithPopover(data.node.span, data.node);
-            }
-        },
-			select: function(e, data) {
-			// Display list of selected nodes
-				var selNodes = data.tree.getSelectedNodes();
-			// convert to title/key array
-				var selKeys = $.map(selNodes, function(node){
-					   return "[" + node.key + "]: '" + node.title + "'";
-					});
-				$("#echoSelection2").text(selKeys.join(", "));
-			},
-			click: function(e, data) {
-			// We should not toggle, if target was "checkbox", because this
-			// would result in double-toggle (i.e. no toggle)
-				if( $.ui.fancytree.getEventTargetType(e) == "title" ){
-					data.node.toggleSelected();
+			glyph: {
+				map: {
+					// doc: "glyphicon glyphicon-file",
+					// docOpen: "glyphicon glyphicon-file",
+					checkbox: "glyphicon glyphicon-unchecked",
+					checkboxSelected: "glyphicon glyphicon-check",
+					checkboxUnknown: "glyphicon glyphicon-share",
+					error: "glyphicon glyphicon-warning-sign",
+					expanderClosed: "glyphicon glyphicon-plus-sign",
+					expanderLazy: "glyphicon glyphicon-plus-sign",
+					// expanderLazy: "glyphicon glyphicon-expand",
+					expanderOpen: "glyphicon glyphicon-minus-sign",
+					// expanderOpen: "glyphicon glyphicon-collapse-down",
+					// folder: "glyphicon glyphicon-folder-close",
+					// folderOpen: "glyphicon glyphicon-folder-open",
+					loading: "glyphicon glyphicon-refresh"
+					// loading: "icon-spinner icon-spin"
 				}
 			},
-			keydown: function(e, data) {
-				if( e.which === 32 ) {
-					data.node.toggleSelected();
-					return false;
-				}
+					// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
+			source: {url: "js/fancy_nested.json", debugDelay: 1000},
+			filter: {
+					//	mode: "hide"
 			},
-			cookieId: "kmaps2tree",
+			activate: function(event, data) {
+					//	alert("activate " + data.node);
+			},			
+			lazyLoad: function(event, ctx) {
+		 			ctx.result = {url: "ajax-sub2.json", debugDelay: 1000};
+			 },
+  		cookieId: "kmaps2tree", // set cookies for features, the second fancytree
 			idPrefix: "kmaps2tree"
 		});
+		
+		
+		var tree = $("#feature-tree").fancytree("getTree");
+		/*
+		 * Event handlers for input interface
+		 */
+		$("input[name=features]").keyup(function(e){
+			var match = $(this).val();
+			if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
+				$("button#btnResetSearch").click();
+				return;
+			}
+			// Pass text as filter string (will be matched as substring in the node title)
+			var n = tree.applyFilter(match);
+			$("button#btnResetSearch").attr("disabled", false);
+			$("span#matches").text("(" + n + " matches)");
+		}).focus();
+
+		$("button#btnResetSearch").click(function(e){
+			$("input[name=features]").val("");
+			$("span#matches").text("");
+			tree.clearFilter();
+		}).attr("disabled", true);
+
+		$("input#hideMode").change(function(e){
+			tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
+			tree.clearFilter();
+			$("input[name=features]").keyup();
+	//			tree.render();
+		});
+		
+		$("button#btnResetSearch").click(function(event){
+				$("#feature-tree").fancytree();
+				$(".feature-treeButtons").slideUp( 300 ); 
+		});
+
+		$("input#feature-name").focusin(function(){ 
+			$(".feature-treeButtons").slideDown( 300 ); 
+		});
+
+		if($("input#feature-name").length === 0 ) (function(){ $("body").css('margin','20px'); } );
+
 });		
 		
 
