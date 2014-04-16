@@ -340,7 +340,7 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+	       source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
           complete: function(xhr, status) {
@@ -355,7 +355,11 @@ jQuery(function ($) {
             if (!data.node.isStatusNode) {
                 decorateElementWithPopover(data.node.span, data.node);
             }
-        }
+        },
+   			// The following options are only required, if we have more than one tree on one page:
+	 			// initId: "treeData",
+			cookieId: "kmaps1tree",
+			idPrefix: "kmaps1tree"
    });
 
     var handleSearch = function handleSearch() {
@@ -442,7 +446,7 @@ jQuery(function ($) {
   $('#searchform').attr('autocomplete','off'); // turn off browser autocomplete
   $("form.form").submit(handleSearch);
 
-//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
+	//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {
         $(".title-field").trunk8({ tooltip:false });
     });
@@ -459,139 +463,53 @@ jQuery(function ($) {
     });
 
 
-    // untruncate on mouseover
-//    $('.listview').on({
-////        'mouseenter': function () { $(this).trunk8('revert'); },
-////        'mouseout': function () { $(this).trunk8({ tooltip:false }).popover(); }
-//    },'.title-field');
+  // untruncate on mouseover
+	//    $('.listview').on({
+	//       'mouseenter': function () { $(this).trunk8('revert'); },
+	//        'mouseout': function () { $(this).trunk8({ tooltip:false }).popover(); }
+	//    },'.title-field');
 
 });
-
 
 
 
 
 // *** SEARCH *** clear search input & support for placeholder on older
-jQuery(function($) {
-
-	/*--- placeholder ---*/
-	$('#searchform').data('holder',$('.form-control').attr('placeholder'));
-	$('input.form-control').focusin(function(){
-	    $('input.form-control').attr('placeholder','');
+jQuery(function($) {	
+	var kms = $('#searchform');				// the main search input
+	var fsname = $('#feature-name');  // feature type name
+	var fsid = $('#feature-id');	    // feature type id
+		
+	// --- placeholder data	
+	$(kms).data('holder',$(kms).attr('placeholder'));			
+	$(fsname).data('holderfname',$(fsname).attr('placeholder'));		
+	$(fsid).data('holderfid',$(fsid).attr('placeholder'));		
+	
+	// --- feature type name
+	$(fsname).focusin(function(){ $(fsname).attr('placeholder',''); });
+	$(fsname).focusout(function(){ $(fsname).attr('placeholder',$(fsname).data('holderfname')); });		
+	// --- feature type id
+	$(fsid).focusin(function(){ $(fsid).attr('placeholder',''); });
+	$(fsid).focusout(function(){ $(fsid).attr('placeholder',$(fsid).data('holderfid'));	});	
+	
+	// --- everything below is for the main searchform with the clear all button
+	$(kms).focusin(function(){
+	    $(kms).attr('placeholder','');
 	    $('.searchreset').show('fast');
 	});
-	$('input.form-control').focusout(function(){
-	    $('#searchform').attr('placeholder',$('.form-control').data('holder'));
-	    $('.searchreset').hide();
-	});
-	$('.searchreset').click(function(){
-		$('input.form-control').attr('placeholder','');
-		$('#searchform').attr('placeholder',$('.form-control').data('holder'));
-		$('.searchreset').hide();
-        searchUtil.clearSearch();
-	});	
-	
-	
-	$('input.form-control').focusout(function() {
-		var str = 'Enter Search...';
-		var txt = $('input.form-control').val();
-
-		if (str.indexOf(txt) > -1) {
-			$('.searchreset').hide();
-		return true;
-		} else {
-			$('.searchreset').show(100);
-		return false;
-		}
-	});
-});
-
-
-
-
-
-
-
-// *** SEARCH *** Select-Form & iCheck form graphics
-jQuery(function ($) {
-  $("input[type='checkbox'], input[type='radio']").each(function () {
-      var self = $(this),
-          label = self.next(),
-          label_text = label.text();
-
-      label.remove();
-      self.iCheck({
-          checkboxClass: "icheckbox_minimal-red",
-          radioClass: "iradio_minimal-red",
-          insert: "<div class='icheck_line-icon'></div>" + label_text
-      });
-  });
-
-  $(".selectpicker").selectpicker();
-
-});
-
-
-
-
-
-
-
-
-
-
-
-// *** CONTENT *** Back to Top link
-jQuery(function ($) {
-	var offset = 220;
-  var duration = 500;
-  jQuery(window).scroll(function() {
-      if (jQuery(this).scrollTop() > offset) {
-          jQuery('.back-to-top').fadeIn(duration);
-      } else {
-          jQuery('.back-to-top').fadeOut(duration);
-      }
-  });
-
-  jQuery('.back-to-top').click(function(event) {
-      event.preventDefault();
-      jQuery('html, body').animate({scrollTop: 0}, duration);
-      return false;
-  })
-});
-
-
-
-
-
-
-// *** SEARCH *** clear search input & support for placeholder on older
-jQuery(function($) {			
-	/*--- placeholder ---*/		
-	$('#searchform').data('holder',$('.kms.form-control').attr('placeholder'));		
-	$('input.kms.form-control').focusin(function(){
-	    $('input.kms.form-control').attr('placeholder','');
-	    $('.searchreset').show('fast');
-	});
-	$('input.kms.form-control').focusout(function(){
-	    $('#searchform').attr('placeholder',$('.kms.form-control').data('holder'));	
+	$(kms).focusout(function(){
+	    $(kms).attr('placeholder',$(kms).data('holder'));	
 	    $('.searchreset').hide();        
 	});	
-
-
-
 	$('.searchreset').click(function(){
-		$('input.form-control').attr('placeholder','');
-		$('#searchform').attr('placeholder',$('.kms.form-control').data('holder'));
+		$(kms).attr('placeholder','');
+		$(kms).attr('placeholder',$(kms).data('holder'));
 		$('.searchreset').hide();
         searchUtil.clearSearch();
-	});	
-	
-	
-	$('input.form-control').focusout(function() {
+	});		
+	$(kms).focusout(function() {
 		var str = 'Enter Search...';
-		var txt = $('input.kms.form-control').val();
-		var txt = $('input.form-control').val();
+		var txt = $(kms).val();
 
 		if (str.indexOf(txt) > -1) {
 			$('.searchreset').hide();
@@ -652,17 +570,12 @@ jQuery(function ($) {
 jQuery(function ($) {
 	// manually initiate dropdown w/bstrap
   $(".dropdown-toggle").dropdown();
-
   // controls clicking in dropdown & feature input
 	$(function () {	
 		$(document).on('click', '#feature-select, .dropdown-menu.features-open', function(e) {
 		   e.stopPropagation()
 		})
-	});
-	
-	// hiding the help message
-	// $(".feature-message").delay( 10000 ).slideUp( 300 );
-	
+	});	
   $(".feature-help").toggle( 
   	function () {
 					$(".feature-message").slideDown( 300 ).delay( 9000 ).slideUp( 300 );	
