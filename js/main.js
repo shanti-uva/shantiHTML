@@ -545,16 +545,17 @@ jQuery(function($) {
 	    $("button.feature-reset").css("text-indent","0").show(100);
 	    $(".feature-treeButtons").slideDown( 300 );
 	    $(fsname).dropdown();
+	});	
+	$(fsname).focusout(function(){
+	    $(fsname).attr("placeholder",$(fsname).data("holderf"));	
+	    $("button.feature-reset").hide();
 	});
-
 	$("button.feature-reset").click(function(){
 		$(fsname).attr("placeholder",$(fsname).data("holder"));
 		$("#feature-tree").fancytree();
-	});
-	
+		$(this).css("text-indent","-9999px");
+	});	
 	$(fsname).focusout(function(){
-	    $(fsname).attr("placeholder",$(fsname).data("holderf"));	
-	    $("button.feature-reset").hide();        
 			var strf = "Filter by Feature Name";
 			var txtf = $(fsname).val();
 	
@@ -564,15 +565,8 @@ jQuery(function($) {
 			} else {
 				$("button.feature-reset").show(100);
 			return false;
-			}
+			}		
 	});
-
-	$("button.feature-reset").click(function(){ 
-		$(this).css("text-indent","-9999px");
-	});	
-		
-
-
 	// --- feature type id
 	var kms = $("#searchform");	// the main search input
 	$(kms).data("holder",$(kms).attr("placeholder"));			
@@ -632,12 +626,12 @@ jQuery(function($) {
 	});
 	
 	$("button#btnResetSearch, .feature-reset").click(function(event){
-		$("button.feature-reset").hide();
 		$("input[name=features]").val("");
 		$("span#matches").text("");
 		
 		$("#feature-tree").fancytree();
 		$(".feature-treeButtons").slideUp( 300 ); 
+		$("button.feature-reset").css("text-indent","-9999px");
 		$(this).addClass("show");
 	});
 	
