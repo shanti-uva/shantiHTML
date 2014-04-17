@@ -1,3 +1,7 @@
+var Settings = {
+     baseUrl: "http://dev-places.kmaps.virginia.edu"
+}
+
 
 // *** NAVIGATION *** top drilldown menu
 jQuery(function ($) {
@@ -193,7 +197,7 @@ function decorateElementWithPopover(elem, node) {
         // alert(node.key + counts);
         $.ajax({
             type: "GET",
-            url: "http://dev-subjects.kmaps.virginia.edu/features/" + node.key + ".xml",
+            url: Settings.baseUrl + "/features/" + node.key + ".xml",
             dataType: "xml",
             timeout: 5000,
             beforeSend: function(){
@@ -339,7 +343,7 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+      source: {url: Settings.baseUrl + "/features/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
           complete: function(xhr, status) {
@@ -425,6 +429,7 @@ jQuery(function ($) {
 
                 $('.row_selected').removeClass('row_selected');
                 $(event.target).closest('tr').addClass('row_selected');
+                $("#tree").animate({ scrollTop: 0 }, "slow");
                 $('#tree')
                     .fancytree('getTree')
                     .activateKey(
@@ -465,8 +470,6 @@ jQuery(function ($) {
 //    },'.title-field');
 
 });
-
-
 
 
 
