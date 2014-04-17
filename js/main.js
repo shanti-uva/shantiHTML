@@ -93,11 +93,7 @@ jQuery(function($) {
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
   var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN 
-
-		if($("#btnResetSearch").hasClass("show")){ 
-			$("#kmaps-search .view-wrap.short-wrap").css({ "height": "508px" });
-		}    	
+  var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN    	
 
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
@@ -116,6 +112,10 @@ jQuery(function($) {
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
 
+		if($("#btnResetSearch").hasClass("show")){ 
+			$("#kmaps-search .view-wrap.short-wrap").css({ "height": "518px" });
+		} 
+		
 });
 
 
@@ -479,77 +479,7 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** clear search input & support for placeholder
-jQuery(function($) {	
-	var fsname = $('#feature-name');  // feature type name
-	var fsid = $('#feature-id');	    // feature type id
-	$(fsname).data('holderfname',$(fsname).attr('placeholder'));		
-	$(fsid).data('holderfid',$(fsid).attr('placeholder'));		
-	
-	// --- feature type name
-	$(fsname).focusin(function(){ 
-		$(fsname).attr('placeholder','');
-		$('.feature-treeButtons').show(100);
-		$('.featurereset').show(100); 
-	});
-	$(fsname).focusout(function(){
-	    $(fsname).attr('placeholder',$(fsname).data('holderfname'));	
-	    $('.featurereset').hide(100);         
-	});
-	$('.featurereset').click(function(){
-		$(fsname).attr('placeholder','');
-		$(fsname).attr('placeholder',$(fsname).data('holderfname'));
-		$('.featurereset').hide();
-	});
-	$(fsname).focusout(function(){ 	
-		var str = 'Filter by Feature Name';
-		var txt = $(fsname).val();
-
-		if (str.indexOf(txt) > -1) {
-			$('.featurereset').hide(100);
-			$('.feature-treeButtons').hide();
-		return true;
-		} else {
-			$('.featurereset').show(100);
-			$('.feature-treeButtons').show(100);
-		return false;
-		}
-	});		
-	
-
-	// --- feature type id
-	var kms = $('#searchform');	// the main search input
-	$(kms).data('holder',$(kms).attr('placeholder'));			
-	
-	// --- everything below is for the main searchform with the clear all button
-	$(kms).focusin(function(){
-	    $(kms).attr('placeholder','');
-	    $('.searchreset').show('fast');
-	});
-	$(kms).focusout(function(){
-	    $(kms).attr('placeholder',$(kms).data('holder'));	
-	    $('.searchreset').hide();        
-	});	
-	$('.searchreset').click(function(){
-		$(kms).attr('placeholder','');
-		$(kms).attr('placeholder',$(kms).data('holder'));
-		$('.searchreset').hide();
-        searchUtil.clearSearch();
-	});		
-	$(kms).focusout(function() {
-		var str = 'Enter Search...';
-		var txt = $(kms).val();
-
-		if (str.indexOf(txt) > -1) {
-			$('.searchreset').hide();
-		return true;
-		} else {
-			$('.searchreset').show(100);
-		return false;
-		}
-	});
-
-
-
+jQuery(function($) {				
 	// Initialize Fancytree
 	$("#feature-tree").fancytree({
 		extensions: ["glyph", "edit", "filter"],
@@ -602,20 +532,90 @@ jQuery(function($) {
 		idPrefix: "kmaps2tree"
 	});
 	
-	
+
 	var tree = $("#feature-tree").fancytree("getTree");
+	
+	// --- feature type id
+	var fsname = $('#feature-name');	// the main search input
+	$(fsname).data('holderf',$(fsname).attr('placeholder'));			
+	
+	// --- everything below is for the main searchform with the clear all button
+	$(fsname).focusin(function(){
+	    $(fsname).attr('placeholder','');
+	    $('.featurereset').show('fast');
+	});
+	$(fsname).focusout(function(){
+	$('.featurereset').hide();
+	    $(fsname).attr('placeholder',$(fsname).data('holderf'));	
+	            
+	});	
+	$('.featurereset').click(function(){
+		$(fsname).attr('placeholder',$(kms).data('holderf'));
+		$('.featurereset').hide();
+      	tree.clearFilter();
+	});		
+	$(fsname).focusout(function() {
+		var strf = 'Filter by Feature Name';
+		var txtf = $(fsname).val();
+
+		if (strf.indexOf(txtf) > -1) {
+			$('.featurereset').hide();
+		return true;
+		} else {
+			$('.featurereset').show(100);
+		return false;
+		}
+	});	
+
+
+	// --- feature type id
+	var kms = $('#searchform');	// the main search input
+	$(kms).data('holder',$(kms).attr('placeholder'));			
+	
+	// --- everything below is for the main searchform with the clear all button
+	$(kms).focusin(function(){
+	    $(kms).attr('placeholder','');
+	    $('.searchreset').show('fast');
+	});
+	$(kms).focusout(function(){
+	    $(kms).attr('placeholder',$(kms).data('holder'));	
+	    $('.searchreset').hide();        
+	});	
+	$('.searchreset').click(function(){
+		$(kms).attr('placeholder','');
+		$(kms).attr('placeholder',$(kms).data('holder'));
+		$('.searchreset').hide();
+        searchUtil.clearSearch();
+	});		
+	$(kms).focusout(function() {
+		var str = 'Enter Search...';
+		var txt = $(kms).val();
+
+		if (str.indexOf(txt) > -1) {
+			$('.searchreset').hide();
+		return true;
+		} else {
+			$('.searchreset').show(100);
+		return false;
+		}
+	});
+
+
+
+	
+	
 	/*
 	 * Event handlers for input interface
 	 */
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
 		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
-			$("button#btnResetSearch").click();
+			$("button#btnResetSearch, button#featurereset").click();
 			return;
 		}
 		// Pass text as filter string (will be matched as substring in the node title)
 		var n = tree.applyFilter(match);
-			$("button#btnResetSearch").attr("disabled", false); 
+			$("button#btnResetSearch, button#featurereset").attr("disabled", false); 
 			$("span#matches").text("(" + n + " matches)"); 
 		}).focus();
 
@@ -623,7 +623,7 @@ jQuery(function($) {
 		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
 		tree.clearFilter();
 		$("input[name=features]").keyup();
-		//			tree.render();
+		//	tree.render();
 	});
 	
 	$("button#btnResetSearch, button#featurereset").click(function(event){
