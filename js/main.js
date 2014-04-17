@@ -539,17 +539,17 @@ jQuery(function($) {
 	$(fsname).data("holderf",$(fsname).attr("placeholder"));			
 	
 	// --- everything below is for the main searchform with the clear all button
-	$(fsname).focusin().dropdown();	
+		
 	$(fsname).focusin(function(){
 	    $(fsname).attr("placeholder","");
-	    $("button.feature-reset").show(100);
+	    $("button.feature-reset").css("text-indent","0").show(100);
 	    $(".feature-treeButtons").slideDown( 300 );
+	    $(fsname).dropdown();
 	});
 
 	$("button.feature-reset").click(function(){
 		$(fsname).attr("placeholder",$(fsname).data("holder"));
-		
-    $("#feature-tree").fancytree();
+		$("#feature-tree").fancytree();
 	});
 	
 	$(fsname).focusout(function(){
@@ -567,7 +567,9 @@ jQuery(function($) {
 			}
 	});
 
-	
+	$("button.feature-reset").click(function(){ 
+		$(this).css("text-indent","-9999px");
+	});	
 		
 
 
@@ -620,7 +622,7 @@ jQuery(function($) {
 		var n = tree2.applyFilter(match);
 			$("button#btnResetSearch, .feature-reset").attr("disabled", false); 
 			$("span#matches").text("(" + n + " matches)"); 
-		}).focus();
+	}).focus();
 
 	$("input#hideMode").change(function(e){
 		tree2.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
@@ -639,9 +641,6 @@ jQuery(function($) {
 		$(this).addClass("show");
 	});
 	
-		
-
-
 });
 
 

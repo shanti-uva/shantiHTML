@@ -110,7 +110,7 @@ object.flip_label{ display:none;}
 	top:9px;
 	z-index:10000;
 }
-.input-section .feature-group .feature-reset{ position:absolute; top:27px;right:57px;}
+.input-section .feature-group .feature-reset{ position:absolute; top:27px;right:57px; display:none;}
 
 .input-section .feature-group .feature-reset i,
 .input-section .input-group .searchreset i{ color:#ccc; border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:1px;font-family:'kmaps-icons'; }
