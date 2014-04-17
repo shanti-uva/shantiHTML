@@ -98,27 +98,26 @@ object.flip_label{ display:none;}
 .input-section .input-group .btn.btn-default:active i.icon, 
 .input-section .input-group .btn.btn-default.active i.icon{ color:#777;}
 /*--- clear all button ---*/
-.input-section .feature-group .featurereset,
+.input-section .feature-group .feature-reset,
 .input-section .input-group .searchreset{ 
 	border:none;
 	background:transparent;
 	background-image:none;
 	width:15px;
 	height:15px;
-	display:block;
 	position:absolute;
 	right:50px;
 	top:9px;
 	z-index:10000;
 }
-.input-section .feature-group .featurereset{ position:absolute; top:32px;right:60px;}
+.input-section .feature-group .feature-reset{ position:absolute; top:27px;right:57px;}
 
-.input-section .feature-group .featurereset i,
+.input-section .feature-group .feature-reset i,
 .input-section .input-group .searchreset i{ color:#ccc; border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:1px;font-family:'kmaps-icons'; }
-.input-section .feature-group .featurereset i:before,
+.input-section .feature-group .feature-reset i:before,
 .input-section .input-group .searchreset i:before{ content: "\e612";background:transparent; color:#ccc;}
 
-.feature-group .featurereset i.icon{ position:relative; top:-5px;right:-45px;}
+.feature-group .feature-reset i.icon{ position:relative; top:-5px;right:-45px;}
 
 /*-----------------------------------------------*/
 /*----- Advanced Options -----*/
@@ -138,7 +137,7 @@ object.flip_label{ display:none;}
 .feature-group .toggle-link.features-link{ margin:0 10px 0 0;}
 .input-section .toggle-link.advanced-link{ margin-right:25px}
 
-.feature-group .feature-treeButtons{ height:18px;width:100%; display:block; position:relative;top:-2px; display:none;}
+.feature-group .feature-treeButtons{ height:20px;width:100%; margin-bottom:5px; position:relative;top:-2px; display:none;}
 
 #kmaps-search .text .feature-treeButtons label:first-child{ color:#707070;}
 .feature-group .feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
@@ -147,6 +146,9 @@ object.flip_label{ display:none;}
 .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
 
+
+.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
+span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
 
 /*--- iCheck :: radio and checkbox style overrides ---*/
