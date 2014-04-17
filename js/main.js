@@ -1,5 +1,5 @@
 var Settings = {
-     baseUrl: "http://dev-places.kmaps.virginia.edu"
+     baseUrl: "http://dev-subjects.kmaps.virginia.edu"
 }
 
 
