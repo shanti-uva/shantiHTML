@@ -130,19 +130,17 @@ object.flip_label{ display:none;}
 .input-section .toggle-link i.icon:before{ color:#dc3c47; font-family:'kmaps-icons'; content:'\e60d'; font-size:0.68em; margin-right:4px;}
 /*---------------------------*/
 /*--- custom sizes & position ---*/
-
-.feature-group .toggle-link.features-link{ margin:0 10px 0 0;}
 .input-section .toggle-link.advanced-link{ margin-right:25px}
-
-.feature-group .feature-treeButtons{ height:20px;width:100%; margin-bottom:5px; position:relative;top:-2px; display:none;}
-
-#kmaps-search .text .feature-treeButtons label:first-child{ color:#707070;}
-.feature-group .feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
-.feature-group .feature-treeButtons label.radio-inline div{ margin:0 4px 0 0;}
-
+.feature-group .toggle-link.features-link{ margin:0 10px 0 0;}
 .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
 
+/*--- filtering button and readout above input ---*/
+.feature-group .feature-treeButtons{ height:20px;width:100%; margin-bottom:5px; position:relative;top:-2px; display:none;}
+.feature-group .feature-treeButtons label:first-child{ color:#707070;}
+
+.feature-group .feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
+.feature-group .feature-treeButtons label.radio-inline div{ margin:0 4px 0 0;}
 
 .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 span.fancytree-node.fancytree-selected:hover{ background:transparent;}

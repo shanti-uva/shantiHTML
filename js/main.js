@@ -543,7 +543,7 @@ jQuery(function($) {
 	$(fsname).focusin(function(){
 			$(this).dropdown();
 	    $(this).attr("placeholder","");
-	    $("button.feature-reset").css("text-indent","0").show(100);
+	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
 	    $(".feature-treeButtons").slideDown( 300 );
 	    $(this).dropdown();
 	});	
@@ -555,7 +555,7 @@ jQuery(function($) {
 	$("button.feature-reset").click(function(){
 		$(fsname).attr("placeholder",$(fsname).data("holderf"));
 		$("#feature-tree").fancytree();
-		$(this).css("text-indent","-9999px");
+		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 	});	
 	$(fsname).focusout(function(){
 			var strf = "Filter by Feature Name";
@@ -563,9 +563,11 @@ jQuery(function($) {
 	
 			if (strf.indexOf(txtf) > -1) {
 				$("button.feature-reset").hide();
+				$(".feature-treeButtons").slideUp( 300 );
 			return true;
 			} else {
 				$("button.feature-reset").show(100);
+				$(".feature-treeButtons").slideDown( 300 );
 			return false;
 			}		
 	});
@@ -633,7 +635,7 @@ jQuery(function($) {
 		
 		$("#feature-tree").fancytree();
 		$(".feature-treeButtons").slideUp( 300 ); 
-		$("button.feature-reset").css("text-indent","-9999px");
+		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 		$(this).addClass("show");
 	});
 	
