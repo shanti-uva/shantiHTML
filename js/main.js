@@ -391,7 +391,7 @@ jQuery(function ($) {
             $('table.table-results').dataTable().fnDestroy();
             var tree = $('#tree').fancytree('getTree').applyFilter(txt);
             // $('span.fancytree-match').removeClass('fancytree-match');
-            $('span.fancytree-title').highlight(txt, { element: 'mark' });
+            $('.input-group span.fancytree-title').highlight(txt, { element: 'mark' });
             // Retrieve matches
             var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
                 return n.match;
@@ -515,7 +515,7 @@ jQuery(function($) {
 			}
 		},
 				// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-		source: {url: "js/fancy_nested.json", debugDelay: 1000},
+		source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json", debugDelay: 1000},
 		filter: {
 				//	mode: "hide"
 		},
@@ -561,13 +561,6 @@ jQuery(function($) {
 	    $(this).attr("placeholder",$(fsname).data("holderf"));	
 	    $("button.feature-reset").hide();
 	    $(this).dropdown();
-	});
-	$("button.feature-reset").click(function(){
-		$(fsname).attr("placeholder",$(fsname).data("holderf"));
-		$("#feature-tree").fancytree();
-		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
-	});	
-	$(fsname).focusout(function(){
 			var strf = "Filter by Feature Name";
 			var txtf = $(fsname).val();
 	
@@ -579,8 +572,14 @@ jQuery(function($) {
 				$("button.feature-reset").show(100);
 				$(".feature-treeButtons").slideDown( 300 );
 			return false;
-			}		
+			}	
 	});
+	$("button.feature-reset").click(function(){
+		$(fsname).attr("placeholder",$(fsname).data("holderf"));
+		$("#feature-tree").fancytree();
+		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
+	});	
+
 	// --- feature type id
 	var kms = $("#searchform");	// the main search input
 	$(kms).data("holder",$(kms).attr("placeholder"));			
