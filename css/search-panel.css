@@ -106,18 +106,15 @@ object.flip_label{ display:none;}
 	width:15px;
 	height:15px;
 	position:absolute;
-	right:50px;
+	right:46px;
 	top:9px;
 	z-index:10000;
+	font-size:1.5em; 
+	color:#ccc;
+	display:none;
+	padding:0;margin:0;
 }
-.input-section .feature-group .feature-reset{ position:absolute; top:27px;right:57px; display:none;}
-
-.input-section .feature-group .feature-reset i,
-.input-section .input-group .searchreset i{ color:#ccc; border:none; font-size:11px; line-height:15px; height:15px; position:relative; top:-2px;right:1px;font-family:'kmaps-icons'; }
-.input-section .feature-group .feature-reset i:before,
-.input-section .input-group .searchreset i:before{ content: "\e612";background:transparent; color:#ccc;}
-
-.feature-group .feature-reset i.icon{ position:relative; top:-5px;right:-45px;}
+.input-section .feature-group .feature-reset{ position:absolute; top:23px;right:7px;}
 
 /*-----------------------------------------------*/
 /*----- Advanced Options -----*/

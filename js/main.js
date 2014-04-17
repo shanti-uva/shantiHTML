@@ -541,17 +541,19 @@ jQuery(function($) {
 	// --- everything below is for the main searchform with the clear all button
 		
 	$(fsname).focusin(function(){
-	    $(fsname).attr("placeholder","");
+			$(this).dropdown();
+	    $(this).attr("placeholder","");
 	    $("button.feature-reset").css("text-indent","0").show(100);
 	    $(".feature-treeButtons").slideDown( 300 );
-	    $(fsname).dropdown();
+	    $(this).dropdown();
 	});	
 	$(fsname).focusout(function(){
-	    $(fsname).attr("placeholder",$(fsname).data("holderf"));	
+	    $(this).attr("placeholder",$(fsname).data("holderf"));	
 	    $("button.feature-reset").hide();
+	    $(this).dropdown();
 	});
 	$("button.feature-reset").click(function(){
-		$(fsname).attr("placeholder",$(fsname).data("holder"));
+		$(fsname).attr("placeholder",$(fsname).data("holderf"));
 		$("#feature-tree").fancytree();
 		$(this).css("text-indent","-9999px");
 	});	
@@ -574,16 +576,16 @@ jQuery(function($) {
 	// --- everything below is for the main searchform with the clear all button
 	$(kms).focusin(function(){
 	    $(kms).attr("placeholder","");
-	    $(".searchreset").show("fast");
+	    $("button.searchreset").show("fast");
 	});
 	$(kms).focusout(function(){
 	    $(kms).attr("placeholder",$(kms).data("holder"));	
-	    $(".searchreset").hide();        
+	    $("button.searchreset").hide();        
 	});	
-	$(".searchreset").click(function(){
+	$("button.searchreset").click(function(){
 		$(kms).attr("placeholder","");
 		$(kms).attr("placeholder",$(kms).data("holder"));
-		$(".searchreset").hide();
+		$("button.searchreset").hide();
         searchUtil.clearSearch();
 	});		
 	$(kms).focusout(function() {
@@ -591,10 +593,10 @@ jQuery(function($) {
 		var txt = $(kms).val();
 
 		if (str.indexOf(txt) > -1) {
-			$(".searchreset").hide();
+			$("button.searchreset").hide();
 		return true;
 		} else {
-			$(".searchreset").show(100);
+			$("button.searchreset").show(100);
 		return false;
 		}
 	});
@@ -619,7 +621,7 @@ jQuery(function($) {
 	}).focus();
 
 	$("input#hideMode").change(function(e){
-		tree2.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
+		tree2.options.filter.mode = $("div.icheckbox_minimal-red").hasClass("checked") ? "hide" : "dimm";
 		tree2.clearFilter();
 		$("input[name=features]").keyup();
 		//	tree2.render();
