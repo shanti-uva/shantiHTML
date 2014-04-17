@@ -311,7 +311,7 @@
 					  <div class="input-group">
 								<input id="searchform" class="form-control kms" type="text" placeholder="Enter Search...">
 								<span class="input-group-btn">
-									<button type="reset" class="searchreset" style="display:none;"><i class="icon"></i></button>
+									<button type="reset" class="searchreset">&times;</button>
 									<button id="searchbutton" type="button" class="btn btn-default"><i class="icon"></i></button>
 								</span>
 
@@ -320,7 +320,9 @@
 						<a href="#" class="advanced-link toggle-link" title="advanced search options"><i class="icon"></i>Advanced</a>	
 								
 							 <!-- advanced search hidden ontent -->
-							 <div class="advanced-view" style="display:none;">													    
+							 <div class="advanced-view" style="display:none;">
+							 	<div id="notification-wrapper"></div>
+							 														    
 								  <div class="form-group"> 
 								    <label class="radio-inline" for="radios-0">
 								      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
@@ -363,33 +365,36 @@
 								  <div class="feature-treeButtons">
 								  		<label>Filter:</label> <span id="matches"></span>								      
 								      <label class="radio-inline" for="hideMode"> 
-								      <input type="checkbox" id="hideMode" checked>Hide Null</label>
+								      <input type="checkbox" id="hideMode">Hide Null</label>
 									</div>
 
 									<div style="position:relative;">						      
-									  		<a href="#" class="dropdown-toggle feature-link toggle-link" data-toggle="dropdown" style="margin-top:5px;"><i class="icon"></i>Feature Tree</a>								  								  		 								  		 														    
-									      <input class="form-control kms-fsname" id="feature-name" name="features" type="text" placeholder="Filter by Feature Name">	
+									  		<a href="#" class="dropdown-toggle feature-link toggle-link" data-toggle="dropdown"><i class="icon"></i>Browse Features</a>								  								  		 								  		 														    
+									      <input class="form-control kms-fname" id="feature-name" name="features" type="text" placeholder="Filter by Feature Name">	
 								      
 									      
 									      <div class="dropdown-menu features-open">
-										  			<div class="tree-wrap">										  			
-											  			  <a href="#" class="feature-help"><i class="icon km-info"></i></a>
-											  				<p class="feature-message">Please select one or more feature types from the list below. For each type, click on the left box to select the type and its subcategories; click on the right box to select only the type without its subcategories.</p>
-											  			<div class="feature-container">
-											  			
-											  				<div id="feature-tree"></div> <!-- features tree, under construction -->
-											  			
-											  			</div> 										  			
+										  			<div class="tree-wrap">	
+										  												  			
+																	<!-- <a href="#" class="feature-help"><i class="icon km-info"></i></a>
+																	<p class="feature-message">Please select one or more feature types from the list below. For each type, click on the left 
+																	box to select the type and its subcategories; click on the right box to select only the type without its subcategories.</p> -->
+											  																									
+											  			<div class="feature-container">											  			
+											  				<div id="feature-tree"></div> <!-- features tree, under construction -->											  			
+											  			</div> 
+											  													  			
 											  			<div class="feature-submit">
 											  				<button type="button" class="btn btn-default">Select</button>
-											  				<button id="btnResetSearch" type="reset" class="btn btn-default clear-form">Cancel</button>
-											  			</div>										  			
-										  			</div>									  		
-									  		</div>
+											  				<button id="btnResetSearch" class="btn btn-default clear-form">Cancel <span>&times;</span></button>
+											  			</div>
+											  													  			
+										  			</div>								  		
+									  		</div> <!-- END dropdown-menu -->
 												
-												<button id="featurereset" class="featurereset" type="reset" style="display:none;"><i class="icon"></i></button>
+												<button id="feature-reset" class="feature-reset">&times;</button>
 							  		</div> 
-								  </div> 
+								  </div> <!-- END feature-group -->
 								  
 								  
 								  
@@ -416,7 +421,7 @@
 
 							 </div>
 				 </fieldset>
-         <div id="notification-wrapper"></div>
+         
        </form>
 			</section>	<!-- END search section -->
 
@@ -543,10 +548,11 @@
 	    <p>&copy; COPYRIGHT 2014</p>
 	  </div>
 	</footer> 
-	
+
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	
 	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="js/menus/jquery.multilevelpushmenu.min.js"></script>
 
@@ -555,7 +561,7 @@
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script><!-- tree -->  
 	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script><!-- tree -->
 
-		<script src="src/jquery.fancytree.edit.js" type="text/javascript"></script>	
+	<script type="text/javascript" src="src/jquery.fancytree.edit.js"></script>	<!-- is this needed ? -->
 
 	<script type="text/javascript" src="js/forms/check/icheck.min.js"></script><!-- forms -->
 	<script type="text/javascript" src="js/forms/select/bootstrap-select.min.js"></script><!-- forms -->  

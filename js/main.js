@@ -97,11 +97,7 @@ jQuery(function($) {
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
   var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN 
-
-		if($("#btnResetSearch").hasClass("show")){ 
-			$("#kmaps-search .view-wrap.short-wrap").css({ "height": "508px" });
-		}    	
+  var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN    	
 
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
@@ -120,6 +116,10 @@ jQuery(function($) {
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
 
+		if($("#btnResetSearch").hasClass("show")){ 
+			$("#kmaps-search .view-wrap.short-wrap").css({ "height": "518px" });
+		} 
+		
 });
 
 
@@ -482,77 +482,7 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** clear search input & support for placeholder
-jQuery(function($) {	
-	var fsname = $('#feature-name');  // feature type name
-	var fsid = $('#feature-id');	    // feature type id
-	$(fsname).data('holderfname',$(fsname).attr('placeholder'));		
-	$(fsid).data('holderfid',$(fsid).attr('placeholder'));		
-	
-	// --- feature type name
-	$(fsname).focusin(function(){ 
-		$(fsname).attr('placeholder','');
-		$('.feature-treeButtons').show(100);
-		$('.featurereset').show(100); 
-	});
-	$(fsname).focusout(function(){
-	    $(fsname).attr('placeholder',$(fsname).data('holderfname'));	
-	    $('.featurereset').hide(100);         
-	});
-	$('.featurereset').click(function(){
-		$(fsname).attr('placeholder','');
-		$(fsname).attr('placeholder',$(fsname).data('holderfname'));
-		$('.featurereset').hide();
-	});
-	$(fsname).focusout(function(){ 	
-		var str = 'Filter by Feature Name';
-		var txt = $(fsname).val();
-
-		if (str.indexOf(txt) > -1) {
-			$('.featurereset').hide(100);
-			$('.feature-treeButtons').hide();
-		return true;
-		} else {
-			$('.featurereset').show(100);
-			$('.feature-treeButtons').show(100);
-		return false;
-		}
-	});		
-	
-
-	// --- feature type id
-	var kms = $('#searchform');	// the main search input
-	$(kms).data('holder',$(kms).attr('placeholder'));			
-	
-	// --- everything below is for the main searchform with the clear all button
-	$(kms).focusin(function(){
-	    $(kms).attr('placeholder','');
-	    $('.searchreset').show('fast');
-	});
-	$(kms).focusout(function(){
-	    $(kms).attr('placeholder',$(kms).data('holder'));	
-	    $('.searchreset').hide();        
-	});	
-	$('.searchreset').click(function(){
-		$(kms).attr('placeholder','');
-		$(kms).attr('placeholder',$(kms).data('holder'));
-		$('.searchreset').hide();
-        searchUtil.clearSearch();
-	});		
-	$(kms).focusout(function() {
-		var str = 'Enter Search...';
-		var txt = $(kms).val();
-
-		if (str.indexOf(txt) > -1) {
-			$('.searchreset').hide();
-		return true;
-		} else {
-			$('.searchreset').show(100);
-		return false;
-		}
-	});
-
-
-
+jQuery(function($) {				
 	// Initialize Fancytree
 	$("#feature-tree").fancytree({
 		extensions: ["glyph", "edit", "filter"],
@@ -605,44 +535,113 @@ jQuery(function($) {
 		idPrefix: "kmaps2tree"
 	});
 	
+
+	var tree2 = $("#feature-tree").fancytree("getTree");
+		
+	var fsname = $("#feature-name");	// feature type id 
+	$(fsname).data("holderf",$(fsname).attr("placeholder"));			
 	
-	var tree = $("#feature-tree").fancytree("getTree");
+	// --- everything below is for the main searchform with the clear all button
+		
+	$(fsname).focusin(function(){
+			$(this).dropdown();
+	    $(this).attr("placeholder","");
+	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
+	    $(".feature-treeButtons").slideDown( 300 );
+	    $(this).dropdown();
+	});	
+	$(fsname).focusout(function(){
+	    $(this).attr("placeholder",$(fsname).data("holderf"));	
+	    $("button.feature-reset").hide();
+	    $(this).dropdown();
+	});
+	$("button.feature-reset").click(function(){
+		$(fsname).attr("placeholder",$(fsname).data("holderf"));
+		$("#feature-tree").fancytree();
+		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
+	});	
+	$(fsname).focusout(function(){
+			var strf = "Filter by Feature Name";
+			var txtf = $(fsname).val();
+	
+			if (strf.indexOf(txtf) > -1) {
+				$("button.feature-reset").hide();
+				$(".feature-treeButtons").slideUp( 300 );
+			return true;
+			} else {
+				$("button.feature-reset").show(100);
+				$(".feature-treeButtons").slideDown( 300 );
+			return false;
+			}		
+	});
+	// --- feature type id
+	var kms = $("#searchform");	// the main search input
+	$(kms).data("holder",$(kms).attr("placeholder"));			
+	
+	// --- everything below is for the main searchform with the clear all button
+	$(kms).focusin(function(){
+	    $(kms).attr("placeholder","");
+	    $("button.searchreset").show("fast");
+	});
+	$(kms).focusout(function(){
+	    $(kms).attr("placeholder",$(kms).data("holder"));	
+	    $("button.searchreset").hide();        
+	});	
+	$("button.searchreset").click(function(){
+		$(kms).attr("placeholder","");
+		$(kms).attr("placeholder",$(kms).data("holder"));
+		$("button.searchreset").hide();
+        searchUtil.clearSearch();
+	});		
+	$(kms).focusout(function() {
+		var str = "Enter Search...";
+		var txt = $(kms).val();
+
+		if (str.indexOf(txt) > -1) {
+			$("button.searchreset").hide();
+		return true;
+		} else {
+			$("button.searchreset").show(100);
+		return false;
+		}
+	});
+
+
+
+	
+	
 	/*
 	 * Event handlers for input interface
 	 */
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
 		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
-			$("button#btnResetSearch").click();
+			$("button#btnResetSearch, .feature-reset").click();
 			return;
 		}
 		// Pass text as filter string (will be matched as substring in the node title)
-		var n = tree.applyFilter(match);
-			$("button#btnResetSearch").attr("disabled", false); 
+		var n = tree2.applyFilter(match);
+			$("button#btnResetSearch, .feature-reset").attr("disabled", false); 
 			$("span#matches").text("(" + n + " matches)"); 
-		}).focus();
+	}).focus();
 
 	$("input#hideMode").change(function(e){
-		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
-		tree.clearFilter();
+		tree2.options.filter.mode = $("div.icheckbox_minimal-red").hasClass("checked") ? "hide" : "dimm";
+		tree2.clearFilter();
 		$("input[name=features]").keyup();
-		//			tree.render();
+		//	tree2.render();
 	});
 	
-	$("button#btnResetSearch, button#featurereset").click(function(event){
+	$("button#btnResetSearch, .feature-reset").click(function(event){
 		$("input[name=features]").val("");
 		$("span#matches").text("");
-		tree.clearFilter();
 		
 		$("#feature-tree").fancytree();
 		$(".feature-treeButtons").slideUp( 300 ); 
+		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 		$(this).addClass("show");
 	});
 	
-	$("input#feature-name").focusin(function(){ 
-		$(".feature-treeButtons").slideDown( 300 ); 
-	});
-
 });
 
 
