@@ -454,6 +454,13 @@ jQuery(function ($) {
   $("#searchbutton").click(handleSearch);
   $('#searchform').attr('autocomplete','off'); // turn off browser autocomplete
   $("form.form").submit(handleSearch);
+  $("#searchform").keyup( function(e) {
+    var code = (e.keyCode ? e.keyCode : e.which);
+    if (code === 13) {
+        e.preventDefault();
+	handleSearch();
+    }
+  });
 
 	//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {
