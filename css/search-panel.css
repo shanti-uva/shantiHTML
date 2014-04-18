@@ -114,7 +114,7 @@ object.flip_label{ display:none;}
 	display:none;
 	padding:0;margin:0;
 }
-.input-section .feature-group .feature-reset{ position:absolute; top:21px;right:7px;}
+.input-section .feature-group .feature-reset{ position:absolute; top:22px;right:7px;}
 
 /*-----------------------------------------------*/
 /*----- Advanced Options -----*/
@@ -131,6 +131,7 @@ object.flip_label{ display:none;}
 /*---------------------------*/
 /*--- custom sizes & position ---*/
 .feature-group .toggle-link.feature-link{ padding-right:15px;}
+.input-section .toggle-link.advanced-link{ margin-bottom:2px;}
 .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
 
@@ -253,6 +254,7 @@ object.flip_label{ display:none;}
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
 
+.feature-group span.fancytree-title{ margin-left:0;padding-left:0;}
 
 
 span.fancytree-checkbox{ cursor:pointer;}
@@ -260,10 +262,10 @@ span.fancytree-checkbox{ cursor:pointer;}
 .feature-group ul.fancytree-container .glyphicon {
     color: #888;
     /* font-family: 'Glyphicons Halflings'; */
-    font-size: 15px;
-   /* margin-right: 12px;
+    font-size: 13px;
+   /* margin-right: 12px; */
     position: relative;
-    top: 1px; */
+    right: 4px;
 }
 .feature-group ul.fancytree-container span.fancytree-node:hover > .glyphicon {
     color: #333;
@@ -279,7 +281,7 @@ span.fancytree-checkbox{ cursor:pointer;}
 
 
 
-.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.fancy-checkbox{ color:#222;}
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.fancy-checkbox{ }
 .feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-share{ color:#000 !important;}
 .feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-check{ color:#c00 !important;}
 
@@ -586,7 +588,7 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
 .view-section ul.fancytree-container .glyphicon {
     color: #888;
     font-family: 'Glyphicons Halflings';
-    font-size: 15px;
+    font-size: 13px;
     margin-right: 12px;
     position: relative;
     top: 1px;

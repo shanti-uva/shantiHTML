@@ -329,8 +329,8 @@ jQuery(function ($) {
 			selectMode: 2,
       debugLevel: 0,
 			autoScroll: true,
-			closeOnExternalClick:false,
-			flapMargin:0,
+			// closeOnExternalClick:false,
+			// flapMargin:0,
       filter: { mode: 'hide' },
       glyph: {
           map: {
