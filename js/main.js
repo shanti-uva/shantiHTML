@@ -348,7 +348,7 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: "/features/fancy_nested.json",
+      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
       // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
@@ -704,7 +704,7 @@ jQuery(function($) {
 	// 		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
 			
 	$(".icheckbox_minimal-red").change(function(e){
-		tree2.options.filter.mode = $(this).hasClass("checked") ? "hide" : "hide";
+		tree2.options.filter.mode = $(this).hasClass("checked") ? "hide" : "dimm";
 		tree2.clearFilter();
 		$("input[name=features]").keyup();
 			//	tree2.render();			
