@@ -580,10 +580,10 @@ jQuery(function($) {
 			}
 		},
 		// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-		// source: {url: "./js/fancy_nested.json", debugDelay: 1000},
-		source: treeData,
+		 source: {url: "./js/fancy_nested.json", debugDelay: 1000},
+		// source: treeData,
 		filter: {
-				//	mode: "hide"
+				mode: "hide"
 		},
 		activate: function(event, data) {
 				//	alert("activate " + data.node);
@@ -707,7 +707,7 @@ jQuery(function($) {
 			//	tree2.render();
 			
 	});
-	
+	$("span.fancytree-submatch").parent().hide();
 	//if($(".icheckbox_minimal-red").hasClass(".checked")) {
 	//		$("fancytree-node").remove();
 	//}
