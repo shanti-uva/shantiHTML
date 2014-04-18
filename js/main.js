@@ -678,6 +678,12 @@ jQuery(function($) {
 
 
 	// --- BOTH ---
+	$("input[name=features]").keydown(function(e){
+			$(".dropdown-toggle").dropdown();
+			return;
+	});
+	
+	
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
 		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
@@ -703,8 +709,8 @@ jQuery(function($) {
 	// $("input#hideMode").change(function(e){
 	// 		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
 			
-	$(".icheckbox_minimal-red").change(function(e){
-		tree2.options.filter.mode = $(this).hasClass("checked") ? "hide" : "dimm";
+	if($(".icheckbox_minimal-red").hasClass("checked")) (function(e){
+		tree2.options.filter.mode = $("input[name=hidemode]").is(":checked") ? "hide" : "dimm";
 		tree2.clearFilter();
 		$("input[name=features]").keyup();
 			//	tree2.render();			
