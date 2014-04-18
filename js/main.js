@@ -348,7 +348,8 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: Settings.baseUrl + "/features/fancy_nested.json",
+      source: {url: Settings.baseUrl + "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+      // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
           complete: function(xhr, status) {
@@ -494,7 +495,32 @@ jQuery(function($) {
 	$("#feature-tree").fancytree({
 		extensions: ["glyph", "edit", "filter"],
 		checkbox: true,
-		selectMode: 2,
+		selectMode: 3,
+		select: function(event, data) {
+				// Get a list of all selected nodes, and convert to a key array:
+				var selKeys = $.map(data.tree.getSelectedNodes(), function(node){
+					return node.key;
+				});
+				$("#echoSelection3").text(selKeys.join(", "));
+
+				// Get a list of all selected TOP nodes
+				var selRootNodes = data.tree.getSelectedNodes(true);
+				// ... and convert to a key array:
+				var selRootKeys = $.map(selRootNodes, function(node){
+					return node.key;
+				});
+				$("#echoSelectionRootKeys3").text(selRootKeys.join(", "));
+				$("#echoSelectionRoots3").text(selRootNodes.join(", "));
+			},
+			dblclick: function(event, data) {
+				data.node.toggleSelected();
+			},
+			keydown: function(event, data) {
+				if( event.which === 32 ) {
+					data.node.toggleSelected();
+					return false;
+				}
+			},
 		glyph: {
 			map: {
 				// doc: "glyphicon glyphicon-file",
@@ -515,7 +541,7 @@ jQuery(function($) {
 			}
 		},
 				// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-		source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json", debugDelay: 1000},
+		source: {url: "./js/fancy_nested.json", debugDelay: 1000},
 		filter: {
 				//	mode: "hide"
 		},
@@ -542,49 +568,16 @@ jQuery(function($) {
 		idPrefix: "kmaps2tree"
 	});
 	
+	// --- input styles for search panel
+	var tree2 = $("#feature-tree").fancytree("getTree");		
+	var fname = $("#feature-name");	// feature type id 
+	$(fname).data("holderf",$(fname).attr("placeholder"));			
 
-	var tree2 = $("#feature-tree").fancytree("getTree");
-		
-	var fsname = $("#feature-name");	// feature type id 
-	$(fsname).data("holderf",$(fsname).attr("placeholder"));			
-	
-	// --- everything below is for the main searchform with the clear all button
-		
-	$(fsname).focusin(function(){
-			$(this).dropdown();
-	    $(this).attr("placeholder","");
-	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
-	    $(".feature-treeButtons").slideDown( 300 );
-	    $(this).dropdown();
-	});	
-	$(fsname).focusout(function(){
-	    $(this).attr("placeholder",$(fsname).data("holderf"));	
-	    $("button.feature-reset").hide();
-	    $(this).dropdown();
-			var strf = "Filter by Feature Name";
-			var txtf = $(fsname).val();
-	
-			if (strf.indexOf(txtf) > -1) {
-				$("button.feature-reset").hide();
-				$(".feature-treeButtons").slideUp( 300 );
-			return true;
-			} else {
-				$("button.feature-reset").show(100);
-				$(".feature-treeButtons").slideDown( 300 );
-			return false;
-			}	
-	});
-	$("button.feature-reset").click(function(){
-		$(fsname).attr("placeholder",$(fsname).data("holderf"));
-		$("#feature-tree").fancytree();
-		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
-	});	
-
-	// --- feature type id
+	// --- kms, KMAPS MAIN SEARCH INPUT ---
 	var kms = $("#searchform");	// the main search input
 	$(kms).data("holder",$(kms).attr("placeholder"));			
 	
-	// --- everything below is for the main searchform with the clear all button
+	// --- below is mostly for the clear all
 	$(kms).focusin(function(){
 	    $(kms).attr("placeholder","");
 	    $("button.searchreset").show("fast");
@@ -613,12 +606,38 @@ jQuery(function($) {
 	});
 
 
+	// --- fname, KMAPS FEATURE NAME ---
+	$(fname).focusin(function(){
+			$(this).dropdown();
+	    $(this).attr("placeholder","");
+	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
+	    $(".feature-treeButtons").slideDown( 300 );
+	});	
+	$(fname).focusout(function(){
+	    $(this).attr("placeholder",$(fname).data("holderf"));	
+	    $("button.feature-reset").hide();
+	    $(this).dropdown();
+			var strf = "Filter by Feature Name";
+			var txtf = $(fname).val();
+	
+			if (strf.indexOf(txtf) > -1) {
+				$("button.feature-reset").hide();
+				$(".feature-treeButtons").slideUp( 300 );
+			return true;
+			} else {
+				$("button.feature-reset").show(100);
+				$(".feature-treeButtons").slideDown( 300 );
+			return false;
+			}	
+	});
+	$("button.feature-reset").click(function(){
+		$(fname).attr("placeholder",$(fname).data("holderf"));
+		$("#feature-tree").fancytree();
+		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
+	});	
 
-	
-	
-	/*
-	 * Event handlers for input interface
-	 */
+
+	// --- BOTH ---
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
 		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
@@ -630,13 +649,6 @@ jQuery(function($) {
 			$("button#btnResetSearch, .feature-reset").attr("disabled", false); 
 			$("span#matches").text("(" + n + " matches)"); 
 	}).focus();
-
-	$("input#hideMode").change(function(e){
-		tree2.options.filter.mode = $("div.icheckbox_minimal-red").hasClass("checked") ? "hide" : "dimm";
-		tree2.clearFilter();
-		$("input[name=features]").keyup();
-		//	tree2.render();
-	});
 	
 	$("button#btnResetSearch, .feature-reset").click(function(event){
 		$("input[name=features]").val("");
@@ -647,6 +659,18 @@ jQuery(function($) {
 		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 		$(this).addClass("show");
 	});
+	
+	$(".icheckbox_minimal-red").change(function(e){
+		tree2.options.filter.mode = $(this).hasClass(".checked") ? "hide" : "dimm";
+		tree2.clearFilter();
+		$("input[name=features]").keyup();
+			//	tree2.render();
+			
+	});
+	
+	//if($(".icheckbox_minimal-red").hasClass(".checked")) {
+	//		$("fancytree-node").remove();
+	//}
 	
 });
 
