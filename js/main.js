@@ -348,7 +348,7 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: Settings.baseUrl + "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
       // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
@@ -700,9 +700,11 @@ jQuery(function($) {
 		$(this).addClass("show");
 	}).attr("disabled", true);
 	
-	$("input#hideMode").change(function(e){
-		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
-		$(".fancytree-node.fancytree-submatch").parent().hide();
+	// $("input#hideMode").change(function(e){
+	// 		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
+			
+	$(".icheckbox_minimal-red").change(function(e){
+		tree2.options.filter.mode = $(this).hasClass("checked") ? "hide" : "dimm";
 		tree2.clearFilter();
 		$("input[name=features]").keyup();
 			//	tree2.render();			

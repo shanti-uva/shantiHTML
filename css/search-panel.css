@@ -300,14 +300,14 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .show-feature-tree .form-group{ border-top:1px solid #e0e0e0; margin:0 8px;}
 .show-feature-tree .form-group.last{ /* padding-bottom:5px; */}
 
-.feature-group ul.fancytree-container{ border:none; margin-top:12px;}
+.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;}
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 .feature-group span.fancytree-node.fancytree-selected:hover{ background:transparent;border:none;}
 
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active, 
 .feature-group span.fancytree-node.fancytree-active:hover{ background:transparent;border:none;}
 
-.feature-group #feature-tree{ height:auto;}
+/* .feature-group #feature-tree{ height:auto;} */
 #kmaps-search .text #feature-tree,
 .fancytree-ext-filter span.fancytree-node span.fancytree-title{ color:#707070;}
 
@@ -325,12 +325,12 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 
 
 /*--- bottom buttons ---*/
-.feature-submit{ padding:0 17px 7px; border-top:1px solid #ccc; width:100%; background-color:#fff; height:45px; min-height:45px;
-	border-radius-bottom-left:12px; border-radius-bottom-right:12px; position:absolute; bottom:-7px; z-index:9999;
+.feature-submit{ padding:0 17px 7px; margin:0; border-top:1px solid #ccc; width:100%; background-color:#fff; height:40px; min-height:40px;
+	border-radius-bottom-left:12px; border-radius-bottom-right:12px; position:absolute; bottom:0; z-index:9999;
 }
-.feature-group .tree-wrap{ position:relative; height:305px; min-height:305px; }
-.feature-container{  height:305px; min-height:305px;}
-.feature-container #feature-tree{ padding:0; height:305px; min-height:305px; margin-top:5px;} /***** container height ******/
+.feature-group .tree-wrap{ height:312px; min-height:312px; /*--- height ---*/ padding:0; position:relative; }
+.feature-container{  height:312px; min-height:312px; /*--- height ---*/ padding:0;margin:0;}
+.feature-container #feature-tree{ height:312px; min-height:312px; /*--- height ---*/ padding:0; margin:5px 0 0;} /***** container height ******/
 
 .feature-help{ color:#555;position:relative;top:20px;right:20px; z-index:9999; height:12px;width:12px;}
 .feature-help i{ font-size:1.18em; color:#555;background:#fff;}
