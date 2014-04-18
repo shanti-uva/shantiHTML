@@ -96,8 +96,8 @@ jQuery(function ($) {
 jQuery(function($) { 
   var winHeight = $(window).height(); 
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
-  var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -485; // ----- height for view-section & search options - OPEN    	
+  var viewHeight = winHeight -216; // ----- height for view-section & search options - CLOSED
+  var shortHeight = winHeight -469; // ----- height for view-section & search options - OPEN    	
 
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
