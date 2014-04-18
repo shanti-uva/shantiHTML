@@ -693,24 +693,22 @@ jQuery(function($) {
 	$("button#btnResetSearch, .feature-reset").click(function(event){
 		$("input[name=features]").val("");
 		$("span#matches").text("");
-		
+		 tree2.clearFilter();		
 		$("#feature-tree").fancytree();
 		$(".feature-treeButtons").slideUp( 300 ); 
 		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 		$(this).addClass("show");
-	});
+	}).attr("disabled", true);
 	
-	$(".icheckbox_minimal-red").change(function(e){
-		tree2.options.filter.mode = $(this).hasClass(".checked") ? "hide" : "dimm";
+	$("input#hideMode").change(function(e){
+		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
+		$(".fancytree-node.fancytree-submatch").parent().hide();
 		tree2.clearFilter();
 		$("input[name=features]").keyup();
-			//	tree2.render();
-			
+			//	tree2.render();			
 	});
-	$("span.fancytree-submatch").parent().hide();
-	//if($(".icheckbox_minimal-red").hasClass(".checked")) {
-	//		$("fancytree-node").remove();
-	//}
+	
+	// possible option -- $(".fancytree-node.fancytree-submatch").parent().remove();
 	
 });
 
