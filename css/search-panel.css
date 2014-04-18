@@ -125,28 +125,16 @@ object.flip_label{ display:none;}
 .input-section label{ color:#222; font-size:13px; line-height:30px; height:28px; padding-right:0; margin-right:0;}
 
 /*--- toggle links for search panel ---*/
-.input-section .toggle-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:block;width:100%;text-align:right;font-weight:600; line-height:10px; height:15px; margin:0 10px 0 0;padding:0 0 0 20px;text-decoration:none;font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+.input-section .toggle-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:block;text-align:right;font-weight:600; line-height:10px; height:15px; margin:0;padding:0 30px 0 0;text-decoration:none;font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .input-section .toggle-link:hover{ text-decoration:none !important; color:#555;}
 .input-section .toggle-link i.icon:before{ color:#dc3c47; font-family:'kmaps-icons'; content:'\e60d'; font-size:0.68em; margin-right:0.12em;}
 /*---------------------------*/
 /*--- custom sizes & position ---*/
-.input-section .toggle-link.advanced-link{ position:relative; right:15px;}
-.feature-group .toggle-link.features-link{ padding:0; margin:0 10px 0 0;}
+.feature-group .toggle-link.feature-link{ padding-right:15px;}
 .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
 
-/*--- filtering button and readout above input ---*/
-.feature-group .feature-treeButtons{ height:20px;width:100%; margin-bottom:5px; position:relative;top:-2px; display:none;}
-.feature-group .feature-treeButtons label:first-child{ color:#707070;}
 
-.feature-group .feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
-.feature-group .feature-treeButtons label.radio-inline div{ margin:0 4px 0 0;}
-
-.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
-.fancytree-container span.fancytree-node.fancytree-selected,
-.fancytree-container span.fancytree-node.fancytree-selected:hover,
-.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
-.fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
 
 /*--- iCheck :: radio and checkbox style overrides ---*/
@@ -247,11 +235,60 @@ object.flip_label{ display:none;}
 
 .input-section .selectpicker li a span{ background:transparent !important; color:#444;}
 .input-section .selectpicker li a span:hover{ color:#fff;}
+
+
 /*-------------------------------*/
 /*--- feature select dropdown ---*/
+
+/*--- filtering button and readout above input ---*/
+.feature-treeButtons{ height:20px;width:100%; margin-bottom:5px; position:relative;top:-2px; display:none;}
+.feature-treeButtons label:first-child{ color:#707070;}
+
+.feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
+.feature-treeButtons label.radio-inline div{ margin:0 4px 0 0;}
+
+.feature-group .fancytree-container span.fancytree-node.fancytree-selected,
+.feature-group .fancytree-container span.fancytree-node.fancytree-selected:hover,
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
+
+
+
+
+span.fancytree-checkbox{ cursor:pointer;}
+
+.feature-group ul.fancytree-container .glyphicon {
+    color: #888;
+    /* font-family: 'Glyphicons Halflings'; */
+    font-size: 15px;
+   /* margin-right: 12px;
+    position: relative;
+    top: 1px; */
+}
+.feature-group ul.fancytree-container span.fancytree-node:hover > .glyphicon {
+    color: #333;
+}
+
+/*
+.feature-group ul.fancytree-container span.fancytree-node.fancytree-active:focus > .glyphicon,
+.feature-group ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon {
+    color: #dc3c47;
+    background: transparent;
+}
+*/
+
+
+
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.fancy-checkbox{ color:#222;}
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-share{ color:#000 !important;}
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-check{ color:#c00 !important;}
+
+
+
 .feature-group{ padding:0; padding-bottom: 8px;}
 .feature-group .form-control{ margin:0;}
 
+/*--- the feature dropdown-menu ----*/
 .feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:44px; left:0; width:100%; min-width:220px;}
 /* .feature-group .dropdown-menu p{ font-size:.82em; line-height:normal; color:#222;}
 #kmaps-search .text .feature-message{ background-color:#fff; font-size:12px;padding:10px 17px 10px; margin:0; 
@@ -546,8 +583,6 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     box-shadow: none;
 }
 
-span.fancytree-checkbox{ cursor:pointer;}
-
 .view-section ul.fancytree-container .glyphicon {
     color: #888;
     font-family: 'Glyphicons Halflings';
@@ -565,7 +600,7 @@ span.fancytree-checkbox{ cursor:pointer;}
     background: transparent;
 }
 /*--- hihglight search text ---*/
-.view-section span.fancytree-title > em,
+/*.view-section span.fancytree-title > em,*/
 .view-section mark {
     color: #dc3c47;
     font-style: normal;
