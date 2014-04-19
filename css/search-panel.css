@@ -125,7 +125,7 @@ object.flip_label{ display:none;}
 .input-section label{ color:#222; font-size:13px; line-height:30px; height:28px; padding-right:0; margin-right:0;}
 
 /*--- toggle links for search panel ---*/
-.input-section .toggle-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:block;text-align:right;font-weight:600; line-height:1em; height:1em; margin:0;padding:0 25px 0 0;text-decoration:none;font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+.input-section .toggle-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:block;text-align:right;font-weight:600; line-height:0.88em; height:1.12em; margin:0;padding:0 25px 0 0;text-decoration:none;font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .input-section .toggle-link:hover{ text-decoration:none !important; color:#555;}
 .input-section .toggle-link i.icon:before{ color:#dc3c47; font-family:'kmaps-icons'; content:'\e60d'; font-size:0.68em; margin-right:0.12em;}
 /*---------------------------*/
@@ -239,10 +239,10 @@ object.flip_label{ display:none;}
 /*-------------------------------*/
 /*--- feature select dropdown ---*/
 .input-section .feature-group{ padding:0 0 1px;}
-.input-section .feature-group .form-control{ margin:2px 0 0;}
+.input-section .feature-group .form-control{ margin:16px 0 0 !important;}
 /*--- filtering button and readout above input ---*/
-.input-section .feature-group span.filter{ float:left;padding-left:15px;height:15px; position:relative;top:-2px;}
-.input-section .feature-group span#matches{ color:#555; font-size:0.82em; line-height:1em; position:relative;top:0;}
+.input-section .feature-group span.filter{ float:left;padding-left:15px;height:15px; position:relative;top:-2px; display:none;}
+.input-section .feature-group span#matches{ color:#555; font-size:0.82em; position:relative;top:-1px;}
 .input-section .feature-group label{ color:#555; padding:0;margin:0; font-size:0.88em; line-height:12px;height:15px;}
 
 /*--- the feature dropdown-menu ----*/

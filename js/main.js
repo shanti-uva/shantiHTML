@@ -675,6 +675,7 @@ jQuery(function($) {
 	$("button.feature-reset").click(function(){
 		$(fname).attr("placeholder",$(fname).data("holderf"));
 		$("#feature-tree").fancytree();
+		$(".filter").hide();
 		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 	});	
 
@@ -683,6 +684,7 @@ jQuery(function($) {
 	// --------------
 	$("input[name=features]").keydown(function(e){
 			$(".dropdown-toggle").dropdown();
+			$(".filter").show(200);
 			return;
 	});
 	
@@ -702,6 +704,7 @@ jQuery(function($) {
 	$("button#btnResetSearch, .feature-reset").click(function(event){
 		$("input[name=features]").val("");
 		$("span#matches").text("");
+		$(".filter").hide();
 		 tree2.clearFilter();		
 		$("#feature-tree").fancytree();
 		$(".feature-treeButtons").slideUp( 300 ); 
