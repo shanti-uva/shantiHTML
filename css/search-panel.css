@@ -255,7 +255,7 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .show-feature-tree .form-group{ border-top:1px solid #e0e0e0; margin:0 8px;}
 .show-feature-tree .form-group.last{ /* padding-bottom:5px; */}
 
-.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;}
+.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;margin-left:5px;}
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 .feature-group span.fancytree-node.fancytree-selected:hover{ background:transparent;border:none;}
 
@@ -267,7 +267,7 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
-.feature-group span.fancytree-title{ margin-left:0;padding-left:0;}
+.feature-group span.fancytree-title{ margin-left:0;padding-left:0;color:#444;}
 .fancytree-ext-filter span.fancytree-node.fancytree-submatch span.fancytree-title{ color:#777;} /*--- highlight parent node ---*/
 .fancytree-ext-filter span.fancytree-node.fancytree-match span.fancytree-title { color:#444;} /* fancytree-match is the class for the actual feature highlight - default is font-weight: bold; */
 
