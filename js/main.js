@@ -116,9 +116,9 @@ jQuery(function($) {
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
 
-		if($("#btnResetSearch").hasClass("show")){ 
-			$("#kmaps-search .view-wrap.short-wrap").css({ "height": "518px" });
-		} 
+	if($("#btnResetSearch").hasClass("show")){ 
+		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight +60 }); // change height of feature types button container
+	} 
 		
 });
 
@@ -348,7 +348,7 @@ jQuery(function ($) {
 //              loading: "icon-spinner icon-spin"
           }
       },
-      source: {url: "http://dev-subjects.kmaps.virginia.edu/features/fancy_nested.json",
+      source: {url: Settings.baseUrl + "/features/fancy_nested.json",
       // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
@@ -580,7 +580,7 @@ jQuery(function($) {
 			}
 		},
 		// source: {url: "ajax-tree-plain.json", debugDelay: 1000},
-		 source: {url: "./js/fancy_nested.json", debugDelay: 1000},
+		source: {url: "./js/fancy_nested.json", debugDelay: 1000},
 		// source: treeData,
 		filter: {
 				mode: "hide"
@@ -609,10 +609,7 @@ jQuery(function($) {
 	});
 	
 	// --- input styles for search panel
-	var tree2 = $("#feature-tree").fancytree("getTree");		
-	var fname = $("#feature-name");	// feature type id 
-	$(fname).data("holderf",$(fname).attr("placeholder"));			
-
+	// ----------------------------------
 	// --- kms, KMAPS MAIN SEARCH INPUT ---
 	var kms = $("#searchform");	// the main search input
 	$(kms).data("holder",$(kms).attr("placeholder"));			
@@ -647,6 +644,11 @@ jQuery(function($) {
 
 
 	// --- fname, KMAPS FEATURE NAME ---
+	// ----------------------------------
+	var tree2 = $("#feature-tree").fancytree("getTree");		
+	var fname = $("#feature-name");	// feature type id 
+	$(fname).data("holderf",$(fname).attr("placeholder"));			
+
 	$(fname).focusin(function(){
 			$(this).dropdown();
 	    $(this).attr("placeholder","");
@@ -657,9 +659,9 @@ jQuery(function($) {
 	    $(this).attr("placeholder",$(fname).data("holderf"));	
 	    $("button.feature-reset").hide();
 	    $(this).dropdown();
+			
 			var strf = "Filter by Feature Name";
-			var txtf = $(fname).val();
-	
+			var txtf = $(fname).val();	
 			if (strf.indexOf(txtf) > -1) {
 				$("button.feature-reset").hide();
 				$(".feature-treeButtons").slideUp( 300 );
@@ -677,7 +679,8 @@ jQuery(function($) {
 	});	
 
 
-	// --- BOTH ---
+	// --- BOTH -----
+	// --------------
 	$("input[name=features]").keydown(function(e){
 			$(".dropdown-toggle").dropdown();
 			return;
@@ -704,20 +707,8 @@ jQuery(function($) {
 		$(".feature-treeButtons").slideUp( 300 ); 
 		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 		$(this).addClass("show");
-	}).attr("disabled", true);
-	
-	// $("input#hideMode").change(function(e){
-	// 		tree.options.filter.mode = $(this).is(":checked") ? "hide" : "dimm";
-			
-	if($(".icheckbox_minimal-red").hasClass("checked")) (function(e){
-		tree2.options.filter.mode = $("input[name=hidemode]").is(":checked") ? "hide" : "dimm";
-		tree2.clearFilter();
-		$("input[name=features]").keyup();
-			//	tree2.render();			
-	});
-	
-	// possible option -- $(".fancytree-node.fancytree-submatch").parent().remove();
-	
+	}).attr("disabled", true);	
+
 });
 
 
@@ -792,5 +783,7 @@ jQuery(function ($) {
 	// show-hide the IE message for older browsers
 	// this could be improved with conditional for - lte IE7 - so it does not self-hide
   $(".progressive").delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
-});
 
+ // equalHeights
+	$(".main-col").equalHeights();
+});

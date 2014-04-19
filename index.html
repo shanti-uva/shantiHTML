@@ -17,13 +17,12 @@
   <link rel="icon" href="/favicon.ico">
   
   <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
-</head>
+</head> 
 <body>
   <!--[if lte IE 8]><p class="progressive">It appears you are using an older browser. Please consider a upgrading to a modern version of your browser to best appreciate this website. Thank you -<i class="icon km-close"></i></p><![endif]-->
 	<div class="wrap">
-  <a href=".main-content" class="sr-only">
-  	Skip to main content</a>
-  <header role="banner">
+  <a href=".main-content" class="sr-only">Skip to main content</a>
+  <header class="header-banner" role="banner">
 		<div class="navbar navbar-default navbar-static-top" role="navigation">  
       <nav class="navbar-header" role="navigation">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navtop">
@@ -56,59 +55,59 @@
 										</li>
 		              </ul>      
           </li>
-          <li class="menu-toggle">
-          	  <a href="#"><i class="icon km-menu"></i></a>
-          </li>
+          <li class="menu-toggle"><a href="#"><i class="icon km-menu"></i></a></li>
         </ul>
 			 </fieldset>  
 			 </form>		       
      </nav><!-- END navbar-collapse -->
     </div><!-- END navbar -->
+
+	
+		<!-- BEGIN navigation dropdown panel -->  
+	  <section class="row collections collapse opencollect">
+			<nav class="container-fluid" role="navigation"> 
+	       <div class="col-sm-8 col-sm-offset-2">          
+	          <h4>EXPLORE COLLECTIONS</h4>
+	          <div class="four-collections">
+	            <div class="col-sm-3">
+	              <ul>
+	                <li><a href="#"><i class="icon km-subjects"></i>Subjects</a></li>
+	                <li><a href="#"><i class="icon km-places"></i>Places</a></li>
+	                <li><a href="#"><i class="icon km-agents"></i>Agents</a></li>
+	                <li><a href="#"><i class="icon km-events"></i>Events</a></li>
+	              </ul>
+	            </div>
+	            <div class="col-sm-3">
+	              <ul>
+	                <li><a href="#"><i class="icon km-photos"></i>Photos</a></li>
+	                <li><a href="#"><i class="icon km-audiovideo"></i>Audio-Video</a></li>
+	                <li><a href="#"><i class="icon km-visuals"></i>Visuals</a></li>
+	              </ul>
+	            </div>
+	            <div class="col-sm-3">
+	              <ul>
+	                <li><a href="#"><i class="icon km-essays"></i>Essays</a></li>
+	                <li><a href="#"><i class="icon km-texts"></i>Texts</a></li>
+	                <li><a href="#"><i class="icon km-maps"></i>Maps</a></li>
+	              </ul>
+	            </div>
+	            <div class="col-sm-3">
+	              <ul class="last">
+	                <li><a href="#"><i class="icon km-community"></i>Community</a></li>
+	                <li><a href="#"><i class="icon km-terms"></i>Terms</a></li>
+	                <li><a href="#"><i class="icon km-sources"></i>Sources</a></li>
+	              </ul>
+	            </div>
+	          </div>          
+	       </div>
+	        <span class="closecollection"> <i class="icon km-close"></i> </span>
+		  </nav>
+	  </section><!-- END dropdown panel -->
   </header><!-- END container-fluid -->
-	
-	<!-- BEGIN navigation dropdown panel -->  
-  <section class="row collections collapse opencollect">
-		<nav class="container-fluid" role="navigation"> 
-       <div class="col-sm-8 col-sm-offset-2">          
-          <h4>EXPLORE COLLECTIONS</h4>
-          <div class="four-collections">
-            <div class="col-sm-3">
-              <ul>
-                <li><a href="#"><i class="icon km-subjects"></i>Subjects</a></li>
-                <li><a href="#"><i class="icon km-places"></i>Places</a></li>
-                <li><a href="#"><i class="icon km-agents"></i>Agents</a></li>
-                <li><a href="#"><i class="icon km-events"></i>Events</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-3">
-              <ul>
-                <li><a href="#"><i class="icon km-photos"></i>Photos</a></li>
-                <li><a href="#"><i class="icon km-audiovideo"></i>Audio-Video</a></li>
-                <li><a href="#"><i class="icon km-visuals"></i>Visuals</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-3">
-              <ul>
-                <li><a href="#"><i class="icon km-essays"></i>Essays</a></li>
-                <li><a href="#"><i class="icon km-texts"></i>Texts</a></li>
-                <li><a href="#"><i class="icon km-maps"></i>Maps</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-3">
-              <ul class="last">
-                <li><a href="#"><i class="icon km-community"></i>Community</a></li>
-                <li><a href="#"><i class="icon km-terms"></i>Terms</a></li>
-                <li><a href="#"><i class="icon km-sources"></i>Sources</a></li>
-              </ul>
-            </div>
-          </div>          
-       </div>
-        <span class="closecollection"> <i class="icon km-close"></i> </span>
-	  </nav>
-  </section><!-- END dropdown panel -->
-	
+  
+  	
 	<!-- BEGIN content -->
-  <main class="container-fluid" role="main">
+  <main class="main-wrapper container-fluid" role="main">
     <article class="row main-content">
      	
     <header class="col-sm-12 titlearea">
@@ -129,7 +128,7 @@
       </div>
     </header>
               
-    <aside class="col-sm-2 content-sidebar">
+    <aside class="col-sm-2 content-sidebar main-col" style="background:#fff;padding:0;margin:0;">
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="icon km-overview"></i>Overview</a></li>
         <li><a href="#tab-essays" data-toggle="pill"><i class="icon km-essays"></i>Essays<span class="badge">1</span></a></li>
@@ -148,7 +147,7 @@
       </ul>
     </aside> 
                       
-    <section  class="col-sm-10 content-section">
+    <section  class="col-sm-10 content-section main-col">
       <div class="tab-content">
         <article class="tab-pane active" id="tab-overview">
           
@@ -360,26 +359,15 @@
 								  
 								  
 								  <!-- feature tree, under contruction -->
-								  <div class="form-group km-input feature-group dropdown">								  								      
-
-								  <div class="feature-treeButtons">
-								  		<label>Filter:</label> <span id="matches"></span>								      
-								      <label class="radio-inline" for="hideMode"> 
-								      <input type="checkbox" id="hideMode" name="hidemode">Hide Null</label>
-									</div>
-
-									<div style="position:relative;">						      
-									  		<a href="#" class="dropdown-toggle feature-link toggle-link" data-toggle="dropdown"><i class="icon"></i>Features List</a>								  								  		 								  		 														    
-									      <input class="form-control kms-fname" id="feature-name" name="features" type="text" placeholder="Filter by Feature Name">	
-								      
+								  <div class="form-group km-input feature-group dropdown">
+												<span class="filter"><label>Filter:</label> <span id="matches"></span></span>												
+												<a href="#" class="dropdown-toggle toggle-link" data-toggle="dropdown"><i class="icon"></i>Features List</a>     
 									      
+									      <input class="form-control kms-fname" id="feature-name" name="features" type="text" placeholder="Filter by Feature Name">	
+								      									      
 									      <div class="dropdown-menu features-open">
 										  			<div class="tree-wrap">	
-										  												  			
-																	<!-- <a href="#" class="feature-help"><i class="icon km-info"></i></a>
-																	<p class="feature-message">Please select one or more feature types from the list below. For each type, click on the left 
-																	box to select the type and its subcategories; click on the right box to select only the type without its subcategories.</p> -->
-											  																									
+
 											  			<div class="feature-container">											  			
 											  				<div id="feature-tree"></div> <!-- features tree, under construction -->											  			
 											  			</div> 
@@ -393,7 +381,6 @@
 									  		</div> <!-- END dropdown-menu -->
 												
 												<button id="feature-reset" class="feature-reset">&times;</button>
-							  		</div> 
 								  </div> <!-- END feature-group -->
 								  
 								  
@@ -561,8 +548,8 @@
 	<script type="text/javascript" src="src/jquery.fancytree.glyph.js"></script><!-- tree -->  
 	<script type="text/javascript" src="src/jquery.fancytree.filter.js"></script><!-- tree -->
 
-	<script type="text/javascript" src="src/jquery.fancytree.edit.js"></script>	<!-- is this needed ? -->
-
+	<script type="text/javascript" src="src/jquery.fancytree.edit.js"></script>
+	<script type="text/javascript" src="js/equalHeights.js"></script> <!-- sidecolumn resources full-height -->
 	<script type="text/javascript" src="js/forms/check/icheck.min.js"></script><!-- forms -->
 	<script type="text/javascript" src="js/forms/select/bootstrap-select.min.js"></script><!-- forms -->  
 	<script type="text/javascript" src="src/jquery.highlight.js"></script><!-- highlight -->
@@ -571,6 +558,6 @@
 	<script type="text/javascript" src="src/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" src="src/trunk8.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script> <!-- kmaps fx -->
-  
+
 </body>
 </html>

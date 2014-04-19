@@ -114,7 +114,7 @@ object.flip_label{ display:none;}
 	display:none;
 	padding:0;margin:0;
 }
-.input-section .feature-group .feature-reset{ position:absolute; top:22px;right:7px;}
+.input-section .feature-group .feature-reset{ position:absolute; top:22px;right:11px;}
 
 /*-----------------------------------------------*/
 /*----- Advanced Options -----*/
@@ -125,16 +125,15 @@ object.flip_label{ display:none;}
 .input-section label{ color:#222; font-size:13px; line-height:30px; height:28px; padding-right:0; margin-right:0;}
 
 /*--- toggle links for search panel ---*/
-.input-section .toggle-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:block;text-align:right;font-weight:600; line-height:10px; height:15px; margin:0;padding:0 30px 0 0;text-decoration:none;font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
+.input-section .toggle-link{ background:#f8f8f8;color:#dc3c47;font-size:0.93em;display:block;text-align:right;font-weight:600; line-height:1em; height:1em; margin:0;padding:0 25px 0 0;text-decoration:none;font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .input-section .toggle-link:hover{ text-decoration:none !important; color:#555;}
 .input-section .toggle-link i.icon:before{ color:#dc3c47; font-family:'kmaps-icons'; content:'\e60d'; font-size:0.68em; margin-right:0.12em;}
 /*---------------------------*/
 /*--- custom sizes & position ---*/
-.feature-group .toggle-link.feature-link{ padding-right:15px;}
-.input-section .toggle-link.advanced-link{ margin-bottom:2px;}
-.feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
+.input-section .feature-group .toggle-link.dropdown-toggle{ float:right;padding:0 10px 0 0;margin:0;display:inline;position:relative;top:-1px;}
+.input-section .toggle-link.advanced-link{ margin-bottom:4px;}
+.input-section .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/
-
 
 
 
@@ -164,7 +163,7 @@ object.flip_label{ display:none;}
 
 /*-----------------------------------------------*/
 /*---- select dropdown -----*/
-.input-section .bootstrap-select{ width:100%; padding:7px 5px 3px 5px; margin-top:4px;margin-bottom:0;}
+.input-section .bootstrap-select{ width:100%; padding:0 5px 3px 5px; margin-top:4px;margin-bottom:0;}
 .input-section .bootstrap-select .selectpicker{ line-height:27px; height:27px; padding:0; border:1px solid #ddd; width:100% !important;}
 .input-section .bootstrap-select .btn{ 
 	padding-left: 15px;
@@ -233,65 +232,21 @@ object.flip_label{ display:none;}
 .input-section .notification-wrapper{ padding: 0 15px; margin:0; }
 .input-section .alert{ margin:0 10px 4px;}
 
-
 .input-section .selectpicker li a span{ background:transparent !important; color:#444;}
 .input-section .selectpicker li a span:hover{ color:#fff;}
 
 
 /*-------------------------------*/
 /*--- feature select dropdown ---*/
-
+.input-section .feature-group{ padding:0 0 1px;}
+.input-section .feature-group .form-control{ margin:2px 0 0;}
 /*--- filtering button and readout above input ---*/
-.feature-treeButtons{ height:20px;width:100%; margin-bottom:5px; position:relative;top:-2px; display:none;}
-.feature-treeButtons label:first-child{ color:#707070;}
-
-.feature-treeButtons label.radio-inline{ height:15px;width:80px;display:inline;float:right;}
-.feature-treeButtons label.radio-inline div{ margin:0 4px 0 0;}
-
-.feature-group .fancytree-container span.fancytree-node.fancytree-selected,
-.feature-group .fancytree-container span.fancytree-node.fancytree-selected:hover,
-.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
-.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
-
-
-.feature-group span.fancytree-title{ margin-left:0;padding-left:0;}
-
-
-span.fancytree-checkbox{ cursor:pointer;}
-
-.feature-group ul.fancytree-container .glyphicon {
-    color: #888;
-    /* font-family: 'Glyphicons Halflings'; */
-    font-size: 13px;
-   /* margin-right: 12px; */
-    position: relative;
-    right: 4px;
-}
-.feature-group ul.fancytree-container span.fancytree-node:hover > .glyphicon {
-    color: #333;
-}
-
-/*
-.feature-group ul.fancytree-container span.fancytree-node.fancytree-active:focus > .glyphicon,
-.feature-group ul.fancytree-container span.fancytree-node.fancytree-active .glyphicon {
-    color: #dc3c47;
-    background: transparent;
-}
-*/
-
-
-
-.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.fancy-checkbox{ }
-.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-share{ color:#000 !important;}
-.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-check{ color:#c00 !important;}
-
-
-
-.feature-group{ padding:0; padding-bottom: 8px;}
-.feature-group .form-control{ margin:0;}
+.input-section .feature-group span.filter{ float:left;padding-left:15px;height:15px; position:relative;top:-2px;}
+.input-section .feature-group span#matches{ color:#555; font-size:0.82em; line-height:1em; position:relative;top:0;}
+.input-section .feature-group label{ color:#555; padding:0;margin:0; font-size:0.88em; line-height:12px;height:15px;}
 
 /*--- the feature dropdown-menu ----*/
-.feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:44px; left:0; width:100%; min-width:220px;}
+.feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:46px; left:0; width:100%; min-width:220px;}
 /* .feature-group .dropdown-menu p{ font-size:.82em; line-height:normal; color:#222;}
 #kmaps-search .text .feature-message{ background-color:#fff; font-size:12px;padding:10px 17px 10px; margin:0; 
 border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
@@ -307,14 +262,22 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active, 
 .feature-group span.fancytree-node.fancytree-active:hover{ background:transparent;border:none;}
 
-/* .feature-group #feature-tree{ height:auto;} */
-#kmaps-search .text #feature-tree,
-.fancytree-ext-filter span.fancytree-node span.fancytree-title{ color:#707070;}
+.feature-group .fancytree-container span.fancytree-node.fancytree-selected,
+.feature-group .fancytree-container span.fancytree-node.fancytree-selected:hover,
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
-.fancytree-ext-filter span.fancytree-node.fancytree-submatch span.fancytree-title, /*--- highlight parent node ---*/
-.fancytree-ext-filter span.fancytree-node.fancytree-match span.fancytree-title { color:red;} /* fancytree-match is the class for the actual feature highlight - default is font-weight: bold; */
+.feature-group span.fancytree-title{ margin-left:0;padding-left:0;}
+.fancytree-ext-filter span.fancytree-node.fancytree-submatch span.fancytree-title{ color:#777;} /*--- highlight parent node ---*/
+.fancytree-ext-filter span.fancytree-node.fancytree-match span.fancytree-title { color:#444;} /* fancytree-match is the class for the actual feature highlight - default is font-weight: bold; */
 
 .feature-group span.fancytree-node{ border:none; display:block;}
+
+.feature-group ul.fancytree-container .glyphicon{ color: #888;font-size: 13px; position:relative; right:4px;}
+.feature-group ul.fancytree-container span.fancytree-node:hover > .glyphicon{ color: #333;}
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.fancy-checkbox{ }
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-share{ color:#000 !important;}
+.feature-group ul.fancytree-container span.fancytree-node span.glyphicon.glyphicon-check{ color:#c00 !important;}
 
 .fancytree-node.fancytree-match{ } /* targets the filtered nodes */
 
@@ -322,7 +285,6 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 #kmaps-search .text input.feature-name { }
 
 .feature-group span.fancytree-icon{ background-image:none; margin:0; padding:0; width:0; height:0; line-height:0; display:none;}
-
 
 /*--- bottom buttons ---*/
 .feature-submit{ padding:0 17px 7px; margin:0; border-top:1px solid #ccc; width:100%; background-color:#fff; height:40px; min-height:40px;
@@ -332,25 +294,22 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .feature-container{  height:312px; min-height:312px; /*--- height ---*/ padding:0;margin:0;}
 .feature-container #feature-tree{ height:312px; min-height:312px; /*--- height ---*/ padding:0; margin:5px 0 0;} /***** container height ******/
 
-.feature-help{ color:#555;position:relative;top:20px;right:20px; z-index:9999; height:12px;width:12px;}
+/* .feature-help{ color:#555;position:relative;top:20px;right:20px; z-index:9999; height:12px;width:12px;}
 .feature-help i{ font-size:1.18em; color:#555;background:#fff;}
 .feature-help i:before{ }
+*/
 
 .feature-submit .btn.btn-default{ /*--- the select button ---*/
 	font-size:0.75em; background-color:#dc3c47;color:#fff; padding:3px 13px 2px; margin-top:7px; background-image:none;box-shadow:none;text-transform:uppercase;text-shadow:none;
 }
 .feature-submit .btn.btn-default>span{ font-size:1.62em;position:relative;top:3px;}
 .feature-submit .btn.btn-default.clear-form{ /*--- the clear button ---*/
-	border:none;background:transparent;padding:0;margin-top:5px;float:right;-webkit-box-shadow:none; box-shadow:none;color:#dc3c47;text-transform:capitalize; border-radius:0;
+	border:none;background:transparent;padding:0;margin-top:5px;float:right;-webkit-box-shadow:none; font-weight:bold; box-shadow:none;color:#dc3c47;text-transform:capitalize; border-radius:0;
 }
 .feature-submit .btn.btn-default.clear-form:hover{ color:#333;}
 .feature-submit .btn.btn-default.clear-form:active{ color:#dc3c47;}
 
-.feature-treeButtons span#matches{ font-size:0.92em; color:#444;}
-
-
-
-.advanced-view .form-group.km-input{ padding:1px 5px 1px;} /*--- common input ---*/
+.advanced-view .form-group.km-input{ padding:2px 5px 2px;} /*--- common input ---*/
 .advanced-view .form-group.km-input .form-control{ 
 	line-height:27px; 
 	height:27px; 

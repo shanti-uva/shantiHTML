@@ -260,7 +260,7 @@ body div.wrap{ position:relative;}
 }
 .content-section {
   background: #eee;    /*---- content background color -----*/
-  padding: 15px;
+  padding: 0 15px;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size:1.06em;
 }
@@ -306,7 +306,7 @@ body div.wrap{ position:relative;}
 .progressive a:hover{ text-decoration:none;}
 
 /*--- BEGIN side col ---*/
-.content-sidebar {
+	.content-sidebar {
   padding-left: 0;
   padding-right: 0;
 }
