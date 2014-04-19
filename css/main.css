@@ -306,7 +306,9 @@ body div.wrap{ position:relative;}
 .progressive a:hover{ text-decoration:none;}
 
 /*--- BEGIN side col ---*/
-	.content-sidebar {
+#tab-overview{ padding-bottom:40px;}
+
+.content-sidebar {
   padding-left: 0;
   padding-right: 0;
 }
@@ -711,6 +713,9 @@ body div.wrap{ position:relative;}
   .main-content .content-sidebar {
     float: left;
     width: 30%;
+    background:#fff;
+    padding:0;
+    margin:0;
   }
 
   .main-content .content-sidebar li a,

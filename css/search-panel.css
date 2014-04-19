@@ -114,13 +114,13 @@ object.flip_label{ display:none;}
 	display:none;
 	padding:0;margin:0;
 }
-.input-section .feature-group .feature-reset{ position:absolute; top:22px;right:11px;}
+.input-section .feature-group .feature-reset{ position:absolute; top:23px;right:11px;}
 
 /*-----------------------------------------------*/
 /*----- Advanced Options -----*/
-.advanced-view{ /*** height:250px; height can help control cross-browser issues ***/ float:left; padding:0; background:#f8f8f8; width:100%; margin-right:4px;}
+.advanced-view{ height:240px; /*** height can help control cross-browser issues ***/ padding:0 !important; background:#f8f8f8; width:100%; margin-right:4px;}
 .advanced-view .form-group{ border-top:1px solid #e0e0e0; margin:0 8px;}
-.advanced-view .form-group.last{ padding-bottom:5px;}
+.advanced-view .form-group.last{ padding-bottom:0;}
 
 .input-section label{ color:#222; font-size:13px; line-height:30px; height:28px; padding-right:0; margin-right:0;}
 
@@ -163,7 +163,7 @@ object.flip_label{ display:none;}
 
 /*-----------------------------------------------*/
 /*---- select dropdown -----*/
-.input-section .bootstrap-select{ width:100%; padding:0 5px 3px 5px; margin-top:4px;margin-bottom:0;}
+.input-section .bootstrap-select{ width:100%; padding:0 5px 0 5px; margin-top:4px;margin-bottom:0;}
 .input-section .bootstrap-select .selectpicker{ line-height:27px; height:27px; padding:0; border:1px solid #ddd; width:100% !important;}
 .input-section .bootstrap-select .btn{ 
 	padding-left: 15px;
@@ -200,7 +200,7 @@ object.flip_label{ display:none;}
 .input-section .dropdown-menu.open{ border-radius:10px;}
 .input-section .selectpicker .dropdown-menu>li>a span.text{ margin-right:0; padding-left:18px; overflow:hidden;}
 
-.input-section .bootstrap-select.btn-group .dropdown-menu{ height:200px; overflow:auto;}
+.input-section .bootstrap-select.btn-group .dropdown-menu{ height:250px; overflow:auto;}
 
 .input-section .selectpicker .caret{ border:none; }
 .input-section .selectpicker .caret:before{ color:#dc3c47; font-size:17px; font-family: 'kmaps-icons'; content: "\e620"; position:absolute; top:-10px; right:0px;}
@@ -239,7 +239,7 @@ object.flip_label{ display:none;}
 /*-------------------------------*/
 /*--- feature select dropdown ---*/
 .input-section .feature-group{ padding:0 0 1px;}
-.input-section .feature-group .form-control{ margin:16px 0 0 !important;}
+.input-section .feature-group .form-control{ margin:16px 0 3px !important;}
 /*--- filtering button and readout above input ---*/
 .input-section .feature-group span.filter{ float:left;padding-left:15px;height:15px; position:relative;top:-2px; display:none;}
 .input-section .feature-group span#matches{ color:#555; font-size:0.82em; position:relative;top:-1px;}
@@ -255,7 +255,7 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .show-feature-tree .form-group{ border-top:1px solid #e0e0e0; margin:0 8px;}
 .show-feature-tree .form-group.last{ /* padding-bottom:5px; */}
 
-.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;margin-left:5px;}
+.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;margin-left:5px;font-size:0.88em;}
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 .feature-group span.fancytree-node.fancytree-selected:hover{ background:transparent;border:none;}
 
@@ -267,9 +267,9 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
-.feature-group span.fancytree-title{ margin-left:0;padding-left:0;color:#444;}
+.feature-group span.fancytree-title{ margin-left:0;padding-left:0;color:#555 !important;}
 .fancytree-ext-filter span.fancytree-node.fancytree-submatch span.fancytree-title{ color:#777;} /*--- highlight parent node ---*/
-.fancytree-ext-filter span.fancytree-node.fancytree-match span.fancytree-title { color:#444;} /* fancytree-match is the class for the actual feature highlight - default is font-weight: bold; */
+.fancytree-ext-filter span.fancytree-node.fancytree-match span.fancytree-title { color:#555;} /* fancytree-match is the class for the actual feature highlight - default is font-weight: bold; */
 
 .feature-group span.fancytree-node{ border:none; display:block;}
 
