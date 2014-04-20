@@ -229,8 +229,8 @@ object.flip_label{ display:none;}
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:hover i.check-mark,
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a:focus i.check-mark{ color:#fff;}
  /* search errors */
-.input-section .notification-wrapper{ padding: 0 15px; margin:0; }
-.input-section .alert{ margin:0 10px 4px;}
+.input-section .notification-wrapper{ padding: 0 15px;}
+.input-section .alert{ margin:0 10px 10px;}
 
 .input-section .selectpicker li a span{ background:transparent !important; color:#444;}
 .input-section .selectpicker li a span:hover{ color:#fff;}
@@ -239,6 +239,7 @@ object.flip_label{ display:none;}
 /*-------------------------------*/
 /*--- feature select dropdown ---*/
 .input-section .feature-group{ padding:0 0 1px;}
+/*--- feature search input ---*/
 .input-section .feature-group .form-control{ margin:16px 0 3px !important;}
 /*--- filtering button and readout above input ---*/
 .input-section .feature-group span.filter{ float:left;padding-left:15px;height:15px; position:relative;top:-2px; display:none;}

@@ -153,14 +153,14 @@ jQuery(function($) {
 // *** SEARCH *** toggle button
 jQuery(function($) {
 
-	 // $(window).on("resize",function(){ location.reload(); } ); // forces height refresh on browser-size change
+	 $(window).on("resize",function(){ location.reload(); } ); // forces height refresh on browser-size change
 
-	  /* drag handle for panel width
-	 $(".ui-resizable-w").mousedown(function() {
-	    	$(window).mousemove(function() {
-	        $(window).on("resize",function(){ location.reload(); } );
-				});
-	 }) */
+	  /* drag handle for panel width */
+	 $(".extruder.right").resize(function() {
+
+	        $(window).reload(false)
+
+	 })
 
 	if (!$(".extruder.right").hasClass("isOpened")) {
 				$(".flap").click( function() {
