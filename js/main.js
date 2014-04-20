@@ -486,11 +486,10 @@ jQuery(function ($) {
 
 // *** SEARCH *** clear search input & support for placeholder
 jQuery(function($) {	
-	// Initialize Fancytree
 	$("#feature-tree").fancytree({
 		extensions: ["glyph", "edit", "filter"],
 		checkbox: true,
-		selectMode: 3,
+		selectMode: 3, // multiselect enabled
 		select: function(event, data) {
 				// Get a list of all selected nodes, and convert to a key array:
 				var selKeys = $.map(data.tree.getSelectedNodes(), function(node){
@@ -570,7 +569,7 @@ jQuery(function($) {
 	var kms = $("#searchform");	// the main search input
 	$(kms).data("holder",$(kms).attr("placeholder"));			
 	
-	// --- below is mostly for the clear all
+	// --- features inputs - focusin / focusout
 	$(kms).focusin(function(){
 	    $(kms).attr("placeholder","");
 	    $("button.searchreset").show("fast");
@@ -590,24 +589,26 @@ jQuery(function($) {
 		return false;
 		}
 	});
+	// --- close and clear all
 	$("button.searchreset").click(function(){
 		$(kms).attr("placeholder",$(kms).data("holder"));
 		$("button.searchreset").hide();
 		$(".alert").hide();
         searchUtil.clearSearch();
+        tree.clearFilter();
 	});
 
-	// --- fname, KMAPS FEATURE NAME ---
+	// --- fname, KMAPS FEATURES ---
 	// ----------------------------------
 	var tree2 = $("#feature-tree").fancytree("getTree");		
 	var fname = $("#feature-name");	// feature type id 
 	$(fname).data("holderf",$(fname).attr("placeholder"));			
-
+	
+	// --- features inputs - focusin / focusout
 	$(fname).focusin(function(){
 			$(this).dropdown();
 	    $(this).attr("placeholder","");
 	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
-	    $(".feature-treeButtons").slideDown( 300 );
 	});	
 	$(fname).focusout(function(){
 	    $(this).attr("placeholder",$(fname).data("holderf"));	
@@ -618,23 +619,18 @@ jQuery(function($) {
 			var txtf = $(fname).val();	
 			if (strf.indexOf(txtf) > -1) {
 				$("button.feature-reset").hide();
-				$(".feature-treeButtons").slideUp( 300 );
 			return true;
 			} else {
 				$("button.feature-reset").show(100);
-				$(".feature-treeButtons").slideDown( 300 );
 			return false;
 			}	
 	});
-
-
-	// --- features input
+	// --- features inputs - keydown / keyup / click
 	$("input[name=features]").keydown(function(e){
 			$(".dropdown-toggle").dropdown();
 			$(".filter").show(100);
 			return;
-	});	
-	
+	});		
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
 		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
@@ -646,7 +642,7 @@ jQuery(function($) {
 			$("button#btnResetSearch, .feature-reset").attr("disabled", false); 
 			$("span#matches").text("(" + n + " matches)"); 
 	}).focus();
-	
+	// close and clear all	
 	$("button#btnResetSearch, .feature-reset").click(function(event){
 		$(fname).attr("placeholder",$(fname).data("holderf"));
 		$("input[name=features]").val("");
@@ -654,9 +650,8 @@ jQuery(function($) {
 		$(".filter").hide();
 		 tree2.clearFilter();		
 		$("#feature-tree").fancytree();
-		$(".feature-treeButtons").slideUp( 300 ); 
 		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
-		$(this).addClass("show");
+		// $(this).addClass("show");
 	}).attr("disabled", true);	
 
 });
