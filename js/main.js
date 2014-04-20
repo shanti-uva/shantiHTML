@@ -486,45 +486,6 @@ jQuery(function ($) {
 
 // *** SEARCH *** clear search input & support for placeholder
 jQuery(function($) {	
-	var treeData = [
-		{title: "item1 with key and tooltip", tooltip: "Look, a tool tip!" },
-		{title: "item2: selected on init", selected: true },
-		{title: "Folder", folder: true, key: "id3",
-			children: [
-				{title: "Sub-item 3.1",
-					children: [
-						{title: "Sub-item 3.1.1", key: "id3.1.1" },
-						{title: "Sub-item 3.1.2", key: "id3.1.2" }
-					]
-				},
-				{title: "Sub-item 3.2",
-					children: [
-						{title: "Sub-item 3.2.1", key: "id3.2.1" },
-						{title: "Sub-item 3.2.2", key: "id3.2.2" }
-					]
-				}
-			]
-		},
-		{title: "Document with some children (expanded on init)", key: "id4", expand: true,
-			children: [
-				{title: "Sub-item 4.1 (active on init)", activate: true,
-					children: [
-						{title: "Sub-item 4.1.1", key: "id4.1.1" },
-						{title: "Sub-item 4.1.2", key: "id4.1.2" }
-					]
-				},
-				{title: "Sub-item 4.2 (selected on init)", selected: true,
-					children: [
-						{title: "Sub-item 4.2.1", key: "id4.2.1" },
-						{title: "Sub-item 4.2.2", key: "id4.2.2" }
-					]
-				},
-				{title: "Sub-item 4.3 (hideCheckbox)", hideCheckbox: true },
-				{title: "Sub-item 4.4 (unselectable)", unselectable: true }
-			]
-		}
-	];
-				
 	// Initialize Fancytree
 	$("#feature-tree").fancytree({
 		extensions: ["glyph", "edit", "filter"],
@@ -617,14 +578,7 @@ jQuery(function($) {
 	$(kms).focusout(function(){
 	    $(kms).attr("placeholder",$(kms).data("holder"));	
 	    $("button.searchreset").hide();        
-	});	
-	$("button.searchreset").click(function(){
-		$(kms).attr("placeholder","");
-		$(kms).attr("placeholder",$(kms).data("holder"));
-		$("button.searchreset").hide();
-        searchUtil.clearSearch();
-	});		
-	$(kms).focusout(function() {
+
 		var str = "Enter Search...";
 		var txt = $(kms).val();
 
@@ -636,7 +590,12 @@ jQuery(function($) {
 		return false;
 		}
 	});
-
+	$("button.searchreset").click(function(){
+		$(kms).attr("placeholder",$(kms).data("holder"));
+		$("button.searchreset").hide();
+		$(".alert").hide();
+        searchUtil.clearSearch();
+	});
 
 	// --- fname, KMAPS FEATURE NAME ---
 	// ----------------------------------
@@ -667,16 +626,9 @@ jQuery(function($) {
 			return false;
 			}	
 	});
-	$("button.feature-reset").click(function(){
-		$(fname).attr("placeholder",$(fname).data("holderf"));
-		$("#feature-tree").fancytree();
-		$(".filter").hide();
-		$(this).css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
-	});	
 
 
-	// --- BOTH -----
-	// --------------
+	// --- features input
 	$("input[name=features]").keydown(function(e){
 			$(".dropdown-toggle").dropdown();
 			$(".filter").show(100);
@@ -696,6 +648,7 @@ jQuery(function($) {
 	}).focus();
 	
 	$("button#btnResetSearch, .feature-reset").click(function(event){
+		$(fname).attr("placeholder",$(fname).data("holderf"));
 		$("input[name=features]").val("");
 		$("span#matches").text("");
 		$(".filter").hide();
