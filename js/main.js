@@ -152,14 +152,10 @@ jQuery(function($) {
 
 // *** SEARCH *** toggle button
 jQuery(function($) {
-
 	 $(window).on("resize",function(){ location.reload(); } ); // forces height refresh on browser-size change
-
 	  /* drag handle for panel width */
 	 $(".extruder.right").resize(function() {
-
-	        $(window).reload(false)
-
+	      $(window).reload(false)
 	 })
 
 	if (!$(".extruder.right").hasClass("isOpened")) {
