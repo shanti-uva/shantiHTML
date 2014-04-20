@@ -115,11 +115,6 @@ jQuery(function($) {
 		$(".view-wrap").css({ "height": viewHeight });
 		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight });
   });
-
-	if($("#btnResetSearch").hasClass("show")){ 
-		$("#kmaps-search .view-wrap.short-wrap").css({ "height": shortHeight +60 }); // change height of feature types button container
-	} 
-		
 });
 
 
@@ -148,21 +143,7 @@ jQuery(function($) {
   checkWidth();
   // Bind event listener
   $(".extruder-content").resize(checkWidth);
-
-  // $(window).on("resize",function(){ location.reload(); } ); // forces height refersh on browser-size change
-
-	// $(".ui-resizable-w").mousedown(function() {
-	//    	$(window).mousemove(function() {
-	//        $(window).on("resize",function(){ location.reload(); } );
-	//			});
-	// })
-
-	if (!$(".extruder.right").hasClass("isOpened")) {
-				$(".flap").click( function() {
-					$(".extruder .text").css("width","100%");
-				});
-	}
-	 
+  	 
 });
 
 
@@ -171,7 +152,21 @@ jQuery(function($) {
 
 // *** SEARCH *** toggle button
 jQuery(function($) {
+
+	 // $(window).on("resize",function(){ location.reload(); } ); // forces height refresh on browser-size change
+
+	  /* drag handle for panel width
+	 $(".ui-resizable-w").mousedown(function() {
+	    	$(window).mousemove(function() {
+	        $(window).on("resize",function(){ location.reload(); } );
+				});
+	 }) */
+
 	if (!$(".extruder.right").hasClass("isOpened")) {
+				$(".flap").click( function() {
+					$(".extruder .text").css("width","100%");
+				});
+					// styles inline for now, forces
 				$(".flap").prepend("<span style='font-size:20px; position:absolute; left:19px; top:13px; z-index:10;'><i class='icon km-search'></i></span>");
 				$(".flap").addClass("on-flap");
 	}
@@ -684,10 +679,9 @@ jQuery(function($) {
 	// --------------
 	$("input[name=features]").keydown(function(e){
 			$(".dropdown-toggle").dropdown();
-			$(".filter").show(200);
+			$(".filter").show(100);
 			return;
-	});
-	
+	});	
 	
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
@@ -733,7 +727,7 @@ jQuery(function ($) {
       });
   });
 
-  $(".selectpicker").selectpicker(); // initiates jq-bootstrap-select
+  $(".selectpicker").selectpicker(); // initiates util bootstrap-select
 
 });
 
