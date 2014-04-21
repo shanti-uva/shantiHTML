@@ -130,7 +130,7 @@ object.flip_label{ display:none;}
 .input-section .toggle-link i.icon:before{ color:#dc3c47; font-family:'kmaps-icons'; content:'\e60d'; font-size:0.68em; margin-right:0.12em;}
 /*---------------------------*/
 /*--- custom sizes & position ---*/
-.input-section .feature-group .toggle-link.dropdown-toggle{ float:right;padding:0 10px 0 0;margin:0;display:inline;position:relative;top:-1px;}
+.input-section .feature-group .toggle-link.feature-toggle{ float:right;padding:0 10px 0 0;margin:0;display:inline;position:relative;top:-1px;}
 .input-section .toggle-link.advanced-link{ margin-bottom:4px;}
 .input-section .feature-group .toggle-link.show-features i.icon:before, /*--- for feature types ---*/
 .input-section .toggle-link.show-advanced i.icon:before{content:'\e613';} /*--- for advanced ---*/

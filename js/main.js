@@ -688,7 +688,6 @@ jQuery(function ($) {
           jQuery('.back-to-top').fadeOut(duration);
       }
   });
-
   jQuery('.back-to-top').click(function(event) {
       event.preventDefault();
       jQuery('html, body').animate({scrollTop: 0}, duration);
@@ -709,18 +708,17 @@ jQuery(function ($) {
   $(".dropdown-toggle").dropdown();
   // controls clicking in dropdown & feature input
 	$(function () {	
-		$(document).on('click', '#feature-name, .dropdown-menu.features-open', function(e) {
+		$(document).on('click', '#feature-name, .dropdown-menu.feature-menu', function(e) {
 		   e.stopPropagation()
 		})
 	});	
-  $(".feature-help").toggle( 
-  	function () {
-					$(".feature-message").slideDown( 300 ).delay( 9000 ).slideUp( 300 );	
-			},
-	  function () {
-					$(".feature-message").slideUp( 300 );	
-			}
-	);
+	
+	if($(".feature-group.dropdown").hasClass("open")) {
+			$(".feature-toggle.toggle-link").addClass("show-features");
+	} 
+	if(!$(".feature-group.dropdown").hasClass("open")) {
+			$(".feature-toggle.toggle-link").removeClass("show-features");
+	}
 });
 	
 
