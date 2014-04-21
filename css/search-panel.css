@@ -236,8 +236,10 @@ object.flip_label{ display:none;}
 .input-section .selectpicker li a span:hover{ color:#fff;}
 
 
-/*-------------------------------*/
-/*--- feature select dropdown ---*/
+/*--------------------------------------------------*/
+/*--- feature types tree and select dropdown -------*/
+/*--------------------------------------------------*/
+/*--- toggle styles are with advanced link ---*/
 .input-section .feature-group{ padding:0 0 1px;}
 /*--- feature search input ---*/
 .input-section .feature-group .form-control{ margin:16px 0 3px !important;}
@@ -246,7 +248,7 @@ object.flip_label{ display:none;}
 .input-section .feature-group span#matches{ color:#555; font-size:0.82em; position:relative;top:-1px;}
 .input-section .feature-group label{ color:#555; padding:0;margin:0; font-size:0.88em; line-height:12px;height:15px;}
 
-/*--- the feature dropdown-menu ----*/
+/*--- the feature dropdown-menu ---*/
 .feature-group .dropdown-menu{ height:320px; overflow:auto; border-radius:12px; padding:0; top:46px; left:0; width:100%; min-width:220px;}
 /* .feature-group .dropdown-menu p{ font-size:.82em; line-height:normal; color:#222;}
 #kmaps-search .text .feature-message{ background-color:#fff; font-size:12px;padding:10px 17px 10px; margin:0; 
@@ -255,24 +257,30 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .show-feature-tree{ padding:0; background:#f8f8f8; width:100%; margin-right:0.06em;} 
 .show-feature-tree .form-group{ border-top:1px solid #e0e0e0; margin:0 8px;}
 .show-feature-tree .form-group.last{ /* padding-bottom:5px; */}
-
-.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;margin-left:5px;font-size:0.88em;}
-.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
-.feature-group span.fancytree-node.fancytree-selected:hover{ background:transparent;border:none;}
-
-.fancytree-node.fancytree-match{ } /* targets the filtered nodes */
-#kmaps-search .text .feature-group { }
-#kmaps-search .text input.feature-name { }
-
 /*--- bottom buttons ---*/
 .feature-submit{ padding:0 17px 7px; margin:0; border-top:1px solid #ccc; width:100%; background-color:#fff; height:40px; min-height:40px;
 	border-radius-bottom-left:12px; border-radius-bottom-right:12px; position:absolute; bottom:0; z-index:9999;
 }
+
 .feature-group .tree-wrap{ height:312px; min-height:312px; /*--- height ---*/ padding:0; position:relative; }
 .feature-container{  height:312px; min-height:312px; /*--- height ---*/ padding:0;margin:0;}
 .feature-container #feature-tree{ height:312px; min-height:312px; /*--- height ---*/ padding:0; margin:5px 0 0;} /***** container height ******/
 
+.feature-group ul.fancytree-container{ border:none; margin-bottom:12px;margin-left:5px;font-size:0.88em;}
+.feature-group .fancytree-container span.fancytree-title{ margin-left:0;padding-left:0;color:#222;}
+.feature-group .fancytree-container span.fancytree-title {
+    /*padding-left: 10px;
+    margin-left: 0px;*/
+}
 .feature-group span.fancytree-node{ border:none; display:block;}
+
+.feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
+.feature-group span.fancytree-node.fancytree-selected:hover{ background:transparent;border:none;}
+
+#kmaps-search .text .feature-group { }
+#kmaps-search .text input.feature-name { }
+
+
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-active, 
 .feature-group span.fancytree-node.fancytree-active:hover{ background:transparent;border:none;}
 .feature-group .fancytree-container span.fancytree-node.fancytree-selected,
@@ -280,16 +288,28 @@ border-bottom:1px solid #ccc; position:relative; z-index:99999;} */
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected, 
 .feature-group .fancytree-container.fancytree-treefocus span.fancytree-node.fancytree-selected:hover{ background:transparent;}
 
-.feature-group span.fancytree-title{ margin-left:0;padding-left:0;color:#555 !important;}
+/*--- highlighting ---*/
+.fancytree-node.fancytree-match{ } /* targets the filtered nodes */
 .fancytree-ext-filter span.fancytree-node.fancytree-submatch span.fancytree-title{ color:#777;} /*--- highlight parent node ---*/
 .fancytree-ext-filter span.fancytree-node.fancytree-match span.fancytree-title { color:#555;} /* fancytree-match is the class for the actual feature highlight - default is font-weight: bold; */
 
 .feature-group span.fancytree-icon{ background-image:none; margin:0; padding:0; width:0; height:0; line-height:0; display:none;}
-.feature-group .fancytree-container .glyphicon{ color: #888;font-size: 13px; position:relative; right:4px;}
+.feature-group .fancytree-container .glyphicon{ color: #888;font-size: 13px; position:relative; right:3px;}
 .feature-group .fancytree-container span.fancytree-node:hover > .glyphicon{ color: #333;}
 .feature-group .fancytree-container span.fancytree-node span.glyphicon.fancy-checkbox{ }
 .feature-group .fancytree-container span.fancytree-node span.glyphicon.glyphicon-share{ color:#000 !important;}
 .feature-group .fancytree-container span.fancytree-node span.glyphicon.glyphicon-check{ color:#c00 !important;}
+
+.fancytree-node.fancytree-active.fancytree-focused.fancytree-has-children.fancytree-exp-c.fancytree-ico-c{
+	background:transparent;
+}
+
+.feature-group span.fancytree-icon{ /*width:3px;display:inline;*/}
+
+
+
+
+
 
 .feature-submit .btn.btn-default{ /*--- the select button ---*/
 	font-size:0.75em; background-color:#dc3c47;color:#fff; padding:3px 13px 2px; margin-top:7px; background-image:none;box-shadow:none;text-transform:uppercase;text-shadow:none;
@@ -408,7 +428,8 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     -webkit-margin-end: 0px;
 }
 
-.popover-content .kmapid-display,.counts-display {
+.popover-content .kmapid-display,
+.counts-display {
     display: block;
     float: right;
     clear: both;
@@ -420,12 +441,12 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
 }
 
 .popover-content .info-wrap {min-width: 18em;}
-.popover-content .counts-display {height: 2em;}
+.popover-content .counts-display {height: 2.56em;}
 .popover-title .kmapid-display {
     display: block;
     float: right;
     clear: both;
-    font-size: x-small;
+    font-size: 1em;
     white-space:nowrap;
     margin-left: 0;
     margin-right: 0;
@@ -436,12 +457,12 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     line-height: 7px;
     margin-left: 5px;
     position: relative;
-    top: -3px;
+    top: -1px;
     font-size: 9px;
     font-family: sans-serif;
     letter-spacing: 0.06em;
 }
-.popover-content span.associated+span.associated:before {content: '|';}
+.popover-content span.associated+span.associated:before {content: '|'; padding:0 7px 1px;}
 .listview h3.popover-title {font-size: medium;}
 /*--- END trunk8 */
 /*-----------------*/

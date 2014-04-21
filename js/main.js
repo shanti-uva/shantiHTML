@@ -677,7 +677,7 @@ jQuery(function ($) {
 
 
 
-// *** CONTENT *** top link
+// *** CONTENT *** top link, ie browser alert, equal-heights
 jQuery(function ($) {
 	var offset = 220;
   var duration = 500;
@@ -694,6 +694,12 @@ jQuery(function ($) {
       jQuery('html, body').animate({scrollTop: 0}, duration);
       return false;
   })
+	
+	// simple show-hide the IE message
+  $('.progressive').delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
+
+ // equalHeights supports rendering of sidecolumn-maincolumn
+	$('.main-col').equalHeights();
 });
 
 
@@ -719,10 +725,9 @@ jQuery(function ($) {
 	
 
 
-// *** GLOBAL ** conditional IE message
+// *** GLOBAL ** conditional IE message, support for white sidecolumn
 jQuery(function ($) {	
-	// show-hide the IE message for older browsers
-	// this could be improved with conditional for - lte IE7 - so it does not self-hide
+	// simple show-hide the IE message
   $(".progressive").delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
 
  // equalHeights
