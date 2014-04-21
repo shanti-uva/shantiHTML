@@ -260,7 +260,7 @@ body div.wrap{ position:relative;}
 }
 .content-section {
   background: #eee;    /*---- content background color -----*/
-  padding: 15px;
+  padding: 0 15px;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   font-size:1.06em;
 }
@@ -306,6 +306,8 @@ body div.wrap{ position:relative;}
 .progressive a:hover{ text-decoration:none;}
 
 /*--- BEGIN side col ---*/
+#tab-overview{ padding-bottom:90px;}
+
 .content-sidebar {
   padding-left: 0;
   padding-right: 0;
@@ -711,6 +713,9 @@ body div.wrap{ position:relative;}
   .main-content .content-sidebar {
     float: left;
     width: 30%;
+    background:#fff;
+    padding:0;
+    margin:0;
   }
 
   .main-content .content-sidebar li a,
