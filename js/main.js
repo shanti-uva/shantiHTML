@@ -222,12 +222,12 @@ function decorateElementWithPopover(elem, node) {
                 var document_count = Number($(xml).find('document_count').text());
 
                 // perhaps instead of vertical bars this should be done as spans then styled via css
-                if (related_count) counts.html("<span class='associated'><i class='icon km-places'></i><span class='badge' + (related_count)?' alert-success':''>" + related_count + "</span></span>");
+                if (related_count) counts.html("<span class='associated'><i class='icon km-sources'></i><span class='badge' + (related_count)?' alert-success':''>" + related_count + "</span></span>");
                 if (description_count) counts.append("<span class='associated'><i class='icon km-essays'></i><span class='badge' + (description_count)?' alert-success':'>" + description_count + "</span></span>");
-                if (place_count) counts.append("<span class='associated'><i class='icon km-texts'></i><span class='badge' + (place_count)?' alert-success':'>" + place_count + "</span></span>");
+                if (place_count) counts.append("<span class='associated'><i class='icon km-places'></i><span class='badge' + (place_count)?' alert-success':'>" + place_count + "</span></span>");
                 if (picture_count) counts.append("<span class='associated'><i class='icon km-photos'></i><span class='badge' + (picture_count)?' alert-success':'>" + picture_count + "</span></span>");
                 if (video_count) counts.append("<span class='associated'><i class='icon km-audiovideo'></i><span class='badge' + (video_count)?' alert-success':'>" + video_count + "</span></span>");
-                if (document_count) counts.append("<span class='associated'><i class='icon km-essays'></i><span class='badge' + (document_count)?' alert-success':'>" + document_count + "</span></span>");
+                if (document_count) counts.append("<span class='associated'><i class='icon km-texts'></i><span class='badge' + (document_count)?' alert-success':'>" + document_count + "</span></span>");
 
             }
         });
@@ -237,7 +237,9 @@ function decorateElementWithPopover(elem, node) {
 
 var searchUtil = {
     clearSearch: function() {
-        $('#tree').fancytree('getActiveNode').setActive(false);
+        if ($('#tree').fancytree('getActiveNode')) {
+            $('#tree').fancytree('getActiveNode').setActive(false);
+        }
         $('#tree').fancytree('getTree').clearFilter();
         $('#tree').fancytree("getRootNode").visit(function (node) {
             node.setExpanded(false);
@@ -297,25 +299,32 @@ jQuery(function ($) {
 
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
-        "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
-            "t" +
-            "<'row'>",
-        "iTabIndex": 1,
+//        "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
+//            "t" +
+//            "<'row'>",
+//        "iTabIndex": 1,
         "oLanguage": {
             "sEmptyTable": "No results.  Enter new search query above.",
-            "oPaginate": {
-                "sPrevious": "&lt;",
-                "sNext": "&gt;"
-            }
+            		"sScrollY": "300px",
+            		"sScrollX": "100%",
+            		"sScrollXInner": "150%",
+            		"bScrollCollapse": true,
+          		"bPaginate": false
+//  "oPaginate": {
+//                "sPrevious": "&lt;",
+//                "sNext": "&gt;"
+//            }
         },
+        "oPaginate": false,
+        "bPaginate": false,
         // this hides the pagination navigation when there is only one page.
         "fnDrawCallback": function() {
-            var dtable = $('table.table-results').dataTable();
-            if (dtable.fnSettings().fnRecordsDisplay() <= dtable.fnSettings()._iDisplayLength) {
-                $('div.dataTables_paginate').hide();
-            } else {
-                $('.dataTables_paginate').show();
-            }
+//            var dtable = $('table.table-results').dataTable();
+//            if (dtable.fnSettings().fnRecordsDisplay() <= dtable.fnSettings()._iDisplayLength) {
+//                $('div.dataTables_paginate').hide();
+//            } else {
+//                $('.dataTables_paginate').show();
+//            }
             $('.title-field').trunk8({ tooltip:false });// .popover();
         },
         "fnInitComplete": function() {
