@@ -655,6 +655,20 @@ jQuery(function($) {
 
 
 
+// *** SEARCH *** feature types
+jQuery(function ($) {
+	// manually initiate dropdown w/bstrap
+  $(".dropdown-toggle").dropdown();
+  // controls clicking in dropdown & feature input
+	$(function () {	
+		$(document).on('click', '#feature-name, .dropdown-menu.feature-menu', function(e) {
+		   e.stopPropagation()
+		})
+	});	
+
+});
+
+
 
 // *** SEARCH *** Select-Form & iCheck form graphics
 jQuery(function ($) {
@@ -702,32 +716,3 @@ jQuery(function ($) {
 });
 
 
-// *** SEARCH *** feature types
-jQuery(function ($) {
-	// manually initiate dropdown w/bstrap
-  $(".dropdown-toggle").dropdown();
-  // controls clicking in dropdown & feature input
-	$(function () {	
-		$(document).on('click', '#feature-name, .dropdown-menu.feature-menu', function(e) {
-		   e.stopPropagation()
-		})
-	});	
-	
-	if($(".feature-group.dropdown").hasClass("open")) {
-			$(".feature-toggle.toggle-link").addClass("show-features");
-	} 
-	if(!$(".feature-group.dropdown").hasClass("open")) {
-			$(".feature-toggle.toggle-link").removeClass("show-features");
-	}
-});
-	
-
-
-// *** GLOBAL ** conditional IE message, support for white sidecolumn
-jQuery(function ($) {	
-	// simple show-hide the IE message
-  $(".progressive").delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
-
- // equalHeights
-	$(".main-col").equalHeights();
-});
