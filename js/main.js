@@ -714,5 +714,5 @@ jQuery(function ($) {
  // equalHeights supports rendering of sidecolumn-maincolumn
 	$('.main-col').equalHeights();
 });
-
+ 
 
