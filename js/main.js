@@ -676,6 +676,20 @@ jQuery(function($) {
 
 
 
+// *** SEARCH *** feature types
+jQuery(function ($) {
+	// manually initiate dropdown w/bstrap
+  $(".dropdown-toggle").dropdown();
+  // controls clicking in dropdown & feature input
+	$(function () {	
+		$(document).on('click', '#feature-name, .dropdown-menu.feature-menu', function(e) {
+		   e.stopPropagation()
+		})
+	});	
+
+});
+
+
 
 // *** SEARCH *** Select-Form & iCheck form graphics
 jQuery(function ($) {
@@ -698,7 +712,7 @@ jQuery(function ($) {
 
 
 
-// *** CONTENT *** top link
+// *** CONTENT *** top link, ie browser alert, equal-heights
 jQuery(function ($) {
 	var offset = 220;
   var duration = 500;
@@ -709,7 +723,6 @@ jQuery(function ($) {
           jQuery('.back-to-top').fadeOut(duration);
       }
   });
-
   jQuery('.back-to-top').click(function(event) {
       event.preventDefault();
       jQuery('html, body').animate({scrollTop: 0}, duration);
@@ -749,3 +762,5 @@ jQuery(function ($) {
  // equalHeights
 	$(".main-col").equalHeights();
 });
+ 
+

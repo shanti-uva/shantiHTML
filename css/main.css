@@ -308,27 +308,27 @@ body div.wrap{ position:relative;}
 /*--- BEGIN side col ---*/
 #tab-overview{ padding-bottom:90px;}
 
-.content-sidebar {
+.content-resources {
   padding-left: 0;
   padding-right: 0;
 }
-.content-sidebar ul.nav-pills {  
+.content-resources ul.nav-pills {  
   font-weight: 600;
   font-size: 1em;
   line-height:2em;
   text-transform: uppercase;
   border-right: 1px solid #eee;
 }
-.content-sidebar ul.nav-pills li {
+.content-resources ul.nav-pills li {
   margin-right: -1px;
   margin-top:0;
   white-space:nowrap;
   border-left: 10px solid #ccc;
 }
-.content-sidebar ul.nav-pills li.active {
+.content-resources ul.nav-pills li.active {
 	border-left: 10px solid #cb3a46;
 }
-.content-sidebar ul.nav-pills li a{ 
+.content-resources ul.nav-pills li a{ 
 	padding-left:20px; 
 	background: #fff; 
 	font-size:0.75em; 
@@ -339,29 +339,29 @@ body div.wrap{ position:relative;}
 	-webkit-transition: background-color 200ms;
 	transition: background-color 200ms;
 }
-.content-sidebar ul.nav-pills li a,
-.content-sidebar ul.nav-pills li a:hover {
+.content-resources ul.nav-pills li a,
+.content-resources ul.nav-pills li a:hover {
   color: #777;
   border-radius:0;  
   margin-top:0;	
 }
-.content-sidebar ul.nav-pills li a:hover{
+.content-resources ul.nav-pills li a:hover{
   color: #333;
   background:#f7f7f7;
 }
-.content-sidebar ul.nav-pills li.active a {
+.content-resources ul.nav-pills li.active a {
   color: #333;
   background: #eee; 							/*---- match background on content-section -----*/
   border-top-color:transparent;
   border-right-color: transparent;
   padding-left:20px;
 }
-.content-sidebar ul.nav-pills li a { }
-.content-sidebar ul.nav-pills li a i{ margin-right:10px; font-size:18px;}
-.content-sidebar ul.nav-pills li a i:before{
+.content-resources ul.nav-pills li a { }
+.content-resources ul.nav-pills li a i{ margin-right:10px; font-size:18px;}
+.content-resources ul.nav-pills li a i:before{
 	position:relative; top:4px;
 }
-.content-sidebar ul.nav-pills>li>a>.badge{
+.content-resources ul.nav-pills>li>a>.badge{
 	background:#888;
 	line-height:7px;
 	margin-left:5px;
@@ -370,8 +370,8 @@ body div.wrap{ position:relative;}
 	letter-spacing:0.06em;
 	text-shadow: 1px 1px #888;
 }
-.content-sidebar a.list-group-item.active>.badge, 
-.content-sidebar ul.nav-pills>.active>a>.badge{
+.content-resources a.list-group-item.active>.badge, 
+.content-resources ul.nav-pills>.active>a>.badge{
 	color:#fff;
 	background:#606060;
 }
@@ -710,7 +710,7 @@ body div.wrap{ position:relative;}
 
 
 @media screen and (min-width: 500px) {
-  .main-content .content-sidebar {
+  .main-content .content-resources {
     float: left;
     width: 30%;
     background:#fff;
@@ -718,12 +718,12 @@ body div.wrap{ position:relative;}
     margin:0;
   }
 
-  .main-content .content-sidebar li a,
-  .main-content .content-sidebar li a:hover {
+  .main-content .content-resources li a,
+  .main-content .content-resources li a:hover {
     padding-left: 10px;
   }
 
-  .main-content .content-sidebar li.active a {
+  .main-content .content-resources li.active a {
     padding-left: 0;
   }
 
@@ -745,16 +745,16 @@ body div.wrap{ position:relative;}
 }
 
 @media screen and (min-width: 600px) {
-  .main-content .content-sidebar {
+  .main-content .content-resources {
     width: 25%;
   }
 
-  .main-content .content-sidebar li a,
-  .main-content .content-sidebar li a:hover {
+  .main-content .content-resources li a,
+  .main-content .content-resources li a:hover {
     padding-left: 20px;
   }
 
-  .main-content .content-sidebar li.active a {
+  .main-content .content-resources li.active a {
     padding-left: 10px;
   }
 
@@ -832,7 +832,7 @@ body div.wrap{ position:relative;}
     margin-bottom: 15px;
     padding-right: 5px;
   }
-  .main-content .content-sidebar {
+  .main-content .content-resources {
     width: 16.66667%;
   }
   .main-content .content-section {
