@@ -14,17 +14,17 @@ jQuery(function ($) {
     groupIcon: 'fa fa-angle-right',
     collapsed: true
 	});
-	
+
 	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li:last').addClass('highlight');
-  // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));	
-	
+  // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));
+
 	// --- expand
 	$( '.menu-toggle' ).click(function(){
 		$('.menu-toggle').toggleClass('show-topmenu');
-		$('#menu').multilevelpushmenu( 'expand' );		
-	
+		$('#menu').multilevelpushmenu( 'expand' );
+
 		if($('.menu-toggle').hasClass('show-topmenu')) {
-			$(this).multilevelpushmenu( 'collapse' );					
+			$(this).multilevelpushmenu( 'collapse' );
 		}
 	});
 	// --- align the text
@@ -49,7 +49,7 @@ jQuery(function ($) {
 // jQuery(function ($) {
 
 	// var menulist = $('#menu ul').css('display') == 'block'
-	
+
 	// $(menulist).filter(function() {
 	  // return $(menulist).css('display') == 'block';
 	// })
@@ -64,7 +64,7 @@ jQuery(function ($) {
 jQuery(function ($) {
 	// --- prevent flash onload
 	$(".input-section, .view-section, .view-section .nav-tabs>li>a").css("display","block");
-	
+
   $("#kmaps-search").buildMbExtruder({
       positionFixed: false,
       position: "right",
@@ -93,11 +93,11 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** adapt search panel height to viewport
-jQuery(function($) { 
-  var winHeight = $(window).height(); 
+jQuery(function($) {
+  var winHeight = $(window).height();
   var panelHeight = winHeight -100; // ----- height of container for search panel - minus length above and below in px
   var viewHeight = winHeight -217; // ----- height for view-section & search options - CLOSED
-  var shortHeight = winHeight -457; // ----- height for view-section & search options - OPEN    	
+  var shortHeight = winHeight -457; // ----- height for view-section & search options - OPEN
 
 	// set initial div height
 	$("div.text").css({ "height": panelHeight });
@@ -143,7 +143,7 @@ jQuery(function($) {
   checkWidth();
   // Bind event listener
   $(".extruder-content").resize(checkWidth);
-  	 
+
 });
 
 
@@ -372,15 +372,15 @@ jQuery(function ($) {
    });
 
     var handleSearch = function handleSearch() {
-      // clear previous styling
-      // (can't simply unwrap because that leaves text nodes in extraneous chunks)
-      $('span.fancytree-title').each(
-          function () {
-              $(this).text($(this).text());
-          }
-      );
+        // clear previous styling
+        // (can't simply unwrap because that leaves text nodes in extraneous chunks)
+        $('span.fancytree-title').each(
+            function () {
+                $(this).text($(this).text());
+            }
+        );
 
-      var txt = $("#searchform").val();
+        var txt = $("#searchform").val();
         if (!txt) {
             searchUtil.clearSearch();
             notify.clear();
@@ -390,69 +390,81 @@ jQuery(function ($) {
         } else {
             notify.clear();
             $('table.table-results').dataTable().fnDestroy();
-            var tree = $('#tree').fancytree('getTree').applyFilter(txt);
-            // $('span.fancytree-match').removeClass('fancytree-match');
-            $('.input-group span.fancytree-title').highlight(txt, { element: 'mark' });
-            // Retrieve matches
-            var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
-                return n.match;
+            $.ajax({
+                type: "GET",
+                url: Settings.baseUrl + "/features/by_name/" + txt + ".json?per_page=3000",
+                dataType: "json",
+                timeout: 5000,
+                beforeSend: function () {
+//                    alert('beforeSend');
+                },
+                error: function (e) {
+                    alert("Error: " + JSON.stringify(e))
+                    ;
+                },
+                success: function (ret) {
+//                    alert("json: " + JSON.stringify(resultHash));
+
+                    var txt = $("#searchform").val();
+                    var resultHash = {};
+                    $(ret.features).each(function () {
+                        resultHash[this.id] = true;
+                    });
+
+
+                    var tree = $('#tree').fancytree('getTree').applyFilter(function (node) {
+                        return (typeof resultHash[node.key] !== 'undefined');
+                    });
+                    // $('span.fancytree-match').removeClass('fancytree-match');
+                    $('span.fancytree-title').highlight(txt, { element: 'mark' });
+                    // Retrieve matches
+                    var list = $('#tree').fancytree('getRootNode').findAll(function (n) {
+                        return n.match;
+                    });
+
+                    if (list.length === 0) {
+                        notify.warn("warnnoresults", "There are no matches.  <br>Try to modify your search.");
+                    }
+                    // clear the current list.
+
+                    $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
+                    // populate list
+                    var table = $('div.listview div div.table-responsive table.table-results');
+                    $.each(list, function (x, y) {
+
+                        table.append(
+                            $('<tr>')
+                                .append(decorateElementWithPopover($('<td>'), y)
+                                    .append(
+                                        $('<span class="title-field">').text(y.title).attr('kid', y.key)
+                                            .highlight(txt, { element: 'mark' }).trunk8({ tooltip: false })
+                                    )
+                                )
+                        );
+                    });
+
+                    $("table.table-results tbody tr").click(function (event) {
+                        var kid = $(event.target).closest('.title-field').attr('kid') || $($(event.target).find('.title-field')[0]).attr('kid');
+                        $('.row_selected').removeClass('row_selected');
+                        $(event.target).closest('tr').addClass('row_selected');
+                        $("#tree").animate({ scrollTop: 0 }, "slow");
+                        $('#tree')
+                            .fancytree('getTree')
+                            .activateKey(
+                                kid
+                            ).scrollIntoView();
+                    });
+
+                    $('table.table-results').dataTable();
+
+
+                }
             });
-
-            if (list.length === 0) {
-                notify.warn("warnnoresults", "There are no matches.  <br>Try to modify your search.");
-            }
-            // clear the current list.
-
-            $('div.listview div div.table-responsive table.table-results tr').not(':first').remove();
-            // populate list
-            var table = $('div.listview div div.table-responsive table.table-results');
-            $.each(list, function (x, y) {
-//                var path = "/" + $.makeArray(y.getParentList(false,true).map(function(n) {
-//                    return n.title;
-//                })).join("/");
-
-                table.append(
-                    $('<tr>')
-                        .append(decorateElementWithPopover($('<td>'), y)
-                            .append(
-                                $('<span class="title-field">').text(y.title).attr('kid', y.key)
-                                    .highlight(txt, { element: 'mark' }).trunk8({ tooltip: false })
-                            )
-                        )
-
-                );
-
-//                table.append(
-//                   $("<tr>" +
-//                        "<td><span rel='popover' title='" + y.title + "' data-content='" + path + (y.data.caption?("<blockquote>" + y.data.caption + "</blockquote>"):"") + "' class='title-field'>" + y.title + "</span></td>" +
-//                        "</tr>").highlight(txt,{ element: 'mark' })
-//                )
-            });
-
-
-
-            $("table.table-results tbody tr").click(function (event) {
-
-                var kid = $(event.target).closest('.title-field').attr('kid') || $($(event.target).find('.title-field')[0]).attr('kid');
-
-                // notify.warn('debug',"kid: " +  kid);
-
-                $('.row_selected').removeClass('row_selected');
-                $(event.target).closest('tr').addClass('row_selected');
-                $("#tree").animate({ scrollTop: 0 }, "slow");
-                $('#tree')
-                    .fancytree('getTree')
-                    .activateKey(
-                        kid
-                    ).scrollIntoView();
-            });
-
-            $('table.table-results').dataTable();
-
+            return false;
         }
-        return false;
-  };
-  $("#searchbutton").click(handleSearch);
+    };
+
+    $("#searchbutton").click(handleSearch);
   $('#searchform').attr('autocomplete','off'); // turn off browser autocomplete
   $("form.form").submit(handleSearch);
   $("#searchform").keyup( function(e) {
@@ -490,7 +502,7 @@ jQuery(function ($) {
 
 
 // *** SEARCH *** clear search input & support for placeholder
-jQuery(function($) {	
+jQuery(function($) {
 	$("#feature-tree").fancytree({
 		extensions: ["glyph", "edit", "filter"],
 		checkbox: true,
@@ -547,7 +559,7 @@ jQuery(function($) {
 		},
 		activate: function(event, data) {
 				//	alert("activate " + data.node);
-		},			
+		},
 		lazyLoad: function(event, ctx) {
 	 			ctx.result = {url: "ajax-sub2.json", debugDelay: 1000};
 		 },
@@ -567,21 +579,21 @@ jQuery(function($) {
 		cookieId: "kmaps2tree", // set cookies for features, the second fancytree
 		idPrefix: "kmaps2tree"
 	});
-	
+
 	// --- input styles for search panel
 	// ----------------------------------
 	// --- kms, KMAPS MAIN SEARCH INPUT ---
 	var kms = $("#searchform");	// the main search input
-	$(kms).data("holder",$(kms).attr("placeholder"));			
-	
+	$(kms).data("holder",$(kms).attr("placeholder"));
+
 	// --- features inputs - focusin / focusout
 	$(kms).focusin(function(){
 	    $(kms).attr("placeholder","");
 	    $("button.searchreset").show("fast");
 	});
 	$(kms).focusout(function(){
-	    $(kms).attr("placeholder",$(kms).data("holder"));	
-	    $("button.searchreset").hide();        
+	    $(kms).attr("placeholder",$(kms).data("holder"));
+	    $("button.searchreset").hide();
 
 		var str = "Enter Search...";
 		var txt = $(kms).val();
@@ -605,37 +617,37 @@ jQuery(function($) {
 
 	// --- fname, KMAPS FEATURES ---
 	// ----------------------------------
-	var tree2 = $("#feature-tree").fancytree("getTree");		
-	var fname = $("#feature-name");	// feature type id 
-	$(fname).data("holderf",$(fname).attr("placeholder"));			
-	
+	var tree2 = $("#feature-tree").fancytree("getTree");
+	var fname = $("#feature-name");	// feature type id
+	$(fname).data("holderf",$(fname).attr("placeholder"));
+
 	// --- features inputs - focusin / focusout
 	$(fname).focusin(function(){
 			$(this).dropdown();
 	    $(this).attr("placeholder","");
 	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
-	});	
+	});
 	$(fname).focusout(function(){
-	    $(this).attr("placeholder",$(fname).data("holderf"));	
+	    $(this).attr("placeholder",$(fname).data("holderf"));
 	    $("button.feature-reset").hide();
 	    $(this).dropdown();
-			
+
 			var strf = "Filter by Feature Name";
-			var txtf = $(fname).val();	
+			var txtf = $(fname).val();
 			if (strf.indexOf(txtf) > -1) {
 				$("button.feature-reset").hide();
 			return true;
 			} else {
 				$("button.feature-reset").show(100);
 			return false;
-			}	
+			}
 	});
 	// --- features inputs - keydown / keyup / click
 	$("input[name=features]").keydown(function(e){
 			$(".dropdown-toggle").dropdown();
 			$(".filter").show(100);
 			return;
-	});		
+	});
 	$("input[name=features]").keyup(function(e){
 		var match = $(this).val();
 		if(e && e.which === $.ui.keyCode.ESCAPE || $.trim(match) === ""){
@@ -644,20 +656,20 @@ jQuery(function($) {
 		}
 		// Pass text as filter string (will be matched as substring in the node title)
 		var n = tree2.applyFilter(match);
-			$("button#btnResetSearch, .feature-reset").attr("disabled", false); 
-			$("span#matches").text("(" + n + " matches)"); 
+			$("button#btnResetSearch, .feature-reset").attr("disabled", false);
+			$("span#matches").text("(" + n + " matches)");
 	}).focus();
-	// close and clear all	
+	// close and clear all
 	$("button#btnResetSearch, .feature-reset").click(function(event){
 		$(fname).attr("placeholder",$(fname).data("holderf"));
 		$("input[name=features]").val("");
 		$("span#matches").text("");
 		$(".filter").hide();
-		 tree2.clearFilter();		
+		 tree2.clearFilter();
 		$("#feature-tree").fancytree();
 		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
 		// $(this).addClass("show");
-	}).attr("disabled", true);	
+	}).attr("disabled", true);
 
 });
 
@@ -711,25 +723,25 @@ jQuery(function ($) {
 	// manually initiate dropdown w/bstrap
   $(".dropdown-toggle").dropdown();
   // controls clicking in dropdown & feature input
-	$(function () {	
+	$(function () {
 		$(document).on('click', '#feature-name, .dropdown-menu.features-open', function(e) {
 		   e.stopPropagation()
 		})
-	});	
-  $(".feature-help").toggle( 
+	});
+  $(".feature-help").toggle(
   	function () {
-					$(".feature-message").slideDown( 300 ).delay( 9000 ).slideUp( 300 );	
+					$(".feature-message").slideDown( 300 ).delay( 9000 ).slideUp( 300 );
 			},
 	  function () {
-					$(".feature-message").slideUp( 300 );	
+					$(".feature-message").slideUp( 300 );
 			}
 	);
 });
-	
+
 
 
 // *** GLOBAL ** conditional IE message
-jQuery(function ($) {	
+jQuery(function ($) {
 	// show-hide the IE message for older browsers
 	// this could be improved with conditional for - lte IE7 - so it does not self-hide
   $(".progressive").delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
