@@ -446,7 +446,7 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     display: block;
     float: right;
     clear: both;
-    font-size: 1em;
+    font-size: 0.8em;
     white-space:nowrap;
     margin-left: 0;
     margin-right: 0;
@@ -462,7 +462,7 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     font-family: sans-serif;
     letter-spacing: 0.06em;
 }
-.popover-content span.associated+span.associated:before {content: '|'; padding:0 7px 1px;}
+.popover-content span.associated+span.associated:before {content: '|'; padding:0 2px 1px;}
 .listview h3.popover-title {font-size: medium;}
 /*--- END trunk8 */
 /*-----------------*/
