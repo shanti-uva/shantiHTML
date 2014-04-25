@@ -653,7 +653,7 @@ jQuery(function($) {
 	});
 	// --- features inputs - keydown / keyup / click
 	$("input[name=features]").keydown(function(e){
-			$(".dropdown-toggle").dropdown();
+			$(fname).dropdown();
 			$(".filter").show(100);
 			return;
 	});
@@ -680,22 +680,12 @@ jQuery(function($) {
 		// $(this).addClass("show");
 	}).attr("disabled", true);
 
-});
-
-
-
-
-// *** SEARCH *** feature types
-jQuery(function ($) {
-	// manually initiate dropdown w/bstrap
-  $(".dropdown-toggle").dropdown();
   // controls clicking in dropdown & feature input
 	$(function () {	
 		$(document).on('click', '#feature-name, .dropdown-menu.feature-menu', function(e) {
 		   e.stopPropagation()
 		})
 	});	
-
 });
 
 

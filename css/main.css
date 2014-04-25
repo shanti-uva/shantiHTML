@@ -15,7 +15,7 @@ body div.wrap{ position:relative;}
 .navbar.navbar-default>.container-fluid{ background:#fff;}
 .navbar.navbar-default .navbar-collapse,
 .navbar.navbar-default.navbar-static-top{ border-bottom: none;}
-.navbar-default h1 {color:#555; font-style:italic; font-size:1em; line-height: 1.25em; margin:0; padding:0 0 0 20px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;  display:inline-block;float:left;}
+.navbar-default h1 {color:#555;float:left;font-style:italic; font-size:1em; line-height: 1.25em; margin:0; padding:0 0 0 20px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .navbar-default h1 a.navbar-brand{border:0;display:inline-block;padding:0;margin:0;color:#333;font-size:1.18em; line-height:1.25em;font-weight:normal;text-shadow:1px 1px 1px #eee;}
 .navbar-default h1 a.navbar-brand:hover{ color:#222;}
 .navbar-default h1 a.navbar-brand span{ position:relative; top:7px; display:inline-block;}
