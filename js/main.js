@@ -389,15 +389,24 @@ jQuery(function ($) {
             notify.warn('warntooshort', 'Search string must be ' + SEARCH_MIN_LENGTH + ' characters or longer.');
         } else {
             notify.clear();
+
+            var searchargs = {
+                name: 0,
+                caption: 0,
+                summary: 1,
+                id: 1,
+                description: 1
+            };
+
             $('table.table-results').dataTable().fnDestroy();
+
+            var searchurl = Settings.baseUrl + "/features/by_fields/" + txt + ".json?per_page=3000" + $.param(searchargs);
+//            console.log("Search URL = " + searchurl);
             $.ajax({
                 type: "GET",
-                url: Settings.baseUrl + "/features/by_name/" + txt + ".json?per_page=3000",
+                url: searchurl,
                 dataType: "json",
-                timeout: 5000,
-                beforeSend: function () {
-//                    alert('beforeSend');
-                },
+                timeout: 15000,
                 error: function (e) {
                     alert("Error: " + JSON.stringify(e))
                     ;
