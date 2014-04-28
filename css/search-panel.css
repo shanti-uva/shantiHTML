@@ -28,18 +28,18 @@
 #kmaps-search .ui-resizable-handle.ui-resizable-w:active{ background:#fafafa;}
 
 /*--- big search button inline styles are loaded via main.js with icon markup  */
-.extruder.right .flap{ cursor:pointer;display:block;background:#fff;height:50px;width:50px;position:absolute;left:-1px;top:0;padding: 8px 0 8px 8px;margin:0 0 0 -48px; border-top-left-radius:50px;border-bottom-left-radius:50px;}
-.extruder.right .flap.on-flap{ border-collapse:separate; /* needed by ie9+ with box-shadow */}
-.extruder.right .flap span.flapLabel,
-.extruder.right .flap.on-flap span.flapLabel{ width:42px !important;position:relative;top:-1px;left:0; background:#505050; height:36px;display:block; padding:18px 40px 18px 0; margin:0;border-top-left-radius:25px;border-bottom-left-radius:25px;overflow:hidden;}
+#kmaps-search.extruder.right .flap{ cursor:pointer;display:block;background:#fff;height:50px;width:50px;position:absolute;left:-1px;top:0;padding: 8px 0 8px 8px;margin:0 0 0 -48px; border-top-left-radius:50px;border-bottom-left-radius:50px;}
+#kmaps-search.extruder.right .flap.on-flap{ border-collapse:separate; /* needed by ie9+ with box-shadow */}
+#kmaps-search.extruder.right .flap span.flapLabel,
+#kmaps-search.extruder.right .flap.on-flap span.flapLabel{ width:42px !important;position:relative;top:-1px;left:0; background:#505050; height:36px;display:block; padding:18px 40px 18px 0; margin:0;border-top-left-radius:25px;border-bottom-left-radius:25px;overflow:hidden;}
 
-.extruder.right.isOpened .flap{width:49px;}
-.extruder.right.isOpened .flap.on-flap span.flapLabel{ width:41px !important;}
+#kmaps-search.extruder.right.isOpened .flap{width:49px;}
+#kmaps-search.extruder.right.isOpened .flap.on-flap span.flapLabel{ width:41px !important;}
 /*----- css for the flap is inserted inline, see js/main ---*/
-.extruder.right .flap>span,
-.extruder.right .flap.on-flap>span{ color:#ddd;}
-.extruder.right .flap.on-hover>span,
-.extruder.right .flap.on-hover.on-flap>span{ color:#fff;}
+#kmaps-search.extruder.right .flap>span,
+#kmaps-search.extruder.right .flap.on-flap>span{ color:#ddd;}
+#kmaps-search.extruder.right .flap.on-hover>span,
+#kmaps-search.extruder.right .flap.on-hover.on-flap>span{ color:#fff;}
 object.flip_label{ display:none;}
 /*----------------------------------------------*/
 /*--- END :: Sliding Panel ---------------------*/
@@ -175,7 +175,9 @@ object.flip_label{ display:none;}
   background-image: -ms-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
   background-image: -o-linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);  
   background-image: linear-gradient(top, #fff 0%, #f7f7f7 45%,  #f0f0f0 55%,  #e0e0e0 100%);
-	/* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FF5A00, endColorstr=#FFAE00); */
+	/* 
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+	*/
 	background-repeat: repeat-x;
 	border: 1px solid #ddd;
 	border-radius:25px;  	
@@ -410,17 +412,17 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
 
 
 /* trunk8 */
-.listview .col-xs-6 { width: 85%;font-size: 0.6em; padding-right: 0;/*padding-left: 0em;*//*margin-left: -2em;*/}
-.listview .pagination>li>a, .pagination>li>span { padding: 0.5em 0.8em;}
-.listview .pagination { margin-left: 1em;margin-top: 0.3em;margin-bottom: 0.1em;margin-right: -0.5em;}
-.listview .dataTables_info {font-size: 1.3em;margin-left: 1em;}
-.listview .row {margin-right: 0;/*margin-left: 0em;*/}
+.view-section .col-xs-6 { width: 85%;font-size: 0.6em; padding-right: 0;/*padding-left: 0em;*//*margin-left: -2em;*/}
+.view-section .pagination>li>a, .pagination>li>span { padding: 0.5em 0.8em;}
+.view-section .pagination { margin-left: 1em;margin-top: 0.3em;margin-bottom: 0.1em;margin-right: -0.5em;}
+.view-section .dataTables_info {font-size: 1.3em;margin-left: 1em;}
+.view-section .row {margin-right: 0;/*margin-left: 0em;*/}
 /* .listview td.sorting_1 { min-width: 12em;} */
-.listview div.title-field { position: static;float: none;/*width: 85%;*//*max-height: 1.3em;*//*white-space: nowrap;*//*overflow: hidden;*//*text-overflow: ellipsis;*/}
-.listview .row {/*margin: 1em 1em 1em 1em;*/}
-.listview .popover-content {font-family: sans-serif;font-size: smaller;}
-.popover-content > blockquote p {font-size: 13px;}
-.popover-content > blockquote {
+.view-section div.title-field { position: static;float: none;/*width: 85%;*//*max-height: 1.3em;*//*white-space: nowrap;*//*overflow: hidden;*//*text-overflow: ellipsis;*/}
+.view-section .row {/*margin: 1em 1em 1em 1em;*/}
+.view-section .popover-content {font-family: sans-serif;font-size: smaller;}
+.view-section .popover-content > blockquote p {font-size: 13px;}
+.view-section .popover-content > blockquote {
     border-left: none;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
@@ -428,8 +430,8 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     -webkit-margin-end: 0px;
 }
 
-.popover-content .kmapid-display,
-.counts-display {
+.view-section .popover-content .kmapid-display,
+.view-section .counts-display {
     display: block;
     float: right;
     clear: both;
@@ -440,20 +442,20 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     color: #888;
 }
 
-.popover-content .info-wrap {min-width: 18em;}
-.popover-content .counts-display {height: 2.56em;}
-.popover-title .kmapid-display {
+.view-section .popover-content .info-wrap {min-width: 18em;}
+.view-section .popover-content .counts-display {height: 2.56em;}
+.view-section .popover-title .kmapid-display {
     display: block;
     float: right;
     clear: both;
-    font-size: 0.8em;
+    font-size: 1em;
     white-space:nowrap;
     margin-left: 0;
     margin-right: 0;
     color: #888;
 }
-.popover-title .kmapid-display:before {color: #888;/*content: "kmapid: "*/}
-.popover-content .badge {
+.view-section .popover-title .kmapid-display:before {color: #888;/*content: "kmapid: "*/}
+.view-section .popover-content .badge {
     line-height: 7px;
     margin-left: 5px;
     position: relative;
@@ -462,8 +464,8 @@ table.dataTable thead .sorting_asc{ background:none;border:none;width:0;min-widt
     font-family: sans-serif;
     letter-spacing: 0.06em;
 }
-.popover-content span.associated+span.associated:before {content: '|'; padding:0 2px 1px;}
-.listview h3.popover-title {font-size: medium;}
+.view-section .popover-content span.associated+span.associated:before {content: '|'; padding:0 7px 1px;}
+.view-section .listview h3.popover-title {font-size: medium;}
 /*--- END trunk8 */
 /*-----------------*/
 /*--- END Table ---*/

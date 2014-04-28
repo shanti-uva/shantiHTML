@@ -23,25 +23,24 @@
 	<div class="wrap-all">
   <a href=".main-content" class="sr-only">Skip to main content</a>
   <header class="header-banner" role="banner">
-		<div class="navbar navbar-default navbar-static-top" role="navigation">  
-      <nav role="navigation">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navtop">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>        
-      </nav>      
+		<div class="navbar navbar-default navbar-static-top" role="navigation">        
+
+        <div class="menu-pushtoggle"><a href="#"><i class="icon km-menu"></i></a></div>
+        <div class="menu-toggle"><a href="#"><i class="icon km-menu"></i></a></div>
+ 
+
       <div class="navbar-header">
-      	<h1 class="navbar-title"><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo"><span><span class="hidden">SHANTI</span>Scholarly Collections at the University of Virginia</span></a></h1>
+      	<h1 class="navbar-title"><a href="" class="navbar-brand" title="SHANTI homepage link"><img src="images/shanti_logo.png" alt="shanti logo"><span><span class="hidden">SHANTI </span>Scholarly Collections at the University of Virginia</span></a></h1>
       </div>        	     
+
+
       <nav class="navbar-collapse collapse navtop" role="navigation">
        <form role="form" class="form">
 			 <fieldset>	        
-        <ul class="nav navbar-nav navbar-right">
+         <ul class="nav navbar-nav navbar-right" style="">
           <li class="explore"><a href="#">Explore Collections<i class="icon km-directions"></i></a></li>
           <li class="dropdown lang">										
-	          	<a href="" class="dropdown-toggle" data-toggle="dropdown">Eng<i class="icon km-arrowselect"></i></a>
+	          	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Eng<i class="icon km-arrowselect"></i></a>
 		          		<ul class="dropdown-menu dropdown-features" role="menu">
                     <li class="form-group"><label class="radio-inline" for="optionlang1">
 												<input type="radio" name="radios" id="optionlang1" value="lang1">Tibetan</label>
@@ -57,11 +56,12 @@
 										</li>
 		              </ul>      
           </li>
-          <li class="menu-toggle"><a href="#"><i class="icon km-menu"></i></a></li>
         </ul>
+        
+       
 			 </fieldset>  
 			 </form>		       
-     </nav><!-- END navbar-collapse -->
+      </nav><!-- END navbar-collapse -->
     </div><!-- END navbar -->
 
 	
@@ -110,27 +110,45 @@
   	
 	<!-- BEGIN content -->
   <main class="main-wrapper container-fluid" role="main">
-    <article class="row main-content">
+    <article class="row row-offcanvas row-offcanvas-left main-content">
      	
-    <header class="col-sm-12 titlearea">
+    <header class="col-xs-12 col-sm-12 titlearea">
      <div>
-	    <h1 class="page-title"><i class="icon km-places"></i><span>Lhasa</span></h1>
+	    <h1 class="page-title"><i class="icon km-places"></i>          
+	    		<span id="width-tracker">
+            <span></span>
+					</span>
+			</h1>
         <nav class="breadcrumbs-wrapper" role="navigation">
-          <ol class="breadcrumb">
-            <li><span class="tag-before-breadcrumb">Places:</span></li>
-            <li><a href="#">World</a></li>
-            <li><a href="#">Asia</a></li>
-            <li><a href="#">Greater Himalayas & Tibetan Plateau</a></li>
-            <li><a href="#">China</a></li>
-            <li><a href="#">Tibet Autonomous Region</a></li>
-            <li><a href="#">Lhasa</a></li>
+          <ol class="breadCrumb">
+            <li><em>Places:</em></li>
+            <li><a href="#">World</a><i class="icon"></i></li>
+            <li><a href="#">Asia</a><i class="icon"></i></li>
+            <li><a href="#">Greater Himalayas & Tibetan Plateau</a><i class="icon"></i></li>
+            <li><a href="#">China</a><i class="icon"></i></li>
+            <li><a href="#">Tibet Autonomous Region</a><i class="icon"></i></li>
+            <li><a href="#">Lhasa</a><i class="icon"></i></li>
             <li class="active">Lhasa</li>
+          </ol> 
+        </nav>  
+        <!--
+        <nav>  
+          <ol class="breadCrumb">
+            <li><em>Resources:</em></li>
+            <li><a href="#"><span><i class="icon"></i><span></span></span></a><i class="icon"></i></li>
+            <li><a href="#"><span><i class="icon"></i><span></span></span></a><i class="icon"></i></li>
+            <li><a href="#"><span><i class="icon"></i><span></span></span></a><i class="icon"></i></li>
+            <li><a href="#"><span><i class="icon"></i><span></span></span></a><i class="icon"></i></li>
+            <li><a href="#"><span><i class="icon"></i><span></span></span></a><i class="icon"></i></li>
+            <li><a href="#"><span><i class="icon"></i><span></span></span></a><i class="icon"></i></li>
+            <li class="active"><span><i class="icon"></i><span></span></span></li>
           </ol>
-        </nav>
+				</nav>
+				-->
       </div>
     </header>
               
-    <aside class="col-sm-2 content-resources main-col">
+    <aside class="col-xs-6 col-sm-3 sidebar-offcanvas content-resources main-col">
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="icon km-overview"></i>Overview</a></li>
         <li><a href="#tab-essays" data-toggle="pill"><i class="icon km-essays"></i>Essays<span class="badge">1</span></a></li>
@@ -149,7 +167,7 @@
       </ul>
     </aside> 
                       
-    <section  class="col-sm-10 content-section main-col">
+    <section  class="col-xs-12 col-sm-9 content-section main-col">
       <div class="tab-content">
         <article class="tab-pane active" id="tab-overview">
           
@@ -161,66 +179,9 @@
           <p><a href="#">City</a>, <a href="#">ADM3</a>, <a href="#">Capital of 1st order administrative division</a> </p>
           
           <h6>Map</h6>
-          <div class="google-maps"><!-- <iframe src="https://mapsengine.google.com/map/embed?mid=zCEqriyJd8A0.kM1pQfphj0Ns" width="640" height="480" style="border:0"></iframe> --></div>
+          <div class="google-maps"> <iframe src="https://mapsengine.google.com/map/embed?mid=zCEqriyJd8A0.kM1pQfphj0Ns" width="640" height="480" style="border:0"></iframe> </div>
           
-          <aside class="panel-group" id="accordion">
-            <section class="panel panel-default">
-              <div class="panel-heading">
-                <h6>
-                  <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle">
-                    <i class="icon km-fw km-minus"></i> Names
-                  </a>
-                </h6>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                  <p>Lorem ipsum Deserunt labore anim officia eiusmod adipisicing labore exercitation ea minim id dolor enim magna Ut esse consequat occaecat aliqua mollit commodo anim quis in tempor deserunt ut laborum sit in dolor cillum nulla eu adipisicing enim minim irure laborum consequat nisi ea ad est amet voluptate labore cillum non sed laborum ex veniam occaecat ad consectetur Duis sit qui magna consectetur velit tempor labore nulla officia Ut consequat Excepteur magna dolor eu deserunt magna est occaecat amet nostrud dolore ut dolore culpa in occaecat est velit aliquip velit culpa in dolore reprehenderit ullamco officia et ea deserunt nostrud ullamco sed eu non est et aliqua dolor dolor pariatur dolor non nisi veniam id est consequat non pariatur commodo aliquip sit in velit fugiat tempor Duis voluptate nostrud enim commodo cupidatat eiusmod culpa qui anim eiusmod adipisicing esse occaecat in officia in ad Ut anim irure officia qui laboris eu nulla sunt dolore consectetur elit enim nulla aute pariatur ullamco pariatur ex aliqua ea in exercitation tempor voluptate nisi laborum in deserunt esse aute qui nulla aliquip do dolor pariatur aliquip ut sunt voluptate dolore culpa veniam consectetur in nisi labore reprehenderit consectetur commodo in magna aute amet magna ad nulla esse ullamco veniam incididunt id sed laborum consectetur incididunt quis fugiat in aliquip dolor enim sunt proident id velit ut est in sed sit.</p>
-                </div>
-              </div>
-            </section>
-            <section class="panel panel-default">
-              <div class="panel-heading">
-                <h6>
-                  <a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle collapsed">
-                    <i class="icon km-fw km-plus"></i> Etymology
-                  </a>
-                </h6>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <p>Lorem ipsum Ad voluptate quis magna Duis aute magna. Lorem ipsum Quis elit minim consectetur nostrud nulla nostrud laborum eiusmod veniam. Lorem ipsum Officia ut cupidatat adipisicing ad culpa enim reprehenderit minim culpa labore enim. Lorem ipsum Labore eiusmod adipisicing Excepteur eiusmod qui proident enim proident. Lorem ipsum Fugiat sunt ut aliquip in enim occaecat magna minim id dolore aliqua. Lorem ipsum Irure eu reprehenderit laboris Duis adipisicing qui do.</p>
-                </div>
-              </div>
-            </section>
-            <section class="panel panel-default">
-              <div class="panel-heading">
-                <h6>
-                  <a href="#collapseThree" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle collapsed">
-                    <i class="icon km-fw km-plus"></i> IDs
-                  </a>
-                </h6>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <p>Lorem ipsum Anim do sit proident aliqua id quis exercitation laboris in commodo est veniam culpa nisi in veniam velit in Excepteur ex Ut voluptate dolor aute eu in incididunt velit irure Duis.</p>
-                </div>
-              </div>
-            </section>
-            <section class="panel panel-default">
-              <div class="panel-heading">
-                <h6>
-                  <a href="#collapseFour" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle collapsed">
-                    <i class="icon km-fw km-plus"></i> Location
-                  </a>
-                </h6>
-              </div>
-              <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <p>Lorem ipsum Tempor proident id sint esse in laborum incididunt anim in dolor officia elit voluptate non occaecat magna sunt nulla qui dolore consectetur in consequat esse incididunt sed mollit dolore occaecat minim ex in cupidatat cupidatat mollit enim id esse aliquip ea do deserunt culpa Ut magna ullamco consectetur eu culpa pariatur consectetur eu labore ut est sunt mollit tempor laboris consequat dolor laborum eu ad laboris amet mollit veniam consequat pariatur irure quis in in cillum nostrud mollit deserunt adipisicing Excepteur in commodo laborum ea deserunt sunt adipisicing ullamco officia dolore laboris pariatur sunt Ut magna adipisicing dolore voluptate eiusmod est eiusmod tempor enim eu eu aliqua ut quis nisi dolore deserunt eiusmod in Ut occaecat cupidatat amet proident reprehenderit non sed esse deserunt aliqua dolor proident qui fugiat adipisicing fugiat enim in labore qui adipisicing consequat sint Duis officia proident anim officia amet ut do Excepteur ea dolor dolore exercitation ut adipisicing cillum dolor eu Ut velit eu nulla irure enim incididunt voluptate eiusmod tempor sunt eu id qui consectetur dolor et sit incididunt tempor est incididunt est aute dolore Excepteur quis laboris aliquip ex laboris elit aliqua id aute consectetur dolore et officia est ea elit sunt dolore mollit ea aute consectetur aute anim dolor aliquip sed sunt.</p>
-                </div>
-              </div>
-            </section>
-          </aside>
+         
         </article>
 				<!-- END tab-pane active -->
 
@@ -290,13 +251,136 @@
         </article>
       </div><!-- END tab-content -->
     </section><!-- END content-page --> 				  
-		
-		
-		
-		
-			<a href="#" class="back-to-top"><i class="icon"></i>Top</a>
+				
+			<a href="#" class="back-to-top"><i class="icon"></i></a>
     </article><!-- END main-content -->
   </main><!-- END container-fluid -->
+
+
+
+
+
+
+
+
+	<section id="menu-push" role="navigation">		
+	 		<div class="panel-group" id="accordion">  	 					            
+	 		
+            <section class="panel panel-default">
+              <h6 class="panel-heading"><a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle collapsed"><i class="icon km-fw km-plus"></i> 
+                    Main Menu</a></h6>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body menu-general">
+                  <ul>
+                  	<li><a href="#">Login</a></li>
+                  	<li><a href="#">Help</a></li>
+                  	<li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+             		          
+            <section class="panel panel-default">
+              <h6 class="panel-heading"><a href="#collapseOne" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle collapsed"><i class="icon km-fw km-minus"></i> 
+                    Explore Collections</a></h6>
+              <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body menu-collections">
+                  <ul>
+		                <li><a href="#"><i class="icon km-subjects"></i>Subjects</a></li>
+		                <li><a href="#"><i class="icon km-places"></i>Places</a></li>
+		                <li><a href="#"><i class="icon km-agents"></i>Agents</a></li>
+		                <li><a href="#"><i class="icon km-events"></i>Events</a></li>
+		                <li><a href="#"><i class="icon km-photos"></i>Photos</a></li>
+		                <li><a href="#"><i class="icon km-audiovideo"></i>Audio-Video</a></li>
+		                <li><a href="#"><i class="icon km-visuals"></i>Visuals</a></li>
+		                <li><a href="#"><i class="icon km-essays"></i>Essays</a></li>
+		                <li><a href="#"><i class="icon km-texts"></i>Texts</a></li>
+		                <li><a href="#"><i class="icon km-maps"></i>Maps</a></li>
+		                <li><a href="#"><i class="icon km-community"></i>Community</a></li>
+		                <li><a href="#"><i class="icon km-terms"></i>Terms</a></li>
+		                <li><a href="#"><i class="icon km-sources"></i>Sources</a></li>
+									</ul>
+                </div>
+              </div>
+            </section>
+            
+            <section class="panel panel-default">
+              <h6 class="panel-heading"><a href="#collapseThree" data-toggle="collapse" data-parent="#accordion" class="accordion-toggle"><i class="icon km-fw km-plus"></i> 
+                  View Preferences</a></h6>
+              <div id="collapseThree" class="panel-collapse collapse in">
+                <div class="panel-body menu-options">
+                
+								  <ul>			  	
+								  	<!-- header -->              
+										<li class="drop-hdr"><em>Site Language</em></li>
+											<li class="form-group"><label class="radio-inline" for="option0a">
+												<input type="radio" name="option0" id="option0a" value="option0a" checked>English</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option0b">
+												<input type="radio" name="option0" id="option0b" value="option0b">French</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option0c">
+												<input type="radio" name="option0" id="option0c" value="option0c">Tibetan</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option0d">
+												<input type="radio" name="option0" id="option0d" value="option0d">Chinese</label>
+											</li>											
+											<li class="form-group last"></li>
+											
+								  	<!-- header -->              
+										<li class="drop-hdr"><em>Perspective</em></li>
+											<li class="form-group"><label class="radio-inline" for="option1a">
+												<input type="radio" name="option1" id="option1a" value="option1a" checked>General</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option1b">
+												<input type="radio" name="option1" id="option1b" value="option1b">Other</label>
+											</li>
+											<li class="form-group last"></li>
+										
+										<!-- header -->
+										<li class="drop-hdr"><em>Subject Language</em></li>
+											<li class="form-group"><label class="radio-inline" for="option2a">
+												<input type="radio" name="option2" id="option2a" value="option2a">Chinese Characters (simplified)</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option2b">
+												<input type="radio" name="option2" id="option2b" value="option2b">Chinese Characters (traditional)</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option2c">
+												<input type="radio" name="option2" id="option2c" value="option2c">Devangiri Script</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option2d">
+												<input type="radio" name="option2" id="option2d" value="option2d" checked>Popular Standard (romanization)</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option2e">
+												<input type="radio" name="option2" id="option2e" value="option2e">Scholarly Standard (romanization)</label>
+											</li>										
+											<li class="form-group"><label class="radio-inline" for="option2f">
+												<input type="radio" name="option2" id="option2f" value="option2f">Tibetan Script (simplified)</label>
+											</li>										
+											<li class="form-group"><label class="radio-inline" for="option2g">
+												<input type="radio" name="option2" id="option2g" value="option2g">Tibetan Script (romanization)</label>
+											</li>
+											<li class="form-group last"></li>
+										
+										<!-- header -->
+										<li class="drop-hdr"><em>Show Subject Details</em></li>                     
+											<li class="form-group"><label class="radio-inline" for="option3a">
+												<input type="radio" name="option3" id="option3a" value="option3a" checked>Yes</label>
+											</li>
+											<li class="form-group"><label class="radio-inline" for="option3b">
+												<input type="radio" name="option3" id="option3b" value="option3b">No</label>
+											</li>
+											<li class="form-group last"></li>
+									</ul>
+													                        
+                </div>
+              </div>
+            </section>
+
+      </div>      
+	</section>
+
+
 
 
 
@@ -449,6 +533,7 @@
 
 
 
+	
 	<section id="menu" style="display:none;">
 	<nav role="navigation">                
 	 <ul>
@@ -546,6 +631,8 @@
 	
 	<script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="js/menus/jquery.multilevelpushmenu.min.js"></script>
+
+	<script type="text/javascript" src="js/menus/jquery.jBreadCrumb.1.1.js"></script>
 
 	<script type="text/javascript" src="js/extruder/mbExtruder.js"></script><!-- searchpanel(3) -->	
 	<script type="text/javascript" src="src/jquery.fancytree.js"></script><!-- tree -->
