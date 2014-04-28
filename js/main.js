@@ -3,6 +3,7 @@ var Settings = {
 }
 
 
+
 // *** NAVIGATION *** top drilldown menu
 jQuery(function ($) {
 	$( '#menu' ).multilevelpushmenu({
@@ -14,8 +15,7 @@ jQuery(function ($) {
     groupIcon: 'fa fa-angle-right',
     collapsed: true
 	});
-
-	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li:last').addClass('highlight');
+	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li.menu-pushtoggle, .navbar-default .navbar-nav>li:last').addClass('highlight');
   // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));
 
 	// --- expand
@@ -24,7 +24,7 @@ jQuery(function ($) {
 		$('#menu').multilevelpushmenu( 'expand' );
 
 		if($('.menu-toggle').hasClass('show-topmenu')) {
-			$(this).multilevelpushmenu( 'collapse' );
+			$('#menu').multilevelpushmenu( 'collapse' );
 		}
 	});
 	// --- align the text
@@ -37,11 +37,12 @@ jQuery(function ($) {
       event.stopPropagation();
       $('#menu').toggle();
   });
+	
   $(document).click( function(){
-  		$('#menu').hide();
+  	  $('#menu').hide();
   		$('.menu-toggle').removeClass('show-topmenu');
       $('#menu').multilevelpushmenu( 'collapse' );
-  });
+  });   
 });
 
 
@@ -58,6 +59,18 @@ jQuery(function ($) {
 // });
 
 
+jQuery(function ($) {
+	$(".breadcrumbs-wrapper").jBreadCrumb({		
+        minimumCompressionElements: 4,
+        endElementsToLeaveOpen: 1,
+        beginingElementsToLeaveOpen: 1,
+        timeExpansionAnimation: 500,
+        timeCompressionAnimation: 500,
+        timeInitialCollapse: 600,
+        previewWidth: 25	
+	});
+});
+
 
 
 // *** SEARCH *** initiate sliding container, toggle collections & search options
@@ -72,6 +85,38 @@ jQuery(function ($) {
       top: 0
   });
 
+
+  $("#menu-push").buildMbExtruder({
+      positionFixed: false,
+      position: "right",
+      // extruderOpacity:.8,
+      width:295, // width is set in two places, here and in the css for the sliding container
+      top: 50
+  }); 
+
+  $(".menu-pushtoggle").click(function () {   
+			if($("#menu-push.extruder").hasClass("isOpened")){	  
+		  	$("#menu-push").closeMbExtruder();
+		  	$('.menu-pushtoggle').removeClass('show-topmenu');
+		  	
+		  	$(document).click( function(){
+						// $('.menu-pushtoggle').removeClass('show-topmenu');
+				});
+  
+			} else {
+				$("#menu-push").openMbExtruder();
+				$("#kmaps-search").closeMbExtruder();
+				$('.menu-pushtoggle').addClass('show-topmenu');
+				return false;
+			}
+  });
+	
+   
+  
+  
+  
+  
+  
   // --- collections toggle
   $("li.explore").addClass("closed");
   $(".explore>a, .closecollection").click(function(){
@@ -152,11 +197,11 @@ jQuery(function($) {
 
 // *** SEARCH *** toggle button
 jQuery(function($) {
-	 $(window).on("resize",function(){ location.reload(); } ); // forces height refresh on browser-size change
-	  /* drag handle for panel width */
-	 $(".extruder.right").resize(function() {
-	      $(window).reload(false)
-	 })
+	 // $(window).on("resize",function(){ location.reload(); } ); // forces height refresh on browser-size change
+	 // drag handle for panel width
+//	 $(".extruder.right").resize(function() {
+//	      $(window).reload(false)
+//	 })
 
 	if (!$(".extruder.right").hasClass("isOpened")) {
 				$(".flap").click( function() {
@@ -650,7 +695,7 @@ jQuery(function($) {
 	$(fname).focusin(function(){
 			$(this).dropdown();
 	    $(this).attr("placeholder","");
-	    $("button.feature-reset").css("text-indent","0").show(100); // switched to negative indent since hide() not working consistently
+	    $("button.feature-reset").show(100); // switched to negative indent since hide() not working consistently
 	});
 	$(fname).focusout(function(){
 	    $(this).attr("placeholder",$(fname).data("holderf"));
@@ -692,7 +737,7 @@ jQuery(function($) {
 		$(".filter").hide();
 		 tree2.clearFilter();
 		$("#feature-tree").fancytree();
-		$("button.feature-reset").css("text-indent","-9999px"); // switched to negative indent since hide() not working consistently
+		$("button.feature-reset").hide(); // switched to negative indent since hide() not working consistently
 		// $(this).addClass("show");
 	}).attr("disabled", true);
 
@@ -726,26 +771,6 @@ jQuery(function ($) {
 });
 
 
-
-// *** CONTENT *** top link, ie browser alert, equal-heights
-jQuery(function ($) {
-	var offset = 220;
-  var duration = 500;
-  jQuery(window).scroll(function() {
-      if (jQuery(this).scrollTop() > offset) {
-          jQuery('.back-to-top').fadeIn(duration);
-      } else {
-          jQuery('.back-to-top').fadeOut(duration);
-      }
-  });
-  jQuery('.back-to-top').click(function(event) {
-      event.preventDefault();
-      jQuery('html, body').animate({scrollTop: 0}, duration);
-      return false;
-  })
-});
-
-
 // *** SEARCH *** feature types
 jQuery(function ($) {
 	// manually initiate dropdown w/bstrap
@@ -768,14 +793,69 @@ jQuery(function ($) {
 
 
 
-// *** GLOBAL ** conditional IE message
+// *** GLOBAL *** ie browser alert, equal-heights, off-canvas panel
 jQuery(function ($) {
 	// show-hide the IE message for older browsers
 	// this could be improved with conditional for - lte IE7 - so it does not self-hide
   $(".progressive").delay( 2000 ).slideDown( 400 ).delay( 5000 ).slideUp( 400 );
-
- // equalHeights
-	$(".main-col").equalHeights();
+  
+  // equalHeights
+	$(".main-col").equalHeights();	
 });
  
 
+// *** CONTENT *** top link
+jQuery(function ($) {
+	var offset = 220;
+  var duration = 500;
+  jQuery(window).scroll(function() {
+      if (jQuery(this).scrollTop() > offset) {
+          jQuery('.back-to-top').fadeIn(duration);
+      } else {
+          jQuery('.back-to-top').fadeOut(duration);
+      }
+  });
+  jQuery('.back-to-top').click(function(event) {
+      event.preventDefault();
+      jQuery('html, body').animate({scrollTop: 0}, duration);
+      return false;
+  })
+});
+
+
+
+
+
+
+// --- width tracker for temp use ---
+jQuery(function ($) {
+    $(function(){
+        placeWindowWidth('#width-tracker');
+
+        $(window).on('resize', function(){
+            updateWindowWidth('#width-tracker');
+        });
+
+    });
+    function placeWindowWidth(selector){
+        if (typeof selector != 'string') return false;
+
+        if (! $(selector).length) {
+            var s = '<div id="' + selector.substr(1, selector.length - 1) + '"><div>Window width:</div><span></span></div>';
+            $('body').append(s);
+        }
+
+        updateWindowWidth(selector);
+    }
+    function updateWindowWidth(selector){
+        var s = $(selector);
+        var w = $(window).width();
+        if (!s.length) return false;
+
+        if (s.children('span')) {
+            s.children('span').text(w + 'px');
+        } else {
+            s.html(w + 'px');
+        }
+    }
+});
