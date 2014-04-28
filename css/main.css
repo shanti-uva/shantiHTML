@@ -272,6 +272,7 @@ body .header-banner{ }
   min-height:800px;
   margin-left: 0;
   margin-right: 0;
+  min-height:900px;
 }
 .content-section {
   background: #eee;    /*---- content background color -----*/
