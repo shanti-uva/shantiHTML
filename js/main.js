@@ -290,7 +290,9 @@ jQuery(function ($) {
 
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
-//        "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
+        "sDom": "frtiS",
+//
+// "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
 //            "t" +
 //            "<'row'>",
 //        "iTabIndex": 1,
@@ -301,11 +303,15 @@ jQuery(function ($) {
             		"sScrollXInner": "150%",
             		"bScrollCollapse": true,
           		"bPaginate": false
+
 //  "oPaginate": {
 //                "sPrevious": "&lt;",
 //                "sNext": "&gt;"
 //            }
         },
+        "sScrollY": "300px",
+        "sScrollX": "100%",
+        "bScrollCollapse": true,
         "oPaginate": false,
         "bPaginate": false,
         // this hides the pagination navigation when there is only one page.
@@ -332,6 +338,13 @@ jQuery(function ($) {
 			// closeOnExternalClick:false,
 			// flapMargin:0,
       filter: { mode: 'hide' },
+      activate: function(event,data) {
+          console.log("activate " + data.node.key);
+
+          var listitem = $(".title-field[kid='" + data.node.key + "']");
+          $('.row_selected').removeClass('row_selected');
+          $(listitem).closest('tr').addClass('row_selected')
+      },
       glyph: {
           map: {
               doc: "",
@@ -487,6 +500,9 @@ jQuery(function ($) {
 	//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {
         $(".title-field").trunk8({ tooltip:false });
+        if ($('.row_selected')[0]) {
+            $('.listview').scrollTo($('.row_selected')[0]);
+        }
     });
     $('.treeview').on('shown.bs.tab', function () {
 
@@ -567,7 +583,7 @@ jQuery(function($) {
 				mode: "hide"
 		},
 		activate: function(event, data) {
-				//	alert("activate " + data.node);
+
 		},
 		lazyLoad: function(event, ctx) {
 	 			ctx.result = {url: "ajax-sub2.json", debugDelay: 1000};
