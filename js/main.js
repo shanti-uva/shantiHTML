@@ -2,8 +2,6 @@ var Settings = {
      baseUrl: "http://dev-subjects.kmaps.virginia.edu"
 }
 
-
-
 // *** NAVIGATION *** top drilldown menu
 jQuery(function ($) {
 	$( '#menu' ).multilevelpushmenu({
@@ -333,9 +331,47 @@ jQuery(function ($) {
     $.fn.popover.Constructor.DEFAULTS.html = true;
     $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
 
+
+    $.fn.overlayMask = function (action) {
+        var mask = this.find('.overlay-mask');
+
+        // Create the required mask
+
+        if (!mask.length) {
+//            this.css({
+//                position: 'relative'
+//            });
+            mask = $('<div class="overlay-mask"></div>');
+            mask.css({
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                top: '0px',
+                left: '0px',
+                zIndex: 100,
+                backgroundColor: 'grey'
+            }).appendTo(this).fadeTo(0, 0.5);
+        }
+
+        // Act based on params
+
+        if (!action || action === 'show') {
+            mask.show();
+        } else if (action === 'hide') {
+            mask.hide();
+        }
+
+        return this;
+    };
+
+
+
+
+
+
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
-        "sDom": "frtiS",
+        "sDom": "rtiS",
 //
 // "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
 //            "t" +
@@ -384,7 +420,7 @@ jQuery(function ($) {
 			// flapMargin:0,
       filter: { mode: 'hide' },
       activate: function(event,data) {
-          console.log("activate " + data.node.key);
+          // console.log("activate " + data.node.key);
 
           var listitem = $(".title-field[kid='" + data.node.key + "']");
           $('.row_selected').removeClass('row_selected');
@@ -410,6 +446,11 @@ jQuery(function ($) {
       // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
+          timeout: 5000,
+          error: function(e) {
+              console.log(JSON.stringify(e));
+              notify.warn("networkerror","Error retrieving tree from kmaps server.");
+          },
           complete: function(xhr, status) {
 //              $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
 //              $(".alert").alert();
@@ -448,12 +489,20 @@ jQuery(function ($) {
         } else {
             notify.clear();
 
+            // notify.warn('debug',$('#termscope')[0].checked);
+
+            var nameck = $('#termscope')[0].checked?1:0;
+
+            var sumck = $('#summaryscope')[0].checked?1:0;
+
+            var essck = $('#essayscope')[0].checked?1:0;
+
             var searchargs = {
-                name: 0,
-                caption: 0,
-                summary: 1,
+                name: nameck,
+                caption: sumck,
+                summary: sumck,
                 id: 1,
-                description: 1
+                description: essck
             };
 
             $('table.table-results').dataTable().fnDestroy();
@@ -464,13 +513,13 @@ jQuery(function ($) {
                 type: "GET",
                 url: searchurl,
                 dataType: "json",
-                timeout: 15000,
+                timeout: 10000,
                 error: function (e) {
-                    alert("Error: " + JSON.stringify(e))
-                    ;
+                    notify.warn("searcherror","Error retrieving search: " + e.statusText);
                 },
+                beforeSend: function() { $('.view-section>.tab-content').overlayMask('show') },
                 success: function (ret) {
-//                    alert("json: " + JSON.stringify(resultHash));
+//                    ("json: " + JSON.stringify(resultHash));
 
                     var txt = $("#searchform").val();
                     var resultHash = {};
@@ -524,7 +573,9 @@ jQuery(function ($) {
 
                     $('table.table-results').dataTable();
 
-
+                },
+                complete: function() {
+                    $('.view-section>.tab-content').overlayMask('hide');
                 }
             });
             return false;

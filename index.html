@@ -391,24 +391,35 @@
 		  <section class="input-section" style="display:none;">									  
 				<form role="form" class="form">
 				 <fieldset>												
-					<legend class="hidden">Search Form</legend>									
-																		
+					<legend class="hidden">Search Form</legend>
+
 					  <div class="input-group">
 								<input id="searchform" class="form-control kms" type="text" placeholder="Enter Search...">
 								<span class="input-group-btn">
 									<button type="reset" class="searchreset">&times;</button>
-									<button id="searchbutton" type="button" class="btn btn-default"><i class="icon"></i></button>
+								<button id="searchbutton" type="button" class="btn btn-default"><i class="icon"></i></button>
 								</span>
-
 					  </div>
+
+                     <!-- search scope -->
+                     <div class="btn-group" data-toggle="buttons">
+                         <label class="checkbox-inline">
+                             <input type="checkbox" id="termscope" name="term-scope" checked="checked" data-value="terms"> Terms
+                         </label>
+                         <label class="checkbox-inline">
+                             <input type="checkbox" id="summaryscope" name="summary-scope" checked="checked" data-value="summaries"> Summaries
+                         </label>
+                         <label class="checkbox-inline" >
+                             <input type="checkbox" id="essayscope" name="essay-scope" data-value="essays"> Essays
+                         </label>
+                     </div>
 
 						<a href="#" class="advanced-link toggle-link"><i class="icon"></i>Advanced</a>	
 						<div id="notification-wrapper"></div>
 								
 							 <!-- advanced search hidden ontent -->
 							 <div class="advanced-view" style="display:none;">
-							 	
-							 														    
+
 								  <div class="form-group"> 
 								    <label class="radio-inline" for="radios-0">
 								      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
