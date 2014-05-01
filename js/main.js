@@ -597,7 +597,9 @@ jQuery(function ($) {
     $('.listview').on('shown.bs.tab', function() {
         $(".title-field").trunk8({ tooltip:false });
         if ($('.row_selected')[0]) {
-            $('.listview').scrollTo($('.row_selected')[0]);
+            if ($('.listview')) {
+                $('.listview').scrollTo($('.row_selected')[0]);
+            }
         }
     });
     $('.treeview').on('shown.bs.tab', function () {
