@@ -236,15 +236,18 @@ function decorateElementWithPopover(elem, node) {
         var counts = jQuery(elem.parentNode||elem[0].parentNode).find('.info-wrap .counts-display');
         // alert(node.key + counts);
         $.ajax({
+            cache: true,
             type: "GET",
             url: Settings.baseUrl + "/features/" + node.key + ".xml",
             dataType: "xml",
             timeout: 5000,
             beforeSend: function(){
-                counts.html("<span class='assoc-resources-loading'>loading...</span>");
+                if (!counts.html()) {
+                    counts.html("<span class='assoc-resources-loading'>loading...</span>");
+                }
             },
             error: function(e) {
-                counts.html("<i class='glyphicon glyphicon-warning-sign' title='"+ e.statusText);
+                counts.html("error: " + e.statusText);
             },
             success: function (xml) {
                 // force the counts to be evaluated as numbers.
@@ -341,7 +344,8 @@ jQuery(function ($) {
 //            this.css({
 //                position: 'relative'
 //            });
-            mask = $('<div class="overlay-mask"></div>');
+            // I suppose some of this styling should go into a css file instead
+            mask = $('<div class="overlay-mask"><div style="text-align:center"><i class="glyphicon glyphicon-time" style="font-size: 5em"></i></div></div>');
             mask.css({
                 position: 'absolute',
                 width: '100%',
@@ -350,7 +354,7 @@ jQuery(function ($) {
                 left: '0px',
                 zIndex: 100,
                 backgroundColor: 'grey'
-            }).appendTo(this).fadeTo(0, 0.5);
+            }).appendTo(this).fadeTo(0, 0.5).find('div').position( { my: 'center center', at: 'center center', of: '.overlay-mask' } )
         }
 
         // Act based on params
@@ -371,7 +375,7 @@ jQuery(function ($) {
 
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
-        "sDom": "rtiS",
+//        "sDom": "rtiS",
 //
 // "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
 //            "t" +
@@ -390,9 +394,9 @@ jQuery(function ($) {
 //                "sNext": "&gt;"
 //            }
         },
-        "sScrollY": "300px",
-        "sScrollX": "100%",
-        "bScrollCollapse": true,
+//        "sScrollY": "300px",
+//        "sScrollX": "100%",
+//        "bScrollCollapse": true,
         "oPaginate": false,
         "bPaginate": false,
         // this hides the pagination navigation when there is only one page.
@@ -735,7 +739,7 @@ jQuery(function($) {
 		$("button.searchreset").hide();
 		$(".alert").hide();
         searchUtil.clearSearch();
-        tree.clearFilter();
+        $('#tree').fancytree('getTree').clearFilter();
 	});
 
 	// --- fname, KMAPS FEATURES ---
