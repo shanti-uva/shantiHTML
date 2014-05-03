@@ -2,6 +2,8 @@ var Settings = {
      baseUrl: "http://dev-subjects.kmaps.virginia.edu"
 }
 
+
+
 // *** NAVIGATION *** top drilldown menu
 jQuery(function ($) {
 	$( '#menu' ).multilevelpushmenu({
@@ -13,7 +15,7 @@ jQuery(function ($) {
     groupIcon: 'fa fa-angle-right',
     collapsed: true
 	});
-	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li.menu-pushtoggle, .navbar-default .navbar-nav>li:last').addClass('highlight');
+	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li.menu-maintoggle, .navbar-default .navbar-nav>li:last').addClass('highlight');
   // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));
 
 	// --- expand
@@ -60,12 +62,12 @@ jQuery(function ($) {
 jQuery(function ($) {
 	$(".breadcrumbs-wrapper").jBreadCrumb({		
         minimumCompressionElements: 4,
-        endElementsToLeaveOpen: 1,
-        beginingElementsToLeaveOpen: 1,
+        endElementsToLeaveOpen: 3,
+        beginingElementsToLeaveOpen: 0,
         timeExpansionAnimation: 500,
         timeCompressionAnimation: 500,
         timeInitialCollapse: 600,
-        previewWidth: 25	
+        previewWidth: 10	
 	});
 });
 
@@ -79,41 +81,84 @@ jQuery(function ($) {
   $("#kmaps-search").buildMbExtruder({
       positionFixed: false,
       position: "right",
-      width: 295,
+      width: 295, // width is set in two places, here and the css
+      accordionPanels:true,
       top: 0
   });
 
 
-  $("#menu-push").buildMbExtruder({
+  $("#menu-main").buildMbExtruder({
       positionFixed: false,
       position: "right",
       // extruderOpacity:.8,
-      width:295, // width is set in two places, here and in the css for the sliding container
-      top: 50
+      width: 280, // width is set in two places, here and the css
+      accordionPanels:true,
+      top: 0
+
   }); 
 
-  $(".menu-pushtoggle").click(function () {   
-			if($("#menu-push.extruder").hasClass("isOpened")){	  
-		  	$("#menu-push").closeMbExtruder();
-		  	$('.menu-pushtoggle').removeClass('show-topmenu');
+  $("#menu-collections").buildMbExtruder({
+      positionFixed: false,
+      position: "right",
+      // extruderOpacity:.8,
+      width:280, // width is set in two places, here and the css
+      accordionPanels:true,
+      top: 0
+
+  });
+  
+  $(".menu-maintoggle").click(function () {   
+			if($("#menu-main.extruder").hasClass("isOpened")){	  
+		  	$("#menu-main").closeMbExtruder();
+		  	$('.menu-maintoggle').removeClass('show-topmenu');
 		  	
 		  	$(document).click( function(){
-						// $('.menu-pushtoggle').removeClass('show-topmenu');
+						// $('.menu-maintoggle').removeClass('show-topmenu');
 				});
   
 			} else {
-				$("#menu-push").openMbExtruder();
+				$("#menu-main").openMbExtruder();
 				$("#kmaps-search").closeMbExtruder();
-				$('.menu-pushtoggle').addClass('show-topmenu');
+				$('.menu-maintoggle').addClass('show-topmenu');
 				return false;
 			}
+	});
+
+  
+  $(".menu-exploretoggle").click(function () {   
+			if($("#menu-main.extruder").hasClass("isOpened")){	  
+		  	// $("#menu-main").closeMbExtruder();
+		  	$('.menu-exploretoggle').removeClass('show-topmenu');
+		  	$('.menu-common-wrap, .menu-options-wrap').show();
+		  	$('.menu-collections-wrap').css('display','block');
+  
+			} else {
+				$("#menu-main").openMbExtruder();
+				$("#kmaps-search").closeMbExtruder();
+				$('.menu-exploretoggle').addClass('show-topmenu');
+				$('.menu-common-wrap, .menu-options-wrap').hide();
+				$('.menu-collections-wrap').css('display','none');
+				return false;
+			}
+
   });
-	
-   
-  
-  
-  
-  
+
+
+
+  $(".kmaps-searchtoggle").click(function () {   
+			if($("#kmaps-search.extruder").hasClass("isOpened")){	  
+		  	$("#kmaps-search,#menu-main").closeMbExtruder();
+		  	$('.menu-searchtoggle').removeClass('show-topmenu');  
+			} else {
+				$("#menu-main").closeMbExtruder();
+				$("#kmaps-search").openMbExtruder();
+				$('.menu-searchtoggle').addClass('show-topmenu');
+				return false;
+			}
+
+  });	
+
+
   
   // --- collections toggle
   $("li.explore").addClass("closed");
@@ -206,7 +251,7 @@ jQuery(function($) {
 					$(".extruder .text").css("width","100%");
 				});
 					// styles inline for now, forces
-				$(".flap").prepend("<span style='font-size:20px; position:absolute; left:19px; top:13px; z-index:10;'><i class='icon km-search'></i></span>");
+				$(".flap").prepend("<span style='font-size:22px; position:absolute; left:18px; top:12px; z-index:10;'><i class='icon km-search-kmaps'></i></span>");
 				$(".flap").addClass("on-flap");
 	}
 
@@ -236,18 +281,15 @@ function decorateElementWithPopover(elem, node) {
         var counts = jQuery(elem.parentNode||elem[0].parentNode).find('.info-wrap .counts-display');
         // alert(node.key + counts);
         $.ajax({
-            cache: true,
             type: "GET",
             url: Settings.baseUrl + "/features/" + node.key + ".xml",
             dataType: "xml",
             timeout: 5000,
             beforeSend: function(){
-                if (!counts.html()) {
-                    counts.html("<span class='assoc-resources-loading'>loading...</span>");
-                }
+                counts.html("<span class='assoc-resources-loading'>loading...</span>");
             },
             error: function(e) {
-                counts.html("error: " + e.statusText);
+                counts.html("<i class='glyphicon glyphicon-warning-sign' title='"+ e.statusText);
             },
             success: function (xml) {
                 // force the counts to be evaluated as numbers.
@@ -334,50 +376,9 @@ jQuery(function ($) {
     $.fn.popover.Constructor.DEFAULTS.html = true;
     $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
 
-
-    $.fn.overlayMask = function (action) {
-        var mask = this.find('.overlay-mask');
-
-        // Create the required mask
-
-        if (!mask.length) {
-//            this.css({
-//                position: 'relative'
-//            });
-            // I suppose some of this styling should go into a css file instead
-            mask = $('<div class="overlay-mask"><div style="text-align:center"><i class="glyphicon glyphicon-time" style="font-size: 5em"></i></div></div>');
-            mask.css({
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                top: '0px',
-                left: '0px',
-                zIndex: 100,
-                backgroundColor: 'grey'
-            }).appendTo(this).fadeTo(0, 0.5).find('div').position( { my: 'center center', at: 'center center', of: '.overlay-mask' } )
-        }
-
-        // Act based on params
-
-        if (!action || action === 'show') {
-            mask.show();
-        } else if (action === 'hide') {
-            mask.hide();
-        }
-
-        return this;
-    };
-
-
-
-
-
-
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
-//        "sDom": "rtiS",
-//
-// "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
+//        "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
 //            "t" +
 //            "<'row'>",
 //        "iTabIndex": 1,
@@ -388,15 +389,11 @@ jQuery(function ($) {
             		"sScrollXInner": "150%",
             		"bScrollCollapse": true,
           		"bPaginate": false
-
 //  "oPaginate": {
 //                "sPrevious": "&lt;",
 //                "sNext": "&gt;"
 //            }
         },
-//        "sScrollY": "300px",
-//        "sScrollX": "100%",
-//        "bScrollCollapse": true,
         "oPaginate": false,
         "bPaginate": false,
         // this hides the pagination navigation when there is only one page.
@@ -423,13 +420,6 @@ jQuery(function ($) {
 			// closeOnExternalClick:false,
 			// flapMargin:0,
       filter: { mode: 'hide' },
-      activate: function(event,data) {
-          // console.log("activate " + data.node.key);
-
-          var listitem = $(".title-field[kid='" + data.node.key + "']");
-          $('.row_selected').removeClass('row_selected');
-          $(listitem).closest('tr').addClass('row_selected')
-      },
       glyph: {
           map: {
               doc: "",
@@ -450,11 +440,6 @@ jQuery(function ($) {
       // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
-          timeout: 5000,
-          error: function(e) {
-              console.log(JSON.stringify(e));
-              notify.warn("networkerror","Error retrieving tree from kmaps server.");
-          },
           complete: function(xhr, status) {
 //              $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
 //              $(".alert").alert();
@@ -492,38 +477,21 @@ jQuery(function ($) {
             notify.warn('warntooshort', 'Search string must be ' + SEARCH_MIN_LENGTH + ' characters or longer.');
         } else {
             notify.clear();
-
-            // notify.warn('debug',$('#termscope')[0].checked);
-
-            var nameck = $('#termscope')[0].checked?1:0;
-
-            var sumck = $('#summaryscope')[0].checked?1:0;
-
-            var essck = $('#essayscope')[0].checked?1:0;
-
-            var searchargs = {
-                name: nameck,
-                caption: sumck,
-                summary: sumck,
-                id: 1,
-                description: essck
-            };
-
             $('table.table-results').dataTable().fnDestroy();
-
-            var searchurl = Settings.baseUrl + "/features/by_fields/" + txt + ".json?per_page=3000" + $.param(searchargs);
-//            console.log("Search URL = " + searchurl);
             $.ajax({
                 type: "GET",
-                url: searchurl,
+                url: Settings.baseUrl + "/features/by_name/" + txt + ".json?per_page=3000",
                 dataType: "json",
-                timeout: 10000,
-                error: function (e) {
-                    notify.warn("searcherror","Error retrieving search: " + e.statusText);
+                timeout: 5000,
+                beforeSend: function () {
+//                    alert('beforeSend');
                 },
-                beforeSend: function() { $('.view-section>.tab-content').overlayMask('show') },
+                error: function (e) {
+                    alert("Error: " + JSON.stringify(e))
+                    ;
+                },
                 success: function (ret) {
-//                    ("json: " + JSON.stringify(resultHash));
+//                    alert("json: " + JSON.stringify(resultHash));
 
                     var txt = $("#searchform").val();
                     var resultHash = {};
@@ -577,9 +545,7 @@ jQuery(function ($) {
 
                     $('table.table-results').dataTable();
 
-                },
-                complete: function() {
-                    $('.view-section>.tab-content').overlayMask('hide');
+
                 }
             });
             return false;
@@ -600,11 +566,6 @@ jQuery(function ($) {
 	//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {
         $(".title-field").trunk8({ tooltip:false });
-        if ($('.row_selected')[0]) {
-            if ($('.listview')) {
-                $('.listview').scrollTo($('.row_selected')[0]);
-            }
-        }
     });
     $('.treeview').on('shown.bs.tab', function () {
 
@@ -685,7 +646,7 @@ jQuery(function($) {
 				mode: "hide"
 		},
 		activate: function(event, data) {
-
+				//	alert("activate " + data.node);
 		},
 		lazyLoad: function(event, ctx) {
 	 			ctx.result = {url: "ajax-sub2.json", debugDelay: 1000};
@@ -739,7 +700,7 @@ jQuery(function($) {
 		$("button.searchreset").hide();
 		$(".alert").hide();
         searchUtil.clearSearch();
-        $('#tree').fancytree('getTree').clearFilter();
+        tree.clearFilter();
 	});
 
 	// --- fname, KMAPS FEATURES ---
@@ -832,6 +793,7 @@ jQuery(function ($) {
 jQuery(function ($) {
 	// manually initiate dropdown w/bstrap
   $(".dropdown-toggle").dropdown();
+  
   // controls clicking in dropdown & feature input
 	$(function () {
 		$(document).on('click', '#feature-name, .dropdown-menu.features-open', function(e) {
