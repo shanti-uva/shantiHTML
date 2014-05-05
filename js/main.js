@@ -8,7 +8,7 @@ var Settings = {
 jQuery(function ($) {
 	$( '#menu' ).multilevelpushmenu({
 		menuWidth: 250,
-		menuHeight: '32em', // this height set by longest menu length, preferences
+		menuHeight: '32em', // this height is determined by tallest menu, Preferences
 		mode: 'cover',
 		direction: 'rtl',
     backItemIcon: 'fa fa-angle-left',
@@ -175,6 +175,7 @@ jQuery(function ($) {
 			$(".advanced-view").toggleClass("show-options");
 			$(".view-wrap").toggleClass("short-wrap"); // ----- toggle class for managing view-section height
   });
+  
 });
 
 
@@ -792,6 +793,7 @@ jQuery(function ($) {
 jQuery(function ($) {
 	// manually initiate dropdown w/bstrap
   $(".dropdown-toggle").dropdown();
+
   
   // controls clicking in dropdown & feature input
 	$(function () {
@@ -841,7 +843,7 @@ jQuery(function ($) {
 });
 
 
-
+ 
 
 
 
