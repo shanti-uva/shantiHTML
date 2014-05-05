@@ -1,20 +1,11 @@
 html{ -webkit-font-smoothing: antialiased; overflow-y:scroll;}
 body{ font-family: "Museo Sans",sans-serif; font-weight:300; overflow: hidden;}
 body div.wrap-all{ position:relative; box-shadow: -2px 0 3px rgba(0, 0, 0, .36);}
-*, *:before, *:after { 
-   -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
-}
-*:focus{
-  outline: 0 !important;
-  /* outline: -2px auto -webkit-focus-ring-color !important; */
-}
-a,a:visited,
-a:hover,a:focus{text-decoration:none}
-
-.container,
-.container-fluid{ background:#eee;}
-/*--- BEGIN navbar tabs ---*/
-body .header-banner{ }
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+*:focus{ outline: 0 !important; /* outline: -2px auto -webkit-focus-ring-color !important; */}
+a,a:visited,a:hover,a:focus{text-decoration:none}
+.container,.container-fluid{ background:#eee;}
+/*--- BEGIN header ---*/
 .navbar.navbar-default{ 
 	padding:0; 
 	margin:0; 
@@ -32,7 +23,8 @@ body .header-banner{ }
 .navbar-default h1 {color:#555;font-style:italic; font-size:1.5em; line-height:normal; margin:0; padding:0 0 0 20px; font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;}
 .navbar-default h1 a.navbar-brand{border:0;display:inline-block;padding:0;margin:0;color:#333;font-weight:normal;text-shadow:1px 1px 1px #eee;}
 .navbar-default h1 a.navbar-brand:hover{ color:#222;}
-.navbar-default h1 a > span{ 	
+.navbar-default h1 em{ display:none;}
+.navbar-default h1 a span{ 	
 	font-size:0.93em;
 	line-height:1em;
 	height:1em;
@@ -41,18 +33,16 @@ body .header-banner{ }
 	top:-7px;
 	white-space:nowrap;
 }  
-/*----- top-menu -----*/
-/*--- create the menu toggle button ---*/
-.menu-icon{ text-align:center;display:inline-block;float:right; padding-right:0;border-left:1px solid #d0d0d0;}
-.menu-icon a{ background:#eee;color:#444; display:inline-block; width:60px;height:50px; vertical-align:middle; padding:12px 0 0 4px;margin:0;}
+/*--- menu toggle buttons ---*/
+.menu-icon{ display:inline-block; float:right; padding:0; border-left:1px solid #d0d0d0;}
+.menu-icon a{ text-align:center;background:#eee;color:#444; display:inline-block; width:60px;height:50px; vertical-align:middle; padding:12px 0 0 0;margin:0;}
 .menu-icon a:hover{ text-decoration:none;}
-.menu-icon i{ width:60px;height:50px; display:block; padding:0 8px 0 0;margin:0; color:#707070; font-size:2em; line-height:0.93em;}
+.menu-icon i{ padding:0; margin:0; color:#707070; font-size:2em; line-height:0.93em;}
 .menu-icon i:before{ content: "\e605";}
 .menu-icon a:hover i:before{ color:#555;}
 .menu-icon a:active i:before{ color:#000;}
 .menu-icon.show-topmenu a{ background:#39373f; color:#fff;}
 .menu-icon.show-topmenu a i:before{ color:#fff;}
-
 
 .navbar-default .menu-explore{ border-left:1px solid #ddd; display:inline;float:right;}
 .navbar-default .menu-explore a{ 	
@@ -270,7 +260,7 @@ body .header-banner{ }
   background:#a52d34;
   font-size:0.88em;
 }
-.titlearea .breadcrumbs-wrapper{ 
+.titlearea .breadwrap{ 
 	margin-left:15px;
 	margin-top:3px;
 }
@@ -524,21 +514,23 @@ body .header-banner{ }
   right: 20px;
   height:50px;
   width:50px;
-  background: #f0f0f0;
+  background: #fff;
   background: rgba(255, 255, 255, 0.50);
   font-size: 1em;
   line-height:2.25em;
   padding: 12px;
   display: none;
-  border:1px solid transparent;
+	-webkit-box-shadow: 0 0 4px 3px #eee;
+	box-shadow: 0 0 4px 3px #eee;
 	border-radius:50%;	
 }
 
 .back-to-top:hover {
 	background: #fff;    
   background: rgba(255, 255, 255, 0.80);
-  border:1px solid #ddd;
   text-decoration:none;
+  	-webkit-box-shadow: 0 0 4px 3px #d0d0d0;
+	box-shadow: 0 0 4px 3px #d0d0d0;
 }
 
 .back-to-top i{ 
@@ -547,8 +539,8 @@ body .header-banner{ }
   font-family: 'FontAwesome';
   font-weight:100;
   position: relative;
-  top: -8px;
-  right: 4px; 
+  top: -7px;
+  right: 3px; 
 }
 .back-to-top:hover i{ color:#999;}
 
@@ -862,7 +854,7 @@ body .header-banner{ }
 /* breadCrumb Styles
  ---------------------------------------------------------------------*/
 
-.breadcrumbs-wrapper
+.breadwrap
 {
 	margin: 0;
 	padding: 0;
@@ -873,14 +865,14 @@ body .header-banner{ }
 	width: 100%;
 	background:transparent;
 }
-.breadcrumbs-wrapper ol
+.breadwrap ol
 {
 	margin: 0;
 	padding: 0;
 	height: 21px;
 	display: block;
 }
-.breadcrumbs-wrapper ol li
+.breadwrap ol li
 {
 	display: inline-block;
 	float: left;
@@ -893,14 +885,14 @@ body .header-banner{ }
 	font-size: .9167em;
 	
 }
-.breadcrumbs-wrapper ol li.last
+.breadwrap ol li.last
 {
 	background: none;
 	margin-right: 0;
 	padding-right: 0;
 }
 
-.breadcrumbs-wrapper ol li a
+.breadwrap ol li a
 {
 	display: inline-block;
 	position: relative;
@@ -911,7 +903,7 @@ body .header-banner{ }
 	margin-right:0px;
 }
 
-.breadcrumbs-wrapper ol li i
+.breadwrap ol li i
 {
 	position: absolute;
 	right: -2px;
@@ -926,7 +918,7 @@ body .header-banner{ }
 	overflow: hidden;
 	background:#dc3c47;
 }
-.breadcrumbs-wrapper ol li i:before{
+.breadwrap ol li i:before{
 	content: "\f105";
 	color:#ddd;
 	font-size:1em;
@@ -941,70 +933,36 @@ body .header-banner{ }
 
 
 
-
 @media screen and (max-width: 400px) {
-	
-	.menu-explore a,
-	.collections-wrap .bottom-trim{ display:none !important;} /* hide collections button and bottom border */
 
 	.menu-icon{ border-left:none;}
-	.menu-icon a{ background:#fff;color:#777; width:29px !important; height:26px !important;min-height:26px !important;line-height:0; padding:3px !important;margin:0;
-		 -webkit-box-shadow: 0 0 4px 3px #d0d0d0;
-	  box-shadow: 0 0 4px 3px #d0d0d0;
-	  border-collapse:separate;
-	  border-radius:3px;
-		position:absolute;
-		top:8px; right:35px;
-		display:block;
-		position:relative;
+	.menu-icon a{ background:#fff;color:#777; width:1.88em !important; height:1.75em !important;min-height:1.75em !important;line-height:normal; padding:3px;margin:0;
+	-webkit-box-shadow: 0 0 4px 3px #d0d0d0;box-shadow: 0 0 4px 3px #d0d0d0;border-collapse:separate;border-radius:3px;position:relative;top:9px; right:0;margin-right:15px;
 	}
-	.menu-icon a:hover{ color:#222;}
-	.menu-icon i{ font-size:1.75em; line-height:1.12em; height:1.38em;width:1.5em;min-width:1.5em;}
+	.menu-icon a:hover{ color:#222; text-decoration:none;}
+	.menu-icon i{ font-size:1.32em !important; line-height:1.25em !important; width:1.75em !important; height:1.75em !important;min-height:1.75em !important;}
 	.menu-icon i:before{ content: "\e614";}
 	.menu-icon a:hover i:before{ color:#808080;}
 	.menu-icon.show-topmenu a{ background:#444; -webkit-box-shadow:none; box-shadow:none;}	
 	.menu-icon.show-topmenu a:hover i:before{ color:#fff;}
-
-
-
-	
-	.kmaps-searchtoggle{ text-align:center;display:inline-block;float:right; padding-right:0;border-left:1px solid #d0d0d0;}
-	.kmaps-searchtoggle a{ background:#eee;color:#444; display:inline-block; width:60px;height:50px; vertical-align:middle; padding:12px 0 0 4px;margin:0;}
-	.kmaps-searchtoggle a:hover{ text-decoration:none;}
-	.kmaps-searchtoggle i{ width:60px;height:50px; display:block; padding:0 8px 0 0;margin:0; color:#707070; font-size:2em; line-height:0.93em;}
-	/*.kmaps-searchtoggle i:before{ }
-	.kmaps-searchtoggle a:hover i:before{ color:#555;}
-	.kmaps-searchtoggle a:active i:before{ color:#000;}
-	.kmaps-searchtoggle.show-topmenu a{ background:#39373f; color:#fff;}
-	.kmaps-searchtoggle.show-topmenu a i:before{ color:#fff;}*/
-	/* new */
-	.kmaps-searchtoggle{ border-left:none;position:absolute;top:1px;right:-37px;}
-	.kmaps-searchtoggle a{ background:#555;color:#fff !important; width:29px !important; height:26px !important;min-height:26px !important;line-height:0; padding:6px 2px 0px 2px !important;margin:0;
-		 -webkit-box-shadow: none;
-	  box-shadow: none;
-	  border-collapse:separate;
-	  border-radius:3px;
-		position:absolute;
-		top:7px; right:50px;
-		display:block;
-		position:relative;
-	}
+	.kmaps-searchtoggle a{ border-radius:4px; position:relative; top:8px; background:#656565; padding:0px; width:2em !important; height:1.88em !important;min-height:1.88em !important; -webkit-box-shadow: none;box-shadow: none;}
 	.kmaps-searchtoggle a:hover{ color:#222;}
-	.kmaps-searchtoggle i{ font-size:1.75em; line-height:1.25em; padding:0;height:1.38em;width:1.5em;min-width:1.5em;font-size:1.25em; line-height:0.88em;}
-	.kmaps-searchtoggle i:before{ color:#eee;}
+	.kmaps-searchtoggle i{ font-size:1.12em !important; line-height:1.68em !important; width:2em !important; height:1.88em !important;min-height:1.88em !important; font-weight:bold; padding:0;}
+	.kmaps-searchtoggle i:before{ color:#eee; content: "\e600";}
 	.kmaps-searchtoggle a:hover i:before{ color:#fff;}
-	.kmaps-searchtoggle.show-topmenu a{ background:#444; -webkit-box-shadow:none; box-shadow:none;}	
-	.kmaps-searchtoggle.show-topmenu a:hover i:before{ color:#fff;}
-
-			
-	#kmaps-search.extruder.right{ margin-top:43px !important;}
-	#kmaps-search.extruder.right.isOpened{ }
+	.kmaps-searchtoggle .menu-icon.show-topmenu a{ background:#000;}		
+	.kmaps-searchtoggle .menu-icon.show-topmenu a i:before{ color:#fff;}
+	
+	#kmaps-search.extruder.right{ margin-top:42px !important;}
 	#kmaps-search.extruder.right .flap,
 	#kmaps-search.extruder.right .flap span.flapLabel,
 	#kmaps-search.extruder.right .flap.on-flap span.flapLabel,	
 	#kmaps-search.extruder.right.isOpened .flap,
 	#kmaps-search.extruder.right.isOpened .flap.on-flap span.flapLabel{ display:none !important;}
-	
+
+	.menu-explore a,
+	.menu-collections-wrap .bottom-trim{ display:none !important;} /* hide collections button and bottom border */
+	.menu-collections-wrap{ display:block !important;}
 	
 }
 
@@ -1013,7 +971,7 @@ body .header-banner{ }
 	
 	.kmaps-searchtoggle,
 	.kmaps-search-wrap,
-	.menu-collections-wrap{ display:none;} /* hide collections menu */
+	.menu-collections-wrap{ display:none !important;} /* hide collections menu */
 
 }
 
@@ -1081,19 +1039,22 @@ body .header-banner{ }
 	.main-content .content-section {
     width: 100%;
   }
-	.menu-icon{ font-size:0.83em; line-height:0.5em; width:50px;} 
-	.navbar-default .menu-icon a{ padding-left:0;}
-	.navbar-default .menu-icon i{ position:relative;top:-2px;}	
-	.navbar-default .menu-icon a,
-	.navbar-default .menu-icon i,
-	.navbar-default .menu-explore a,
+	.menu-icon{ } 
+	.menu-icon a,
+	.menu-icon i{ padding:0; height:40px; width:50px;}
+	.menu-icon i{ font-size:1.75em; line-height:1.75em;}
+	.menu-icon a,
+	.menu-icon i,
+	.menu-explore a,
 	.navbar-default .navbar-nav>li>a,
 	.navbar.navbar-default{ height:40px; min-height: 40px;}
+
 
 	.menu-accordion.extruder.right{ margin-top:40px; }
 	.navbar-default .menu-explore a{ 	
 		font-size:0.88em; 
 		line-height:0.75em;
+		height:40px;
 		padding:10px 20px 0 16px;
 		}
 	#kmaps-search.extruder.right{ margin-top:55px;}
@@ -1102,6 +1063,11 @@ body .header-banner{ }
   	font-size:1.44em; 
   	line-height:1.63em;
   }	
+  
+  #menu-main .container,
+  #menu-collections .container,
+  #menu-main .panel-group,
+  #menu-collections .panel-group{ padding:0 !important;}
 }
 
 @media screen and (min-width: 768px) {

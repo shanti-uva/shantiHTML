@@ -15,8 +15,6 @@ jQuery(function ($) {
     groupIcon: 'fa fa-angle-right',
     collapsed: true
 	});
-	$('.navbar-default .navbar-nav>li.lang, .navbar-default .navbar-nav>li.menu-maintoggle, .navbar-default .navbar-nav>li:last').addClass('highlight');
-  // $('.multilevelpushmenu_wrapper>div>ul>li').append($("<a class=\"link-blocker\"></a>"));
 
 	// --- expand
 	$( '.menu-toggle' ).click(function(){
@@ -59,8 +57,11 @@ jQuery(function ($) {
 // });
 
 
+
+
+// --- breadcrumbs 
 jQuery(function ($) {
-	$(".breadcrumbs-wrapper").jBreadCrumb({		
+	$(".breadwrap").jBreadCrumb({		
         minimumCompressionElements: 4,
         endElementsToLeaveOpen: 3,
         beginingElementsToLeaveOpen: 0,
@@ -81,8 +82,9 @@ jQuery(function ($) {
   $("#kmaps-search").buildMbExtruder({
       positionFixed: false,
       position: "right",
+      closeOnExternalClick:false,
+      closeOnClick:false,
       width: 295, // width is set in two places, here and the css
-      accordionPanels:true,
       top: 0
   });
 
@@ -90,9 +92,7 @@ jQuery(function ($) {
   $("#menu-main").buildMbExtruder({
       positionFixed: false,
       position: "right",
-      // extruderOpacity:.8,
       width: 280, // width is set in two places, here and the css
-      accordionPanels:true,
       top: 0
 
   }); 
@@ -100,59 +100,58 @@ jQuery(function ($) {
   $("#menu-collections").buildMbExtruder({
       positionFixed: false,
       position: "right",
-      // extruderOpacity:.8,
       width:280, // width is set in two places, here and the css
-      accordionPanels:true,
       top: 0
 
   });
+
+
   
   $(".menu-maintoggle").click(function () {   
 			if($("#menu-main.extruder").hasClass("isOpened")){	  
 		  	$("#menu-main").closeMbExtruder();
-		  	$('.menu-maintoggle').removeClass('show-topmenu');
-		  	
-		  	$(document).click( function(){
-						// $('.menu-maintoggle').removeClass('show-topmenu');
-				});
-  
+		  	$(".menu-maintoggle").removeClass("show-topmenu");
 			} else {
 				$("#menu-main").openMbExtruder();
 				$("#kmaps-search").closeMbExtruder();
-				$('.menu-maintoggle').addClass('show-topmenu');
+				$("#menu-collections").closeMbExtruder();
+				$(".menu-maintoggle").addClass("show-topmenu");
+				$(".menu-exploretoggle,.kmaps-searchtoggle").removeClass("show-topmenu");
 				return false;
 			}
 	});
 
   
   $(".menu-exploretoggle").click(function () {   
-			if($("#menu-main.extruder").hasClass("isOpened")){	  
-		  	// $("#menu-main").closeMbExtruder();
-		  	$('.menu-exploretoggle').removeClass('show-topmenu');
-		  	$('.menu-common-wrap, .menu-options-wrap').show();
-		  	$('.menu-collections-wrap').css('display','block');
-  
+			if($("#menu-collections.extruder").hasClass("isOpened")){	  
+		  	$("#menu-collections").closeMbExtruder();
+		  	$(".menu-exploretoggle").removeClass("show-topmenu");
 			} else {
-				$("#menu-main").openMbExtruder();
+				
+				// $(".menu-commons-wrap, .menu-options-wrap").css('display','none');
+				$(".menu-collections-wrap").css('display','block');
+				$("#menu-collections").openMbExtruder();
+				$("#menu-main").closeMbExtruder();
 				$("#kmaps-search").closeMbExtruder();
-				$('.menu-exploretoggle').addClass('show-topmenu');
-				$('.menu-common-wrap, .menu-options-wrap').hide();
-				$('.menu-collections-wrap').css('display','none');
+				$(".menu-exploretoggle").addClass("show-topmenu");	
+				$(".menu-maintoggle,.kmaps-searchtoggle").removeClass("show-topmenu");			
 				return false;
 			}
 
   });
 
-
-
   $(".kmaps-searchtoggle").click(function () {   
 			if($("#kmaps-search.extruder").hasClass("isOpened")){	  
-		  	$("#kmaps-search,#menu-main").closeMbExtruder();
-		  	$('.menu-searchtoggle').removeClass('show-topmenu');  
+		  	$("#kmaps-search").closeMbExtruder();
+		  	$(".kmaps-searchtoggle").removeClass("show-topmenu");
 			} else {
 				$("#menu-main").closeMbExtruder();
+				$("#menu-collections").closeMbExtruder();
 				$("#kmaps-search").openMbExtruder();
-				$('.menu-searchtoggle').addClass('show-topmenu');
+				$(".kmaps-searchtoggle").addClass("show-topmenu");
+				$(".menu-maintoggle,.menu-exploretoggle").removeClass("show-topmenu");
+				// $(".menu-collections-wrap .accordion-toggle").addClass("collapsed");
+				// $(".menu-collections-wrap .panel-collapse").removeClass("in").css('height','0');
 				return false;
 			}
 

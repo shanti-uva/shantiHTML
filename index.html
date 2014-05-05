@@ -26,14 +26,14 @@
 		<div class="navbar navbar-default navbar-static-top" role="navigation">        
 				
       <div class="menu-buttons">
+        <span class="kmaps-searchtoggle menu-icon"><a href="#"><i class='icon km-search-kmaps'></i></a></span>
         <span class="menu-toggle menu-icon"><a href="#"><i class="icon km-menu"></i></a></span>
         <span class="menu-maintoggle menu-icon"><a href="#"><i class="icon km-menu"></i></a></span>
-        <span class="kmaps-searchtoggle"><a href="#"><i class='icon km-search-kmaps'></i></a></span>
 				<span class="menu-exploretoggle menu-explore"><a href="#"><span>Explore </span>Collections<i class="icon km-directions"></i></a></span>
 			</div>
 
       <div class="navbar-header">
-      	<h1 class="navbar-title"><a href="#" class="navbar-brand" title="SHANTI Homepage"><i class="icon km-logo-kmaps"></i>
+      	<h1 class="navbar-title"><a href="#" class="navbar-brand" title="SHANTI Homepage"><i class="icon km-logo-kmaps"></i><em>SHANTI</em>
       		<span>Scholarly Collections at the University of Virginia</span></a>
       	</h1>
       </div>        	     
@@ -43,7 +43,7 @@
 			 <fieldset>	        
          <ul class="nav navbar-nav navbar-right">
           <li class="explore"><a href="#">Explore Collections<i class="icon km-directions"></i></a></li>
-          <li class="dropdown lang">										
+          <li class="dropdown lang highlight">										
           	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Eng<i class="icon km-arrowselect"></i></a>
           		<ul class="dropdown-menu dropdown-features" role="menu">
                 <li class="form-group"><label class="radio-inline" for="optionlang1">
@@ -112,16 +112,16 @@
   	
 	<!-- BEGIN content -->
   <main class="main-wrapper container-fluid" role="main">
-    <article class="row row-offcanvas row-offcanvas-left main-content">
+    <article class="row main-content">
      	
-    <header class="col-xs-12 col-sm-12 titlearea">
+    <header class="col-xs-12 titlearea">
      <div>
 	    <h1 class="page-title"><i class="icon km-places"></i>          
 	    		<span id="width-tracker">
             <span></span>
 					</span>
 			</h1>
-        <nav class="breadcrumbs-wrapper" role="navigation">
+        <nav class="breadwrap" role="navigation">
           <ol class="breadCrumb">
             <li><em>Places:</em></li>
             <li><a href="#">World</a><i class="fa fa-angle-right"></i></li>
@@ -136,7 +136,7 @@
       </div>
     </header>
               
-    <aside class="col-xs-6 col-sm-3 sidebar-offcanvas content-resources main-col">
+    <aside class="col-sm-3 content-resources main-col">
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#tab-overview" data-toggle="pill"><i class="icon km-overview"></i>Overview</a></li>
         <li><a href="#tab-essays" data-toggle="pill"><i class="icon km-essays"></i>Essays<span class="badge">1</span></a></li>
@@ -244,15 +244,47 @@
 
 
 
-
-
-	<section id="menu-main" class="menu-accordion" role="navigation">		
+	<section id="menu-collections" class="menu-accordion" role="navigation">		
 	 		<nav class="panel-group accordion" id="menu-accordion">  	 					            
 	 		
+						<div class="panel panel-default menu-collections-wrap1">
+				      <h6 class="panel-heading"><a href="#collapseCollections1" data-toggle="collapse" data-parent="#menu-accordion" class="accordion-toggle"><i class="icon"></i> 
+				            Kmaps Collections</a>
+				      </h6>
+				      <div id="collapseCollections1" class="panel-collapse collapse in">
+				        <div class="panel-body menu-collections">
+				          <ul>
+				            <li><a href="#"><i class="icon km-subjects"></i>Subjects</a></li>
+				            <li><a href="#"><i class="icon km-places"></i>Places</a></li>
+				            <li><a href="#"><i class="icon km-agents"></i>Agents</a></li>
+				            <li><a href="#"><i class="icon km-events"></i>Events</a></li>
+				            <li><a href="#"><i class="icon km-photos"></i>Photos</a></li>
+				            <li><a href="#"><i class="icon km-audiovideo"></i>Audio-Video</a></li>
+				            <li><a href="#"><i class="icon km-visuals"></i>Visuals</a></li>
+				            <li><a href="#"><i class="icon km-essays"></i>Essays</a></li>
+				            <li><a href="#"><i class="icon km-texts"></i>Texts</a></li>
+				            <li><a href="#"><i class="icon km-maps"></i>Maps</a></li>
+				            <li><a href="#"><i class="icon km-community"></i>Community</a></li>
+				            <li><a href="#"><i class="icon km-terms"></i>Terms</a></li>
+				            <li><a href="#"><i class="icon km-sources"></i>Sources</a></li>
+				            <li class="bottom-trim"></li>
+									</ul>
+				        </div>
+				      </div>
+				    </div>
+      </nav>      
+	</section>
+
+	
+	
+	<section id="menu-main" class="menu-accordion" role="navigation">		
+	 		<nav class="panel-group accordion" id="menu-accordion-main">  	 					            	 		
+						
 						<div class="panel panel-default menu-collections-wrap">
-				      <h6 class="panel-heading"><a href="#collapseOne" data-toggle="collapse" data-parent="#menu-accordion" class="accordion-toggle collapsed"><i class="icon"></i> 
-				            Kmaps Collections</a></h6>
-				      <div id="collapseOne" class="panel-collapse collapse">
+				      <h6 class="panel-heading"><a href="#collapseCollections" data-toggle="collapse" data-parent="#menu-accordion-main" class="accordion-toggle collapsed"><i class="icon"></i> 
+				            Kmaps Collections</a>
+				      </h6>
+				      <div id="collapseCollections" class="panel-collapse collapse">
 				        <div class="panel-body menu-collections">
 				          <ul>
 				            <li><a href="#"><i class="icon km-subjects"></i>Subjects</a></li>
@@ -274,10 +306,10 @@
 				      </div>
 				    </div>
 
-            <div class="panel panel-default menu-common-wrap">
-              <h6 class="panel-heading"><a href="#collapseTwo" data-toggle="collapse" data-parent="#menu-accordion" class="accordion-toggle"><i class="icon"></i> 
+            <div class="panel panel-default menu-commons-wrap">
+              <h6 class="panel-heading"><a href="#collapseCommons" data-toggle="collapse" data-parent="#menu-accordion-main" class="accordion-toggle"><i class="icon"></i> 
                     Main Menu</a></h6>
-              <div id="collapseTwo" class="panel-collapse collapse in">
+              <div id="collapseCommons" class="panel-collapse collapse in">
                 <div class="panel-body menu-common">
                   <ul>
                   	<li><a href="#">Login</a></li>
@@ -289,9 +321,9 @@
             </div>
           
             <div class="panel panel-default menu-options-wrap">
-              <h6 class="panel-heading"><a href="#collapseThree" data-toggle="collapse" data-parent="#menu-accordion" class="accordion-toggle collapsed"><i class="icon"></i> 
+              <h6 class="panel-heading"><a href="#collapseOptions" data-toggle="collapse" data-parent="#menu-accordion-main" class="accordion-toggle collapsed"><i class="icon"></i> 
                   View Preferences</a></h6>
-              <div id="collapseThree" class="panel-collapse collapse">
+              <div id="collapseOptions" class="panel-collapse collapse">
                 <div class="panel-body menu-options">
                 
 								  <ul>			  	
@@ -361,9 +393,12 @@
                 </div>
               </div>
             </div>
+      </nav>      	
+	</section>
 
-      </nav>      
-	</section><!-- END menu-main -->
+
+
+
 
 
 
