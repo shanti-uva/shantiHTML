@@ -289,7 +289,7 @@ function decorateElementWithPopover(elem, node) {
                 counts.html("<span class='assoc-resources-loading'>loading...</span>");
             },
             error: function(e) {
-                counts.html("<i class='glyphicon glyphicon-warning-sign' title='"+ e.statusText);
+                counts.html("error: " + e.statusText);
             },
             success: function (xml) {
                 // force the counts to be evaluated as numbers.
@@ -376,6 +376,45 @@ jQuery(function ($) {
     $.fn.popover.Constructor.DEFAULTS.html = true;
     $.fn.popover.Constructor.DEFAULTS.delay.hide = '5000'
 
+
+    $.fn.overlayMask = function (action) {
+        var mask = this.find('.overlay-mask');
+
+        // Create the required mask
+
+        if (!mask.length) {
+//            this.css({
+//                position: 'relative'
+//            });
+            // I suppose some of this styling should go into a css file instead
+            mask = $('<div class="overlay-mask"><div style="text-align:center"><i class="glyphicon glyphicon-time" style="font-size: 5em"></i></div></div>');
+            mask.css({
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                top: '0px',
+                left: '0px',
+                zIndex: 100,
+                backgroundColor: 'grey'
+            }).appendTo(this).fadeTo(0, 0.5).find('div').position( { my: 'center center', at: 'center center', of: '.overlay-mask' } )
+        }
+
+        // Act based on params
+
+        if (!action || action === 'show') {
+            mask.show();
+        } else if (action === 'hide') {
+            mask.hide();
+        }
+
+        return this;
+    };
+
+
+
+
+
+
     // set the dataTable defaults
     $.extend( true, $.fn.dataTable.defaults,        {
 //        "sDom": "<'row'<'col-xs-6'i><'col-xs-6'p>>" +
@@ -420,6 +459,13 @@ jQuery(function ($) {
 			// closeOnExternalClick:false,
 			// flapMargin:0,
       filter: { mode: 'hide' },
+      activate: function(event,data) {
+          // console.log("activate " + data.node.key);
+
+          var listitem = $(".title-field[kid='" + data.node.key + "']");
+          $('.row_selected').removeClass('row_selected');
+          $(listitem).closest('tr').addClass('row_selected')
+      },
       glyph: {
           map: {
               doc: "",
@@ -440,6 +486,11 @@ jQuery(function ($) {
       // source: {url: Settings.baseUrl + "./js/fancy_nested.json",
           cache: false,
           debugDelay: 1000,
+          timeout: 5000,
+          error: function(e) {
+              console.log(JSON.stringify(e));
+              notify.warn("networkerror","Error retrieving tree from kmaps server.");
+          },
           complete: function(xhr, status) {
 //              $('<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>' + status + ': ' + xhr.statusText + '</div>').appendTo('.treeview');
 //              $(".alert").alert();
@@ -477,21 +528,38 @@ jQuery(function ($) {
             notify.warn('warntooshort', 'Search string must be ' + SEARCH_MIN_LENGTH + ' characters or longer.');
         } else {
             notify.clear();
+
+            // notify.warn('debug',$('#termscope')[0].checked);
+
+            var nameck = $('#termscope')[0].checked?1:0;
+
+            var sumck = $('#summaryscope')[0].checked?1:0;
+
+            var essck = $('#essayscope')[0].checked?1:0;
+
+            var searchargs = {
+                name: nameck,
+                caption: sumck,
+                summary: sumck,
+                id: 1,
+                description: essck
+            };
+
             $('table.table-results').dataTable().fnDestroy();
+
+            var searchurl = Settings.baseUrl + "/features/by_fields/" + txt + ".json?per_page=3000" + $.param(searchargs);
+//            console.log("Search URL = " + searchurl);
             $.ajax({
                 type: "GET",
-                url: Settings.baseUrl + "/features/by_name/" + txt + ".json?per_page=3000",
+                url: searchurl,
                 dataType: "json",
-                timeout: 5000,
-                beforeSend: function () {
-//                    alert('beforeSend');
-                },
+                timeout: 10000,
                 error: function (e) {
-                    alert("Error: " + JSON.stringify(e))
-                    ;
+                    notify.warn("searcherror","Error retrieving search: " + e.statusText);
                 },
+                beforeSend: function() { $('.view-section>.tab-content').overlayMask('show') },
                 success: function (ret) {
-//                    alert("json: " + JSON.stringify(resultHash));
+//                    ("json: " + JSON.stringify(resultHash));
 
                     var txt = $("#searchform").val();
                     var resultHash = {};
@@ -545,7 +613,9 @@ jQuery(function ($) {
 
                     $('table.table-results').dataTable();
 
-
+                },
+                complete: function() {
+                    $('.view-section>.tab-content').overlayMask('hide');
                 }
             });
             return false;
@@ -566,6 +636,11 @@ jQuery(function ($) {
 	//    $('.table-v').on('shown.bs.tab', function() { $('.title-field').trunk8(); });
     $('.listview').on('shown.bs.tab', function() {
         $(".title-field").trunk8({ tooltip:false });
+        if ($('.row_selected')[0]) {
+            if ($('.listview')) {
+                $('.listview').scrollTo($('.row_selected')[0]);
+            }
+        }
     });
     $('.treeview').on('shown.bs.tab', function () {
 
@@ -700,7 +775,7 @@ jQuery(function($) {
 		$("button.searchreset").hide();
 		$(".alert").hide();
         searchUtil.clearSearch();
-        tree.clearFilter();
+        $('#tree').fancytree('getTree').clearFilter();
 	});
 
 	// --- fname, KMAPS FEATURES ---
