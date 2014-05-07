@@ -260,11 +260,27 @@ a,a:visited,a:hover,a:focus{text-decoration:none}
   background:#a52d34;
   font-size:0.88em;
 }
-.titlearea .breadwrap{ 
+
+
+
+/* breadCrumb Styles
+ ---------------------------------------------------------------------*/
+
+.breadwrap
+{
+	margin: 0;
 	margin-left:15px;
 	margin-top:3px;
+	padding: 0;
+	float: left;
+	display: block;
+	height: 21px;
+	overflow: hidden;
+	width: 100%;
+	background:transparent;
 }
-.titlearea .breadCrumb {
+.breadwrap ol
+{
   background: inherit;
   font-size: 0.88em;
   line-height:21px;
@@ -272,30 +288,89 @@ a,a:visited,a:hover,a:focus{text-decoration:none}
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   margin:0;
   padding:0;
+	display: block;
 }
-.titlearea .breadCrumb em {
+.breadwrap ol li
+{
+	display: inline-block;
+	float: left;
+	position: relative;
+	height: 21px;
+	overflow: hidden;
+	line-height: 21px;
+	margin: 0px 6px 0px 0;
+	padding: 0px 10px 0px 0;
+	font-size: .9167em;
+	
+}
+.breadwrap .breadCrumb li:first-child 
+{
   font-family: "Museo Sans", sans-serif;
   font-size:1.25em;
-  line-height:20px;
+  line-height:21px;
   padding:0;
-  margin:0 -10px 0 0;
+  margin:0 5px 0 0;
   font-weight: 600;
   font-style:normal;
 }
-.breadCrumb > li + li:before{ padding:0;}
-.titlearea .breadCrumb a {
+.breadwrap ol li.last
+{
+	background: none;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.breadwrap ol li a
+{
   color: #fff;
   text-decoration: none;
+	display: inline-block;
+	position: relative;
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+	float: left;
+	margin-right:0px;
 }
-.titlearea .breadCrumb .active {
-  color: #fff;
-}
-.titlearea .breadCrumb li + li:before {
-  color: #fff;
-}
-.titlearea .breadCrumb .active{ font-weight:bold; color:#fff; font-size:1em;}
 
+.breadwrap ol li i
+{
+	position: absolute;
+	right: -2px;
+	top: -1px;
+	z-index: 20;
+	font-family:'FontAwesome';
+	font-size:2em;
+	line-height:20px;
+	font-weight:200;
+	color:#ddd;
+	display: block;
+	overflow: hidden;
+	background:#dc3c47;
+}
+.breadwrap ol li i:before{
+	content: "\f105";
+	color:#ddd;
+	font-size:1em;
+  display: inline-block;
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position:relative;top:-2px;
+}
+.breadwrap .breadCrumb li + li:before {
+  color: #fff;
+  padding:0;
+}
+
+.breadwrap .breadCrumb li.active {
+  font-weight:bold; color:#fff; font-size:1em;
+}
 /*--- END banner header ---*/
+
 
 
 /*---------------------*/
@@ -408,24 +483,61 @@ a,a:visited,a:hover,a:focus{text-decoration:none}
   border-right-color: transparent;
 }
 .content-resources ul.nav-pills li a { }
-.content-resources ul.nav-pills li a i{ margin-right:0.5em; font-size:1.56em; line-height:1em; height:1.75em;}
+.content-resources ul.nav-pills li a i{ 
+	font-family: 'kmaps-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin-right:0.5em; 
+	font-size:1.56em; 
+	line-height:1em; 
+	height:1.75em;
+}
+
+
 .content-resources ul.nav-pills li a i:before{
 	position:relative; top:4px;
 }
-.content-resources ul.nav-pills>li>a>.badge{
-	background:#888;
+.content-resources ul li.overview a i:before { content: "\e610";}
+.content-resources ul li.subjects a i:before { content: "\e609";}
+.content-resources ul li.essays a i:before { content: "\e61a";}
+.content-resources ul li.places a i:before { content: "\e60e";}
+.content-resources ul li.agents a i:before { content: "\e621";}
+.content-resources ul li.events a i:before { content: "\e622";}
+.content-resources ul li.photos a i:before { content: "\e60b";}
+.content-resources ul li.audio-video a i:before { content: "\e61f";}
+.content-resources ul li.visuals a i:before { content: "\e606";}
+.content-resources ul li.texts a i:before { content: "\e603";}
+.content-resources ul li.maps a i:before { content: "\e615";}
+.content-resources ul li.community a i:before { content: "\e61c";}
+.content-resources ul li.terms a i:before { content: "\e608";}
+.content-resources ul li.sources a i:before { content: "\e60f";}
+
+.content-resources ul.nav-pills > li > a > span{
 	line-height:7px;
 	margin-left:5px;
 	position:relative; top:-3px;
 	font-size:9px;
 	letter-spacing:0.06em;
 	text-shadow: 1px 1px #777;
-}
-.content-resources a.list-group-item.active>.badge, 
-.content-resources ul.nav-pills>.active>a>.badge{
-	color:#fff;
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 10px;
+  color:#fff;
 	background:#555;
 }
+.content-resources ul.nav-pills > .active > a > span { background:#555;}
+.content-resources ul.nav-pills > li > a > span.badge:empty {display: none;}
 /*--- END side col ---*/
 
 

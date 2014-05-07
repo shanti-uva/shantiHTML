@@ -918,7 +918,11 @@ jQuery(function ($) {
 });
 
 
- 
+// jQuery(function ($) {
+//	if($(".feature-menu").hasClass("open")) {
+//	  	$(".feature-toggle").addClass("show-features");
+//  }
+// });  
 
 
 
